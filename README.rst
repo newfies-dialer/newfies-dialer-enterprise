@@ -27,4 +27,4 @@ Placeholder
 
 This repository is a placeholder for the Newfies-dialer Enterprise Version.
 
-Visit http://www.newfies-dialer.org/ for further information.
+Please visit http://www.newfies-dialer.org/ for further information.
