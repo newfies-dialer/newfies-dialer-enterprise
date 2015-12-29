@@ -149,10 +149,10 @@ Features
     +-----------------+----------------------------------------------------+
 
 
-.. _beginners-guide-server-spec:
+.. _server-spec:
 
-Server Specification for Newfies-Dialer
----------------------------------------
+Server Specification
+--------------------
 
 As a minimum, we recommend a server with 4Gb of RAM and at least 40Gb of hard
 drive space with a 64 bit architecture. This will be sufficient to test
@@ -169,7 +169,7 @@ then we would recommend a multi-server installation consisting of one database
 and web server and multiple Freeswitch systems to make the calls.
 
 
-.. _princing:
+.. _pricing:
 
 Pricing
 -------
