@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ContactSerializer &mdash; Newfies-Dialer 3.0.4 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 3.0.4 documentation" href="../index.html" />
+    <link rel="up" title="API Reference" href="../api-reference.html" />
+    <link rel="next" title="ContentTypeSerializer" href="content_type_serializers.html" />
+    <link rel="prev" title="CampaignSerializer" href="campaign_serializers.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="content_type_serializers.html" title="ContentTypeSerializer"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="campaign_serializers.html" title="CampaignSerializer"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.0.4 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../api-reference.html" accesskey="U">API Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+
+    <span class="target" id="module-apirest.contact_serializers"></span><div class="section" id="contactserializer">
+<span id="contactserializer-model"></span><h1><cite>ContactSerializer</cite><a class="headerlink" href="#contactserializer" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="apirest.contact_serializers.ContactSerializer">
+<em class="property">class </em><code class="descclassname">apirest.contact_serializers.</code><code class="descname">ContactSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class rest_framework.fields.empty&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#apirest.contact_serializers.ContactSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Create</strong>:</p>
+<blockquote>
+<div><p>CURL Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre>curl -u username:password --dump-header - -H &quot;Content-Type:application/json&quot; -X POST --data &#39;{&quot;contact&quot;: &quot;12345678&quot;, &quot;status&quot;: &quot;1&quot;, &quot;last_name&quot;: &quot;Belaid&quot;, &quot;first_name&quot;: &quot;Areski&quot;, &quot;phonebook&quot;: &quot;1&quot;}&#39; http://localhost:8000/rest-api/contact/
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><div class="highlight"><pre>HTTP/1.0 201 CREATED
+Date: Fri, 14 Jun 2013 09:52:27 GMT
+Server: WSGIServer/0.1 Python/2.7.3
+Vary: Accept, Accept-Language, Cookie
+Content-Type: application/json; charset=utf-8
+Content-Language: en-us
+Allow: GET, POST, HEAD, OPTIONS
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Read</strong>:</p>
+<blockquote>
+<div><p>CURL Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre>curl -u username:password -H &#39;Accept: application/json&#39; http://localhost:8000/rest-api/contact/
+
+curl -u username:password -H &#39;Accept: application/json&#39; http://localhost:8000/rest-api/contact/%contact-id%/
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><div class="highlight"><pre>{
+    &quot;count&quot;: 1,
+    &quot;next&quot;: null,
+    &quot;previous&quot;: null,
+    &quot;results&quot;: [
+        {
+            &quot;url&quot;: &quot;http://127.0.0.1:8000/rest-api/contact/1/&quot;,
+            &quot;phonebook&quot;: &quot;http://127.0.0.1:8000/rest-api/phonebook/1/&quot;,
+            &quot;contact&quot;: &quot;55555555&quot;,
+            &quot;status&quot;: 1,
+            &quot;last_name&quot;: &quot;Belaid&quot;,
+            &quot;first_name&quot;: &quot;Arezqui&quot;,
+            &quot;email&quot;: &quot;areski@gmail.com&quot;,
+            &quot;address&quot;: &quot;Address&quot;,
+            &quot;city&quot;: &quot;Barcelona&quot;,
+            &quot;state&quot;: &quot;state&quot;,
+            &quot;country&quot;: &quot;ES&quot;,
+            &quot;unit_number&quot;: &quot;123&quot;,
+            &quot;additional_vars&quot;: &quot;{&quot;facility&quot;:&quot;hurron&quot;,&quot;debt&quot;:10,&quot;address&quot;:&quot;Sant Lluis street 60&quot;}&quot;,
+            &quot;description&quot;: &quot;test subscriber&quot;,
+            &quot;created_date&quot;: &quot;2013-06-27T19:48:45.118&quot;,
+            &quot;updated_date&quot;: &quot;2013-06-27T19:48:45.118&quot;
+        },
+    ]
+}
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Update</strong>:</p>
+<blockquote>
+<div><p>CURL Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre>curl -u username:password --dump-header - -H &quot;Content-Type: application/json&quot; -X PATCH --data &#39;{&quot;contact&quot;: &quot;12345678&quot;, &quot;status&quot;: &quot;1&quot;, &quot;last_name&quot;: &quot;Belaid&quot;, &quot;first_name&quot;: &quot;Areski&quot;, &quot;phonebook&quot;: &quot;1&quot;}&#39; http://localhost:8000/rest-api/contact/%contact-id%/
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><div class="highlight"><pre>HTTP/1.0 202 NO CONTENT
+Date: Fri, 23 Sep 2011 06:46:12 GMT
+Server: WSGIServer/0.1 Python/2.7.1+
+Vary: Accept-Language, Cookie
+Content-Length: 0
+Content-Type: text/html; charset=utf-8
+Content-Language: en-us
+</pre></div>
+</div>
+</div></blockquote>
+<dl class="method">
+<dt id="apirest.contact_serializers.ContactSerializer.get_fields">
+<code class="descname">get_fields</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#apirest.contact_serializers.ContactSerializer.get_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>filter survey field</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><p class="logo"><a href="../index.html">
+  <img class="logo" src="https://github.com/newfies-dialer/newfies-dialer/raw/develop/newfies/resources/images/newfies-dialer-180.png" alt="Logo"/>
+</a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="campaign_serializers.html"
+                        title="previous chapter"><cite>CampaignSerializer</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="content_type_serializers.html"
+                        title="next chapter"><cite>ContentTypeSerializer</cite></a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="content_type_serializers.html" title="ContentTypeSerializer"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="campaign_serializers.html" title="CampaignSerializer"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.0.4 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../api-reference.html" >API Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011-2015, Arezqui Belaid &lt;info@star2billing.com&gt;.
+    </div>
+  </body>
+</html>

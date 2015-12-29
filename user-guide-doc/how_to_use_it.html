@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>How to use Newfies-Dialer &mdash; Newfies-Dialer 3.0.4 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 3.0.4 documentation" href="../index.html" />
+    <link rel="up" title="User Guide" href="../user-guide.html" />
+    <link rel="next" title="Survey Nodes" href="survey_node.html" />
+    <link rel="prev" title="Overview" href="overview.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="survey_node.html" title="Survey Nodes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="overview.html" title="Overview"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.0.4 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../user-guide.html" accesskey="U">User Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+
+    <div class="section" id="how-to-use-newfies-dialer">
+<span id="how-to-use-it"></span><h1>How to use Newfies-Dialer<a class="headerlink" href="#how-to-use-newfies-dialer" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#freeswitch-set-up" id="id3">Freeswitch Set-Up</a></li>
+<li><a class="reference internal" href="#create-gateway" id="id4">Create Gateway</a></li>
+<li><a class="reference internal" href="#dialer-settings" id="id5">Dialer Settings</a></li>
+<li><a class="reference internal" href="#create-survey" id="id6">Create Survey</a></li>
+<li><a class="reference internal" href="#survey-nodes" id="id7">Survey Nodes</a></li>
+<li><a class="reference internal" href="#survey-branching" id="id8">Survey Branching</a></li>
+<li><a class="reference internal" href="#create-call-list" id="id9">Create call list</a></li>
+<li><a class="reference internal" href="#create-campaign" id="id10">Create campaign</a></li>
+<li><a class="reference internal" href="#voip-call-report" id="id11">VoIP Call Report</a></li>
+<li><a class="reference internal" href="#survey-report" id="id12">Survey Report</a></li>
+</ul>
+</div>
+<div class="section" id="freeswitch-set-up">
+<span id="id1"></span><h2><a class="toc-backref" href="#id3">Freeswitch Set-Up</a><a class="headerlink" href="#freeswitch-set-up" title="Permalink to this headline">¶</a></h2>
+<p>Configure trunks and gateways in Freeswitch by creating an XML file in
+/usr/local/freeswitch/conf/sip_profiles/external/ and give it an identifiable name,
+e.g. call-labs.xml, and place the following lines in the file, edited to suit your provider:</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;include&gt;
+&lt;gateway name=&quot;ip address or hostname of carrier&quot;&gt;
+&lt;!--/// account username *required* ///--&gt;
+&lt;param name=&quot;username&quot; value=&quot;your username provided by carrier&quot;/&gt;
+&lt;!--/// auth realm: *optional* same as gateway name, if blank ///--&gt;
+&lt;!--&lt;param name=&quot;realm&quot; value=&quot;asterlink.com&quot;/&gt;--&gt;
+&lt;!--/// username to use in from: *optional* same as username, if blank ///--&gt;
+&lt;param name=&quot;from-user&quot; value=&quot;your username provided by carrier&quot;/&gt;
+&lt;!--/// domain to use in from: *optional* same as realm, if blank ///--&gt;
+&lt;!--param name=&quot;from-domain&quot; value=&quot;&quot;/--&gt;
+&lt;!--/// account password *required* ///--&gt;
+&lt;param name=&quot;password&quot; value=&quot;your password supplied by carrier&quot;/&gt;
+&lt;!--/// extension for inbound calls: *optional* same as username, if blank ///--&gt;
+&lt;!--&lt;param name=&quot;extension&quot; value=&quot;cluecon&quot;/&gt;--&gt;
+&lt;!--/// proxy host: *optional* same as realm, if blank ///--&gt;
+&lt;!--&lt;param name=&quot;proxy&quot; value=&quot;asterlink.com&quot;/&gt;--&gt;
+&lt;!--/// send register to this proxy: *optional* same as proxy, if blank ///--&gt;
+&lt;!--&lt;param name=&quot;register-proxy&quot; value=&quot;mysbc.com&quot;/&gt;--&gt;
+&lt;!--/// expire in seconds: *optional* 3600, if blank ///--&gt;
+&lt;!--&lt;param name=&quot;expire-seconds&quot; value=&quot;60&quot;/&gt;--&gt;
+&lt;!--/// do not register ///--&gt;
+&lt;param name=&quot;register&quot; value=&quot;true&quot;/&gt;
+&lt;!-- which transport to use for register --&gt;
+&lt;!--&lt;param name=&quot;register-transport&quot; value=&quot;udp&quot;/&gt;--&gt;
+&lt;!--How many seconds before a retry when a failure or timeout occurs --&gt;
+&lt;!--&lt;param name=&quot;retry-seconds&quot; value=&quot;30&quot;/&gt;--&gt;
+&lt;!--Use the callerid of an inbound call in the from field on outbound calls via this gateway --&gt;
+&lt;!--&lt;param name=&quot;caller-id-in-from&quot; value=&quot;false&quot;/&gt;--&gt;
+&lt;!--extra sip params to send in the contact--&gt;
+&lt;!--&lt;param name=&quot;contact-params&quot; value=&quot;tport=tcp&quot;/&gt;--&gt;
+&lt;!--send an options ping every x seconds, failure will unregister and/or mark it down--&gt;
+&lt;!--&lt;param name=&quot;ping&quot; value=&quot;25&quot;/&gt;--&gt;
+&lt;/gateway&gt;
+&lt;/include&gt;
+</pre></div>
+</div>
+<p>Then in the Freeswitch CLI (fs_cli) “sofia profile external restart reloadxml”. When the command is
+complete, check the gateway has registered with the command “sofia status”.</p>
+</div>
+<div class="section" id="create-gateway">
+<span id="id2"></span><h2><a class="toc-backref" href="#id4">Create Gateway</a><a class="headerlink" href="#create-gateway" title="Permalink to this headline">¶</a></h2>
+<p>Having created the gateway in Freeswitch, Newfies-Dialer has to be told that it can use it. In
+admin,  add a new dialer gateway, e.g. sofia/gateway/myprovider/ (The final / is important) where
+“myprovider” is the gateway name setting used in above xml file in Freeswitch.</p>
+<p>Only the fields in bold are compulsory.</p>
+</div>
+<div class="section" id="dialer-settings">
+<span id="apply-dialer-settings"></span><h2><a class="toc-backref" href="#id5">Dialer Settings</a><a class="headerlink" href="#dialer-settings" title="Permalink to this headline">¶</a></h2>
+<p>Dialer settings has to be mapped with system users who are going to create campaigns &amp; contacts.
+If dialer setting is not mapped with system users, notification &amp; mail has been sent to Super admin user.</p>
+<p>To create restrictions (like the Max. no of campaign, Max no of contacts etc.) for
+system User, Click on <code class="docutils literal"><span class="pre">Add</span></code> in dialer settings list of admin side. Add numeric values for the limit.</p>
+<p>To apply the dialer settings limit on a system user, click on <code class="docutils literal"><span class="pre">Customers</span></code> or <code class="docutils literal"><span class="pre">Admins</span></code> in admin UI,
+select the user to update, &amp; apply the settings from the dialer settings list.</p>
+<p>Dialer settings:</p>
+<img alt="../_images/dialersetting_list.png" src="../_images/dialersetting_list.png" />
+<p>Update dialer settings:</p>
+<img alt="../_images/update_dialersetting.png" src="../_images/update_dialersetting.png" />
+</div>
+<div class="section" id="create-survey">
+<span id="survey"></span><h2><a class="toc-backref" href="#id6">Create Survey</a><a class="headerlink" href="#create-survey" title="Permalink to this headline">¶</a></h2>
+<img alt="../_images/update_survey1.png" src="../_images/update_survey1.png" />
+<p>The survey application for Newfies-Dialer allows polls and surveys to be taken over the phone.</p>
+<p>Each contact is called, and then played a sound file. After the sound file is heard, the user can
+enter their answer through the phone keypad using keys 0 to 9.</p>
+<p>Therefore before creating the survey, the first job is to upload the audio for the survey. One audio
+file is required for each question.</p>
+<p><strong>Uploading Audio Files</strong>:</p>
+<p>Select Audio Files from the top menu then click add.</p>
+<p>Enter a name to describe the audio, then click chose file, select the file you require from your
+computer, then click submit.</p>
+<p>Note that only mp3, Wav and ogg formats are supported.</p>
+<p>The audio file will then be uploaded and renamed so that it is unique.</p>
+<p><strong>Create the Survey</strong>:</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/survey/">http://localhost:8000/survey/</a></li>
+<li><a class="reference external" href="http://localhost:8000/survey/add/">http://localhost:8000/survey/add/</a></li>
+<li><a class="reference external" href="http://localhost:8000/survey/1/">http://localhost:8000/survey/1/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/survey_list1.png" src="../_images/survey_list1.png" />
+<p>Select Modules from the top menu, then Survey.</p>
+<p>Click the add button, then give the survey a name and description, then click Submit.</p>
+<p>A button will now appear to add a question.</p>
+<p>In the question field, put in some text to describe the question - e.g &#8220;What is 1+1&#8221;; select the audio
+file pertaining to the question which was uploaded in the previous step.</p>
+<p>If no audio file is selected, then the system will automatically play the text in the question field
+using the text to speech engine.</p>
+<p>Then click Add Response. A further two fields will appear named Key Digit and Key Value. In key Digit
+put a number from 0 to 9 which should be pressed for this answer. In the example &#8220;What is 1+1&#8221;, &#8220;2&#8221;
+should be placed in the Key Digit Field&#8221;</p>
+<p>The Key Value field is used in the survey reports, and so in this case, you would put &#8220;Correct&#8221; as
+1+1=2. You may chose to add responses 0,1 and 3 to 9 as key digits, with key values of &#8220;Wrong&#8221; as
+these answers will then be summed up in the Survey Reports.</p>
+<p>You can then go on to add another question, and its associated responses. On completion, click
+Update Survey.</p>
+<p>To use the Survey in a campaign, simply create a campaign as normal, and select the Survey name in
+the Application drop-down.</p>
+</div>
+<div class="section" id="survey-nodes">
+<h2><a class="toc-backref" href="#id7">Survey Nodes</a><a class="headerlink" href="#survey-nodes" title="Permalink to this headline">¶</a></h2>
+<p>Most survey nodes have similar attributes that include:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Section Title, the title of the section and becomes the TTS (text To Speech)</li>
+<li>Audio File, The sound file to be played for this node.</li>
+<li>Retries, if no valid input, then the question can be asked again.</li>
+<li>Timeout, the amount of time before it is considered that no input has been received.</li>
+<li>Check Validity, whether the answer is deemed valid.</li>
+<li>Audio Invalid Input, The audio to play when invalid input is received.</li>
+<li>Survey Complete, check this field to mark the survey is complete for reporting &amp; retry purposes.</li>
+</ul>
+</div></blockquote>
+<p>There is many type of survey nodes which allow to create complex IVR applications.
+On each node you will be able to perform call transfer, capture digits, go to conference room, add a contact to the DNC list and much more, see the
+list of survey nodes <a class="reference internal" href="survey_node.html#survey-nodes"><span>Survey Nodes</span></a>.</p>
+</div>
+<div class="section" id="survey-branching">
+<h2><a class="toc-backref" href="#id8">Survey Branching</a><a class="headerlink" href="#survey-branching" title="Permalink to this headline">¶</a></h2>
+<p>The flow of the survey is determined by Survey Branching, which will pass the contact onto the next node depending on the parameters you set for instance, invalid entry, any key or a specified key.</p>
+</div>
+<div class="section" id="create-call-list">
+<span id="call-list"></span><h2><a class="toc-backref" href="#id9">Create call list</a><a class="headerlink" href="#create-call-list" title="Permalink to this headline">¶</a></h2>
+<p>To create a call list, click on <code class="docutils literal"><span class="pre">Add</span></code> in Phonebook list, add name of phonebook &amp; its
+description. Click on <code class="docutils literal"><span class="pre">Contacts</span></code> and add phone numbers in the contact list.
+You can also import your call list from csv files, via clicking on
+<code class="docutils literal"><span class="pre">Import</span> <span class="pre">contact</span></code>.</p>
+<p>Update Phonebook:</p>
+<img alt="../_images/update_phonebook1.png" src="../_images/update_phonebook1.png" />
+<p>Contact List:</p>
+<img alt="../_images/contact_list1.png" src="../_images/contact_list1.png" />
+<p>Import contact:</p>
+<img alt="../_images/import_contact1.png" src="../_images/import_contact1.png" />
+</div>
+<div class="section" id="create-campaign">
+<span id="campaign"></span><h2><a class="toc-backref" href="#id10">Create campaign</a><a class="headerlink" href="#create-campaign" title="Permalink to this headline">¶</a></h2>
+<p>To create a campaign, click on <code class="docutils literal"><span class="pre">Add</span></code> in campaign list, add details for the campaign.
+Important: Add the campaign&#8217;s start and end dates with times &amp; week-day
+exceptions. Select the gateway through which calls will be routed &amp; the phonebook(s)
+linked with the contacts.</p>
+<p>Campaign list:</p>
+<img alt="../_images/campaign_list1.png" src="../_images/campaign_list1.png" />
+<p>Update Campaign:</p>
+<img alt="../_images/update_campaign1.png" src="../_images/update_campaign1.png" />
+</div>
+<div class="section" id="voip-call-report">
+<span id="call-report"></span><h2><a class="toc-backref" href="#id11">VoIP Call Report</a><a class="headerlink" href="#voip-call-report" title="Permalink to this headline">¶</a></h2>
+<p>As per the status of a call-request, it will be stored in the VoIP call records.
+This gives information of all the calls &amp; call statistics made with the call-request
+and also you can search for records on the basis of date range. You can export the VoIP
+call report into a csv file.</p>
+<img alt="../_images/callreport.png" src="../_images/callreport.png" />
+</div>
+<div class="section" id="survey-report">
+<span id="howtouse-survey-report"></span><h2><a class="toc-backref" href="#id12">Survey Report</a><a class="headerlink" href="#survey-report" title="Permalink to this headline">¶</a></h2>
+<img alt="../_images/surveyreport.png" src="../_images/surveyreport.png" />
+<p>When the survey is complete, the survey results can be inspected by clicking Reporting on the top
+and selecting Survey Results from the drop-down.</p>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><p class="logo"><a href="../index.html">
+  <img class="logo" src="https://github.com/newfies-dialer/newfies-dialer/raw/develop/newfies/resources/images/newfies-dialer-180.png" alt="Logo"/>
+</a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="overview.html"
+                        title="previous chapter">Overview</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="survey_node.html"
+                        title="next chapter">Survey Nodes</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="survey_node.html" title="Survey Nodes"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="overview.html" title="Overview"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.0.4 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../user-guide.html" >User Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011-2015, Arezqui Belaid &lt;info@star2billing.com&gt;.
+    </div>
+  </body>
+</html>

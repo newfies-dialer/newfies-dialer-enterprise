@@ -1,0 +1,271 @@
+.. _voice-configuration:
+
+===================
+Voice Configuration
+===================
+
+.. contents::
+    :local:
+    :depth: 2
+
+
+This is a simple step-by-step guide for configuration of the necessary
+components of Newfies-Dialer. It covers the configuration of Freeswitch and
+Newfies-Dialer, followed by setting off the first Newfies-Dialer campaign.
+
+
+.. _configuration-freeswitch-trunk-configuration:
+
+Freeswitch Trunk configuration
+==============================
+
+In order for Newfies-Dialer to make outbound calls to its subscribers,
+you will need a SIP trunk. The Freeswitch wiki can provide more information on
+configuring trunks. However creating a trunk simply for Newfies-Dialer is
+straightforward.
+
+Trunks or gateways, as they are known in Freeswitch, are configured using XML
+syntax, so using your favourite text editor, while logged in as root
+"sudo su -" create an XML file in /etc/freeswitch/sip_profiles/external/ and
+give it an identifiable name, e.g. call-labs.xml, and place the following
+lines in the file.
+::
+
+    <include>
+    <gateway name="ip address or hostname of carrier">
+    <!--/// account username *required* ///-->
+    <param name="username" value="your username provided by carrier"/>
+    <!--/// auth realm: *optional* same as gateway name, if blank ///-->
+    <!--<param name="realm" value="asterlink.com"/>-->
+    <!--/// username to use in from: *optional* same as username, if blank ///-->
+    <param name="from-user" value="your username provided by carrier"/>
+    <!--/// domain to use in from: *optional* same as realm, if blank ///-->
+    <!--param name="from-domain" value=""/-->
+    <!--/// account password *required* ///-->
+    <param name="password" value="your password supplied by carrier"/>
+    <!--/// extension for inbound calls: *optional* same as username, if blank ///-->
+    <!--<param name="extension" value="cluecon"/>-->
+    <!--/// proxy host: *optional* same as realm, if blank ///-->
+    <!--<param name="proxy" value="asterlink.com"/>-->
+    <!--/// send register to this proxy: *optional* same as proxy, if blank ///-->
+    <!--<param name="register-proxy" value="mysbc.com"/>-->
+    <!--/// expire in seconds: *optional* 3600, if blank ///-->
+    <!--<param name="expire-seconds" value="60"/>-->
+    <!--/// do not register ///-->
+    <param name="register" value="true"/>
+    <!-- which transport to use for register -->
+    <!--<param name="register-transport" value="udp"/>-->
+    <!--How many seconds before a retry when a failure or timeout occurs -->
+    <!--<param name="retry-seconds" value="30"/>-->
+    <!--Use the callerid of an inbound call in the from field on outbound calls via this gateway -->
+    <!--<param name="caller-id-in-from" value="false"/>-->
+    <!--extra sip params to send in the contact-->
+    <!--<param name="contact-params" value="tport=tcp"/>-->
+    <!--send an options ping every x seconds, failure will unregister and/or mark it down-->
+    <!--<param name="ping" value="25"/>-->
+    </gateway>
+    </include>
+
+The lines in bold are almost certainly required by your carrier and Freeswitch,
+the remaining parameters can be uncommented and used, if required by your
+carrier. The XML syntax for comments are denoted by lines that begin " <!– "
+and end in "–> ".
+
+Finally we need to load the new configuration, and check the trunk is
+registered. The Freeswitch console is accessed by typing "fs_cli" at the
+command prompt. The logging level can be increased or decreased from level 0
+to level 7. to switch off logging, type /log 0 at the Freeswitch console,
+followed by enter. For the greatest verbosity, type /log 7 followed by enter.
+
+Type "fs_cli" followed by enter.
+
+You should now see the Freeswitch CLI, so now reload the Freeswitch
+configuration with the following command: (tip; Tab auto-completes)
+::
+
+    sofia profile external restart reloadxml
+
+
+When complete, check the trunk has registered with the following command.
+::
+
+    sofia status
+
+
+Against the name of the trunk you configured in the XML file, you should see
+REGED (registered) at the end of the line. Take a note of the trunk name, we
+are going to need it for telling Newfies-Dialer that it can use this trunk.
+
+To exit the Freeswitch CLI, do CTRL D, or /exit
+
+Freeswitch configuration is now complete.
+
+
+.. _voice-application:
+
+Voice Application
+=================
+
+For demonstration purposes, we are going to configure one standard voice
+application supplied with Newfies-Dialer, using the root user, to call only
+one person.
+
+We are going to use the admin interface to tell Newfies-Dialer about the
+gateway we have configured in Freeswitch and set the  maximum parameters for
+a customer such as their allowed dial rate, maximum number of campaigns, etc.
+
+
+Set Hostname
+------------
+
+Some of the features of Newfies-Dialer are dependent on the hostname or IP
+address, so this has to be set correctly in site address.
+
+In the Admin dashboard, locate the "Sites" link and click change. By default,
+there will be an entry of "example.com". Edit this setting to reflect the
+hostname of the server, or if you do not have this set up, the IP address.
+e.g.  http://www.domain.tld or in the case of an IP address,
+something like http://192.168.1.200
+
+
+Newfies-Dialer’s Gateway
+------------------------
+
+Log into the Newfies-Dialer interface using your root username and password
+previously created in these instructions.
+
+Click Admin, and locate and enter the "Dialer Gateways" panel on the
+dashboard, then add a dialer gateway. Only the fields in bold need to be
+filled in. That is to say, the name of gateway, for identification, and the
+Gateway’s field, e.g.
+::
+
+    sofia/gateway/myprovider/
+
+
+"myprovider" is the name of the gateway which you can take from the gateway
+name when you typed "sofia status" when configuring the Freeswitch Gateway.
+Finally, check the status is active, and save. The trunk should now appear in
+the gateway list.
+
+
+Dialer Settings
+---------------
+
+Each customer, including the root user, needs to have Dialer Settings and
+trunks associated with their account. These set the limit to which each
+customer can utilise Newfies-Dialer in terms of trunks, calls per minute,
+call duration, subscribers and campaigns, as well as blacklisting or
+whitelisting phone numbers.
+
+In the Admin Dashboard, locate the Dialer Settings, and click Add, in the
+name, put "DS1" and, for the moment, leave the default settings as they are,
+then save them.
+
+The Dialer Settings have to be associated with the customer’s account. For
+the purposes of this demonstration, we are using the root user.  In
+production, you would apply these settings to the customers.
+
+In the Admin dashboard, click Admins, then root. Scroll to the bottom of the
+page.
+
+ * Optionally add an accountcode, which can be used for billing in an
+ external billing application to identify the customer from the CDR. The
+ accountcode must be numerical.
+ * Select which Dialer Settings apply to this customer, in this case "DS1"
+ * Select which gateway(s) this customer is allowed to use.
+
+Finally, click save.
+
+NB: Everything above this is covered at the video at the top of the page,
+from configuring FreeSWITCH to apply Dialer Settings.
+
+
+.. _configuration-customer-portal:
+
+Customer Portal
+===============
+
+Now we are going to use the customer’s portal to create phonebooks containing
+subscribers to call, configure a survey, add campaign, and start the outbound
+voice broadcast. These should always be done from the Customer Portal and not
+from the Admin Interface. To proceed, click "Customer Panel" at the top of
+Admin interface.
+
+
+Create Phonebook
+----------------
+
+The phonebook is where lists of subscribers are grouped. Click Customer Panel
+on the top menu in the Admin Dashboard, then click Phonebook, and add a new
+phonebook.
+
+Create a new phonebook called, for the purposes of the exercise, PB1, and
+give it a description.
+
+
+Add Contacts
+------------
+
+Click contact, and add a new contact. As a minimum add a phone number to call
+in the Contact field, and for the purposes of this demonstration, enter your
+own telephone number in the format that your carrier expects it. Click Submit.
+
+Repeat as necessary until you have your test numbers added.
+
+
+Add Survey
+----------
+
+Next we are going to configure the survey that will be executed when
+Newfies-Dialer calls your phone and you answer. Click Modules, Survey, then
+click add. As is traditional with first steps, we will call this survey
+"Hello World".
+
+The aim is that Newfies-Dialer will call you, and when you answer,
+Newfies-Dialer will broadcast "Hello World" to you using the text to speech
+engine in Freeswitch.
+
+Click "Add Section" and select "Play Message", enter "Hello World" in the
+section title. This is the speech that will be read out by the TTS engine. It
+can be edited later. When done, click save.
+
+Best practice is that we should hangup, and mark the survey as complete, so
+click "Add Section" and select Hangup as the node type. Type "Goodbye" in the
+section title, and tick "Survey complete"
+
+Next, set up the node branching. On the play message panel, click the branch
+icon, and select "Goodbye" as the next destination.
+
+Finally, click Close Survey, and move on to configuring the campaign.
+
+
+Configure Campaign
+------------------
+
+We now have all the components to create and run our campaign, so click
+campaign, and click add.
+
+Give the Campaign a name, say "CPN Hello World", optionally, a description,
+set a caller ID to pass the called party,  select the A-Leg Gateway you
+configured earlier, the application, Hello World, and highlight the phonebook
+PB1, and submit. You will be returned to the list of campaigns.
+
+
+Start The Campaign
+------------------
+
+We are now ready to launch the campaign, simply press the Play button against
+the CPN Hello World campaign.
+
+In a few seconds, your campaign will launch, your phone will ring, and you
+will hear "Hello World" followed by "Goodbye" broadcast to you over the phone.
+
+
+.. note:: As with all telephony systems, they are a valuable target on the
+internet, so before exposing any telephone system to the Internet, do ensure
+that you have done a security audit. Also note that in some countries,
+telemarketing, phone polling, and automated dialling is under regulatory
+control, and advice should be sought as to how best to remain within the
+limits of the law. First points of reference may be Ofcom in the UK and the
+Federal Trade Commission (FTC) in the USA.

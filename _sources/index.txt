@@ -1,0 +1,31 @@
+.. Newfies documentation master file
+
+Welcome to Newfies-Dialer!
+==========================
+
+:Version: |version|
+:Release: |release|
+:Date: |today|
+
+
+Contents:
+
+.. toctree::
+    :maxdepth: 2
+
+    introduction
+    configuration
+    sms-configure
+    user-guide
+    api-reference
+    troubleshooting
+    faq
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+

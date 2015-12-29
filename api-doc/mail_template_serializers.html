@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>MailTemplateSerializer &mdash; Newfies-Dialer 3.0.4 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 3.0.4 documentation" href="../index.html" />
+    <link rel="up" title="API Reference" href="../api-reference.html" />
+    <link rel="next" title="PhonebookSerializer" href="phonebook_serializers.html" />
+    <link rel="prev" title="GatewaySerializer" href="gateway_serializers.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="phonebook_serializers.html" title="PhonebookSerializer"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="gateway_serializers.html" title="GatewaySerializer"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.0.4 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../api-reference.html" accesskey="U">API Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+
+    <span class="target" id="module-apirest.mail_template_serializers"></span><div class="section" id="mailtemplateserializer">
+<span id="mailtemplateserializer-model"></span><h1><cite>MailTemplateSerializer</cite><a class="headerlink" href="#mailtemplateserializer" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="apirest.mail_template_serializers.MailTemplateSerializer">
+<em class="property">class </em><code class="descclassname">apirest.mail_template_serializers.</code><code class="descname">MailTemplateSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class rest_framework.fields.empty&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#apirest.mail_template_serializers.MailTemplateSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Read</strong>:</p>
+<blockquote>
+<div><p>CURL Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre>curl -u username:password -H &#39;Accept: application/json&#39; http://localhost:8000/rest-api/mail-template/
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;count&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s">&quot;next&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s">&quot;previous&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s">&quot;results&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s">&quot;url&quot;</span><span class="p">:</span> <span class="s">&quot;http://127.0.0.1:8000/rest-api/mail-template/1/&quot;</span><span class="p">,</span>
+            <span class="s">&quot;label&quot;</span><span class="p">:</span> <span class="s">&quot;test_mail&quot;</span><span class="p">,</span>
+            <span class="s">&quot;template_key&quot;</span><span class="p">:</span> <span class="s">&quot;test_mail&quot;</span><span class="p">,</span>
+            <span class="s">&quot;from_email&quot;</span><span class="p">:</span> <span class="s">&quot;xyz@gmail.com&quot;</span><span class="p">,</span>
+            <span class="s">&quot;from_name&quot;</span><span class="p">:</span> <span class="s">&quot;xyz&quot;</span><span class="p">,</span>
+            <span class="s">&quot;subject&quot;</span><span class="p">:</span> <span class="s">&quot;hi&quot;</span><span class="p">,</span>
+            <span class="s">&quot;message_plaintext&quot;</span><span class="p">:</span> <span class="s">&quot;test message&quot;</span><span class="p">,</span>
+            <span class="s">&quot;message_html&quot;</span><span class="p">:</span> <span class="s">&quot;&lt;h1&gt;Hi&lt;/h1&gt;&quot;</span><span class="p">,</span>
+            <span class="s">&quot;created_date&quot;</span><span class="p">:</span> <span class="s">&quot;2013-12-16T06:37:42.938Z&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd></dl>
+
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><p class="logo"><a href="../index.html">
+  <img class="logo" src="https://github.com/newfies-dialer/newfies-dialer/raw/develop/newfies/resources/images/newfies-dialer-180.png" alt="Logo"/>
+</a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="gateway_serializers.html"
+                        title="previous chapter"><cite>GatewaySerializer</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="phonebook_serializers.html"
+                        title="next chapter"><cite>PhonebookSerializer</cite></a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="phonebook_serializers.html" title="PhonebookSerializer"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="gateway_serializers.html" title="GatewaySerializer"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.0.4 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../api-reference.html" >API Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011-2015, Arezqui Belaid &lt;info@star2billing.com&gt;.
+    </div>
+  </body>
+</html>

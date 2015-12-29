@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>API Reference &mdash; Newfies-Dialer 3.0.4 documentation</title>
+    
+    <link rel="stylesheet" href="_static/newfies-dialer.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '3.0.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 3.0.4 documentation" href="index.html" />
+    <link rel="next" title="AudioFileSerializer" href="api-doc/audiofile_serializers.html" />
+    <link rel="prev" title="SMS Campaign" href="user-guide-doc/sms_campaign.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="api-doc/audiofile_serializers.html" title="AudioFileSerializer"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="user-guide-doc/sms_campaign.html" title="SMS Campaign"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Newfies-Dialer 3.0.4 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+
+    <div class="section" id="api-reference">
+<span id="id1"></span><h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
+<p>Contents:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api-doc/audiofile_serializers.html"><cite>AudioFileSerializer</cite></a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-doc/branching_template_serializers.html"><cite>BranchingTemplateSerializer</cite></a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-doc/campaign_serializers.html"><cite>CampaignSerializer</cite></a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-doc/contact_serializers.html"><cite>ContactSerializer</cite></a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-doc/content_type_serializers.html"><cite>ContentTypeSerializer</cite></a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-doc/dnc_serializers.html"><cite>DNCSerializer</cite></a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-doc/dnc_contact_serializers.html"><cite>DNCContactSerializer</cite></a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-doc/gateway_serializers.html"><cite>GatewaySerializer</cite></a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-doc/mail_template_serializers.html"><cite>MailTemplateSerializer</cite></a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-doc/phonebook_serializers.html"><cite>PhonebookSerializer</cite></a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-doc/section_template_serializers.html"><cite>SectionTemplateSerializer</cite></a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-doc/sms_campaign_serializers.html"><cite>SMSCampaignSerializer</cite></a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-doc/sms_gateway_serializers.html"><cite>SMSGatewaySerializer</cite></a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-doc/sms_template_serializers.html"><cite>SMSTemplateSerializer</cite></a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-doc/subscriber_list_serializers.html"><cite>SubscriberListSerializer</cite></a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-doc/survey_serializers.html"><cite>SurveySerializer</cite></a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-doc/survey_template_serializers.html"><cite>SurveyTemplateSerializer</cite></a></li>
+</ul>
+</div>
+<p>Testing console of APIs:</p>
+<blockquote>
+<div><strong>URL</strong> : <a class="reference external" href="http://127.0.0.1:8000/api-explorer/">http://127.0.0.1:8000/api-explorer/</a></div></blockquote>
+<a class="reference internal image-reference" href="_images/list_of_api.png"><img alt="_images/list_of_api.png" src="_images/list_of_api.png" style="width: 700px;" /></a>
+<p>To test individual api, click on one api from above api list and you will get like
+following screen.</p>
+<blockquote>
+<div><strong>URL</strong> : <a class="reference external" href="http://127.0.0.1:8000/api-explorer/switch/">http://127.0.0.1:8000/api-explorer/switch/</a></div></blockquote>
+<a class="reference internal image-reference" href="_images/phonebook_playground.png"><img alt="_images/phonebook_playground.png" src="_images/phonebook_playground.png" style="width: 700px;" /></a>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><p class="logo"><a href="index.html">
+  <img class="logo" src="https://github.com/newfies-dialer/newfies-dialer/raw/develop/newfies/resources/images/newfies-dialer-180.png" alt="Logo"/>
+</a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="user-guide-doc/sms_campaign.html"
+                        title="previous chapter">SMS Campaign</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="api-doc/audiofile_serializers.html"
+                        title="next chapter"><cite>AudioFileSerializer</cite></a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="api-doc/audiofile_serializers.html" title="AudioFileSerializer"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="user-guide-doc/sms_campaign.html" title="SMS Campaign"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Newfies-Dialer 3.0.4 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011-2015, Arezqui Belaid &lt;info@star2billing.com&gt;.
+    </div>
+  </body>
+</html>

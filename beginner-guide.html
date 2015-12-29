@@ -1,0 +1,304 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Beginner’s Guide &mdash; Newfies-Dialer 3.0.4 documentation</title>
+    
+    <link rel="stylesheet" href="_static/newfies-dialer.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '3.0.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 3.0.4 documentation" href="index.html" />
+    <link rel="next" title="SMS Configuration" href="sms/sms-configure.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="sms/sms-configure.html" title="SMS Configuration"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Newfies-Dialer 3.0.4 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+
+    <div class="section" id="beginners-guide">
+<span id="id1"></span><h1>Beginner’s Guide<a class="headerlink" href="#beginners-guide" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#introduction" id="id2">Introduction</a></li>
+<li><a class="reference internal" href="#complete-installation" id="id3">Complete Installation</a></li>
+<li><a class="reference internal" href="#newfies-dialer-installation" id="id4">Newfies-Dialer Installation</a></li>
+<li><a class="reference internal" href="#freeswitch-trunk-configuration" id="id5">Freeswitch Trunk configuration</a></li>
+<li><a class="reference internal" href="#newfies-dialer-configuration" id="id6">Newfies-Dialer Configuration</a><ul>
+<li><a class="reference internal" href="#set-hostname" id="id7">Set Hostname</a></li>
+<li><a class="reference internal" href="#newfies-dialers-gateway" id="id8">Newfies-Dialer’s Gateway</a></li>
+<li><a class="reference internal" href="#dialer-settings" id="id9">Dialer Settings</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#customer-portal" id="id10">Customer Portal</a><ul>
+<li><a class="reference internal" href="#create-phonebook" id="id11">Create Phonebook</a></li>
+<li><a class="reference internal" href="#add-contacts" id="id12">Add Contacts</a></li>
+<li><a class="reference internal" href="#add-survey" id="id13">Add Survey</a></li>
+<li><a class="reference internal" href="#configure-campaign" id="id14">Configure Campaign</a></li>
+<li><a class="reference internal" href="#start-the-campaign" id="id15">Start The Campaign</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#conclusion" id="id16">Conclusion</a></li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<span id="beginners-guide-introduction"></span><h2><a class="toc-backref" href="#id2">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This is a simple step-by-step guide for installation of the necessary components to install Newfies-Dialer. It covers the installation of the operating system, Freeswitch and Newfies-Dialer along with all the dependencies, followed by setting off the first Newfies-Dialer campaign, and can be achieved in under one hour, given suitably quick broadband.</p>
+<iframe width="640" height="480" src="https://www.youtube.com/embed/MBuy76bsg1Y" frameborder="0" allowfullscreen></iframe></div>
+<div class="section" id="complete-installation">
+<span id="beginners-guide-complete-installation"></span><h2><a class="toc-backref" href="#id3">Complete Installation</a><a class="headerlink" href="#complete-installation" title="Permalink to this headline">¶</a></h2>
+<p>We have provided automated scripts that installs Newfies-Dialer on your Server and includes all the dependencies such as Freeswitch, Celery and Redis.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Freeswitch is the telephony engine used by Newfies-Dialer to make calls, as well as play voice applications</li>
+<li>Celery is the task queuing system.</li>
+<li>Redis is the task messaging system</li>
+</ul>
+</div></blockquote>
+<p>Once Debian 7.x is installed, log in as root, then download and run the install-all.sh installation script, by executing the following command:</p>
+<div class="highlight-python"><div class="highlight"><pre>wget --no-check-certificate http://bit.ly/newfies-dialer-installer -O install-all.sh
+bash install-all.sh
+</pre></div>
+</div>
+<p>The installation will prompt you to install Freeswitch, press enter. this will download and install Freeswitch with the modules appropriate for Newfies-Dialer. The installation will take some time, but does not require your interaction once started.</p>
+<p>Finally, the Newfies-Dialer selection menu will appear.</p>
+</div>
+<div class="section" id="newfies-dialer-installation">
+<span id="beginners-guide-installation"></span><h2><a class="toc-backref" href="#id4">Newfies-Dialer Installation</a><a class="headerlink" href="#newfies-dialer-installation" title="Permalink to this headline">¶</a></h2>
+<p>Newfies-Dialer is the management and control system providing a web interface for admin and customers alike, to manage the platform, subscribers and voice broadcast campaigns.</p>
+<p>The installation script will prompt you as to what you want to install. For this guide, we chose the option to install all.</p>
+<p>At points during the installation, you will be prompted to press enter to continue, with a short explanation of what is happening next. Just press enter for the defaults.</p>
+<p>You will be prompted to create a superuser. Accept root, enter your email address, and your chosen password, twice. This will be the username and password you use to log on to the Newfies-Dialer web interface.</p>
+<p>Once installed, the system will then prompt you to continue with the installation and install the backend processes. Press enter to continue. On completion, the script will return to the original Newfies-Dialer install menu. Exit the menu.</p>
+<p>We can now reboot to ensure that, on startup, all required services are running. Type &#8220;reboot&#8221; at the command line. We don’t need to type &#8220;sudo reboot&#8221; as mentioned earlier, because we are already logged in as root.</p>
+<p>On reboot log into the new system via your web browser to check that everything is working. Type <a class="reference external" href="http:/">http:/</a>/&lt;&lt;IP-ADDRESS&gt;&gt; into your web browser’s address bar where &lt;&lt;IP-ADDRESS&gt;&gt; is the IP address or hostname of your Newfies-Dialer platform. If you have followed the instructions above, you should be able to login using the username and password you created during the installation.</p>
+<p>The scripts are well tested, and there is no reason for them to fail provided you have followed the instructions and you have Internet access. If things have not gone well, and you cannot log on, re-read the instructions and check you have internet access and DNS resolution.</p>
+</div>
+<div class="section" id="freeswitch-trunk-configuration">
+<span id="beginners-guide-freeswitch-trunk-configuration"></span><h2><a class="toc-backref" href="#id5">Freeswitch Trunk configuration</a><a class="headerlink" href="#freeswitch-trunk-configuration" title="Permalink to this headline">¶</a></h2>
+<p>NB: See the video at the top of the page for an overview of the initial configuration of Newfies-Dialer.</p>
+<p>In order for Newfies-Dialer to make outbound calls to its subscribers, you will need a SIP trunk. The Freeswitch wiki can provide more information on configuring trunks. However creating a trunk simply for Newfies-Dialer is straightforward.</p>
+<p>Trunks or gateways, as they are known in Freeswitch, are configured using XML syntax, so using your favourite text editor, while logged in as root &#8220;sudo su -&#8221; create an XML file in /etc/freeswitch/sip_profiles/external/ and give it an identifiable name, e.g. call-labs.xml, and place the following lines in the file.</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;include&gt;
+&lt;gateway name=&quot;ip address or hostname of carrier&quot;&gt;
+&lt;!--/// account username *required* ///--&gt;
+&lt;param name=&quot;username&quot; value=&quot;your username provided by carrier&quot;/&gt;
+&lt;!--/// auth realm: *optional* same as gateway name, if blank ///--&gt;
+&lt;!--&lt;param name=&quot;realm&quot; value=&quot;asterlink.com&quot;/&gt;--&gt;
+&lt;!--/// username to use in from: *optional* same as username, if blank ///--&gt;
+&lt;param name=&quot;from-user&quot; value=&quot;your username provided by carrier&quot;/&gt;
+&lt;!--/// domain to use in from: *optional* same as realm, if blank ///--&gt;
+&lt;!--param name=&quot;from-domain&quot; value=&quot;&quot;/--&gt;
+&lt;!--/// account password *required* ///--&gt;
+&lt;param name=&quot;password&quot; value=&quot;your password supplied by carrier&quot;/&gt;
+&lt;!--/// extension for inbound calls: *optional* same as username, if blank ///--&gt;
+&lt;!--&lt;param name=&quot;extension&quot; value=&quot;cluecon&quot;/&gt;--&gt;
+&lt;!--/// proxy host: *optional* same as realm, if blank ///--&gt;
+&lt;!--&lt;param name=&quot;proxy&quot; value=&quot;asterlink.com&quot;/&gt;--&gt;
+&lt;!--/// send register to this proxy: *optional* same as proxy, if blank ///--&gt;
+&lt;!--&lt;param name=&quot;register-proxy&quot; value=&quot;mysbc.com&quot;/&gt;--&gt;
+&lt;!--/// expire in seconds: *optional* 3600, if blank ///--&gt;
+&lt;!--&lt;param name=&quot;expire-seconds&quot; value=&quot;60&quot;/&gt;--&gt;
+&lt;!--/// do not register ///--&gt;
+&lt;param name=&quot;register&quot; value=&quot;true&quot;/&gt;
+&lt;!-- which transport to use for register --&gt;
+&lt;!--&lt;param name=&quot;register-transport&quot; value=&quot;udp&quot;/&gt;--&gt;
+&lt;!--How many seconds before a retry when a failure or timeout occurs --&gt;
+&lt;!--&lt;param name=&quot;retry-seconds&quot; value=&quot;30&quot;/&gt;--&gt;
+&lt;!--Use the callerid of an inbound call in the from field on outbound calls via this gateway --&gt;
+&lt;!--&lt;param name=&quot;caller-id-in-from&quot; value=&quot;false&quot;/&gt;--&gt;
+&lt;!--extra sip params to send in the contact--&gt;
+&lt;!--&lt;param name=&quot;contact-params&quot; value=&quot;tport=tcp&quot;/&gt;--&gt;
+&lt;!--send an options ping every x seconds, failure will unregister and/or mark it down--&gt;
+&lt;!--&lt;param name=&quot;ping&quot; value=&quot;25&quot;/&gt;--&gt;
+&lt;/gateway&gt;
+&lt;/include&gt;
+</pre></div>
+</div>
+<p>The lines in bold are almost certainly required by your carrier and Freeswitch, the remaining parameters can be uncommented and used, if required by your carrier. The XML syntax for comments are denoted by lines that begin &#8221; &lt;!– &#8221; and end in &#8220;–&gt; &#8221;.</p>
+<p>Finally we need to load the new configuration, and check the trunk is registered.
+The Freeswitch console is accessed by typing &#8220;fs_cli&#8221; at the command prompt. The logging level can be increased or decreased from level 0 to level 7. to switch off logging, type /log 0 at the Freeswitch console, followed by enter. For the greatest verbosity, type /log 7 followed by enter.</p>
+<p>Type &#8220;fs_cli&#8221; followed by enter.</p>
+<p>You should now see the Freeswitch CLI, so now reload the Freeswitch configuration with the following command: (tip; Tab auto-completes)</p>
+<div class="highlight-python"><div class="highlight"><pre>sofia profile external restart reloadxml
+</pre></div>
+</div>
+<p>When complete, check the trunk has registered with the following command.</p>
+<div class="highlight-python"><div class="highlight"><pre>sofia status
+</pre></div>
+</div>
+<p>Against the name of the trunk you configured in the XML file, you should see REGED (registered) at the end of the line. Take a note of the trunk name, we are going to need it for telling Newfies-Dialer that it can use this trunk.</p>
+<p>To exit the Freeswitch CLI, do CTRL D, or /exit</p>
+<p>Freeswitch configuration is now complete.</p>
+</div>
+<div class="section" id="newfies-dialer-configuration">
+<span id="beginners-guide-newfies-dialer-configuration"></span><h2><a class="toc-backref" href="#id6">Newfies-Dialer Configuration</a><a class="headerlink" href="#newfies-dialer-configuration" title="Permalink to this headline">¶</a></h2>
+<p>For demonstration purposes, we are going to configure one standard voice application supplied with Newfies-Dialer, using the root user, to call only one person.</p>
+<p>We are going to use the admin interface to tell Newfies-Dialer about the gateway we have configured in Freeswitch and set the  maximum parameters for a customer such as their allowed dial rate, maximum number of campaigns, etc.</p>
+<div class="section" id="set-hostname">
+<h3><a class="toc-backref" href="#id7">Set Hostname</a><a class="headerlink" href="#set-hostname" title="Permalink to this headline">¶</a></h3>
+<p>Some of the features of Newfies-Dialer are dependent on the hostname or IP address, so this has to be set correctly in site address.</p>
+<p>In the Admin dashboard, locate the &#8220;Sites&#8221; link and click change. By default, there will be an entry of &#8220;example.com&#8221;. Edit this setting to reflect the hostname of the server, or if you do not have this set up, the IP address. e.g.  <a class="reference external" href="http://www.domain.tld">http://www.domain.tld</a> or in the case of an IP address, something like <a class="reference external" href="http://192.168.1.200">http://192.168.1.200</a></p>
+</div>
+<div class="section" id="newfies-dialers-gateway">
+<h3><a class="toc-backref" href="#id8">Newfies-Dialer’s Gateway</a><a class="headerlink" href="#newfies-dialers-gateway" title="Permalink to this headline">¶</a></h3>
+<p>Log into the Newfies-Dialer interface using your root username and password previously created in these instructions.</p>
+<p>Click Admin, and locate and enter the &#8220;Dialer Gateways&#8221; panel on the dashboard, then add a dialer gateway. Only the fields in bold need to be filled in. That is to say, the name of gateway, for identification, and the Gateway’s field, e.g.</p>
+<div class="highlight-python"><div class="highlight"><pre>sofia/gateway/myprovider/
+</pre></div>
+</div>
+<p>&#8220;myprovider&#8221; is the name of the gateway which you can take from the gateway name when you typed &#8220;sofia status&#8221; when configuring the Freeswitch Gateway. Finally, check the status is active, and save. The trunk should now appear in the gateway list.</p>
+</div>
+<div class="section" id="dialer-settings">
+<h3><a class="toc-backref" href="#id9">Dialer Settings</a><a class="headerlink" href="#dialer-settings" title="Permalink to this headline">¶</a></h3>
+<p>Each customer, including the root user, needs to have Dialer Settings and trunks associated with their account. These set the limit to which each customer can utilise Newfies-Dialer in terms of trunks, calls per minute, call duration, subscribers and campaigns, as well as blacklisting or whitelisting phone numbers.</p>
+<p>In the Admin Dashboard, locate the Dialer Settings, and click Add, in the name, put &#8220;DS1&#8221; and, for the moment, leave the default settings as they are, then save them.</p>
+<p>The Dialer Settings have to be associated with the customer’s account. For the purposes of this demonstration, we are using the root user.  In production, you would apply these settings to the customers.</p>
+<p>In the Admin dashboard, click Admins, then root. Scroll to the bottom of the page.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Optionally add an accountcode, which can be used for billing in an external billing application to identify the customer from the CDR. The accountcode must be numerical.</li>
+<li>Select which Dialer Settings apply to this customer, in this case &#8220;DS1&#8221;</li>
+<li>Select which gateway(s) this customer is allowed to use.</li>
+</ul>
+</div></blockquote>
+<p>Finally, click save.</p>
+<p>NB: Everything above this is covered at the video at the top of the page, from configuring FreeSWITCH to apply Dialer Settings.</p>
+</div>
+</div>
+<div class="section" id="customer-portal">
+<span id="beginners-guide-customer-portal"></span><h2><a class="toc-backref" href="#id10">Customer Portal</a><a class="headerlink" href="#customer-portal" title="Permalink to this headline">¶</a></h2>
+<p>Now we are going to use the customer’s portal to create phonebooks containing subscribers to call, configure a survey, add campaign, and start the outbound voice broadcast. These should always be done from the Customer Portal and not from the Admin Interface. To proceed, click &#8220;Customer Panel&#8221; at the top of Admin interface.</p>
+<div class="section" id="create-phonebook">
+<h3><a class="toc-backref" href="#id11">Create Phonebook</a><a class="headerlink" href="#create-phonebook" title="Permalink to this headline">¶</a></h3>
+<p>The phonebook is where lists of subscribers are grouped. Click Customer Panel on the top menu in the Admin Dashboard, then click Phonebook, and add a new phonebook.</p>
+<p>Create a new phonebook called, for the purposes of the exercise, PB1, and give it a description.</p>
+</div>
+<div class="section" id="add-contacts">
+<h3><a class="toc-backref" href="#id12">Add Contacts</a><a class="headerlink" href="#add-contacts" title="Permalink to this headline">¶</a></h3>
+<p>Click contact, and add a new contact. As a minimum add a phone number to call in the Contact field, and for the purposes of this demonstration, enter your own telephone number in the format that your carrier expects it. Click Submit.</p>
+<p>Repeat as necessary until you have your test numbers added.</p>
+</div>
+<div class="section" id="add-survey">
+<h3><a class="toc-backref" href="#id13">Add Survey</a><a class="headerlink" href="#add-survey" title="Permalink to this headline">¶</a></h3>
+<p>Next we are going to configure the survey that will be executed when Newfies-Dialer calls your phone and you answer. Click Modules, Survey, then click add. As is traditional with first steps, we will call this survey &#8220;Hello World&#8221;.</p>
+<p>The aim is that Newfies-Dialer will call you, and when you answer, Newfies-Dialer will broadcast &#8220;Hello World&#8221; to you using the text to speech engine in Freeswitch.</p>
+<p>Click &#8220;Add Section&#8221; and select &#8220;Play Message&#8221;, enter &#8220;Hello World&#8221; in the section title. This is the speech that will be read out by the TTS engine. It can be edited later. When done, click save.</p>
+<p>Best practice is that we should hangup, and mark the survey as complete, so click &#8220;Add Section&#8221; and select Hangup as the node type. Type &#8220;Goodbye&#8221; in the section title, and tick &#8220;Survey complete&#8221;</p>
+<p>Next, set up the node branching. On the play message panel, click the branch icon, and select &#8220;Goodbye&#8221; as the next destination.</p>
+<p>Finally, click Close Survey, and move on to configuring the campaign.</p>
+</div>
+<div class="section" id="configure-campaign">
+<h3><a class="toc-backref" href="#id14">Configure Campaign</a><a class="headerlink" href="#configure-campaign" title="Permalink to this headline">¶</a></h3>
+<p>We now have all the components to create and run our campaign, so click campaign, and click add.</p>
+<p>Give the Campaign a name, say &#8220;CPN Hello World&#8221;, optionally, a description, set a caller ID to pass the called party,  select the A-Leg Gateway you configured earlier, the application, Hello World, and highlight the phonebook PB1, and submit. You will be returned to the list of campaigns.</p>
+</div>
+<div class="section" id="start-the-campaign">
+<h3><a class="toc-backref" href="#id15">Start The Campaign</a><a class="headerlink" href="#start-the-campaign" title="Permalink to this headline">¶</a></h3>
+<p>We are now ready to launch the campaign, simply press the Play button against the CPN Hello World campaign.</p>
+<p>In a few seconds, your campaign will launch, your phone will ring, and you will hear &#8220;Hello World&#8221; followed by &#8220;Goodbye&#8221; broadcast to you over the phone.</p>
+</div>
+</div>
+<div class="section" id="conclusion">
+<span id="beginners-guide-conclusion"></span><h2><a class="toc-backref" href="#id16">Conclusion</a><a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p>This is a brief step by step instruction set of installing Newfies-Dialer, and making the first call. Please refer to the advanced documentation on the Newfies-Dialer and Freeswitch websites to cover more advanced topics, and begin implementing your own Voice Broadcast applications.</p>
+<p>Star2Billing’s Support Team (<a class="reference external" href="mailto:newfies-dialer&#37;&#52;&#48;star2billing&#46;com">newfies-dialer<span>&#64;</span>star2billing<span>&#46;</span>com</a>) are on hand to provide one to one installation, support and tuition where required, and Star2Billing’s Development Team can be commissioned to build voice applications and integrate them with third party software and systems.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">As with all telephony systems, they are a valuable target on the internet, so before exposing any telephone system to the Internet, do ensure that you have done a security audit. Also note that in some countries, telemarketing, phone polling, and automated dialling is under regulatory control, and advice should be sought as to how best to remain within the limits of the law. First points of reference may be Ofcom in the UK and the Federal Trade Commission (FTC) in the USA.</p>
+</div>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><p class="logo"><a href="index.html">
+  <img class="logo" src="https://github.com/newfies-dialer/newfies-dialer/raw/develop/newfies/resources/images/newfies-dialer-180.png" alt="Logo"/>
+</a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="introduction.html"
+                        title="previous chapter">Introduction</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="sms/sms-configure.html"
+                        title="next chapter">SMS Configuration</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="sms/sms-configure.html" title="SMS Configuration"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Newfies-Dialer 3.0.4 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011-2015, Arezqui Belaid &lt;info@star2billing.com&gt;.
+    </div>
+  </body>
+</html>

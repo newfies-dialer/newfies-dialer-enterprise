@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>SectionTemplateSerializer &mdash; Newfies-Dialer 3.0.4 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 3.0.4 documentation" href="../index.html" />
+    <link rel="up" title="API Reference" href="../api-reference.html" />
+    <link rel="next" title="SMSCampaignSerializer" href="sms_campaign_serializers.html" />
+    <link rel="prev" title="PhonebookSerializer" href="phonebook_serializers.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="sms_campaign_serializers.html" title="SMSCampaignSerializer"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="phonebook_serializers.html" title="PhonebookSerializer"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.0.4 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../api-reference.html" accesskey="U">API Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+
+    <span class="target" id="module-apirest.section_template_serializers"></span><div class="section" id="sectiontemplateserializer">
+<span id="sectiontemplateserializer-model"></span><h1><cite>SectionTemplateSerializer</cite><a class="headerlink" href="#sectiontemplateserializer" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="apirest.section_template_serializers.SectionTemplateSerializer">
+<em class="property">class </em><code class="descclassname">apirest.section_template_serializers.</code><code class="descname">SectionTemplateSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class rest_framework.fields.empty&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#apirest.section_template_serializers.SectionTemplateSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Create</strong>:</p>
+<blockquote>
+<div><p>CURL Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre>curl -u username:password --dump-header - -H &quot;Content-Type:application/json&quot; -X POST --data &#39;{&quot;type&quot;: &quot;1&quot;, &quot;audiofile&quot;: &quot;/rest-api/audio-files/1/&quot;, &quot;question&quot;: &quot;survey que&quot;, &quot;survey&quot;: &quot;/rest-api/survey-template/1/&quot;, &quot;invalid_audiofile&quot;: &quot;/rest-api/audio-files/1/&quot;, &quot;queue&quot;: &quot;/rest-api/queue/1/&quot;}&#39; http://localhost:8000/rest-api/section-template/
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><div class="highlight"><pre>HTTP/1.0 201 CREATED
+Date: Fri, 14 Jun 2013 09:52:27 GMT
+Server: WSGIServer/0.1 Python/2.7.3
+Vary: Accept, Accept-Language, Cookie
+Content-Type: application/json; charset=utf-8
+Content-Language: en-us
+Location: http://localhost:8000/rest-api/section-template/1/
+Allow: GET, POST, HEAD, OPTIONS
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Read</strong>:</p>
+<blockquote>
+<div><p>CURL Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre>curl -u username:password -H &#39;Accept: application/json&#39; http://localhost:8000/rest-api/section-template/
+
+    or
+
+curl -u username:password -H &#39;Accept: application/json&#39; http://localhost:8000/rest-api/section-template/%section-template-id%/
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;count&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s">&quot;next&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s">&quot;previous&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s">&quot;results&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s">&quot;url&quot;</span><span class="p">:</span> <span class="s">&quot;http://127.0.0.1:8000/rest-api/section-template/1/&quot;</span><span class="p">,</span>
+            <span class="s">&quot;order&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s">&quot;question&quot;</span><span class="p">:</span> <span class="s">&quot;this is test question&quot;</span><span class="p">,</span>
+            <span class="s">&quot;script&quot;</span><span class="p">:</span> <span class="s">&quot;this is test question&quot;</span><span class="p">,</span>
+            <span class="s">&quot;audiofile&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;retries&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;timeout&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="s">&quot;key_0&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;key_1&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;key_2&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;key_3&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;key_4&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;key_5&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;key_6&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;key_7&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;key_8&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;key_9&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;rating_laps&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+            <span class="s">&quot;validate_number&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+            <span class="s">&quot;number_digits&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="s">&quot;min_number&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s">&quot;max_number&quot;</span><span class="p">:</span> <span class="mi">99</span><span class="p">,</span>
+            <span class="s">&quot;phonenumber&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;conference&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;completed&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+            <span class="s">&quot;queue&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;created_date&quot;</span><span class="p">:</span> <span class="s">&quot;2013-06-13T12:42:28.457&quot;</span><span class="p">,</span>
+            <span class="s">&quot;updated_date&quot;</span><span class="p">:</span> <span class="s">&quot;2013-06-13T12:42:28.511&quot;</span><span class="p">,</span>
+            <span class="s">&quot;survey&quot;</span><span class="p">:</span> <span class="s">&quot;http://127.0.0.1:8000/rest-api/survey-template/1/&quot;</span><span class="p">,</span>
+            <span class="s">&quot;invalid_audiofile&quot;</span><span class="p">:</span> <span class="n">null</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Update</strong>:</p>
+<blockquote>
+<div><p>CURL Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre>curl -u username:password --dump-header - -H &quot;Content-Type: application/json&quot; -X PATCH --data &#39;{&quot;type&quot;: &quot;1&quot;, &quot;question&quot;: &quot;survey que&quot;, &quot;survey&quot;: &quot;/rest-api/survey-template/1/&quot;, &quot;invalid_audiofile&quot;: &quot;/rest-api/audio-files/1/&quot;}&#39; http://localhost:8000/rest-api/section-template/%section-template-id%/
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><div class="highlight"><pre>HTTP/1.0 202 NO CONTENT
+Date: Fri, 23 Sep 2011 06:46:12 GMT
+Server: WSGIServer/0.1 Python/2.7.1+
+Vary: Accept-Language, Cookie
+Content-Length: 0
+Content-Type: text/html; charset=utf-8
+Content-Language: en-us
+</pre></div>
+</div>
+</div></blockquote>
+</dd></dl>
+
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><p class="logo"><a href="../index.html">
+  <img class="logo" src="https://github.com/newfies-dialer/newfies-dialer/raw/develop/newfies/resources/images/newfies-dialer-180.png" alt="Logo"/>
+</a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="phonebook_serializers.html"
+                        title="previous chapter"><cite>PhonebookSerializer</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="sms_campaign_serializers.html"
+                        title="next chapter"><cite>SMSCampaignSerializer</cite></a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="sms_campaign_serializers.html" title="SMSCampaignSerializer"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="phonebook_serializers.html" title="PhonebookSerializer"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.0.4 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../api-reference.html" >API Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011-2015, Arezqui Belaid &lt;info@star2billing.com&gt;.
+    </div>
+  </body>
+</html>

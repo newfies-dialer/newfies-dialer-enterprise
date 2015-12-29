@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Survey Nodes &mdash; Newfies-Dialer 3.0.4 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 3.0.4 documentation" href="../index.html" />
+    <link rel="up" title="User Guide" href="../user-guide.html" />
+    <link rel="next" title="Customer Panel" href="customer_panel.html" />
+    <link rel="prev" title="How to use Newfies-Dialer" href="how_to_use_it.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="customer_panel.html" title="Customer Panel"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="how_to_use_it.html" title="How to use Newfies-Dialer"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.0.4 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../user-guide.html" accesskey="U">User Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+
+    <div class="section" id="survey-nodes">
+<span id="id1"></span><h1>Survey Nodes<a class="headerlink" href="#survey-nodes" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#capture-digits" id="id9">Capture Digits</a></li>
+<li><a class="reference internal" href="#conference" id="id10">Conference</a></li>
+<li><a class="reference internal" href="#dnc" id="id11">DNC</a></li>
+<li><a class="reference internal" href="#hangup" id="id12">Hangup</a></li>
+<li><a class="reference internal" href="#multi-choice" id="id13">Multi-Choice</a></li>
+<li><a class="reference internal" href="#play-message" id="id14">Play Message</a></li>
+<li><a class="reference internal" href="#rating-question" id="id15">Rating Question</a></li>
+<li><a class="reference internal" href="#record-message" id="id16">Record Message</a></li>
+<li><a class="reference internal" href="#sms-message" id="id17">SMS Message</a></li>
+<li><a class="reference internal" href="#call-transfer" id="id18">Call Transfer</a></li>
+<li><a class="reference internal" href="#http-api" id="id19">HTTP API</a></li>
+</ul>
+</div>
+<p>Most survey nodes have similar attributes that include:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Section Title, the title of the section and becomes the TTS (text To Speech)</li>
+<li>Audio File, The sound file to be played for this node.</li>
+<li>Retries, if no valid input, then the question can be asked again.</li>
+<li>Timeout, the amount of time before it is considered that no input has been received.</li>
+<li>Check Validity, whether the answer is deemed valid.</li>
+<li>Audio Invalid Input, The audio to play when invalid input is received.</li>
+<li>Survey Complete, check this field to mark the survey is complete for reporting &amp; retry purposes.</li>
+</ul>
+</div></blockquote>
+<div class="section" id="capture-digits">
+<span id="id2"></span><h2><a class="toc-backref" href="#id9">Capture Digits</a><a class="headerlink" href="#capture-digits" title="Permalink to this headline">¶</a></h2>
+<p>Captures a series of digits, e.g. a telephone number or account number and stores it in the reporting. The number of digits and the minimum and maximum values can be set.</p>
+<img alt="../_images/node_capture_digits.png" src="../_images/node_capture_digits.png" />
+</div>
+<div class="section" id="conference">
+<span id="conference-node"></span><h2><a class="toc-backref" href="#id10">Conference</a><a class="headerlink" href="#conference" title="Permalink to this headline">¶</a></h2>
+<p>Set up a conference with outbound calls. The default conference number in Freeswitch is 9888. The Freeswitch dialplan can be adjusted to add more conferences.</p>
+<img alt="../_images/node_conference.png" src="../_images/node_conference.png" />
+</div>
+<div class="section" id="dnc">
+<span id="dnc-list"></span><h2><a class="toc-backref" href="#id11">DNC</a><a class="headerlink" href="#dnc" title="Permalink to this headline">¶</a></h2>
+<p>Do Not Call node, which will add the called contact to the DNC list configured in the campaign.</p>
+<img alt="../_images/node_dnc.png" src="../_images/node_dnc.png" />
+</div>
+<div class="section" id="hangup">
+<span id="hangup-node"></span><h2><a class="toc-backref" href="#id12">Hangup</a><a class="headerlink" href="#hangup" title="Permalink to this headline">¶</a></h2>
+<p>Hang up the call at the end of the survey.</p>
+<img alt="../_images/node_hangup.png" src="../_images/node_hangup.png" />
+</div>
+<div class="section" id="multi-choice">
+<span id="multi-choice-node"></span><h2><a class="toc-backref" href="#id13">Multi-Choice</a><a class="headerlink" href="#multi-choice" title="Permalink to this headline">¶</a></h2>
+<p>Multi-Choice offering options 0 to 9. The value placed in the &#8220;Key X&#8221; fields appears in the survey reports.</p>
+<p>Survey branching can be used to control the flow of the IVR depending on the key pressed.</p>
+<img alt="../_images/node_multi-choice.png" src="../_images/node_multi-choice.png" />
+</div>
+<div class="section" id="play-message">
+<span id="id3"></span><h2><a class="toc-backref" href="#id14">Play Message</a><a class="headerlink" href="#play-message" title="Permalink to this headline">¶</a></h2>
+<p>Play message is simply to play a message, either with TTS or pre-recorded audio.</p>
+<img alt="../_images/node_play_message.png" src="../_images/node_play_message.png" />
+</div>
+<div class="section" id="rating-question">
+<span id="id4"></span><h2><a class="toc-backref" href="#id15">Rating Question</a><a class="headerlink" href="#rating-question" title="Permalink to this headline">¶</a></h2>
+<p>Rating allows the entry of a digit or digits from 1 to X, where X is a number you select.</p>
+<img alt="../_images/node_rating_question.png" src="../_images/node_rating_question.png" />
+</div>
+<div class="section" id="record-message">
+<span id="id5"></span><h2><a class="toc-backref" href="#id16">Record Message</a><a class="headerlink" href="#record-message" title="Permalink to this headline">¶</a></h2>
+<img alt="../_images/node_record_message.png" src="../_images/node_record_message.png" />
+<p>Record a message, the system stops recording after 3 seconds of silence, or by pressing the # key. The IVR flow will then continue.</p>
+<p>Recordings can be listened to in the survey reports menu.</p>
+</div>
+<div class="section" id="sms-message">
+<span id="id6"></span><h2><a class="toc-backref" href="#id17">SMS Message</a><a class="headerlink" href="#sms-message" title="Permalink to this headline">¶</a></h2>
+<p>Play a message to the customer, either via TTS or audio file, then send an SMS message to the customer.</p>
+<p>Note that when the campaign is created, an SMS gateway must be selected under the Dialer tab.</p>
+<p>Reports on SMS messages can be be viewed under the Reporting section.</p>
+</div>
+<div class="section" id="call-transfer">
+<span id="id7"></span><h2><a class="toc-backref" href="#id18">Call Transfer</a><a class="headerlink" href="#call-transfer" title="Permalink to this headline">¶</a></h2>
+<p>Used for &#8220;press one&#8221; campaigns and live lead generation. This node bridges the call to the number in the Phone Number field when the contact answers.</p>
+<p>The field can have a telephone number or something like sofia/gateway/my.gateway/12345 which will direct the call via a specified gateway (my.gateway) to number 12345.</p>
+<img alt="../_images/node_call_transfer.png" src="../_images/node_call_transfer.png" />
+<p>In order to support screen-pops and deliver other data, there has been some data included in the SIP message</p>
+<dl class="docutils">
+<dt>By default the following data is included in the SIP header on call transfer:</dt>
+<dd>P-CallRequest-ID is the Call request ID
+P-Contact-ID is is the Contact ID.</dd>
+</dl>
+<p>It is envisaged that these ID numbers can be used to do database look-ups on the Newfies-Dialer database.</p>
+<p>Furthermore, there is a optional SIP header that can be added.</p>
+<blockquote>
+<div>P-Contact-Transfer-Ref:</div></blockquote>
+<p>This can be added against the Contact in the &#8220;Additional Parmeters (JSON)&#8221; field.
+Simply add the &#8220;transfer_ref&#8221; keyword and string to send in the SIP message as follows:</p>
+<blockquote>
+<div>{&#8220;transfer_ref&#8221;: &#8220;My-Unique-Ref-Number&#8221;}</div></blockquote>
+<p>In the SIP headers, you will see:</p>
+<blockquote>
+<div>P-CallRequest-ID: 3
+P-Contact-ID: 1
+P-Contact-Transfer-Ref: My-Unique-Ref-Number</div></blockquote>
+</div>
+<div class="section" id="http-api">
+<span id="id8"></span><h2><a class="toc-backref" href="#id19">HTTP API</a><a class="headerlink" href="#http-api" title="Permalink to this headline">¶</a></h2>
+<p>This node provide the ability to perform HTTP API Request and branch to another node based on the result.</p>
+<p>In order to do this, the UI has some features in the survey editor:</p>
+<blockquote>
+<div><ul class="simple">
+<li>API URL: to enter the url for the HTTP query</li>
+<li>Branching based on matching results: this allows selection the next branch based on the API result</li>
+</ul>
+</div></blockquote>
+<p>The API <em>MUST</em> implement the GET method on the given URL and return a valid
+JSON document with the field &#8220;api_result&#8221;, eg:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;api_result&quot;</span><span class="p">:</span> <span class="s">&quot;5000&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The value of &#8220;api_result&#8221; eg &#8220;5000&#8221; is used to decide which node to branch to on the IVR.</p>
+<p>The branching on API Node supports:</p>
+<blockquote>
+<div><ul class="simple">
+<li>timeout: maximum time to wait on an API request.</li>
+<li>pattern: check api_result against a pattern and therefore which node to branch to</li>
+<li>any: if no pattern can be matched, this will branch to the selected node (enter &#8220;any&#8221; in pattern)</li>
+</ul>
+</div></blockquote>
+<p>The API call will pass a list of HTTP variables to identify the call session and the contact.</p>
+<p>This is the current list of variables passed:</p>
+<blockquote>
+<div><ul class="simple">
+<li>campaign_id</li>
+<li>subscriber_id</li>
+<li>contact_id</li>
+<li>callrequest_id</li>
+<li>used_gateway_id</li>
+<li>last_digits</li>
+<li>contact_last_name</li>
+<li>contact_first_name</li>
+<li>contact_email</li>
+<li>contact_country</li>
+<li>contact_city</li>
+<li>caller_id_name</li>
+<li>caller_id_number</li>
+<li>destination_number</li>
+<li>uuid</li>
+<li>survey_id</li>
+<li>current_node_id</li>
+<li>record_filename</li>
+</ul>
+</div></blockquote>
+<p>Use case: HTTP API could be used in many scenarios, such as validating that a
+call is authorized, or asking to your customer&#8217;s PBX how many agents are available.</p>
+<img alt="../_images/node_http_api.png" src="../_images/node_http_api.png" />
+<p>Note: You can use <a class="reference external" href="http://mockbin.org/">http://mockbin.org/</a> to create a test API.</p>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><p class="logo"><a href="../index.html">
+  <img class="logo" src="https://github.com/newfies-dialer/newfies-dialer/raw/develop/newfies/resources/images/newfies-dialer-180.png" alt="Logo"/>
+</a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="how_to_use_it.html"
+                        title="previous chapter">How to use Newfies-Dialer</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="customer_panel.html"
+                        title="next chapter">Customer Panel</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="customer_panel.html" title="Customer Panel"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="how_to_use_it.html" title="How to use Newfies-Dialer"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.0.4 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../user-guide.html" >User Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011-2015, Arezqui Belaid &lt;info@star2billing.com&gt;.
+    </div>
+  </body>
+</html>

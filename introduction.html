@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Introduction &mdash; Newfies-Dialer 3.0.4 documentation</title>
+    
+    <link rel="stylesheet" href="_static/newfies-dialer.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '3.0.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 3.0.4 documentation" href="index.html" />
+    <link rel="next" title="Voice Configuration" href="configuration.html" />
+    <link rel="prev" title="Welcome to Newfies-Dialer!" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="configuration.html" title="Voice Configuration"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Newfies-Dialer!"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Newfies-Dialer 3.0.4 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+
+    <div class="section" id="introduction">
+<span id="id1"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Web:</th><td class="field-body"><a class="reference external" href="http://www.newfies-dialer.org/">http://www.newfies-dialer.org/</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Keywords:</th><td class="field-body">voice broadcasting, autodialer, voip, freeswitch, IVR, SMS, call blasting</td>
+</tr>
+</tbody>
+</table>
+<p>&#8211;</p>
+<p>Newfies-Dialer is a Voice and SMS broadcasting system based on distributed
+message passing. It has been built to support cloud based servers and can
+also work on standalone servers. It uses <a class="reference external" href="http://www.freeswitch.org/">Freeswitch</a> (VoIP Server) to
+outbound calls.</p>
+<p>Using very simple steps, Newfies-Dialer will help you create campaigns, add
+phonebooks, contacts, build audio messages and create complex telephony
+applications. Once the campaigns are ready to start, the messages
+will be dispatched and delivered.</p>
+<p>Newfies-Dialer provides an extensive set of APIs to easily integrate with
+third-party applications. Virtually every feature on the UI can be managed
+via the API&#8217;s.</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#overview" id="id6">Overview</a></li>
+<li><a class="reference internal" href="#utility" id="id7">Utility</a></li>
+<li><a class="reference internal" href="#features" id="id8">Features</a></li>
+<li><a class="reference internal" href="#server-specification-for-newfies-dialer" id="id9">Server Specification for Newfies-Dialer</a></li>
+<li><a class="reference internal" href="#pricing" id="id10">Pricing</a></li>
+<li><a class="reference internal" href="#contact-us" id="id11">Contact Us</a></li>
+</ul>
+</div>
+<div class="section" id="overview">
+<span id="id2"></span><h2><a class="toc-backref" href="#id6">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Newfies-Dialer can be used by anyone who has a need for SMS broadcasting,
+mass outbound calling, voice broadcasting or providing outbound IVR Some of the
+potential uses for Newfies-Dialer are listed below.</p>
+<p>The system may be used by either companies who wish to make calls
+on their own behalf, or by SaaS (Software as a Service) companies that want to
+provide bulk dialling and SMS broadcasting facilities to their own customers.</p>
+<p>Newfies-Dialer can be configured on a single server, or for really high capacity
+or high speed systems, Newfies-Dialer can be configured across multiple servers.</p>
+</div>
+<div class="section" id="utility">
+<span id="id3"></span><h2><a class="toc-backref" href="#id7">Utility</a><a class="headerlink" href="#utility" title="Permalink to this headline">¶</a></h2>
+<p>Newfies-Dialer is loaded up with a list of telephone numbers that can be dialled
+sequentially at very high rates of calling depending on carrier capacity and
+hardware, potentially delivering many millions of calls per day.</p>
+<p>When the called party answers the call, Newfies-Dialer passes the call to a telephony
+application that is custom designed to provide the desired behaviour.</p>
+<p>Some examples of where Newfies-Dialer may be used follow:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Telecasting</strong>: Broadcast marketing or informational messages to customers and clients.</li>
+<li><strong>Phone Polling, Surveys and Voting</strong>: Ring large numbers of people and present
+IVR options for either polling their opinions, interactive surveys, or taking
+their vote and record the results.</li>
+<li><strong>Debt Control</strong>: Customers can be automatically reminded at intervals that
+they owe money, and an IVR menu presented to talk to the finance department
+or passed to a credit card capture IVR to pay over the phone.</li>
+<li><strong>Dissemination of information via phone</strong>: Newfies-Dialer was originally
+designed to call large numbers of people and disseminate medical and health advice
+via cellphone in 3rd world countries where often, literacy levels are low. On a
+local scale, it can be used to disseminate information about forthcoming community events.</li>
+<li><strong>Mass Emergency broadcast</strong>: Where there is a necessity to warn large numbers
+of people in a short space of time, such as weather warnings, evacuation notices
+and crime prevention.</li>
+<li><strong>Subscription Reminders and Renewals</strong>: Where a company sells an annual
+subscription for a product or service, Newfies-Dialer can be configured to
+dial the customer, remind them that the subscription is due.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="features">
+<span id="id4"></span><h2><a class="toc-backref" href="#id8">Features</a><a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Broadcasting</td>
+<td>Web-based SMS and Voice Broadcasting application.</td>
+</tr>
+<tr class="row-even"><td>Distributed</td>
+<td>Runs on one or more machines. Supports
+broker <cite>clustering</cite> and <cite>HA</cite> when used in
+combination with <cite>RabbitMQ</cite>.  You can set up new
+workers without central configuration.</td>
+</tr>
+<tr class="row-odd"><td>Concurrency</td>
+<td>Throttle Concurrent Calls.</td>
+</tr>
+<tr class="row-even"><td>Scheduling</td>
+<td>Supports recurring tasks like cron, or specifying
+an exact date or countdown for when the task
+should be executed. Can re-try failed calls at a
+later time.</td>
+</tr>
+<tr class="row-odd"><td>IVR support</td>
+<td>Accommodates multiple IVR scripts with options to
+connect the user to another IVR/phone number on
+pressing a key.</td>
+</tr>
+<tr class="row-even"><td>Web Interface</td>
+<td>Newfies-Dialer can be managed via a Web interface.
+Realtime web-based reports for call details and
+current calls.</td>
+</tr>
+<tr class="row-odd"><td>Import Contact</td>
+<td>Import contact details from a .csv file</td>
+</tr>
+<tr class="row-even"><td>Multi-tenant</td>
+<td>It provies different roles for end-users, staff
+and administrators. With Appointment reminders
+module, it also provides Calendar Users.</td>
+</tr>
+<tr class="row-odd"><td>RealTime Control</td>
+<td>Control the speed of campaigns in realtime, as well
+as start, stop and pause buttons to control the
+campaigns</td>
+</tr>
+<tr class="row-even"><td>Surveys</td>
+<td>IVR designer application enable the easy creation
+of survey application used. Survey reports can be
+consulted in real-time.</td>
+</tr>
+<tr class="row-odd"><td>Audio file</td>
+<td>Support multiple audio file formats : wav, mp3,
+ogg, gsm, etc...</td>
+</tr>
+<tr class="row-even"><td>Text2Speech</td>
+<td>Supports powerful text2speech engines : Flite,
+Acapela &amp; Cepstral. Acapela covers a wide range
+languages.</td>
+</tr>
+<tr class="row-odd"><td>DNC</td>
+<td>Support Do Not Call List. Several DNC lists can be
+managed per campaign and per user.</td>
+</tr>
+<tr class="row-even"><td>SMS</td>
+<td>SMS delivery, SMS Gateway support, SMS campaign.</td>
+</tr>
+<tr class="row-odd"><td>AMD</td>
+<td>Answering Machine Detection module is available.</td>
+</tr>
+<tr class="row-even"><td>Rebranding &amp;
+Whitelabelling</td>
+<td>Rebranding and design services to match your
+corporate imagee.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="server-specification-for-newfies-dialer">
+<span id="beginners-guide-server-spec"></span><h2><a class="toc-backref" href="#id9">Server Specification for Newfies-Dialer</a><a class="headerlink" href="#server-specification-for-newfies-dialer" title="Permalink to this headline">¶</a></h2>
+<p>As a minimum, we recommend a server with 4Gb of RAM and at least 40Gb of hard
+drive space with a 64 bit architecture. This will be sufficient to test
+Newfies-Dialer. However, for best performance a highly specified server would
+be better with good IO suggesting SSD, RAID 0 or RAID 10, plenty of RAM and
+multiple processors.</p>
+<p>The capacity of your Newfies-Dialer server can only be determined accurately
+with benchmarking.</p>
+<p>As a rule of thumb, if you are looking for more than 1000 concurrent calls,
+then we would recommend a multi-server installation consisting of one database
+and web server and multiple Freeswitch systems to make the calls.</p>
+</div>
+<div class="section" id="pricing">
+<span id="princing"></span><h2><a class="toc-backref" href="#id10">Pricing</a><a class="headerlink" href="#pricing" title="Permalink to this headline">¶</a></h2>
+<p>Newfies-Dialer can be installed on either your servers (On-Premises) or on our
+servers (Rented) in our data centre. In either case, you will provide
+the carrier to terminate your calls, if you need a carrier we can give
+some recommendations.</p>
+<p>To see our pricing list for on-premises and rented servers with or without AMD,
+visit our pricing page: <a class="reference external" href="http://www.newfies-dialer.org/pricing/">http://www.newfies-dialer.org/pricing/</a></p>
+</div>
+<div class="section" id="contact-us">
+<span id="id5"></span><h2><a class="toc-backref" href="#id11">Contact Us</a><a class="headerlink" href="#contact-us" title="Permalink to this headline">¶</a></h2>
+<p>Star2Billing is the company behind the Newfies-Dialer SMS and Voice Broadcasting
+Solution and can be contacted at the email addresses and telephone numbers below
+during our normal working hours.</p>
+<p>Star2Billing can be contacted at:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Email: <a class="reference external" href="mailto:newfies-dialer&#37;&#52;&#48;star2billing&#46;com">newfies-dialer<span>&#64;</span>star2billing<span>&#46;</span>com</a></li>
+<li>Tel (UK): +44 117 911 4474</li>
+<li>Tel (USA): +1-202-464-8397</li>
+</ul>
+</div></blockquote>
+<p>Note that we are located Europe, and our time zone is Central European Time.</p>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><p class="logo"><a href="index.html">
+  <img class="logo" src="https://github.com/newfies-dialer/newfies-dialer/raw/develop/newfies/resources/images/newfies-dialer-180.png" alt="Logo"/>
+</a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to Newfies-Dialer!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="configuration.html"
+                        title="next chapter">Voice Configuration</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="configuration.html" title="Voice Configuration"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Newfies-Dialer!"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Newfies-Dialer 3.0.4 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011-2015, Arezqui Belaid &lt;info@star2billing.com&gt;.
+    </div>
+  </body>
+</html>
