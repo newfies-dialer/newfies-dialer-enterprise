@@ -17,6 +17,10 @@ Contents:
     configuration
     sms-configure
     user-guide
+
+.. toctree::
+    :maxdepth: 1
+
     api-reference
     troubleshooting
     faq
