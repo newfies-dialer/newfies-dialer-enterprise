@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Freeswitch Trunk configuration &mdash; Newfies-Dialer 3.1.2 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.1.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 3.1.2 documentation" href="../index.html" />
+    <link rel="up" title="Admin Guide" href="../admin-guide.html" />
+    <link rel="next" title="Site Configuration" href="site-config.html" />
+    <link rel="prev" title="Configuration" href="configuration.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="site-config.html" title="Site Configuration"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="configuration.html" title="Configuration"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.1.2 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../admin-guide.html" accesskey="U">Admin Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+
+    <div class="section" id="freeswitch-trunk-configuration">
+<span id="freeswitch-configuration"></span><h1>Freeswitch Trunk configuration<a class="headerlink" href="#freeswitch-trunk-configuration" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#username-secret-authentication" id="id1">Username / Secret Authentication</a></li>
+<li><a class="reference internal" href="#carrier-ip-authentication" id="id2">Carrier IP Authentication</a></li>
+<li><a class="reference internal" href="#create-gateway" id="id3">Create Gateway</a></li>
+<li><a class="reference internal" href="#add-carrier-to-admin-or-manager" id="id4">Add Carrier to Admin or Manager</a></li>
+</ul>
+</div>
+<p>Assistance to configure new gateways in Freeswitch is provided by The Newfies-Dialer Support Team, however if you need to add your own gateway, instructions follow.</p>
+<p>In order for Newfies-Dialer to make outbound calls to its subscribers, you will need a SIP trunk. The Freeswitch wiki can provide more information on configuring trunks, but in most cases creating a new gateway is straightforward.</p>
+<p>Trunks, or gateways as they are known in Freeswitch, are configured using XML syntax, so using your favourite text editor, while logged in as root (sudo su -) create an XML file in /etc/freeswitch/sip_profiles/external/ and give it an identifiable name, e.g. call-labs.xml, and place the following lines in the file.</p>
+<p>These settings are suitable for carriers where a username and secret is required. If your carrier authenticates via IP address and/or prefix, then read on.</p>
+<div class="section" id="username-secret-authentication">
+<h2><a class="toc-backref" href="#id1">Username / Secret Authentication</a><a class="headerlink" href="#username-secret-authentication" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>&lt;include&gt;
+&lt;gateway name=&quot;ip address or hostname of carrier&quot;&gt;
+&lt;!--/// account username *required* ///--&gt;
+&lt;param name=&quot;username&quot; value=&quot;your username provided by carrier&quot;/&gt;
+&lt;!--/// auth realm: *optional* same as gateway name, if blank ///--&gt;
+&lt;!--&lt;param name=&quot;realm&quot; value=&quot;asterlink.com&quot;/&gt;--&gt;
+&lt;!--/// username to use in from: *optional* same as username, if blank ///--&gt;
+&lt;param name=&quot;from-user&quot; value=&quot;your username provided by carrier&quot;/&gt;
+&lt;!--/// domain to use in from: *optional* same as realm, if blank ///--&gt;
+&lt;!--param name=&quot;from-domain&quot; value=&quot;&quot;/--&gt;
+&lt;!--/// account password *required* ///--&gt;
+&lt;param name=&quot;password&quot; value=&quot;your password supplied by carrier&quot;/&gt;
+&lt;!--/// extension for inbound calls: *optional* same as username, if blank ///--&gt;
+&lt;!--&lt;param name=&quot;extension&quot; value=&quot;cluecon&quot;/&gt;--&gt;
+&lt;!--/// proxy host: *optional* same as realm, if blank ///--&gt;
+&lt;!--&lt;param name=&quot;proxy&quot; value=&quot;asterlink.com&quot;/&gt;--&gt;
+&lt;!--/// send register to this proxy: *optional* same as proxy, if blank ///--&gt;
+&lt;!--&lt;param name=&quot;register-proxy&quot; value=&quot;mysbc.com&quot;/&gt;--&gt;
+&lt;!--/// expire in seconds: *optional* 3600, if blank ///--&gt;
+&lt;!--&lt;param name=&quot;expire-seconds&quot; value=&quot;60&quot;/&gt;--&gt;
+&lt;!--/// do not register ///--&gt;
+&lt;param name=&quot;register&quot; value=&quot;true&quot;/&gt;
+&lt;!-- which transport to use for register --&gt;
+&lt;!--&lt;param name=&quot;register-transport&quot; value=&quot;udp&quot;/&gt;--&gt;
+&lt;!--How many seconds before a retry when a failure or timeout occurs --&gt;
+&lt;!--&lt;param name=&quot;retry-seconds&quot; value=&quot;30&quot;/&gt;--&gt;
+&lt;!--Use the callerid of an inbound call in the from field on outbound calls via this gateway --&gt;
+&lt;!--&lt;param name=&quot;caller-id-in-from&quot; value=&quot;false&quot;/&gt;--&gt;
+&lt;!--extra sip params to send in the contact--&gt;
+&lt;!--&lt;param name=&quot;contact-params&quot; value=&quot;tport=tcp&quot;/&gt;--&gt;
+&lt;!--send an options ping every x seconds, failure will unregister and/or mark it down--&gt;
+&lt;!--&lt;param name=&quot;ping&quot; value=&quot;25&quot;/&gt;--&gt;
+&lt;/gateway&gt;
+&lt;/include&gt;
+</pre></div>
+</div>
+<p>The XML syntax for comments are denoted by lines that begin &#8221; &lt;!– &#8221; and end in &#8220;–&gt; &#8221;.</p>
+<p>Finally we need to load the new configuration, and check the trunk is registered. The Freeswitch console is accessed by typing &#8220;fs_cli&#8221; at the command prompt. The logging level can be increased or decreased from level 0 to level 7. to switch off logging, type /log 0 at the Freeswitch console, followed by enter. For the greatest verbosity, type /log 7 followed by enter.</p>
+<p>Type &#8220;fs_cli&#8221; followed by enter.</p>
+<p>You should now see the Freeswitch CLI, so now reload the Freeswitch configuration with the following command: (tip; Tab auto-completes)</p>
+<div class="highlight-python"><div class="highlight"><pre>sofia profile external restart reloadxml
+</pre></div>
+</div>
+<p>When complete, check the trunk has registered with the following command.</p>
+<div class="highlight-python"><div class="highlight"><pre>sofia status
+</pre></div>
+</div>
+<p>Against the name of the trunk you configured in the XML file, you should see REGED (registered) at the end of the line. Take a note of the trunk name, we are going to need it for telling Newfies-Dialer that it can use this trunk.</p>
+<p>To exit the Freeswitch CLI, do CTRL D, or /exit</p>
+<p>Freeswitch configuration is now complete.</p>
+</div>
+<div class="section" id="carrier-ip-authentication">
+<h2><a class="toc-backref" href="#id2">Carrier IP Authentication</a><a class="headerlink" href="#carrier-ip-authentication" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes, your carrier will authenticate using your IP address only, in this case the configuration is usually as follows.</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;include&gt;
+   &lt;gateway name=&quot;MyProvider&quot;&gt;
+     &lt;param name=&quot;username&quot; value=&quot;&quot;/&gt;
+     &lt;param name=&quot;password&quot; value=&quot;&quot;/&gt;
+     &lt;param name=&quot;proxy&quot; value=&quot;1.2.3.4&quot;/&gt;
+     &lt;param name=&quot;caller-id-in-from&quot; value=&quot;true&quot;/&gt;
+     &lt;param name=&quot;context&quot; value=&quot;public&quot;/&gt;
+     &lt;param name=&quot;register&quot; value=&quot;false&quot;/&gt;
+   &lt;/gateway&gt;
+&lt;/include&gt;
+</pre></div>
+</div>
+<p>Replace the gateway name and proxy values to suit, and follow the steps above to restart the external profile.</p>
+</div>
+<div class="section" id="create-gateway">
+<h2><a class="toc-backref" href="#id3">Create Gateway</a><a class="headerlink" href="#create-gateway" title="Permalink to this headline">¶</a></h2>
+<p>Having created the gateway in Freeswitch, Newfies-Dialer has to be told that it can use it. In
+admin,  add a new dialer gateway, e.g. sofia/gateway/myprovider/ (The final / is important) where
+“myprovider” is the gateway name setting used in above xml file in Freeswitch.</p>
+<p>Here you can also add prefixes to the dialled digits.</p>
+<p>For instance, many carriers in the USA demand that you send 11 digits, e.g. 12024648397, not 2024648397, so if all your numbers are in 10 digit format, you can prepend a 1 with the Add prefix field.</p>
+<p>The add prefix field can also be used for Technical Prefixes that some carriers demand.</p>
+</div>
+<div class="section" id="add-carrier-to-admin-or-manager">
+<h2><a class="toc-backref" href="#id4">Add Carrier to Admin or Manager</a><a class="headerlink" href="#add-carrier-to-admin-or-manager" title="Permalink to this headline">¶</a></h2>
+<p>To make the new carrier available to a user, you will select the gateways the Admin or the Manager is allowed to use in the appropriate Manager&#8217;s or Admin&#8217;s settings.</p>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><p class="logo"><a href="../index.html">
+  <img class="logo" src="https://github.com/newfies-dialer/newfies-dialer/raw/develop/newfies/resources/images/newfies-dialer-180.png" alt="Logo"/>
+</a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="configuration.html"
+                        title="previous chapter">Configuration</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="site-config.html"
+                        title="next chapter">Site Configuration</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="site-config.html" title="Site Configuration"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="configuration.html" title="Configuration"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.1.2 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../admin-guide.html" >Admin Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011-2016, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
+    </div>
+  </body>
+</html>

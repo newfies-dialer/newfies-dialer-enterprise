@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Contacts &mdash; Newfies-Dialer 3.1.2 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.1.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 3.1.2 documentation" href="../index.html" />
+    <link rel="up" title="User Guide" href="../user-guide.html" />
+    <link rel="next" title="Voice Campaign" href="voice-campaign.html" />
+    <link rel="prev" title="Survey &amp; IVR Configuration" href="survey-nodes.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="voice-campaign.html" title="Voice Campaign"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="survey-nodes.html" title="Survey &amp; IVR Configuration"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.1.2 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../user-guide.html" accesskey="U">User Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+
+    <div class="section" id="contacts">
+<span id="contacts-title"></span><h1>Contacts<a class="headerlink" href="#contacts" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="phonebook">
+<span id="id1"></span><h2>Phonebook<a class="headerlink" href="#phonebook" title="Permalink to this headline">¶</a></h2>
+<p>The phonebook list will be displayed from the following URL. You can add a new
+phonebook by clicking <code class="docutils literal"><span class="pre">Add</span> <span class="pre">phonebook</span></code> and add the name of a phonebook and its
+description. Also from the phonebook list, click on the phonebook to update.</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://HOSTNAME_IP/phonebook/">http://HOSTNAME_IP/phonebook/</a></li>
+</ul>
+</div></blockquote>
+<a class="reference internal image-reference" href="../_images/phonebook_list1.png"><img alt="../_images/phonebook_list1.png" src="../_images/phonebook_list1.png" style="width: 700px;" /></a>
+<p>To Add/Update a Phonebook for a logged in user</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://HOSTNAME_IP/phonebook/add/">http://HOSTNAME_IP/phonebook/add/</a></li>
+<li><a class="reference external" href="http://HOSTNAME_IP/phonebook/1/">http://HOSTNAME_IP/phonebook/1/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/update_phonebook1.png" src="../_images/update_phonebook1.png" />
+</div>
+<div class="section" id="contact">
+<span id="id2"></span><h2>Contact<a class="headerlink" href="#contact" title="Permalink to this headline">¶</a></h2>
+<p>The contact list will be displayed from following the URL. You can add a new contact
+by clicking <code class="docutils literal"><span class="pre">Add</span> <span class="pre">contact</span></code> &amp; adding the contact details (i.e. phone number, name,
+description about contact, contact status) under the logged in user&#8217;s phonebook from
+the phonebook list. On the contact list, click on the contact to update.</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://HOSTNAME_IP/contact/">http://HOSTNAME_IP/contact/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/contact_list1.png" src="../_images/contact_list1.png" />
+<p>To Add/Update a contact in a phonebook</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://HOSTNAME_IP/contact/add/">http://HOSTNAME_IP/contact/add/</a></li>
+<li><a class="reference external" href="http://HOSTNAME_IP/contact/1/">http://HOSTNAME_IP/contact/1/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/update_contact1.png" src="../_images/update_contact1.png" />
+<p>The contact can contain extra custom data in the Additional Parameters field. This is JSON formatted data that can be used for tag replacement in the survey when using TTS, e.g.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span><span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="s2">&quot;32&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>When {age} is used in the TTS script in a survey node, it will read out 32 instead.</p>
+<p>There are some special variables which have certain functions. These are described in the documentation.</p>
+</div>
+<div class="section" id="import-contacts">
+<span id="id3"></span><h2>Import Contacts<a class="headerlink" href="#import-contacts" title="Permalink to this headline">¶</a></h2>
+<p>To import bulk contacts into a phonebook, click on <code class="docutils literal"><span class="pre">Import</span></code>.
+where you can upload contacts via a CSV file under a logged in
+user&#8217;s phonebook.</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://HOSTNAME_IP/contact_import/">http://HOSTNAME_IP/contact_import/</a></li>
+</ul>
+</div></blockquote>
+<a class="reference internal image-reference" href="../_images/import_contact1.png"><img alt="../_images/import_contact1.png" src="../_images/import_contact1.png" style="width: 700px;" /></a>
+<p>Use the pipe &#8220;|&#8221; as the field delimiter, e.g.</p>
+<div class="highlight-python"><div class="highlight"><pre>1234567890|surname|forename|email@somewhere.com|test-contact|1|address|city|state|US|unit|{&quot;age&quot;:&quot;32&quot;,&quot;title&quot;:&quot;doctor&quot;}|
+</pre></div>
+</div>
+<p>The file needs to contain all the pipes, even if you don&#8217;t want to populate all the fields. e.g.</p>
+<div class="highlight-python"><div class="highlight"><pre>12024648397|||||1|||||||||
+</pre></div>
+</div>
+<p>Often, it is easier to copy a correctly formatted column from Excel and paste it into a text file. The formula to convert a telephone number in column A into the required format in column B uses concatenation, and is as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre>=A2&amp;&quot;|&quot;&amp;&quot;|&quot;&amp;&quot;|&quot;&amp;&quot;|&quot;&amp;&quot;|&quot;&amp;&quot;1|&quot;&amp;&quot;|&quot;&amp;&quot;|&quot;&amp;&quot;|&quot;&amp;&quot;|&quot;&amp;&quot;|&quot;&amp;&quot;|&quot;&amp;&quot;|&quot;&amp;&quot;|&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="additional-parameters-json">
+<span id="additional-parameters"></span><h2>Additional parameters (JSON)<a class="headerlink" href="#additional-parameters-json" title="Permalink to this headline">¶</a></h2>
+<p>In contacts, under advanced data, it is possible to upload custom values which can be played as TTS simply by enclosing them in {curly brackets} in the following form:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span><span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="s2">&quot;32&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>If {age} is placed into the TTS, 32 will be the value read out. Multiple JSON formatted values can be added into this field</p>
+</div>
+<div class="section" id="special-function-additional-parameters-keywords-json">
+<span id="special-function-additional-parameters-keywords"></span><h2>Special Function Additional parameters keywords (JSON)<a class="headerlink" href="#special-function-additional-parameters-keywords-json" title="Permalink to this headline">¶</a></h2>
+<p>Some special function keywords can be added which change the usual behaviour of the system. These are:</p>
+<p><strong>transfer_phonenumber</strong> - the value of the transfer phone number overwrites the SIP URI / Phone number in the call transfer node.</p>
+<p><strong>transfer_ref</strong> - this means that a SIP header &#8220;P-Contact-Transfer-Ref&#8221; is added on transfer, which may be used to trigger a screen pop or otherwise identify the contact transferred at your IP-PBX.</p>
+<p><strong>sms_phonenumber</strong> - when the SMS node is used, rather than sending the SMS to the contact&#8217;s number, it can be sent to a different number, e.g. the contact&#8217;s cellphone number, if this keyword is used.</p>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><p class="logo"><a href="../index.html">
+  <img class="logo" src="https://github.com/newfies-dialer/newfies-dialer/raw/develop/newfies/resources/images/newfies-dialer-180.png" alt="Logo"/>
+</a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="survey-nodes.html"
+                        title="previous chapter">Survey &amp; IVR Configuration</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="voice-campaign.html"
+                        title="next chapter">Voice Campaign</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="voice-campaign.html" title="Voice Campaign"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="survey-nodes.html" title="Survey &amp; IVR Configuration"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.1.2 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../user-guide.html" >User Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011-2016, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
+    </div>
+  </body>
+</html>

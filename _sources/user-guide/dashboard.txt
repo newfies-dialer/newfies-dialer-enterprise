@@ -1,0 +1,52 @@
+.. _dashboard:
+
+=========
+Dashboard
+=========
+
+.. contents::
+    :local:
+    :depth: 1
+
+There are two dashboards, one for Voice and one for SMS.
+
+.. _voice_dashboard:
+
+Voice Dashboard
+---------------
+
+The voice dashboard gives a quick overview of both the campaign in progress, and the statistics overall and for each indvidual campaign with a selectable duration.
+
+The Total contacts called, Duration, ASR and ALOC are displayed at the top of the page:
+
+Definitions:
+------------
+
+* **ASR** - Average Seizure Ratio is a measure of network quality, it is calculated as the percentage of answered calls with respect to the total call made. A low ASR indicates that either the carrier is having a problem, or your call list has a large number of unobtainable / unanswered numbers. An ASR different to the norm also may indicate problems.
+* **ALOC** - Average Length of Call - This is the Bill Sec divided by the total number of **answered** calls.
+* **Duration** - the length of time from making the call to hangup.
+* **Bill-Sec** - The length of time from call being answered to hangup.
+
+On the next line is some reporting for the campaign results which include:-
+
+* **First call** - When the first call was made
+* **Last Call** - Time of the last call made.
+* **Dial** - number of Dialed contacts not including any retries
+* **Redial** -  Number of retries or redials not including the initial dial.
+* **Answer** - Number of calls answered
+* **No Answer** - Where the call is not answered, includes busy, unobtainable, no Answer.
+* **Completed** - Where a survey has been completed according to the completed switch on the survey node.
+* **% Completed** - the above figure expressed as a percentage of the total calls made
+* **Transfer** - Number of calls transfered to an agent when using the transfer node
+* **% Transfer** - Transferred calls expressed as a percentage of the total calls made
+
+In the centre of the screen are pie charts for an at-a-glance result of your survey so far.
+
+At the bottom of the screen is a graph showing calls by hours and minutes, with the ability to zoom in.
+
+.. _sms_dashboard:
+
+SMS Dashboard
+-------------
+
+The SMS dashboard simply shows the number of contacts in the campaign, with the number of SMS messages sent. A pie chart gives an at-a-glance overview the status of the campaign. There are filters for campaigns and time periods.

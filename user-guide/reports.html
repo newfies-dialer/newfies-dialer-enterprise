@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Reports &mdash; Newfies-Dialer 3.1.2 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.1.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 3.1.2 documentation" href="../index.html" />
+    <link rel="up" title="User Guide" href="../user-guide.html" />
+    <link rel="next" title="Dashboard" href="dashboard.html" />
+    <link rel="prev" title="SMS Campaign" href="sms-campaign.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="dashboard.html" title="Dashboard"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="sms-campaign.html" title="SMS Campaign"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.1.2 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../user-guide.html" accesskey="U">User Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+
+    <div class="section" id="reports">
+<span id="id1"></span><h1>Reports<a class="headerlink" href="#reports" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#call-detail-reports-cdr" id="id5">Call Detail Reports (CDR)</a></li>
+<li><a class="reference internal" href="#survey-reports" id="id6">Survey Reports</a></li>
+<li><a class="reference internal" href="#subscriber-reports" id="id7">Subscriber Reports</a></li>
+<li><a class="reference internal" href="#sms-reports" id="id8">SMS Reports</a></li>
+</ul>
+</div>
+<div class="section" id="call-detail-reports-cdr">
+<span id="call-detail-reports"></span><h2><a class="toc-backref" href="#id5">Call Detail Reports (CDR)</a><a class="headerlink" href="#call-detail-reports-cdr" title="Permalink to this headline">¶</a></h2>
+<p>Call detail reports give the call records of each individual call along with a daily report. The UI only shows an overview of the CDR, to get a more detailed report, use the action button to download a report to CSV or Excel.</p>
+<p>The report is mostly self explanatory, apart from the the duration and Bill Sec fields.</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Duration</strong> is the amount of time from ringing to hangup.</li>
+<li><strong>Bill-Sec</strong> is the amount of time from answer to hangup - the sum of calls and duration should closely match your carrier&#8217;s CDR.</li>
+</ul>
+</div></blockquote>
+<p>Therefore it follows that Duration less Bill-Sec is the time the the phone rings for before it is answered.</p>
+</div>
+<div class="section" id="survey-reports">
+<span id="id2"></span><h2><a class="toc-backref" href="#id6">Survey Reports</a><a class="headerlink" href="#survey-reports" title="Permalink to this headline">¶</a></h2>
+<p>These reports, also downloadable to CSV, Excel or JSON files are displayed here.</p>
+<p>Under Survey Calls, you can look at each indiviual call, and see the results of the call, as well as play any audio such as for a recording node.</p>
+</div>
+<div class="section" id="subscriber-reports">
+<span id="id3"></span><h2><a class="toc-backref" href="#id7">Subscriber Reports</a><a class="headerlink" href="#subscriber-reports" title="Permalink to this headline">¶</a></h2>
+<p>When a campaign is started, the numbers to call are copied from the phonebooks selected in the campaign, these numbers in Newfies-Dialer are referred to as &#8220;Subscribers&#8221;. The subscriber report indicates the state of each individual subscriber, e.g. Pending, Completed, Sent, etc.</p>
+</div>
+<div class="section" id="sms-reports">
+<span id="id4"></span><h2><a class="toc-backref" href="#id8">SMS Reports</a><a class="headerlink" href="#sms-reports" title="Permalink to this headline">¶</a></h2>
+<p>Reports on the status of each SMS message sent.</p>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><p class="logo"><a href="../index.html">
+  <img class="logo" src="https://github.com/newfies-dialer/newfies-dialer/raw/develop/newfies/resources/images/newfies-dialer-180.png" alt="Logo"/>
+</a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="sms-campaign.html"
+                        title="previous chapter">SMS Campaign</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="dashboard.html"
+                        title="next chapter">Dashboard</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="dashboard.html" title="Dashboard"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="sms-campaign.html" title="SMS Campaign"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.1.2 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../user-guide.html" >User Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011-2016, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
+    </div>
+  </body>
+</html>

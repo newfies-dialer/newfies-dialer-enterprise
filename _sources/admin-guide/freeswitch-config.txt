@@ -1,0 +1,120 @@
+.. _freeswitch_configuration:
+
+==============================
+Freeswitch Trunk configuration
+==============================
+
+.. contents::
+    :local:
+    :depth: 1
+
+Assistance to configure new gateways in Freeswitch is provided by The Newfies-Dialer Support Team, however if you need to add your own gateway, instructions follow.
+
+In order for Newfies-Dialer to make outbound calls to its subscribers, you will need a SIP trunk. The Freeswitch wiki can provide more information on configuring trunks, but in most cases creating a new gateway is straightforward.
+
+Trunks, or gateways as they are known in Freeswitch, are configured using XML syntax, so using your favourite text editor, while logged in as root (sudo su -) create an XML file in /etc/freeswitch/sip_profiles/external/ and give it an identifiable name, e.g. call-labs.xml, and place the following lines in the file.
+
+These settings are suitable for carriers where a username and secret is required. If your carrier authenticates via IP address and/or prefix, then read on.
+
+Username / Secret Authentication
+--------------------------------
+
+::
+
+    <include>
+    <gateway name="ip address or hostname of carrier">
+    <!--/// account username *required* ///-->
+    <param name="username" value="your username provided by carrier"/>
+    <!--/// auth realm: *optional* same as gateway name, if blank ///-->
+    <!--<param name="realm" value="asterlink.com"/>-->
+    <!--/// username to use in from: *optional* same as username, if blank ///-->
+    <param name="from-user" value="your username provided by carrier"/>
+    <!--/// domain to use in from: *optional* same as realm, if blank ///-->
+    <!--param name="from-domain" value=""/-->
+    <!--/// account password *required* ///-->
+    <param name="password" value="your password supplied by carrier"/>
+    <!--/// extension for inbound calls: *optional* same as username, if blank ///-->
+    <!--<param name="extension" value="cluecon"/>-->
+    <!--/// proxy host: *optional* same as realm, if blank ///-->
+    <!--<param name="proxy" value="asterlink.com"/>-->
+    <!--/// send register to this proxy: *optional* same as proxy, if blank ///-->
+    <!--<param name="register-proxy" value="mysbc.com"/>-->
+    <!--/// expire in seconds: *optional* 3600, if blank ///-->
+    <!--<param name="expire-seconds" value="60"/>-->
+    <!--/// do not register ///-->
+    <param name="register" value="true"/>
+    <!-- which transport to use for register -->
+    <!--<param name="register-transport" value="udp"/>-->
+    <!--How many seconds before a retry when a failure or timeout occurs -->
+    <!--<param name="retry-seconds" value="30"/>-->
+    <!--Use the callerid of an inbound call in the from field on outbound calls via this gateway -->
+    <!--<param name="caller-id-in-from" value="false"/>-->
+    <!--extra sip params to send in the contact-->
+    <!--<param name="contact-params" value="tport=tcp"/>-->
+    <!--send an options ping every x seconds, failure will unregister and/or mark it down-->
+    <!--<param name="ping" value="25"/>-->
+    </gateway>
+    </include>
+
+The XML syntax for comments are denoted by lines that begin " <!– " and end in "–> ".
+
+Finally we need to load the new configuration, and check the trunk is registered. The Freeswitch console is accessed by typing "fs_cli" at the command prompt. The logging level can be increased or decreased from level 0 to level 7. to switch off logging, type /log 0 at the Freeswitch console, followed by enter. For the greatest verbosity, type /log 7 followed by enter.
+
+Type "fs_cli" followed by enter.
+
+You should now see the Freeswitch CLI, so now reload the Freeswitch configuration with the following command: (tip; Tab auto-completes)
+
+::
+
+    sofia profile external restart reloadxml
+
+
+When complete, check the trunk has registered with the following command.
+
+::
+
+    sofia status
+
+
+Against the name of the trunk you configured in the XML file, you should see REGED (registered) at the end of the line. Take a note of the trunk name, we are going to need it for telling Newfies-Dialer that it can use this trunk.
+
+To exit the Freeswitch CLI, do CTRL D, or /exit
+
+Freeswitch configuration is now complete.
+
+Carrier IP Authentication
+-------------------------
+
+Sometimes, your carrier will authenticate using your IP address only, in this case the configuration is usually as follows.
+::
+
+    <include>
+       <gateway name="MyProvider">
+         <param name="username" value=""/>
+         <param name="password" value=""/>
+         <param name="proxy" value="1.2.3.4"/>
+         <param name="caller-id-in-from" value="true"/>
+         <param name="context" value="public"/>
+         <param name="register" value="false"/>
+       </gateway>
+    </include>
+
+Replace the gateway name and proxy values to suit, and follow the steps above to restart the external profile.
+
+Create Gateway
+-----------------
+Having created the gateway in Freeswitch, Newfies-Dialer has to be told that it can use it. In
+admin,  add a new dialer gateway, e.g. sofia/gateway/myprovider/ (The final / is important) where
+“myprovider” is the gateway name setting used in above xml file in Freeswitch.
+
+Here you can also add prefixes to the dialled digits.
+
+For instance, many carriers in the USA demand that you send 11 digits, e.g. 12024648397, not 2024648397, so if all your numbers are in 10 digit format, you can prepend a 1 with the Add prefix field.
+
+The add prefix field can also be used for Technical Prefixes that some carriers demand.
+
+Add Carrier to Admin or Manager
+-------------------------------
+
+To make the new carrier available to a user, you will select the gateways the Admin or the Manager is allowed to use in the appropriate Manager's or Admin's settings.
+

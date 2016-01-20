@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>SMSCampaignSerializer &mdash; Newfies-Dialer 3.0.4 documentation</title>
+    <title>SMSCampaignSerializer &mdash; Newfies-Dialer 3.1.2 documentation</title>
     
     <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '3.0.4',
+        VERSION:     '3.1.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Newfies-Dialer 3.0.4 documentation" href="../index.html" />
+    <link rel="top" title="Newfies-Dialer 3.1.2 documentation" href="../index.html" />
     <link rel="up" title="API Reference" href="../api-reference.html" />
     <link rel="next" title="SMSGatewaySerializer" href="sms_gateway_serializers.html" />
     <link rel="prev" title="SectionTemplateSerializer" href="section_template_serializers.html" /> 
@@ -44,7 +44,7 @@
         <li class="right" >
           <a href="section_template_serializers.html" title="SectionTemplateSerializer"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.0.4 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.1.2 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../api-reference.html" accesskey="U">API Reference</a> &raquo;</li> 
       </ul>
     </div>  
@@ -55,8 +55,108 @@
           <div class="body" role="main">
             
 
-    <div class="section" id="smscampaignserializer">
+    <span class="target" id="module-apirest.sms_campaign_serializers"></span><div class="section" id="smscampaignserializer">
 <span id="smscampaignserializer-model"></span><h1><cite>SMSCampaignSerializer</cite><a class="headerlink" href="#smscampaignserializer" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="apirest.sms_campaign_serializers.SMSCampaignSerializer">
+<em class="property">class </em><code class="descclassname">apirest.sms_campaign_serializers.</code><code class="descname">SMSCampaignSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class rest_framework.fields.empty&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#apirest.sms_campaign_serializers.SMSCampaignSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Create</strong>:</p>
+<blockquote>
+<div><p>CURL Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre>curl -u username:password --dump-header - -H &quot;Content-Type:application/json&quot; -X POST --data &#39;{&quot;name&quot;: &quot;sms&quot;, &quot;description&quot;: &quot;&quot;, &quot;callerid&quot;: &quot;1239876&quot;, &quot;startingdate&quot;: &quot;2013-06-13 13:13:33&quot;, &quot;expirationdate&quot;: &quot;2013-06-14 13:13:33&quot;, &quot;frequency&quot;: &quot;20&quot;, &quot;maxretry&quot;: &quot;3&quot;, &quot;sms_gateway&quot;: &quot;/rest-api/sms-gateway/1/&quot;, &quot;phonebook&quot;: [&quot;/rest-api/phonebook/1/&quot;], &quot;daily_start_time&quot;: &quot;00:00:00&quot;, &quot;daily_stop_time&quot;: &quot;23:59:59&quot;, &quot;text_message&quot;: &quot;Hello world!&quot;, &quot;user&quot;: &quot;/rest-api/users/1/&quot;}&#39; http://HOSTNAME_IP/rest-api/sms-campaigns/
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><div class="highlight"><pre>HTTP/1.0 201 CREATED
+Date: Fri, 14 Jun 2013 09:52:27 GMT
+Server: WSGIServer/0.1 Python/2.7.3
+Vary: Accept, Accept-Language, Cookie
+Content-Type: application/json; charset=utf-8
+Content-Language: en-us
+Allow: GET, POST, HEAD, OPTIONS
+
+{&quot;id&quot;: 1, &quot;sms_campaign_code&quot;: &quot;JDQBG&quot;, &quot;name&quot;: &quot;mysmscampaign1&quot;, &quot;description&quot;: &quot;&quot;, &quot;callerid&quot;: &quot;1239876&quot;, &quot;phonebook&quot;: [&quot;/rest-api/phonebook/1/&quot;, &quot;/rest-api/phonebook/2/&quot;], &quot;startingdate&quot;: &quot;2013-06-13T13:13:33&quot;, &quot;expirationdate&quot;: &quot;2013-06-14T13:13:33&quot;, &quot;sms_gateway&quot;: &quot;http://HOSTNAME_IP/rest-api/sms-gateway/1/&quot;, &quot;user&quot;: &quot;http://&lt;IP-HOST&gt;/rest-api/users/1/&quot;, &quot;status&quot;: 2, &quot;frequency&quot;: 20, &quot;daily_start_time&quot;: &quot;00:00:00&quot;, &quot;daily_stop_time&quot;: &quot;23:59:59&quot;, &quot;monday&quot;: true, &quot;tuesday&quot;: true, &quot;wednesday&quot;: true, &quot;thursday&quot;: true, &quot;friday&quot;: true, &quot;saturday&quot;: true, &quot;sunday&quot;: true}
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Read</strong>:</p>
+<blockquote>
+<div><p>CURL Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre>curl -u username:password -H &#39;Accept: application/json&#39; http://HOSTNAME_IP/rest-api/sms-campaigns/
+
+curl -u username:password -H &#39;Accept: application/json&#39; http://HOSTNAME_IP/rest-api/sms-campaigns/%sms-campaign-id%/
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;next&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;previous&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;results&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="s2">&quot;sms_campaign_code&quot;</span><span class="p">:</span> <span class="s2">&quot;BXTWX&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Sample SMS campaign&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;callerid&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;phonebook&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;http://HOSTNAME_IP/rest-api/phonebook/1/&quot;</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;startingdate&quot;</span><span class="p">:</span> <span class="s2">&quot;2011-12-27T14:35:46&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;expirationdate&quot;</span><span class="p">:</span> <span class="s2">&quot;2011-12-28T14:35:46&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;sms_gateway&quot;</span><span class="p">:</span> <span class="s2">&quot;http://HOSTNAME_IP/rest-api/sms-gateway/1/&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;http://HOSTNAME_IP/rest-api/users/1/&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="s2">&quot;frequency&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="s2">&quot;callmaxduration&quot;</span><span class="p">:</span> <span class="mi">1800</span><span class="p">,</span>
+            <span class="s2">&quot;maxretry&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;daily_start_time&quot;</span><span class="p">:</span> <span class="s2">&quot;00:00:00&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;daily_stop_time&quot;</span><span class="p">:</span> <span class="s2">&quot;23:59:59&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;monday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+            <span class="s2">&quot;tuesday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+            <span class="s2">&quot;wednesday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+            <span class="s2">&quot;thursday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+            <span class="s2">&quot;friday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+            <span class="s2">&quot;saturday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+            <span class="s2">&quot;sunday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Update</strong>:</p>
+<blockquote>
+<div><p>CURL Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre>curl -u username:password --dump-header - -H &quot;Content-Type: application/json&quot; -X PATCH --data &#39;{&quot;name&quot;: &quot;mylittlesmscampaign243&quot;}&#39; http://HOSTNAME_IP/rest-api/sms-campaigns/%sms-campaign-id%/
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><div class="highlight"><pre>HTTP/1.0 202 NO CONTENT
+Date: Fri, 23 Sep 2011 06:46:12 GMT
+Server: WSGIServer/0.1 Python/2.7.1+
+Vary: Accept-Language, Cookie
+Content-Length: 0
+Content-Type: text/html; charset=utf-8
+Content-Language: en-us
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Delete</strong>:</p>
+<blockquote>
+<div><p>CURL Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre>curl -u username:password --dump-header - -H &quot;Content-Type: application/json&quot; -X DELETE  http://HOSTNAME_IP/rest-api/sms-campaigns/%sms-campaign_id%/
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="s2">&quot;sms campaign deleted&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd></dl>
+
 </div>
 
 
@@ -106,12 +206,12 @@
         <li class="right" >
           <a href="section_template_serializers.html" title="SectionTemplateSerializer"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.0.4 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.1.2 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../api-reference.html" >API Reference</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2011-2015, Arezqui Belaid &lt;info@star2billing.com&gt;.
+        &copy; Copyright 2011-2016, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
     </div>
   </body>
 </html>

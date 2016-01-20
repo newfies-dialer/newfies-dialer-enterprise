@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>ContactSerializer &mdash; Newfies-Dialer 3.0.4 documentation</title>
+    <title>ContactSerializer &mdash; Newfies-Dialer 3.1.2 documentation</title>
     
     <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '3.0.4',
+        VERSION:     '3.1.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Newfies-Dialer 3.0.4 documentation" href="../index.html" />
+    <link rel="top" title="Newfies-Dialer 3.1.2 documentation" href="../index.html" />
     <link rel="up" title="API Reference" href="../api-reference.html" />
     <link rel="next" title="ContentTypeSerializer" href="content_type_serializers.html" />
     <link rel="prev" title="CampaignSerializer" href="campaign_serializers.html" /> 
@@ -44,7 +44,7 @@
         <li class="right" >
           <a href="campaign_serializers.html" title="CampaignSerializer"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.0.4 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.1.2 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../api-reference.html" accesskey="U">API Reference</a> &raquo;</li> 
       </ul>
     </div>  
@@ -63,7 +63,7 @@
 <dd><p><strong>Create</strong>:</p>
 <blockquote>
 <div><p>CURL Usage:</p>
-<div class="highlight-python"><div class="highlight"><pre>curl -u username:password --dump-header - -H &quot;Content-Type:application/json&quot; -X POST --data &#39;{&quot;contact&quot;: &quot;12345678&quot;, &quot;status&quot;: &quot;1&quot;, &quot;last_name&quot;: &quot;Belaid&quot;, &quot;first_name&quot;: &quot;Areski&quot;, &quot;phonebook&quot;: &quot;1&quot;}&#39; http://localhost:8000/rest-api/contact/
+<div class="highlight-python"><div class="highlight"><pre>curl -u username:password --dump-header - -H &quot;Content-Type:application/json&quot; -X POST --data &#39;{&quot;contact&quot;: &quot;12345678&quot;, &quot;status&quot;: &quot;1&quot;, &quot;last_name&quot;: &quot;Belaid&quot;, &quot;first_name&quot;: &quot;Areski&quot;, &quot;phonebook&quot;: &quot;1&quot;}&#39; http://HOSTNAME_IP/rest-api/contact/
 </pre></div>
 </div>
 <p>Response:</p>
@@ -80,9 +80,9 @@ Allow: GET, POST, HEAD, OPTIONS
 <p><strong>Read</strong>:</p>
 <blockquote>
 <div><p>CURL Usage:</p>
-<div class="highlight-python"><div class="highlight"><pre>curl -u username:password -H &#39;Accept: application/json&#39; http://localhost:8000/rest-api/contact/
+<div class="highlight-python"><div class="highlight"><pre>curl -u username:password -H &#39;Accept: application/json&#39; http://HOSTNAME_IP/rest-api/contact/
 
-curl -u username:password -H &#39;Accept: application/json&#39; http://localhost:8000/rest-api/contact/%contact-id%/
+curl -u username:password -H &#39;Accept: application/json&#39; http://HOSTNAME_IP/rest-api/contact/%contact-id%/
 </pre></div>
 </div>
 <p>Response:</p>
@@ -92,8 +92,8 @@ curl -u username:password -H &#39;Accept: application/json&#39; http://localhost
     &quot;previous&quot;: null,
     &quot;results&quot;: [
         {
-            &quot;url&quot;: &quot;http://127.0.0.1:8000/rest-api/contact/1/&quot;,
-            &quot;phonebook&quot;: &quot;http://127.0.0.1:8000/rest-api/phonebook/1/&quot;,
+            &quot;url&quot;: &quot;http://HOSTNAME_IP/rest-api/contact/1/&quot;,
+            &quot;phonebook&quot;: &quot;http://HOSTNAME_IP/rest-api/phonebook/1/&quot;,
             &quot;contact&quot;: &quot;55555555&quot;,
             &quot;status&quot;: 1,
             &quot;last_name&quot;: &quot;Belaid&quot;,
@@ -117,7 +117,7 @@ curl -u username:password -H &#39;Accept: application/json&#39; http://localhost
 <p><strong>Update</strong>:</p>
 <blockquote>
 <div><p>CURL Usage:</p>
-<div class="highlight-python"><div class="highlight"><pre>curl -u username:password --dump-header - -H &quot;Content-Type: application/json&quot; -X PATCH --data &#39;{&quot;contact&quot;: &quot;12345678&quot;, &quot;status&quot;: &quot;1&quot;, &quot;last_name&quot;: &quot;Belaid&quot;, &quot;first_name&quot;: &quot;Areski&quot;, &quot;phonebook&quot;: &quot;1&quot;}&#39; http://localhost:8000/rest-api/contact/%contact-id%/
+<div class="highlight-python"><div class="highlight"><pre>curl -u username:password --dump-header - -H &quot;Content-Type: application/json&quot; -X PATCH --data &#39;{&quot;contact&quot;: &quot;12345678&quot;, &quot;status&quot;: &quot;1&quot;, &quot;last_name&quot;: &quot;Belaid&quot;, &quot;first_name&quot;: &quot;Areski&quot;, &quot;phonebook&quot;: &quot;1&quot;}&#39; http://HOSTNAME_IP/rest-api/contact/%contact-id%/
 </pre></div>
 </div>
 <p>Response:</p>
@@ -131,12 +131,6 @@ Content-Language: en-us
 </pre></div>
 </div>
 </div></blockquote>
-<dl class="method">
-<dt id="apirest.contact_serializers.ContactSerializer.get_fields">
-<code class="descname">get_fields</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#apirest.contact_serializers.ContactSerializer.get_fields" title="Permalink to this definition">¶</a></dt>
-<dd><p>filter survey field</p>
-</dd></dl>
-
 </dd></dl>
 
 </div>
@@ -188,12 +182,12 @@ Content-Language: en-us
         <li class="right" >
           <a href="campaign_serializers.html" title="CampaignSerializer"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.0.4 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.1.2 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../api-reference.html" >API Reference</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2011-2015, Arezqui Belaid &lt;info@star2billing.com&gt;.
+        &copy; Copyright 2011-2016, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
     </div>
   </body>
 </html>

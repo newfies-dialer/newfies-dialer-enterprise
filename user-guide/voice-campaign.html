@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Voice Campaign &mdash; Newfies-Dialer 3.1.2 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.1.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 3.1.2 documentation" href="../index.html" />
+    <link rel="up" title="User Guide" href="../user-guide.html" />
+    <link rel="next" title="SMS Campaign" href="sms-campaign.html" />
+    <link rel="prev" title="Contacts" href="contacts.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="sms-campaign.html" title="SMS Campaign"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="contacts.html" title="Contacts"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.1.2 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../user-guide.html" accesskey="U">User Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+
+    <div class="section" id="voice-campaign">
+<span id="add-voice-campaign"></span><h1>Voice Campaign<a class="headerlink" href="#voice-campaign" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#add-new-campaign" id="id4">Add New Campaign</a></li>
+<li><a class="reference internal" href="#dialer-tab" id="id5">Dialer Tab</a></li>
+<li><a class="reference internal" href="#voicemail-settings" id="id6">Voicemail Settings</a></li>
+<li><a class="reference internal" href="#schedule" id="id7">Schedule</a></li>
+<li><a class="reference internal" href="#extra" id="id8">Extra</a></li>
+<li><a class="reference internal" href="#list-campaigns" id="id9">List Campaigns</a></li>
+</ul>
+</div>
+<p>The campaign list will be displayed from the following URL. You can add a new campaign for
+the logged in user by clicking <code class="docutils literal"><span class="pre">Add</span> <span class="pre">campaign</span></code>. When adding a campaign, it is important
+to add the campaign&#8217;s start and end dates with time &amp; week-day exceptions. Select
+the gateway through which calls will be routed &amp; phonebook(s) that are
+linked with contacts from the campaign list, click on campaign to update.</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://HOSTNAME_IP/campaign/">http://HOSTNAME_IP/campaign/</a></li>
+</ul>
+</div></blockquote>
+<a class="reference internal image-reference" href="../_images/campaign_list1.png"><img alt="../_images/campaign_list1.png" src="../_images/campaign_list1.png" style="width: 800px;" /></a>
+<p>To Add/Update a Campaign for a logged in user</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://HOSTNAME_IP/campaign/add/">http://HOSTNAME_IP/campaign/add/</a></li>
+<li><a class="reference external" href="http://HOSTNAME_IP/campaign/1/">http://HOSTNAME_IP/campaign/1/</a></li>
+</ul>
+</div></blockquote>
+<a class="reference internal image-reference" href="../_images/add_campaign_general.png"><img alt="../_images/add_campaign_general.png" src="../_images/add_campaign_general.png" style="width: 800px;" /></a>
+<div class="section" id="add-new-campaign">
+<span id="id1"></span><h2><a class="toc-backref" href="#id4">Add New Campaign</a><a class="headerlink" href="#add-new-campaign" title="Permalink to this headline">¶</a></h2>
+<p>The <cite>Add New Campaign</cite> tab has a number of fields to fill in:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Caller ID Number</strong> - the number to deliver to the called party</li>
+<li><strong>Caller Name</strong> - Optional, not supported by many carriers, delivers the caller ID name</li>
+<li><strong>Application</strong> - the survey to send to the customer</li>
+<li><strong>Extra Parameters</strong> - Usually not required.</li>
+<li><strong>DNC</strong> - The Do Not Disturb list where numbers are added to, and numbers checked before calling.</li>
+<li><strong>Phonebook</strong> - One or more phonebooks to be called.</li>
+<li><strong>Description</strong> - Free text to put notes against the campaign.</li>
+</ul>
+</div></blockquote>
+<a class="reference internal image-reference" href="../_images/add_campaign_dialer.png"><img alt="../_images/add_campaign_dialer.png" src="../_images/add_campaign_dialer.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="dialer-tab">
+<span id="id2"></span><h2><a class="toc-backref" href="#id5">Dialer Tab</a><a class="headerlink" href="#dialer-tab" title="Permalink to this headline">¶</a></h2>
+<p>The dialer section controls the call in progress:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>A-Leg Gateway</strong> - the gateway to use.</li>
+<li><strong>Frequency</strong> - Calls dispatched per minute, this can be varied without stopping the campaign.</li>
+<li><strong>Max Call duration</strong> - Make sure this is long enough to include the B-Leg where applicable.</li>
+<li><strong>Max retries</strong> - Try again if the call has failed (unobtainbable / congestion / No answer )</li>
+<li><strong>Time between retries</strong> - How long to wait before calling again.</li>
+<li><strong>Timeout on Dialling</strong> - how long to ring for before giving up (minimum 15 seconds)</li>
+<li><strong>Dialer completion retries</strong> - where the contact has not completed the survey, they can be called back. This is controlled by the Conpleted setting in the survey node.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="voicemail-settings">
+<span id="voicemail-settings-tab"></span><h2><a class="toc-backref" href="#id6">Voicemail Settings</a><a class="headerlink" href="#voicemail-settings" title="Permalink to this headline">¶</a></h2>
+<p>If AMD is not installed, you will not see this tab.</p>
+<a class="reference internal image-reference" href="../_images/add_campaign_voicemail.png"><img alt="../_images/add_campaign_voicemail.png" src="../_images/add_campaign_voicemail.png" style="width: 800px;" /></a>
+<p>There are three options.</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Always play message</strong> - play the message to a contact, or if a machine, play the voice file selected in the voicemail audio file. The Audio file should be longer than the welcome message on an answering machine, for instance about 20+ seconds.</li>
+<li><strong>Play message to human only</strong> - Hangup when machine is detected.</li>
+<li><strong>Leave message to voicemail only</strong> - Hangup if person is detected, if machine, play the voicemail audio file. Note that this message should be longer than the voicemail greeting message (20+ secs)</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="schedule">
+<span id="schedule-tab"></span><h2><a class="toc-backref" href="#id7">Schedule</a><a class="headerlink" href="#schedule" title="Permalink to this headline">¶</a></h2>
+<p>Decide which time of day to start and stop the campaigns, as well as which days they are active. By default, the campaign is set to start at the time of creation and finish 24 hours later.</p>
+<a class="reference internal image-reference" href="../_images/add_campaign_schedule.png"><img alt="../_images/add_campaign_schedule.png" src="../_images/add_campaign_schedule.png" style="width: 800px;" /></a>
+<p>It is good practice to set the days and times that a campaign should be active to ensure that calls are not made out of hours.</p>
+<p>Note that retries do not respect the stop time, so sufficient time must be given for these to complete before the campaign stops.</p>
+</div>
+<div class="section" id="extra">
+<span id="extra-tab"></span><h2><a class="toc-backref" href="#id8">Extra</a><a class="headerlink" href="#extra" title="Permalink to this headline">¶</a></h2>
+<p>The only setting here for the moment is to opt to record the B-Leg, that is to say the call with the agent.</p>
+<a class="reference internal image-reference" href="../_images/add_campaign_extra.png"><img alt="../_images/add_campaign_extra.png" src="../_images/add_campaign_extra.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="list-campaigns">
+<span id="id3"></span><h2><a class="toc-backref" href="#id9">List Campaigns</a><a class="headerlink" href="#list-campaigns" title="Permalink to this headline">¶</a></h2>
+<p>When a campaign is first created, the &#8220;Type&#8221; will show Survey Template, and the number of contacts will be 0. When the play button is pressed, the the &#8220;Type&#8221; will change to Survey and the number of contacts will be displayed.</p>
+<a class="reference internal image-reference" href="../_images/campaign_list1.png"><img alt="../_images/campaign_list1.png" src="../_images/campaign_list1.png" style="width: 800px;" /></a>
+<p>During the campaign, the speed of the campaign can be varied without having to stop the campaign.</p>
+<p>When the campaign is started, a snapshot is taken of the survey at that time, so if there is a mistake in the survey, and you edit it, a new campaign will have to be created ton include your edit.</p>
+<p>There is also the option to copy a campaign. When a campaign is copied, it will use the snpashot described in the previous paragraph, so if you edit the a survey, then copy an existing campaign, the survey edits will not be included.</p>
+<p>In brief, if you edit a survey, make a new campaign.</p>
+<p>While the survey is in a state of &#8220;Started&#8221; then new contacts can be added to the phonebook and they will be called. This will not occur if the campaign is stopped, even if the campaign is later restarted.</p>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><p class="logo"><a href="../index.html">
+  <img class="logo" src="https://github.com/newfies-dialer/newfies-dialer/raw/develop/newfies/resources/images/newfies-dialer-180.png" alt="Logo"/>
+</a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="contacts.html"
+                        title="previous chapter">Contacts</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="sms-campaign.html"
+                        title="next chapter">SMS Campaign</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="sms-campaign.html" title="SMS Campaign"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="contacts.html" title="Contacts"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.1.2 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../user-guide.html" >User Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011-2016, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
+    </div>
+  </body>
+</html>

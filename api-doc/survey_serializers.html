@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>SurveySerializer &mdash; Newfies-Dialer 3.0.4 documentation</title>
+    <title>SurveySerializer &mdash; Newfies-Dialer 3.1.2 documentation</title>
     
     <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '3.0.4',
+        VERSION:     '3.1.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Newfies-Dialer 3.0.4 documentation" href="../index.html" />
+    <link rel="top" title="Newfies-Dialer 3.1.2 documentation" href="../index.html" />
     <link rel="up" title="API Reference" href="../api-reference.html" />
     <link rel="next" title="SurveyTemplateSerializer" href="survey_template_serializers.html" />
     <link rel="prev" title="SubscriberListSerializer" href="subscriber_list_serializers.html" /> 
@@ -44,7 +44,7 @@
         <li class="right" >
           <a href="subscriber_list_serializers.html" title="SubscriberListSerializer"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.0.4 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.1.2 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../api-reference.html" accesskey="U">API Reference</a> &raquo;</li> 
       </ul>
     </div>  
@@ -63,27 +63,27 @@
 <dd><p><strong>Read</strong>:</p>
 <blockquote>
 <div><p>CURL Usage:</p>
-<div class="highlight-python"><div class="highlight"><pre>curl -u username:password -H &#39;Accept: application/json&#39; http://localhost:8000/rest-api/sealed-survey/
+<div class="highlight-python"><div class="highlight"><pre>curl -u username:password -H &#39;Accept: application/json&#39; http://HOSTNAME_IP/rest-api/sealed-survey/
 
     or
 
-curl -u username:password -H &#39;Accept: application/json&#39; http://localhost:8000/rest-api/sealed-survey/%sealed_survey_id%/
+curl -u username:password -H &#39;Accept: application/json&#39; http://HOSTNAME_IP/rest-api/sealed-survey/%sealed_survey_id%/
 </pre></div>
 </div>
 <p>Response:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
-    <span class="s">&quot;count&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="s">&quot;next&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-    <span class="s">&quot;previous&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-    <span class="s">&quot;results&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;next&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;previous&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;results&quot;</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
-            <span class="s">&quot;url&quot;</span><span class="p">:</span> <span class="s">&quot;http://127.0.0.1:8000/rest-api/sealed-survey/1/&quot;</span><span class="p">,</span>
-            <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Sample survey campaign&quot;</span><span class="p">,</span>
-            <span class="s">&quot;tts_language&quot;</span><span class="p">:</span> <span class="s">&quot;en&quot;</span><span class="p">,</span>
-            <span class="s">&quot;description&quot;</span><span class="p">:</span> <span class="s">&quot;ok&quot;</span><span class="p">,</span>
-            <span class="s">&quot;created_date&quot;</span><span class="p">:</span> <span class="s">&quot;2013-06-13T12:42:18.148&quot;</span><span class="p">,</span>
-            <span class="s">&quot;updated_date&quot;</span><span class="p">:</span> <span class="s">&quot;2013-06-13T12:42:31.527&quot;</span><span class="p">,</span>
-            <span class="s">&quot;user&quot;</span><span class="p">:</span> <span class="s">&quot;http://127.0.0.1:8000/rest-api/users/1/&quot;</span>
+            <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://HOSTNAME_IP/rest-api/sealed-survey/1/&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Sample survey campaign&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;tts_language&quot;</span><span class="p">:</span> <span class="s2">&quot;en&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;ok&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;created_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2013-06-13T12:42:18.148&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;updated_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2013-06-13T12:42:31.527&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;http://HOSTNAME_IP/rest-api/users/1/&quot;</span>
         <span class="p">}</span>
     <span class="p">]</span>
 <span class="p">}</span>
@@ -141,12 +141,12 @@ curl -u username:password -H &#39;Accept: application/json&#39; http://localhost
         <li class="right" >
           <a href="subscriber_list_serializers.html" title="SubscriberListSerializer"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.0.4 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.1.2 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../api-reference.html" >API Reference</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2011-2015, Arezqui Belaid &lt;info@star2billing.com&gt;.
+        &copy; Copyright 2011-2016, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
     </div>
   </body>
 </html>

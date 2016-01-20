@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>API Reference &mdash; Newfies-Dialer 3.0.4 documentation</title>
+    <title>API Reference &mdash; Newfies-Dialer 3.1.2 documentation</title>
     
     <link rel="stylesheet" href="_static/newfies-dialer.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.0.4',
+        VERSION:     '3.1.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,9 +23,9 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Newfies-Dialer 3.0.4 documentation" href="index.html" />
+    <link rel="top" title="Newfies-Dialer 3.1.2 documentation" href="index.html" />
     <link rel="next" title="AudioFileSerializer" href="api-doc/audiofile_serializers.html" />
-    <link rel="prev" title="SMS Campaign" href="user-guide-doc/sms_campaign.html" /> 
+    <link rel="prev" title="Troubleshooting" href="admin-guide/trouble-shooting.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -41,9 +41,9 @@
           <a href="api-doc/audiofile_serializers.html" title="AudioFileSerializer"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="user-guide-doc/sms_campaign.html" title="SMS Campaign"
+          <a href="admin-guide/trouble-shooting.html" title="Troubleshooting"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Newfies-Dialer 3.0.4 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Newfies-Dialer 3.1.2 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -66,12 +66,10 @@
 <li class="toctree-l1"><a class="reference internal" href="api-doc/dnc_serializers.html"><cite>DNCSerializer</cite></a></li>
 <li class="toctree-l1"><a class="reference internal" href="api-doc/dnc_contact_serializers.html"><cite>DNCContactSerializer</cite></a></li>
 <li class="toctree-l1"><a class="reference internal" href="api-doc/gateway_serializers.html"><cite>GatewaySerializer</cite></a></li>
-<li class="toctree-l1"><a class="reference internal" href="api-doc/mail_template_serializers.html"><cite>MailTemplateSerializer</cite></a></li>
 <li class="toctree-l1"><a class="reference internal" href="api-doc/phonebook_serializers.html"><cite>PhonebookSerializer</cite></a></li>
 <li class="toctree-l1"><a class="reference internal" href="api-doc/section_template_serializers.html"><cite>SectionTemplateSerializer</cite></a></li>
 <li class="toctree-l1"><a class="reference internal" href="api-doc/sms_campaign_serializers.html"><cite>SMSCampaignSerializer</cite></a></li>
 <li class="toctree-l1"><a class="reference internal" href="api-doc/sms_gateway_serializers.html"><cite>SMSGatewaySerializer</cite></a></li>
-<li class="toctree-l1"><a class="reference internal" href="api-doc/sms_template_serializers.html"><cite>SMSTemplateSerializer</cite></a></li>
 <li class="toctree-l1"><a class="reference internal" href="api-doc/subscriber_list_serializers.html"><cite>SubscriberListSerializer</cite></a></li>
 <li class="toctree-l1"><a class="reference internal" href="api-doc/survey_serializers.html"><cite>SurveySerializer</cite></a></li>
 <li class="toctree-l1"><a class="reference internal" href="api-doc/survey_template_serializers.html"><cite>SurveyTemplateSerializer</cite></a></li>
@@ -79,12 +77,11 @@
 </div>
 <p>Testing console of APIs:</p>
 <blockquote>
-<div><strong>URL</strong> : <a class="reference external" href="http://127.0.0.1:8000/api-explorer/">http://127.0.0.1:8000/api-explorer/</a></div></blockquote>
+<div><strong>URL</strong> : <a class="reference external" href="http://HOSTNAME_IP/rest-api/">http://HOSTNAME_IP/rest-api/</a></div></blockquote>
 <a class="reference internal image-reference" href="_images/list_of_api.png"><img alt="_images/list_of_api.png" src="_images/list_of_api.png" style="width: 700px;" /></a>
-<p>To test individual api, click on one api from above api list and you will get like
-following screen.</p>
+<p>To inspect the available APIs, click on a link from above API list:</p>
 <blockquote>
-<div><strong>URL</strong> : <a class="reference external" href="http://127.0.0.1:8000/api-explorer/switch/">http://127.0.0.1:8000/api-explorer/switch/</a></div></blockquote>
+<div><strong>URL</strong> : <a class="reference external" href="http://HOSTNAME_IP/rest-api/phonebook/">http://HOSTNAME_IP/rest-api/phonebook/</a></div></blockquote>
 <a class="reference internal image-reference" href="_images/phonebook_playground.png"><img alt="_images/phonebook_playground.png" src="_images/phonebook_playground.png" style="width: 700px;" /></a>
 </div>
 
@@ -98,8 +95,8 @@ following screen.</p>
   <img class="logo" src="https://github.com/newfies-dialer/newfies-dialer/raw/develop/newfies/resources/images/newfies-dialer-180.png" alt="Logo"/>
 </a></p>
   <h4>Previous topic</h4>
-  <p class="topless"><a href="user-guide-doc/sms_campaign.html"
-                        title="previous chapter">SMS Campaign</a></p>
+  <p class="topless"><a href="admin-guide/trouble-shooting.html"
+                        title="previous chapter">Troubleshooting</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="api-doc/audiofile_serializers.html"
                         title="next chapter"><cite>AudioFileSerializer</cite></a></p>
@@ -133,13 +130,13 @@ following screen.</p>
           <a href="api-doc/audiofile_serializers.html" title="AudioFileSerializer"
              >next</a> |</li>
         <li class="right" >
-          <a href="user-guide-doc/sms_campaign.html" title="SMS Campaign"
+          <a href="admin-guide/trouble-shooting.html" title="Troubleshooting"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Newfies-Dialer 3.0.4 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Newfies-Dialer 3.1.2 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2011-2015, Arezqui Belaid &lt;info@star2billing.com&gt;.
+        &copy; Copyright 2011-2016, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
     </div>
   </body>
 </html>

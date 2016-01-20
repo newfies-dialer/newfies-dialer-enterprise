@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Quick Start &mdash; Newfies-Dialer 3.1.2 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.1.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 3.1.2 documentation" href="../index.html" />
+    <link rel="up" title="User Guide" href="../user-guide.html" />
+    <link rel="next" title="Customer Panel" href="customer-panel.html" />
+    <link rel="prev" title="Overview" href="overview.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="customer-panel.html" title="Customer Panel"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="overview.html" title="Overview"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.1.2 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../user-guide.html" accesskey="U">User Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+
+    <div class="section" id="quick-start">
+<span id="id1"></span><h1>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h1>
+<p>The purpose of this short guide is to give a quick overview from creating a suvey through to making an outbound call. It is recommended that you run through this guide on your own platform before attempting more complex surveys and campaigns.</p>
+<p>Now we are going to use the customer portal to create phonebooks containing subscribers to call, configure a survey, add campaign, and start the outbound voice broadcast. These should always be done from the Customer Portal and not from the Admin Interface. To proceed, click &#8220;Customer Panel&#8221; at the top of Admin interface.</p>
+<div class="section" id="create-phonebook">
+<span id="id2"></span><h2>Create Phonebook<a class="headerlink" href="#create-phonebook" title="Permalink to this headline">¶</a></h2>
+<p>The phonebook is where lists of subscribers are grouped. Click Customer Panel on the top menu in the Admin Dashboard, then click Phonebook, and add a new phonebook.</p>
+<p>Create a new phonebook called, for the purposes of the exercise, PB1, and give it a description.</p>
+</div>
+<div class="section" id="add-contacts">
+<span id="id3"></span><h2>Add Contacts<a class="headerlink" href="#add-contacts" title="Permalink to this headline">¶</a></h2>
+<p>Click contact, and add a new contact. As a minimum add a phone number to call in the Contact field, and for the purposes of this demonstration, enter your own telephone number in the format that your carrier expects it. Click Submit.</p>
+<p>Repeat as necessary until you have your test numbers added.</p>
+<p>It is possible to upload numbers from a text file. The methodology is covered later in this guide.</p>
+</div>
+<div class="section" id="add-survey">
+<span id="id4"></span><h2>Add Survey<a class="headerlink" href="#add-survey" title="Permalink to this headline">¶</a></h2>
+<p>Next we are going to configure the survey that will be executed when Newfies-Dialer calls your phone and you answer. Click Modules, Survey, then click add. As is traditional with first steps, we will call this survey &#8220;Hello World&#8221;.</p>
+<p>The aim is that Newfies-Dialer will call you, and when you answer, Newfies-Dialer will broadcast &#8220;Hello World&#8221; to you using the text to speech engine in Freeswitch.</p>
+<p>Click &#8220;Add Section&#8221; and select &#8220;Play Message&#8221;, enter &#8220;Hello World&#8221; in the section title. This is the speech that will be read out by the TTS engine. It can be edited later. When done, click save.</p>
+<p>Best practice is that we should explicitly hangup, and mark the survey as complete, so click &#8220;Add Section&#8221; and select Hangup as the node type. Type &#8220;Goodbye&#8221; in the section title, and tick &#8220;Survey complete&#8221;</p>
+<p>Next, set up the node branching. On the play message panel, click the branch icon, and select &#8220;Goodbye&#8221; as the next destination.</p>
+<p>Finally, click Close Survey, and move on to configuring the campaign.</p>
+</div>
+<div class="section" id="configure-campaign">
+<span id="id5"></span><h2>Configure Campaign<a class="headerlink" href="#configure-campaign" title="Permalink to this headline">¶</a></h2>
+<p>We now have all the components to create and run our campaign, so click campaign, and click add.</p>
+<p>Give the Campaign a name, say &#8220;CPN Hello World&#8221;, optionally, a description, set a caller ID to pass the called party,  select the A-Leg Gateway you configured earlier, the application, Hello World, and highlight the phonebook PB1, and submit. You will be returned to the list of campaigns.</p>
+</div>
+<div class="section" id="start-the-campaign">
+<span id="id6"></span><h2>Start The Campaign<a class="headerlink" href="#start-the-campaign" title="Permalink to this headline">¶</a></h2>
+<p>We are now ready to launch the campaign, simply press the Play button against the CPN Hello World campaign.</p>
+<p>In a few seconds, your campaign will launch, your phone will ring, and you will hear &#8220;Hello World&#8221; followed by &#8220;Goodbye&#8221; broadcast to you over the phone.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In some countries, telemarketing, phone polling, and automated dialling is under regulatory control, and advice should be sought as to how best to remain within the limits of the law. First points of reference may be Ofcom in the UK and the Federal Trade Commission (FTC) in the USA.</p>
+</div>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><p class="logo"><a href="../index.html">
+  <img class="logo" src="https://github.com/newfies-dialer/newfies-dialer/raw/develop/newfies/resources/images/newfies-dialer-180.png" alt="Logo"/>
+</a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="overview.html"
+                        title="previous chapter">Overview</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="customer-panel.html"
+                        title="next chapter">Customer Panel</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="customer-panel.html" title="Customer Panel"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="overview.html" title="Overview"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.1.2 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../user-guide.html" >User Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011-2016, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
+    </div>
+  </body>
+</html>

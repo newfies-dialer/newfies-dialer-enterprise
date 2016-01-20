@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>SMSGatewaySerializer &mdash; Newfies-Dialer 3.0.4 documentation</title>
+    <title>SMSGatewaySerializer &mdash; Newfies-Dialer 3.1.2 documentation</title>
     
     <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '3.0.4',
+        VERSION:     '3.1.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,9 +23,9 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Newfies-Dialer 3.0.4 documentation" href="../index.html" />
+    <link rel="top" title="Newfies-Dialer 3.1.2 documentation" href="../index.html" />
     <link rel="up" title="API Reference" href="../api-reference.html" />
-    <link rel="next" title="SMSTemplateSerializer" href="sms_template_serializers.html" />
+    <link rel="next" title="SubscriberListSerializer" href="subscriber_list_serializers.html" />
     <link rel="prev" title="SMSCampaignSerializer" href="sms_campaign_serializers.html" /> 
   </head>
   <body role="document">
@@ -39,12 +39,12 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="sms_template_serializers.html" title="SMSTemplateSerializer"
+          <a href="subscriber_list_serializers.html" title="SubscriberListSerializer"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="sms_campaign_serializers.html" title="SMSCampaignSerializer"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.0.4 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.1.2 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../api-reference.html" accesskey="U">API Reference</a> &raquo;</li> 
       </ul>
     </div>  
@@ -63,7 +63,7 @@
 <dd><p><strong>Create</strong>:</p>
 <blockquote>
 <div><p>CURL Usage:</p>
-<div class="highlight-python"><div class="highlight"><pre>curl -u username:password --dump-header - -H &quot;Content-Type:application/json&quot; -X POST --data &#39;{&quot;name&quot;: &quot;My_Gateway&quot;, &quot;description&quot;: &quot;&quot;, &quot;addprefix&quot;: &quot;&quot;, &quot;removeprefix&quot;: &quot;&quot;, &quot;gateways&quot;: &quot;user/,user&quot;, &quot;gateway_codecs&quot;: &quot;PCMA,PCMU&quot;, &quot;gateway_timeouts&quot;: &quot;10,10&quot;, &quot;gateway_retries&quot;: &quot;2,1&quot;}&#39; http://localhost:8000/rest-api/gateway/
+<div class="highlight-python"><div class="highlight"><pre>curl -u username:password --dump-header - -H &quot;Content-Type:application/json&quot; -X POST --data &#39;{&quot;name&quot;: &quot;My_Gateway&quot;, &quot;description&quot;: &quot;&quot;, &quot;addprefix&quot;: &quot;&quot;, &quot;removeprefix&quot;: &quot;&quot;, &quot;gateways&quot;: &quot;user/,user&quot;, &quot;gateway_codecs&quot;: &quot;PCMA,PCMU&quot;, &quot;gateway_timeouts&quot;: &quot;10,10&quot;, &quot;gateway_retries&quot;: &quot;2,1&quot;}&#39; http://HOSTNAME_IP/rest-api/sms-gateway/
 </pre></div>
 </div>
 <p>Response:</p>
@@ -80,37 +80,20 @@ Allow: GET, POST, HEAD, OPTIONS
 <p><strong>Read</strong>:</p>
 <blockquote>
 <div><p>CURL Usage:</p>
-<div class="highlight-python"><div class="highlight"><pre>curl -u username:password -H &#39;Accept: application/json&#39; http://localhost:8000/rest-api/gateway/
+<div class="highlight-python"><div class="highlight"><pre>curl -u username:password -H &#39;Accept: application/json&#39; http://HOSTNAME_IP/rest-api/sms-gateway/
 
-curl -u username:password -H &#39;Accept: application/json&#39; http://localhost:8000/rest-api/gateway/%gateway-id%/
+curl -u username:password -H &#39;Accept: application/json&#39; http://HOSTNAME_IP/rest-api/sms-gateway/%gateway-id%/
 </pre></div>
 </div>
 <p>Response:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
-    <span class="s">&quot;count&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="s">&quot;next&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-    <span class="s">&quot;previous&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-    <span class="s">&quot;results&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;next&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;previous&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;results&quot;</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
-            <span class="s">&quot;url&quot;</span><span class="p">:</span> <span class="s">&quot;http://127.0.0.1:8000/rest-api/gateway/1/&quot;</span><span class="p">,</span>
-            <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Default_Gateway&quot;</span><span class="p">,</span>
-            <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-            <span class="s">&quot;description&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
-            <span class="s">&quot;addprefix&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
-            <span class="s">&quot;removeprefix&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
-            <span class="s">&quot;gateways&quot;</span><span class="p">:</span> <span class="s">&quot;user/,user&quot;</span><span class="p">,</span>
-            <span class="s">&quot;gateway_codecs&quot;</span><span class="p">:</span> <span class="s">&quot;PCMA,PCMU&quot;</span><span class="p">,</span>
-            <span class="s">&quot;gateway_timeouts&quot;</span><span class="p">:</span> <span class="s">&quot;10,10&quot;</span><span class="p">,</span>
-            <span class="s">&quot;gateway_retries&quot;</span><span class="p">:</span> <span class="s">&quot;2,1&quot;</span><span class="p">,</span>
-            <span class="s">&quot;originate_dial_string&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
-            <span class="s">&quot;secondused&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-            <span class="s">&quot;created_date&quot;</span><span class="p">:</span> <span class="s">&quot;2011-06-15T00:28:52&quot;</span><span class="p">,</span>
-            <span class="s">&quot;updated_date&quot;</span><span class="p">:</span> <span class="s">&quot;2013-06-14T17:54:24.130&quot;</span><span class="p">,</span>
-            <span class="s">&quot;failover&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-            <span class="s">&quot;addparameter&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
-            <span class="s">&quot;count_call&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-            <span class="s">&quot;count_in_use&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-            <span class="s">&quot;maximum_call&quot;</span><span class="p">:</span> <span class="n">null</span>
+            <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://HOSTNAME_IP/rest-api/sms-gateway/1/&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Default_Gateway&quot;</span>
         <span class="p">}</span>
     <span class="p">]</span>
 <span class="p">}</span>
@@ -134,8 +117,8 @@ curl -u username:password -H &#39;Accept: application/json&#39; http://localhost
   <p class="topless"><a href="sms_campaign_serializers.html"
                         title="previous chapter"><cite>SMSCampaignSerializer</cite></a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="sms_template_serializers.html"
-                        title="next chapter"><cite>SMSTemplateSerializer</cite></a></p>
+  <p class="topless"><a href="subscriber_list_serializers.html"
+                        title="next chapter"><cite>SubscriberListSerializer</cite></a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -163,17 +146,17 @@ curl -u username:password -H &#39;Accept: application/json&#39; http://localhost
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="sms_template_serializers.html" title="SMSTemplateSerializer"
+          <a href="subscriber_list_serializers.html" title="SubscriberListSerializer"
              >next</a> |</li>
         <li class="right" >
           <a href="sms_campaign_serializers.html" title="SMSCampaignSerializer"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.0.4 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.1.2 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../api-reference.html" >API Reference</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2011-2015, Arezqui Belaid &lt;info@star2billing.com&gt;.
+        &copy; Copyright 2011-2016, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
     </div>
   </body>
 </html>

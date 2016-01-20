@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Introduction &mdash; Newfies-Dialer 3.0.4 documentation</title>
+    <title>Introduction &mdash; Newfies-Dialer 3.1.2 documentation</title>
     
     <link rel="stylesheet" href="_static/newfies-dialer.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.0.4',
+        VERSION:     '3.1.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,8 +23,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Newfies-Dialer 3.0.4 documentation" href="index.html" />
-    <link rel="next" title="Voice Configuration" href="configuration.html" />
+    <link rel="top" title="Newfies-Dialer 3.1.2 documentation" href="index.html" />
+    <link rel="next" title="User Guide" href="user-guide.html" />
     <link rel="prev" title="Welcome to Newfies-Dialer!" href="index.html" /> 
   </head>
   <body role="document">
@@ -38,12 +38,12 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="configuration.html" title="Voice Configuration"
+          <a href="user-guide.html" title="User Guide"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Welcome to Newfies-Dialer!"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Newfies-Dialer 3.0.4 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Newfies-Dialer 3.1.2 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -65,49 +65,50 @@
 </tr>
 </tbody>
 </table>
-<p>&#8211;</p>
-<p>Newfies-Dialer is a Voice and SMS broadcasting system based on distributed
-message passing. It has been built to support cloud based servers and can
-also work on standalone servers. It uses <a class="reference external" href="http://www.freeswitch.org/">Freeswitch</a> (VoIP Server) to
-outbound calls.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Newfies-Dialer is an SMS and voice broadcasting system built to support
+cloud based servers and can also work on standalone servers.
+It uses <a class="reference external" href="http://www.freeswitch.org/">Freeswitch</a> (VoIP Server) to make calls.</p>
+<a class="reference internal image-reference" href="_images/customer_dashboard.png"><img alt="_images/customer_dashboard.png" src="_images/customer_dashboard.png" style="width: 800px;" /></a>
 <p>Using very simple steps, Newfies-Dialer will help you create campaigns, add
 phonebooks, contacts, build audio messages and create complex telephony
-applications. Once the campaigns are ready to start, the messages
-will be dispatched and delivered.</p>
+applications for voice broadcasting.</p>
 <p>Newfies-Dialer provides an extensive set of APIs to easily integrate with
 third-party applications. Virtually every feature on the UI can be managed
 via the API&#8217;s.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#overview" id="id7">Overview</a></li>
-<li><a class="reference internal" href="#utility" id="id8">Utility</a></li>
-<li><a class="reference internal" href="#features" id="id9">Features</a></li>
-<li><a class="reference internal" href="#server-specification" id="id10">Server Specification</a></li>
-<li><a class="reference internal" href="#pricing" id="id11">Pricing</a></li>
-<li><a class="reference internal" href="#contact-us" id="id12">Contact Us</a></li>
+<li><a class="reference internal" href="#overview" id="id6">Overview</a></li>
+<li><a class="reference internal" href="#utility" id="id7">Utility</a></li>
+<li><a class="reference internal" href="#features" id="id8">Features</a></li>
+<li><a class="reference internal" href="#server-specification" id="id9">Server Specification</a></li>
+<li><a class="reference internal" href="#pricing" id="id10">Pricing</a></li>
+<li><a class="reference internal" href="#contact-us" id="id11">Contact Us</a></li>
 </ul>
 </div>
 <div class="section" id="overview">
-<span id="id2"></span><h2><a class="toc-backref" href="#id7">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<span id="newfies-dialer-overview"></span><h2><a class="toc-backref" href="#id6">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>Newfies-Dialer can be used by anyone who has a need for SMS broadcasting,
 mass outbound calling, voice broadcasting or providing outbound IVR Some of the
 potential uses for Newfies-Dialer are listed below.</p>
-<p>The system may be used by either companies who wish to make calls
+<p>The Newfies-Dialer may be used by either companies who wish to make calls
 on their own behalf, or by SaaS (Software as a Service) companies that want to
 provide bulk dialling and SMS broadcasting facilities to their own customers.</p>
 <p>Newfies-Dialer can be configured on a single server, or for really high capacity
 or high speed systems, Newfies-Dialer can be configured across multiple servers.</p>
 </div>
 <div class="section" id="utility">
-<span id="id3"></span><h2><a class="toc-backref" href="#id8">Utility</a><a class="headerlink" href="#utility" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2><a class="toc-backref" href="#id7">Utility</a><a class="headerlink" href="#utility" title="Permalink to this headline">¶</a></h2>
 <p>Newfies-Dialer is loaded up with a list of telephone numbers that can be dialled
 sequentially at very high rates of calling depending on carrier capacity and
 hardware, potentially delivering many millions of calls per day.</p>
 <p>When the called party answers the call, Newfies-Dialer passes the call to a telephony
 application that is custom designed to provide the desired behaviour.</p>
 <p>Some examples of where Newfies-Dialer may be used follow:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
+<li><strong>Lead Generation</strong>: Broadcast messages to contacts with a press one facility to transfer calls to a callcentre.</li>
 <li><strong>Telecasting</strong>: Broadcast marketing or informational messages to customers and clients.</li>
 <li><strong>Phone Polling, Surveys and Voting</strong>: Ring large numbers of people and present
 IVR options for either polling their opinions, interactive surveys, or taking
@@ -126,10 +127,9 @@ and crime prevention.</li>
 subscription for a product or service, Newfies-Dialer can be configured to
 dial the customer, remind them that the subscription is due.</li>
 </ul>
-</div></blockquote>
 </div>
 <div class="section" id="features">
-<span id="id4"></span><h2><a class="toc-backref" href="#id9">Features</a><a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<span id="id3"></span><h2><a class="toc-backref" href="#id8">Features</a><a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><table border="1" class="docutils">
 <colgroup>
@@ -189,8 +189,7 @@ ogg, gsm, etc...</td>
 </tr>
 <tr class="row-even"><td>Text2Speech</td>
 <td>Supports powerful text2speech engines : Flite,
-Acapela &amp; Cepstral. Acapela covers a wide range
-languages.</td>
+Acapela, Cepstral, and any MRCP capable MRCP engine</td>
 </tr>
 <tr class="row-odd"><td>DNC</td>
 <td>Support Do Not Call List. Several DNC lists can be
@@ -212,41 +211,34 @@ corporate imagee.</td>
 </div></blockquote>
 </div>
 <div class="section" id="server-specification">
-<span id="server-spec"></span><h2><a class="toc-backref" href="#id10">Server Specification</a><a class="headerlink" href="#server-specification" title="Permalink to this headline">¶</a></h2>
-<p>As a minimum, we recommend a server with 4Gb of RAM and at least 40Gb of hard
-drive space with a 64 bit architecture. This will be sufficient to test
-Newfies-Dialer. However, for best performance a highly specified server would
-be better with good IO suggesting SSD, RAID 0 or RAID 10, plenty of RAM and
-multiple processors.</p>
+<span id="server-spec"></span><h2><a class="toc-backref" href="#id9">Server Specification</a><a class="headerlink" href="#server-specification" title="Permalink to this headline">¶</a></h2>
+<p>For best performance we recommend a highly specified server with good IO
+suggesting SSD, RAID 0 or RAID 10, plenty of RAM and multiple processors.</p>
 <p>The capacity of your Newfies-Dialer server can only be determined accurately
 with benchmarking.</p>
-<p>As a rule of thumb, if you are looking for more than 1000 concurrent calls,
+<p>As a rule of thumb, if you are looking for more than 500 concurrent calls,
 then we would recommend a multi-server installation consisting of one database
 and web server and multiple Freeswitch systems to make the calls.</p>
 </div>
 <div class="section" id="pricing">
-<span id="id5"></span><h2><a class="toc-backref" href="#id11">Pricing</a><a class="headerlink" href="#pricing" title="Permalink to this headline">¶</a></h2>
+<span id="id4"></span><h2><a class="toc-backref" href="#id10">Pricing</a><a class="headerlink" href="#pricing" title="Permalink to this headline">¶</a></h2>
 <p>Newfies-Dialer can be installed on either your servers (On-Premises) or on our
-servers (Rented) in our data centre. In either case, you will provide
-the carrier to terminate your calls, if you need a carrier we can give
-some recommendations.</p>
-<p>To see our pricing list for on-premises and rented servers with or without AMD,
+servers (Rented) in our data centre. In either case, you provide the carrier
+to terminate your calls, if you need a carrier we can give some recommendations.</p>
+<p>To see pricing for on-premises and rented servers with or without AMD,
 visit our pricing page: <a class="reference external" href="http://www.newfies-dialer.org/pricing/">http://www.newfies-dialer.org/pricing/</a></p>
 </div>
 <div class="section" id="contact-us">
-<span id="id6"></span><h2><a class="toc-backref" href="#id12">Contact Us</a><a class="headerlink" href="#contact-us" title="Permalink to this headline">¶</a></h2>
+<span id="id5"></span><h2><a class="toc-backref" href="#id11">Contact Us</a><a class="headerlink" href="#contact-us" title="Permalink to this headline">¶</a></h2>
 <p>Star2Billing is the company behind the Newfies-Dialer SMS and Voice Broadcasting
 Solution and can be contacted at the email addresses and telephone numbers below
-during our normal working hours.</p>
+during our normal working hours, Central European Time.</p>
 <p>Star2Billing can be contacted at:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li>Email: <a class="reference external" href="mailto:newfies-dialer&#37;&#52;&#48;star2billing&#46;com">newfies-dialer<span>&#64;</span>star2billing<span>&#46;</span>com</a></li>
 <li>Tel (UK): +44 117 911 4474</li>
 <li>Tel (USA): +1-202-464-8397</li>
 </ul>
-</div></blockquote>
-<p>Note that we are located Europe, and our time zone is Central European Time.</p>
 </div>
 </div>
 
@@ -263,8 +255,8 @@ during our normal working hours.</p>
   <p class="topless"><a href="index.html"
                         title="previous chapter">Welcome to Newfies-Dialer!</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="configuration.html"
-                        title="next chapter">Voice Configuration</a></p>
+  <p class="topless"><a href="user-guide.html"
+                        title="next chapter">User Guide</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -292,16 +284,16 @@ during our normal working hours.</p>
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="configuration.html" title="Voice Configuration"
+          <a href="user-guide.html" title="User Guide"
              >next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Welcome to Newfies-Dialer!"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Newfies-Dialer 3.0.4 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Newfies-Dialer 3.1.2 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2011-2015, Arezqui Belaid &lt;info@star2billing.com&gt;.
+        &copy; Copyright 2011-2016, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
     </div>
   </body>
 </html>

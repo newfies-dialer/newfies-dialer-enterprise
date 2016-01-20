@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Add User &mdash; Newfies-Dialer 3.1.2 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.1.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 3.1.2 documentation" href="../index.html" />
+    <link rel="up" title="Admin Guide" href="../admin-guide.html" />
+    <link rel="next" title="TTS Configuration" href="tts-config.html" />
+    <link rel="prev" title="Dialer Settings" href="dialer-settings.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tts-config.html" title="TTS Configuration"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="dialer-settings.html" title="Dialer Settings"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.1.2 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../admin-guide.html" accesskey="U">Admin Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+
+    <div class="section" id="add-user">
+<span id="id1"></span><h1>Add User<a class="headerlink" href="#add-user" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#add-manager" id="id4">Add Manager</a></li>
+<li><a class="reference internal" href="#hijack-user" id="id5">Hijack User</a></li>
+</ul>
+</div>
+<p>Newfies-Dialer is multi-tenant, so each user or &#8220;Manager&#8221;, as it is referred to in Newfies-Dialer can run their own campaigns isolated from every other manager on Newfies-Dialer.</p>
+<p>The dialer settings are assigned to each manager, and these control the resources that a manager can consume.</p>
+<p>Additionally, a voice and SMS (if applicable) gateway is assigned to the Manager, so they can only use the gateway(s) they are assigned.</p>
+<div class="section" id="add-manager">
+<span id="id2"></span><h2><a class="toc-backref" href="#id4">Add Manager</a><a class="headerlink" href="#add-manager" title="Permalink to this headline">¶</a></h2>
+<p>In the General Tab, click Add against Manager, and in the new screen, fill in the username and password. The name and address details are optional.</p>
+<p>Select the gateways you are allowing the Manager to use, and select the dialer settings applicable to this manager. You can add more gateways and dialer settings by clicking the + button, and the appropriate screen will appear as a popup.</p>
+<p>When you click save, another screen will appear where you can select the Available User Permissions, Choose All. This will give access to the customer screen only, a manager cannot carry out any admin tasks.</p>
+<p>Click save once more, and confirm that the new Manager is added and that you can log in with their assigned username and password.</p>
+</div>
+<div class="section" id="hijack-user">
+<span id="id3"></span><h2><a class="toc-backref" href="#id5">Hijack User</a><a class="headerlink" href="#hijack-user" title="Permalink to this headline">¶</a></h2>
+<p>In order to provide support to an individual user without needing to know their password, there is a facility for Administrators to log on as them.</p>
+<p>List the Managers, then click Hijack against the manager you want access.</p>
+<img alt="../_images/newfies-hijack-user.png" src="../_images/newfies-hijack-user.png" />
+<p>You will then be logged on to your Manager&#8217;s account.</p>
+<img alt="../_images/newfies-user-hijacked.png" src="../_images/newfies-user-hijacked.png" />
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><p class="logo"><a href="../index.html">
+  <img class="logo" src="https://github.com/newfies-dialer/newfies-dialer/raw/develop/newfies/resources/images/newfies-dialer-180.png" alt="Logo"/>
+</a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="dialer-settings.html"
+                        title="previous chapter">Dialer Settings</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="tts-config.html"
+                        title="next chapter">TTS Configuration</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tts-config.html" title="TTS Configuration"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="dialer-settings.html" title="Dialer Settings"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.1.2 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../admin-guide.html" >Admin Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011-2016, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
+    </div>
+  </body>
+</html>

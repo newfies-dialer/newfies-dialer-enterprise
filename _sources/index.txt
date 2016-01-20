@@ -14,16 +14,14 @@ Contents:
     :maxdepth: 2
 
     introduction
-    configuration
-    sms-configure
     user-guide
+    admin-guide
+
 
 .. toctree::
     :maxdepth: 1
 
     api-reference
-    troubleshooting
-    faq
 
 
 Indices and tables
@@ -32,4 +30,5 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
 

@@ -7,17 +7,18 @@ Introduction
 :Web: http://www.newfies-dialer.org/
 :Keywords: voice broadcasting, autodialer, voip, freeswitch, IVR, SMS, call blasting
 
---
+|
 
-Newfies-Dialer is a Voice and SMS broadcasting system based on distributed
-message passing. It has been built to support cloud based servers and can
-also work on standalone servers. It uses `Freeswitch`_ (VoIP Server) to
-outbound calls.
+Newfies-Dialer is an SMS and voice broadcasting system built to support
+cloud based servers and can also work on standalone servers.
+It uses `Freeswitch`_ (VoIP Server) to make calls.
+
+.. image:: ./_static/images/customer/customer_dashboard.png
+    :width: 800
 
 Using very simple steps, Newfies-Dialer will help you create campaigns, add
 phonebooks, contacts, build audio messages and create complex telephony
-applications. Once the campaigns are ready to start, the messages
-will be dispatched and delivered.
+applications for voice broadcasting.
 
 Newfies-Dialer provides an extensive set of APIs to easily integrate with
 third-party applications. Virtually every feature on the UI can be managed
@@ -31,7 +32,7 @@ via the API's.
     :depth: 1
 
 
-.. _overview:
+.. _newfies-dialer_overview:
 
 Overview
 --------
@@ -40,7 +41,7 @@ Newfies-Dialer can be used by anyone who has a need for SMS broadcasting,
 mass outbound calling, voice broadcasting or providing outbound IVR Some of the
 potential uses for Newfies-Dialer are listed below.
 
-The system may be used by either companies who wish to make calls
+The Newfies-Dialer may be used by either companies who wish to make calls
 on their own behalf, or by SaaS (Software as a Service) companies that want to
 provide bulk dialling and SMS broadcasting facilities to their own customers.
 
@@ -62,28 +63,30 @@ application that is custom designed to provide the desired behaviour.
 Some examples of where Newfies-Dialer may be used follow:
 
 
-    * **Telecasting**: Broadcast marketing or informational messages to customers and clients.
+* **Lead Generation**: Broadcast messages to contacts with a press one facility to transfer calls to a callcentre.
 
-    * **Phone Polling, Surveys and Voting**: Ring large numbers of people and present
-      IVR options for either polling their opinions, interactive surveys, or taking
-      their vote and record the results.
+* **Telecasting**: Broadcast marketing or informational messages to customers and clients.
 
-    * **Debt Control**: Customers can be automatically reminded at intervals that
-      they owe money, and an IVR menu presented to talk to the finance department
-      or passed to a credit card capture IVR to pay over the phone.
+* **Phone Polling, Surveys and Voting**: Ring large numbers of people and present
+  IVR options for either polling their opinions, interactive surveys, or taking
+  their vote and record the results.
 
-    * **Dissemination of information via phone**: Newfies-Dialer was originally
-      designed to call large numbers of people and disseminate medical and health advice
-      via cellphone in 3rd world countries where often, literacy levels are low. On a
-      local scale, it can be used to disseminate information about forthcoming community events.
+* **Debt Control**: Customers can be automatically reminded at intervals that
+  they owe money, and an IVR menu presented to talk to the finance department
+  or passed to a credit card capture IVR to pay over the phone.
 
-    * **Mass Emergency broadcast**: Where there is a necessity to warn large numbers
-      of people in a short space of time, such as weather warnings, evacuation notices
-      and crime prevention.
+* **Dissemination of information via phone**: Newfies-Dialer was originally
+  designed to call large numbers of people and disseminate medical and health advice
+  via cellphone in 3rd world countries where often, literacy levels are low. On a
+  local scale, it can be used to disseminate information about forthcoming community events.
 
-    * **Subscription Reminders and Renewals**: Where a company sells an annual
-      subscription for a product or service, Newfies-Dialer can be configured to
-      dial the customer, remind them that the subscription is due.
+* **Mass Emergency broadcast**: Where there is a necessity to warn large numbers
+  of people in a short space of time, such as weather warnings, evacuation notices
+  and crime prevention.
+
+* **Subscription Reminders and Renewals**: Where a company sells an annual
+  subscription for a product or service, Newfies-Dialer can be configured to
+  dial the customer, remind them that the subscription is due.
 
 
 .. _features:
@@ -132,8 +135,7 @@ Features
     |                 | ogg, gsm, etc...                                   |
     +-----------------+----------------------------------------------------+
     | Text2Speech     | Supports powerful text2speech engines : Flite,     |
-    |                 | Acapela & Cepstral. Acapela covers a wide range    |
-    |                 | languages.                                         |
+    |                 | Acapela, Cepstral, and any MRCP capable MRCP engine|
     +-----------------+----------------------------------------------------+
     | DNC             | Support Do Not Call List. Several DNC lists can be |
     |                 | managed per campaign and per user.                 |
@@ -154,17 +156,14 @@ Features
 Server Specification
 --------------------
 
-As a minimum, we recommend a server with 4Gb of RAM and at least 40Gb of hard
-drive space with a 64 bit architecture. This will be sufficient to test
-Newfies-Dialer. However, for best performance a highly specified server would
-be better with good IO suggesting SSD, RAID 0 or RAID 10, plenty of RAM and
-multiple processors.
+For best performance we recommend a highly specified server with good IO
+suggesting SSD, RAID 0 or RAID 10, plenty of RAM and multiple processors.
 
 
 The capacity of your Newfies-Dialer server can only be determined accurately
 with benchmarking.
 
-As a rule of thumb, if you are looking for more than 1000 concurrent calls,
+As a rule of thumb, if you are looking for more than 500 concurrent calls,
 then we would recommend a multi-server installation consisting of one database
 and web server and multiple Freeswitch systems to make the calls.
 
@@ -175,11 +174,10 @@ Pricing
 -------
 
 Newfies-Dialer can be installed on either your servers (On-Premises) or on our
-servers (Rented) in our data centre. In either case, you will provide
-the carrier to terminate your calls, if you need a carrier we can give
-some recommendations.
+servers (Rented) in our data centre. In either case, you provide the carrier
+to terminate your calls, if you need a carrier we can give some recommendations.
 
-To see our pricing list for on-premises and rented servers with or without AMD,
+To see pricing for on-premises and rented servers with or without AMD,
 visit our pricing page: http://www.newfies-dialer.org/pricing/
 
 
@@ -190,14 +188,10 @@ Contact Us
 
 Star2Billing is the company behind the Newfies-Dialer SMS and Voice Broadcasting
 Solution and can be contacted at the email addresses and telephone numbers below
-during our normal working hours.
-
+during our normal working hours, Central European Time.
 
 Star2Billing can be contacted at:
 
- * Email: newfies-dialer@star2billing.com
- * Tel (UK): +44 117 911 4474
- * Tel (USA): +1-202-464-8397
-
-
-Note that we are located Europe, and our time zone is Central European Time.
+* Email: newfies-dialer@star2billing.com
+* Tel (UK): +44 117 911 4474
+* Tel (USA): +1-202-464-8397

@@ -1,0 +1,34 @@
+.. _overview:
+
+========
+Overview
+========
+
+Newfies-Dialer is a powerful SMS and Voice Broadcasting system which can be installed on dedicated servers or cloud servers. The underlying telephony engine is Freeswitch, and it is designed to send calls via VoIP using the SIP protocol and is compatible with nearly all SIP carriers.
+
+Newfies-Dialer comes installed with a web interface to allow the easy configuration of market messages, surveys and campaigns.
+
+**Features**
+
+    * Restful-API based to easily integrate the platform dialer with third-party applications
+
+    * Web-based administrative/customer interfaces
+
+    * Lower operating costs
+
+    * Calls are made through Internet VoIP. No need for telephony hardware
+
+    * Call reports and Statistics
+
+The following user documentation will cover:
+    
+    * A quick start guide to cover the basics
+    * A detailed guide to the purpose of all the survey nodes
+    * The customer panel
+    * Creating phonebooks and contacts
+    * Configuring voice and SMS campaigns
+    * Reports
+    * The dashboard
+
+We suggest you follow the quick start guide to get an overview of the system, then start creating your own surveys and campaigns.
+

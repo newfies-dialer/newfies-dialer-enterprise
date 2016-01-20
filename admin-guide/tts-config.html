@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>TTS Configuration &mdash; Newfies-Dialer 3.1.2 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.1.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 3.1.2 documentation" href="../index.html" />
+    <link rel="up" title="Admin Guide" href="../admin-guide.html" />
+    <link rel="next" title="Admin Panel" href="admin-panel.html" />
+    <link rel="prev" title="Add User" href="add-user.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="admin-panel.html" title="Admin Panel"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="add-user.html" title="Add User"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.1.2 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../admin-guide.html" accesskey="U">Admin Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+
+    <div class="section" id="tts-configuration">
+<span id="id1"></span><h1>TTS Configuration<a class="headerlink" href="#tts-configuration" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#tts-types" id="id3">TTS Types</a></li>
+<li><a class="reference internal" href="#how-to-enable-acapela" id="id4">How to enable Acapela</a></li>
+</ul>
+</div>
+<div class="section" id="tts-types">
+<span id="id2"></span><h2><a class="toc-backref" href="#id3">TTS Types</a><a class="headerlink" href="#tts-types" title="Permalink to this headline">¶</a></h2>
+<p>By default the TTS (Text to Speech) engine used by newfies-Dialer is Flite (<a class="reference external" href="http://www.speech.cs.cmu.edu/flite/">http://www.speech.cs.cmu.edu/flite/</a>) which only supports English. If you want to use another language you will need another TTS engine.</p>
+<p>We have integrated Acapela: <a class="reference external" href="http://acapela-vaas.com/">http://acapela-vaas.com/</a> and in order to use Acapela, the only thing you have to do is to sign in and enable Acapela on Newfies-dialer.</p>
+<p>uniMRCP TTS engines are also supported. Typically, a separate server will be required containing the TTS engine, the text to be converted will be sent to the TTS server, and the audio file sent back ready for playing by the campaign.</p>
+<p>Please check with us the suitability of your uniMRCP TTS system before purchase. We will assist with the integration.</p>
+</div>
+<div class="section" id="how-to-enable-acapela">
+<span id="how-enable-acapela"></span><h2><a class="toc-backref" href="#id4">How to enable Acapela</a><a class="headerlink" href="#how-to-enable-acapela" title="Permalink to this headline">¶</a></h2>
+<p>First you will have to sign-up and register an account with Acapela : <a class="reference external" href="http://acapela-vaas.com/">http://acapela-vaas.com/</a>
+Once you signed up you will receive a login, an application login and an application password, you will need those to configure Acapela on Newfies-Dialer.</p>
+<p>Acapela needs to be configured in 2 places:</p>
+<ol class="arabic simple">
+<li>On the Web interface</li>
+</ol>
+<p>Edit the file /usr/share/newfies-dialer/newfies_dialer/settings_local.py and find:</p>
+<div class="highlight-python"><div class="highlight"><pre>#TEXT-TO-SPEECH
+#==============
+TTS_ENGINE = &#39;FLITE&#39;  # FLITE, CEPSTRAL, ACAPELA
+
+ACCOUNT_LOGIN = &#39;EVAL_XXXX&#39;
+APPLICATION_LOGIN = &#39;EVAL_XXXXXXX&#39;
+APPLICATION_PASSWORD = &#39;XXXXXXXX&#39;
+
+SERVICE_URL = &#39;http://vaas.acapela-group.com/Services/Synthesizer&#39;
+QUALITY = &#39;22k&#39;  # 22k, 8k, 8ka, 8kmu
+ACAPELA_GENDER = &#39;W&#39;
+ACAPELA_INTONATION = &#39;NORMAL&#39;
+
+You will have to change the value of the settings : TTS_ENGINE, ACCOUNT_LOGIN, APPLICATION_LOGIN and APPLICATION_PASSWORD.
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>On the IVR application</li>
+</ol>
+<p>Create a new file /usr/share/newfies-lua/config/acapela_config.lua and add the following:</p>
+<div class="highlight-python"><div class="highlight"><pre>TTS_ENGINE = &#39;acapela&#39;
+
+ACCOUNT_LOGIN = &#39;EVAL_VAAS&#39;
+APPLICATION_LOGIN = &#39;EVAL_XXXXXX&#39;
+APPLICATION_PASSWORD = &#39;XXXXXX&#39;
+
+SERVICE_URL = &#39;http://vaas.acapela-group.com/Services/Synthesizer&#39;
+QUALITY = &#39;22k&#39;  -- 22k, 8k, 8ka, 8kmu
+ACAPELA_GENDER = &#39;M&#39;
+ACAPELA_INTONATION = &#39;NORMAL&#39;
+ACAPELA_LANG = &#39;EN&#39;
+
+
+Change the value of the settings : ACCOUNT_LOGIN, APPLICATION_LOGIN, APPLICATION_PASSWORD and optionally, ACAPELA_LANG.
+</pre></div>
+</div>
+<p>Finally restart the web UI::</p>
+<div class="highlight-python"><div class="highlight"><pre>/etc/init.d/supervisor stop
+and
+/etc/init.d/supervisor start
+</pre></div>
+</div>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><p class="logo"><a href="../index.html">
+  <img class="logo" src="https://github.com/newfies-dialer/newfies-dialer/raw/develop/newfies/resources/images/newfies-dialer-180.png" alt="Logo"/>
+</a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="add-user.html"
+                        title="previous chapter">Add User</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="admin-panel.html"
+                        title="next chapter">Admin Panel</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="admin-panel.html" title="Admin Panel"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="add-user.html" title="Add User"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.1.2 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../admin-guide.html" >Admin Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011-2016, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
+    </div>
+  </body>
+</html>
