@@ -13,7 +13,7 @@ Newfies-Dialer is an SMS and voice broadcasting system built to support
 cloud based servers and can also work on standalone servers.
 It uses `Freeswitch`_ (VoIP Server) to make calls.
 
-.. image:: ./_static/images/customer/customer_dashboard.png
+.. image:: ./_static/images/newfies-dialer-dashboard.png
     :width: 800
 
 Using very simple steps, Newfies-Dialer will help you create campaigns, add
