@@ -5,6 +5,11 @@
 Contacts
 ========
 
+.. contents::
+    :local:
+    :depth: 2
+
+
 .. _phonebook:
 
 Phonebook
