@@ -21,7 +21,7 @@ Login Page
 
 Index page for the customer interface after successful login with user credentials
 
-.. image:: ../_static/images/customer_screenshot.png
+.. image:: ../_static/images/newfies-dialer-dashboard.png
     :width: 750
 
 .. _dashboards:
