@@ -1,7 +1,7 @@
 .. Newfies documentation master file
 
-Welcome to Newfies-Dialer!
-==========================
+Documentation Newfies-Dialer
+============================
 
 :Version: |version|
 :Release: |release|
