@@ -55,7 +55,7 @@ A program called PCAPSIPDUMP should have been installed on your server for just 
 
     apt-get -y install libpcap0.8 libpcap-dev build-essential
     cd /usr/src/
-    wget http://skylink.dl.sourceforge.net/project/pcapsipdump/pcapsipdump/0.2/pcapsipdump-0.2.tar.gz
+    wget --no-check-certificate http://skylink.dl.sourceforge.net/project/pcapsipdump/pcapsipdump/0.2/pcapsipdump-0.2.tar.gz
     tar zxfv pcapsipdump-0.2.tar.gz
     cd pcapsipdump-0.2
     apt-get -y install libpcap0.8 libpcap-dev build-essential

@@ -24,7 +24,7 @@ Home Page
 
 In the general section, click Site/Page, then click "Change" against the "flat pages" link, click home, and the current text and logo will be displayed.
 
-From this screen it can be edited with your own logo and wording.
+From this screen edit the wording.
 
 In the Advanced Section, there is an option to make this page visible to everyone, or just logged in users.
 
@@ -32,5 +32,3 @@ New Pages
 ---------
 
 In the same area as the Home Page, there are options to add new pages to Newfies-Dialer to contain your own custom content.
-
- 

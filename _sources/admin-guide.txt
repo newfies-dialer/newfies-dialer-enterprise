@@ -12,6 +12,7 @@ Contents:
     ./admin-guide/configuration.rst
     ./admin-guide/freeswitch-config.rst
     ./admin-guide/site-config.rst
+    ./admin-guide/rebranding.rst
     ./admin-guide/SMS-config.rst
     ./admin-guide/dialer-settings.rst
     ./admin-guide/add-user.rst

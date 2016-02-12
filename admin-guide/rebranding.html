@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Rebranding &mdash; Newfies-Dialer 3.1.8 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.1.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 3.1.8 documentation" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.1.8 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+
+    <div class="section" id="rebranding">
+<span id="id1"></span><h1>Rebranding<a class="headerlink" href="#rebranding" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#configure-project-names-and-footer" id="id2">Configure project names and footer</a></li>
+<li><a class="reference internal" href="#change-icon" id="id3">Change Icon</a></li>
+<li><a class="reference internal" href="#change-favicon" id="id4">Change Favicon</a></li>
+<li><a class="reference internal" href="#custom-css" id="id5">Custom CSS</a></li>
+<li><a class="reference internal" href="#apply-changes" id="id6">Apply changes</a></li>
+</ul>
+</div>
+<p>Rebranding and logo upload will be done by the Newfies-Dialer support team, simply provide us with the Company Name, a logo as described below, and your favicon, as described below.</p>
+<div class="section" id="configure-project-names-and-footer">
+<h2><a class="toc-backref" href="#id2">Configure project names and footer</a><a class="headerlink" href="#configure-project-names-and-footer" title="Permalink to this headline">¶</a></h2>
+<p>Edit /usr/share/newfies/newfies_dialer/settings_local.py as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c1"># BRANDING</span>
+<span class="c1"># ========</span>
+<span class="n">PROJECT_NAME</span> <span class="o">=</span> <span class="s1">&#39;MyCompany&#39;</span>
+<span class="n">PAGE_FOOTER</span> <span class="o">=</span> <span class="s1">&#39;Powered by MyCompany&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="change-icon">
+<h2><a class="toc-backref" href="#id3">Change Icon</a><a class="headerlink" href="#change-icon" title="Permalink to this headline">¶</a></h2>
+<p>The icon needs to be in PNG format and have transparency.
+Max height for the icon is 60px.</p>
+<p>Copy it in the <cite>images/branding</cite> directory:</p>
+<div class="highlight-python"><div class="highlight"><pre>cp mycompany-icon.png /usr/share/newfies/resources/images/branding/logo-icon.png
+</pre></div>
+</div>
+</div>
+<div class="section" id="change-favicon">
+<h2><a class="toc-backref" href="#id4">Change Favicon</a><a class="headerlink" href="#change-favicon" title="Permalink to this headline">¶</a></h2>
+<p>You will need 3 files:
+* apple-touch-icon.png
+* favicon.ico
+* favicon.png</p>
+<p>Copy those files to the <cite>images/branding</cite> directory:</p>
+<div class="highlight-python"><div class="highlight"><pre>cp apple-touch-icon.png /usr/share/newfies/resources/images/branding/
+cp favicon.* /usr/share/newfies/resources/images/branding/
+</pre></div>
+</div>
+</div>
+<div class="section" id="custom-css">
+<h2><a class="toc-backref" href="#id5">Custom CSS</a><a class="headerlink" href="#custom-css" title="Permalink to this headline">¶</a></h2>
+<p>Copy <cite>custom.css</cite> to the <cite>css/branding</cite> directory:</p>
+<div class="highlight-python"><div class="highlight"><pre>cp custom.css /usr/share/newfies/resources/css/branding/
+</pre></div>
+</div>
+</div>
+<div class="section" id="apply-changes">
+<h2><a class="toc-backref" href="#id6">Apply changes</a><a class="headerlink" href="#apply-changes" title="Permalink to this headline">¶</a></h2>
+<p>You will need to collect the new static files and restart supervisor:</p>
+<div class="highlight-python"><div class="highlight"><pre>workon newfies-dialer
+cd /usr/share/newfies
+python manage.py collectstatic --noinput
+resup
+</pre></div>
+</div>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><p class="logo"><a href="../index.html">
+  <img class="logo" src="https://github.com/newfies-dialer/newfies-dialer/raw/develop/newfies/resources/images/newfies-dialer-180.png" alt="Logo"/>
+</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.1.8 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011-2016, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
+    </div>
+  </body>
+</html>
