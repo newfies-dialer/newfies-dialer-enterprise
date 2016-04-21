@@ -5,8 +5,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>CampaignSerializer &mdash; Newfies-Dialer 3.1.8 documentation</title>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-325034-18']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <title>CampaignSerializer &mdash; Newfies-Dialer 3.2.4 documentation</title>
     
     <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +25,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '3.1.8',
+        VERSION:     '3.2.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +34,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Newfies-Dialer 3.1.8 documentation" href="../index.html" />
+    <link rel="top" title="Newfies-Dialer 3.2.4 documentation" href="../index.html" />
     <link rel="up" title="API Reference" href="../api-reference.html" />
     <link rel="next" title="ContactSerializer" href="contact_serializers.html" />
     <link rel="prev" title="BranchingTemplateSerializer" href="branching_template_serializers.html" /> 
@@ -44,7 +55,7 @@
         <li class="right" >
           <a href="branching_template_serializers.html" title="BranchingTemplateSerializer"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.1.8 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.2.4 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../api-reference.html" accesskey="U">API Reference</a> &raquo;</li> 
       </ul>
     </div>  
@@ -63,32 +74,32 @@
 <dd><p><strong>Create</strong>:</p>
 <blockquote>
 <div><p>CURL Usage:</p>
-<div class="highlight-python"><div class="highlight"><pre>curl -u username:password --dump-header - -H &quot;Content-Type:application/json&quot; -X POST --data &#39;{&quot;name&quot;: &quot;mycampaign01&quot;, &quot;description&quot;: &quot;&quot;, &quot;callerid&quot;: &quot;1239876&quot;, &quot;startingdate&quot;: &quot;2013-06-13 13:13:33&quot;, &quot;expirationdate&quot;: &quot;2013-06-14 13:13:33&quot;, &quot;frequency&quot;: &quot;20&quot;, &quot;callmaxduration&quot;: &quot;50&quot;, &quot;maxretry&quot;: &quot;3&quot;, &quot;intervalretry&quot;: &quot;3000&quot;, &quot;calltimeout&quot;: &quot;45&quot;, &quot;aleg_gateway&quot;: &quot;/rest-api/gateway/1/&quot;, &quot;sms_gateway&quot;: &quot;/rest-api/sms-gateway/1/&quot;, &quot;content_type&quot;: &quot;/rest-api/content-type/49/&quot;, &quot;object_id&quot; : &quot;1&quot;, &quot;extra_data&quot;: &quot;2000&quot;, &quot;voicemail&quot;: &quot;True&quot;, &quot;amd_behavior&quot;: &quot;1&quot;, &quot;voicemail_audiofile&quot;: &quot;/rest-api/audio-files/1/&quot;, &quot;dnc&quot;: &quot;/rest-api/dnc-list/1/&quot;, &quot;user&quot;: &quot;/rest-api/users/1/&quot;, &quot;phonebook&quot;: [&quot;/rest-api/phonebook/1/&quot;], &quot;daily_start_time&quot;: &quot;00:00:00&quot;, &quot;daily_stop_time&quot;: &quot;23:59:59&quot;}&#39; http://HOSTNAME_IP/rest-api/campaigns/
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span><span class="p">:</span><span class="n">password</span> <span class="o">--</span><span class="n">dump</span><span class="o">-</span><span class="n">header</span> <span class="o">-</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type:application/json&quot;</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">--</span><span class="n">data</span> <span class="s1">&#39;{&quot;name&quot;: &quot;mycampaign01&quot;, &quot;description&quot;: &quot;&quot;, &quot;callerid&quot;: &quot;1239876&quot;, &quot;startingdate&quot;: &quot;2013-06-13 13:13:33&quot;, &quot;expirationdate&quot;: &quot;2013-06-14 13:13:33&quot;, &quot;frequency&quot;: &quot;20&quot;, &quot;callmaxduration&quot;: &quot;50&quot;, &quot;maxretry&quot;: &quot;3&quot;, &quot;intervalretry&quot;: &quot;3000&quot;, &quot;calltimeout&quot;: &quot;45&quot;, &quot;aleg_gateway&quot;: &quot;/rest-api/gateway/1/&quot;, &quot;sms_gateway&quot;: &quot;/rest-api/sms-gateway/1/&quot;, &quot;content_type&quot;: &quot;/rest-api/content-type/49/&quot;, &quot;object_id&quot; : &quot;1&quot;, &quot;extra_data&quot;: &quot;2000&quot;, &quot;voicemail&quot;: &quot;True&quot;, &quot;amd_behavior&quot;: &quot;1&quot;, &quot;voicemail_audiofile&quot;: &quot;/rest-api/audio-files/1/&quot;, &quot;dnc&quot;: &quot;/rest-api/dnc-list/1/&quot;, &quot;user&quot;: &quot;/rest-api/users/1/&quot;, &quot;phonebook&quot;: [&quot;/rest-api/phonebook/1/&quot;], &quot;daily_start_time&quot;: &quot;00:00:00&quot;, &quot;daily_stop_time&quot;: &quot;23:59:59&quot;}&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">campaigns</span><span class="o">/</span>
 </pre></div>
 </div>
 <p>Response:</p>
-<div class="highlight-python"><div class="highlight"><pre>HTTP/1.0 201 CREATED
-Date: Fri, 14 Jun 2013 09:52:27 GMT
-Server: WSGIServer/0.1 Python/2.7.3
-Vary: Accept, Accept-Language, Cookie
-Content-Type: application/json; charset=utf-8
-Content-Language: en-us
-Allow: GET, POST, HEAD, OPTIONS
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">HTTP</span><span class="o">/</span><span class="mf">1.0</span> <span class="mi">201</span> <span class="n">CREATED</span>
+<span class="n">Date</span><span class="p">:</span> <span class="n">Fri</span><span class="p">,</span> <span class="mi">14</span> <span class="n">Jun</span> <span class="mi">2013</span> <span class="mi">09</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">27</span> <span class="n">GMT</span>
+<span class="n">Server</span><span class="p">:</span> <span class="n">WSGIServer</span><span class="o">/</span><span class="mf">0.1</span> <span class="n">Python</span><span class="o">/</span><span class="mf">2.7</span><span class="o">.</span><span class="mi">3</span>
+<span class="n">Vary</span><span class="p">:</span> <span class="n">Accept</span><span class="p">,</span> <span class="n">Accept</span><span class="o">-</span><span class="n">Language</span><span class="p">,</span> <span class="n">Cookie</span>
+<span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">application</span><span class="o">/</span><span class="n">json</span><span class="p">;</span> <span class="n">charset</span><span class="o">=</span><span class="n">utf</span><span class="o">-</span><span class="mi">8</span>
+<span class="n">Content</span><span class="o">-</span><span class="n">Language</span><span class="p">:</span> <span class="n">en</span><span class="o">-</span><span class="n">us</span>
+<span class="n">Allow</span><span class="p">:</span> <span class="n">GET</span><span class="p">,</span> <span class="n">POST</span><span class="p">,</span> <span class="n">HEAD</span><span class="p">,</span> <span class="n">OPTIONS</span>
 
-{&quot;id&quot;: 1, &quot;campaign_code&quot;: &quot;JDQBG&quot;, &quot;name&quot;: &quot;mycampaign1&quot;, &quot;description&quot;: &quot;&quot;, &quot;callerid&quot;: &quot;1239876&quot;, &quot;phonebook&quot;: [&quot;/rest-api/phonebook/1/&quot;, &quot;/rest-api/phonebook/2/&quot;], &quot;startingdate&quot;: &quot;2013-06-13T13:13:33&quot;, &quot;expirationdate&quot;: &quot;2013-06-14T13:13:33&quot;, &quot;aleg_gateway&quot;: &quot;http://HOSTNAME_IP/rest-api/gateway/1/&quot;, &quot;user&quot;: &quot;http://&lt;IP-HOST&gt;/rest-api/users/1/&quot;, &quot;status&quot;: 2, &quot;content_type&quot;: &quot;http://&lt;IP-HOST&gt;/rest-api/content-type/49/&quot;, &quot;object_id&quot;: 1, &quot;extra_data&quot;: &quot;2000&quot;, &quot;dnc&quot;: null, &quot;frequency&quot;: 20, &quot;callmaxduration&quot;: 50, &quot;maxretry&quot;: 3, &quot;intervalretry&quot;: 3000, &quot;calltimeout&quot;: 45, &quot;daily_start_time&quot;: &quot;00:00:00&quot;, &quot;daily_stop_time&quot;: &quot;23:59:59&quot;, &quot;monday&quot;: true, &quot;tuesday&quot;: true, &quot;wednesday&quot;: true, &quot;thursday&quot;: true, &quot;friday&quot;: true, &quot;saturday&quot;: true, &quot;sunday&quot;: true, &quot;completion_maxretry&quot;: 0, &quot;completion_intervalretry&quot;: 900}
+<span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;campaign_code&quot;</span><span class="p">:</span> <span class="s2">&quot;JDQBG&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;mycampaign1&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;callerid&quot;</span><span class="p">:</span> <span class="s2">&quot;1239876&quot;</span><span class="p">,</span> <span class="s2">&quot;phonebook&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;/rest-api/phonebook/1/&quot;</span><span class="p">,</span> <span class="s2">&quot;/rest-api/phonebook/2/&quot;</span><span class="p">],</span> <span class="s2">&quot;startingdate&quot;</span><span class="p">:</span> <span class="s2">&quot;2013-06-13T13:13:33&quot;</span><span class="p">,</span> <span class="s2">&quot;expirationdate&quot;</span><span class="p">:</span> <span class="s2">&quot;2013-06-14T13:13:33&quot;</span><span class="p">,</span> <span class="s2">&quot;aleg_gateway&quot;</span><span class="p">:</span> <span class="s2">&quot;http://HOSTNAME_IP/rest-api/gateway/1/&quot;</span><span class="p">,</span> <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;http://&lt;IP-HOST&gt;/rest-api/users/1/&quot;</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;content_type&quot;</span><span class="p">:</span> <span class="s2">&quot;http://&lt;IP-HOST&gt;/rest-api/content-type/49/&quot;</span><span class="p">,</span> <span class="s2">&quot;object_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;extra_data&quot;</span><span class="p">:</span> <span class="s2">&quot;2000&quot;</span><span class="p">,</span> <span class="s2">&quot;dnc&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span> <span class="s2">&quot;frequency&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;callmaxduration&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">&quot;maxretry&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;intervalretry&quot;</span><span class="p">:</span> <span class="mi">3000</span><span class="p">,</span> <span class="s2">&quot;calltimeout&quot;</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span> <span class="s2">&quot;daily_start_time&quot;</span><span class="p">:</span> <span class="s2">&quot;00:00:00&quot;</span><span class="p">,</span> <span class="s2">&quot;daily_stop_time&quot;</span><span class="p">:</span> <span class="s2">&quot;23:59:59&quot;</span><span class="p">,</span> <span class="s2">&quot;monday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;tuesday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;wednesday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;thursday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;friday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;saturday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;sunday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;completion_maxretry&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;completion_intervalretry&quot;</span><span class="p">:</span> <span class="mi">900</span><span class="p">}</span>
 </pre></div>
 </div>
 </div></blockquote>
 <p><strong>Read</strong>:</p>
 <blockquote>
 <div><p>CURL Usage:</p>
-<div class="highlight-python"><div class="highlight"><pre>curl -u username:password -H &#39;Accept: application/json&#39; http://HOSTNAME_IP/rest-api/campaigns/
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span><span class="p">:</span><span class="n">password</span> <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Accept: application/json&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">campaigns</span><span class="o">/</span>
 
-curl -u username:password -H &#39;Accept: application/json&#39; http://HOSTNAME_IP/rest-api/campaigns/%campaign-id%/
+<span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span><span class="p">:</span><span class="n">password</span> <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Accept: application/json&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">campaigns</span><span class="o">/%</span><span class="n">campaign</span><span class="o">-</span><span class="nb">id</span><span class="o">%/</span>
 </pre></div>
 </div>
 <p>Response:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
     <span class="s2">&quot;next&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
     <span class="s2">&quot;previous&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
@@ -139,34 +150,34 @@ curl -u username:password -H &#39;Accept: application/json&#39; http://HOSTNAME_
 <p><strong>Update</strong>:</p>
 <blockquote>
 <div><p>CURL Usage:</p>
-<div class="highlight-python"><div class="highlight"><pre>curl -u username:password --dump-header - -H &quot;Content-Type: application/json&quot; -X PATCH --data &#39;{&quot;name&quot;: &quot;mylittlecampaign243&quot;}&#39; http://HOSTNAME_IP/rest-api/campaigns/%campaign-id%/
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span><span class="p">:</span><span class="n">password</span> <span class="o">--</span><span class="n">dump</span><span class="o">-</span><span class="n">header</span> <span class="o">-</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="o">-</span><span class="n">X</span> <span class="n">PATCH</span> <span class="o">--</span><span class="n">data</span> <span class="s1">&#39;{&quot;name&quot;: &quot;mylittlecampaign243&quot;}&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">campaigns</span><span class="o">/%</span><span class="n">campaign</span><span class="o">-</span><span class="nb">id</span><span class="o">%/</span>
 </pre></div>
 </div>
 <p>Response:</p>
-<div class="highlight-python"><div class="highlight"><pre>HTTP/1.0 202 NO CONTENT
-Date: Fri, 23 Sep 2011 06:46:12 GMT
-Server: WSGIServer/0.1 Python/2.7.1+
-Vary: Accept-Language, Cookie
-Content-Length: 0
-Content-Type: text/html; charset=utf-8
-Content-Language: en-us
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">HTTP</span><span class="o">/</span><span class="mf">1.0</span> <span class="mi">202</span> <span class="n">NO</span> <span class="n">CONTENT</span>
+<span class="n">Date</span><span class="p">:</span> <span class="n">Fri</span><span class="p">,</span> <span class="mi">23</span> <span class="n">Sep</span> <span class="mi">2011</span> <span class="mi">06</span><span class="p">:</span><span class="mi">46</span><span class="p">:</span><span class="mi">12</span> <span class="n">GMT</span>
+<span class="n">Server</span><span class="p">:</span> <span class="n">WSGIServer</span><span class="o">/</span><span class="mf">0.1</span> <span class="n">Python</span><span class="o">/</span><span class="mf">2.7</span><span class="o">.</span><span class="mi">1</span><span class="o">+</span>
+<span class="n">Vary</span><span class="p">:</span> <span class="n">Accept</span><span class="o">-</span><span class="n">Language</span><span class="p">,</span> <span class="n">Cookie</span>
+<span class="n">Content</span><span class="o">-</span><span class="n">Length</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">text</span><span class="o">/</span><span class="n">html</span><span class="p">;</span> <span class="n">charset</span><span class="o">=</span><span class="n">utf</span><span class="o">-</span><span class="mi">8</span>
+<span class="n">Content</span><span class="o">-</span><span class="n">Language</span><span class="p">:</span> <span class="n">en</span><span class="o">-</span><span class="n">us</span>
 
-{&quot;id&quot;: 1, &quot;campaign_code&quot;: &quot;JDQBG&quot;, &quot;name&quot;: &quot;mylittlecampaign243&quot;, &quot;description&quot;: &quot;&quot;, &quot;callerid&quot;: &quot;1239876&quot;, &quot;phonebook&quot;: [&quot;http://HOSTNAME_IP/rest-api/phonebook/1/&quot;, &quot;http://&lt;IP-HOST&gt;/rest-api/phonebook/2/&quot;], &quot;startingdate&quot;: &quot;2013-06-13T13:13:33&quot;, &quot;expirationdate&quot;: &quot;2013-06-14T13:13:33&quot;, &quot;aleg_gateway&quot;: &quot;http://&lt;IP-HOST&gt;/rest-api/gateway/1/&quot;, &quot;user&quot;: &quot;http://&lt;IP-HOST&gt;/rest-api/users/1/&quot;, &quot;status&quot;: 2, &quot;content_type&quot;: &quot;http://&lt;IP-HOST&gt;/rest-api/content-type/67/&quot;, &quot;object_id&quot;: 1, &quot;extra_data&quot;: &quot;2000&quot;, &quot;dnc&quot;: null, &quot;frequency&quot;: 20, &quot;callmaxduration&quot;: 50, &quot;maxretry&quot;: 3, &quot;intervalretry&quot;: 3000, &quot;calltimeout&quot;: 45, &quot;daily_start_time&quot;: &quot;00:00:00&quot;, &quot;daily_stop_time&quot;: &quot;23:59:59&quot;, &quot;monday&quot;: true, &quot;tuesday&quot;: true, &quot;wednesday&quot;: true, &quot;thursday&quot;: true, &quot;friday&quot;: true, &quot;saturday&quot;: true, &quot;sunday&quot;: true, &quot;completion_maxretry&quot;: 0, &quot;completion_intervalretry&quot;: 900}
+<span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;campaign_code&quot;</span><span class="p">:</span> <span class="s2">&quot;JDQBG&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;mylittlecampaign243&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;callerid&quot;</span><span class="p">:</span> <span class="s2">&quot;1239876&quot;</span><span class="p">,</span> <span class="s2">&quot;phonebook&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;http://HOSTNAME_IP/rest-api/phonebook/1/&quot;</span><span class="p">,</span> <span class="s2">&quot;http://&lt;IP-HOST&gt;/rest-api/phonebook/2/&quot;</span><span class="p">],</span> <span class="s2">&quot;startingdate&quot;</span><span class="p">:</span> <span class="s2">&quot;2013-06-13T13:13:33&quot;</span><span class="p">,</span> <span class="s2">&quot;expirationdate&quot;</span><span class="p">:</span> <span class="s2">&quot;2013-06-14T13:13:33&quot;</span><span class="p">,</span> <span class="s2">&quot;aleg_gateway&quot;</span><span class="p">:</span> <span class="s2">&quot;http://&lt;IP-HOST&gt;/rest-api/gateway/1/&quot;</span><span class="p">,</span> <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;http://&lt;IP-HOST&gt;/rest-api/users/1/&quot;</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;content_type&quot;</span><span class="p">:</span> <span class="s2">&quot;http://&lt;IP-HOST&gt;/rest-api/content-type/67/&quot;</span><span class="p">,</span> <span class="s2">&quot;object_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;extra_data&quot;</span><span class="p">:</span> <span class="s2">&quot;2000&quot;</span><span class="p">,</span> <span class="s2">&quot;dnc&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span> <span class="s2">&quot;frequency&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;callmaxduration&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">&quot;maxretry&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;intervalretry&quot;</span><span class="p">:</span> <span class="mi">3000</span><span class="p">,</span> <span class="s2">&quot;calltimeout&quot;</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span> <span class="s2">&quot;daily_start_time&quot;</span><span class="p">:</span> <span class="s2">&quot;00:00:00&quot;</span><span class="p">,</span> <span class="s2">&quot;daily_stop_time&quot;</span><span class="p">:</span> <span class="s2">&quot;23:59:59&quot;</span><span class="p">,</span> <span class="s2">&quot;monday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;tuesday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;wednesday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;thursday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;friday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;saturday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;sunday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;completion_maxretry&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;completion_intervalretry&quot;</span><span class="p">:</span> <span class="mi">900</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>CURL Usage (Update Campaign Status==Started):</p>
-<div class="highlight-python"><div class="highlight"><pre>curl -u username:password --dump-header - -H &quot;Content-Type: application/json&quot; -X PATCH --data &#39;{&quot;status&quot;: 1}&#39; http://HOSTNAME_IP/rest-api/campaigns/%campaign-id%/
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span><span class="p">:</span><span class="n">password</span> <span class="o">--</span><span class="n">dump</span><span class="o">-</span><span class="n">header</span> <span class="o">-</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="o">-</span><span class="n">X</span> <span class="n">PATCH</span> <span class="o">--</span><span class="n">data</span> <span class="s1">&#39;{&quot;status&quot;: 1}&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">campaigns</span><span class="o">/%</span><span class="n">campaign</span><span class="o">-</span><span class="nb">id</span><span class="o">%/</span>
 </pre></div>
 </div>
 </div></blockquote>
 <p><strong>Delete</strong>:</p>
 <blockquote>
 <div><p>CURL Usage:</p>
-<div class="highlight-python"><div class="highlight"><pre>curl -u username:password --dump-header - -H &quot;Content-Type: application/json&quot; -X DELETE  http://HOSTNAME_IP/rest-api/campaign/%campaign_id%/
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span><span class="p">:</span><span class="n">password</span> <span class="o">--</span><span class="n">dump</span><span class="o">-</span><span class="n">header</span> <span class="o">-</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="o">-</span><span class="n">X</span> <span class="n">DELETE</span>  <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">campaign</span><span class="o">/%</span><span class="n">campaign_id</span><span class="o">%/</span>
 </pre></div>
 </div>
 <p>Response:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="s2">&quot;campaign deleted&quot;</span>
 <span class="p">}</span>
 </pre></div>
@@ -199,9 +210,6 @@ Content-Language: en-us
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -223,7 +231,7 @@ Content-Language: en-us
         <li class="right" >
           <a href="branching_template_serializers.html" title="BranchingTemplateSerializer"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.1.8 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.2.4 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../api-reference.html" >API Reference</a> &raquo;</li> 
       </ul>
     </div>

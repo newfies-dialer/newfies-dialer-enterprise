@@ -5,8 +5,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Freeswitch Trunk configuration &mdash; Newfies-Dialer 3.1.8 documentation</title>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-325034-18']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <title>Freeswitch Trunk configuration &mdash; Newfies-Dialer 3.2.4 documentation</title>
     
     <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +25,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '3.1.8',
+        VERSION:     '3.2.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +34,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Newfies-Dialer 3.1.8 documentation" href="../index.html" />
+    <link rel="top" title="Newfies-Dialer 3.2.4 documentation" href="../index.html" />
     <link rel="up" title="Admin Guide" href="../admin-guide.html" />
     <link rel="next" title="Site Configuration" href="site-config.html" />
     <link rel="prev" title="Configuration" href="configuration.html" /> 
@@ -44,7 +55,7 @@
         <li class="right" >
           <a href="configuration.html" title="Configuration"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.1.8 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.2.4 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../admin-guide.html" accesskey="U">Admin Guide</a> &raquo;</li> 
       </ul>
     </div>  
@@ -71,7 +82,7 @@
 <p>These settings are suitable for carriers where a username and secret is required. If your carrier authenticates via IP address and/or prefix, then read on.</p>
 <div class="section" id="username-secret-authentication">
 <h2><a class="toc-backref" href="#id1">Username / Secret Authentication</a><a class="headerlink" href="#username-secret-authentication" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre>&lt;include&gt;
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;include&gt;
 &lt;gateway name=&quot;ip address or hostname of carrier&quot;&gt;
 &lt;!--/// account username *required* ///--&gt;
 &lt;param name=&quot;username&quot; value=&quot;your username provided by carrier&quot;/&gt;
@@ -111,11 +122,11 @@
 <p>Finally we need to load the new configuration, and check the trunk is registered. The Freeswitch console is accessed by typing &#8220;fs_cli&#8221; at the command prompt. The logging level can be increased or decreased from level 0 to level 7. to switch off logging, type /log 0 at the Freeswitch console, followed by enter. For the greatest verbosity, type /log 7 followed by enter.</p>
 <p>Type &#8220;fs_cli&#8221; followed by enter.</p>
 <p>You should now see the Freeswitch CLI, so now reload the Freeswitch configuration with the following command: (tip; Tab auto-completes)</p>
-<div class="highlight-python"><div class="highlight"><pre>sofia profile external restart reloadxml
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sofia</span> <span class="n">profile</span> <span class="n">external</span> <span class="n">restart</span> <span class="n">reloadxml</span>
 </pre></div>
 </div>
 <p>When complete, check the trunk has registered with the following command.</p>
-<div class="highlight-python"><div class="highlight"><pre>sofia status
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sofia</span> <span class="n">status</span>
 </pre></div>
 </div>
 <p>Against the name of the trunk you configured in the XML file, you should see REGED (registered) at the end of the line. Take a note of the trunk name, we are going to need it for telling Newfies-Dialer that it can use this trunk.</p>
@@ -125,16 +136,16 @@
 <div class="section" id="carrier-ip-authentication">
 <h2><a class="toc-backref" href="#id2">Carrier IP Authentication</a><a class="headerlink" href="#carrier-ip-authentication" title="Permalink to this headline">¶</a></h2>
 <p>Sometimes, your carrier will authenticate using your IP address only, in this case the configuration is usually as follows.</p>
-<div class="highlight-python"><div class="highlight"><pre>&lt;include&gt;
-   &lt;gateway name=&quot;MyProvider&quot;&gt;
-     &lt;param name=&quot;username&quot; value=&quot;&quot;/&gt;
-     &lt;param name=&quot;password&quot; value=&quot;&quot;/&gt;
-     &lt;param name=&quot;proxy&quot; value=&quot;1.2.3.4&quot;/&gt;
-     &lt;param name=&quot;caller-id-in-from&quot; value=&quot;true&quot;/&gt;
-     &lt;param name=&quot;context&quot; value=&quot;public&quot;/&gt;
-     &lt;param name=&quot;register&quot; value=&quot;false&quot;/&gt;
-   &lt;/gateway&gt;
-&lt;/include&gt;
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">include</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="n">gateway</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;MyProvider&quot;</span><span class="o">&gt;</span>
+     <span class="o">&lt;</span><span class="n">param</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;username&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="o">/&gt;</span>
+     <span class="o">&lt;</span><span class="n">param</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;password&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="o">/&gt;</span>
+     <span class="o">&lt;</span><span class="n">param</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;proxy&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;1.2.3.4&quot;</span><span class="o">/&gt;</span>
+     <span class="o">&lt;</span><span class="n">param</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;caller-id-in-from&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="o">/&gt;</span>
+     <span class="o">&lt;</span><span class="n">param</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;context&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;public&quot;</span><span class="o">/&gt;</span>
+     <span class="o">&lt;</span><span class="n">param</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;register&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;false&quot;</span><span class="o">/&gt;</span>
+   <span class="o">&lt;/</span><span class="n">gateway</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">include</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>Replace the gateway name and proxy values to suit, and follow the steps above to restart the external profile.</p>
@@ -177,9 +188,6 @@ admin,  add a new dialer gateway, e.g. sofia/gateway/myprovider/ (The final / is
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -201,7 +209,7 @@ admin,  add a new dialer gateway, e.g. sofia/gateway/myprovider/ (The final / is
         <li class="right" >
           <a href="configuration.html" title="Configuration"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.1.8 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.2.4 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../admin-guide.html" >Admin Guide</a> &raquo;</li> 
       </ul>
     </div>

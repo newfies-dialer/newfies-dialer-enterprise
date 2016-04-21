@@ -5,8 +5,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>TTS Configuration &mdash; Newfies-Dialer 3.1.8 documentation</title>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-325034-18']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <title>TTS Configuration &mdash; Newfies-Dialer 3.2.4 documentation</title>
     
     <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +25,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '3.1.8',
+        VERSION:     '3.2.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +34,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Newfies-Dialer 3.1.8 documentation" href="../index.html" />
+    <link rel="top" title="Newfies-Dialer 3.2.4 documentation" href="../index.html" />
     <link rel="up" title="Admin Guide" href="../admin-guide.html" />
     <link rel="next" title="Admin Panel" href="admin-panel.html" />
     <link rel="prev" title="Add User" href="add-user.html" /> 
@@ -44,7 +55,7 @@
         <li class="right" >
           <a href="add-user.html" title="Add User"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.1.8 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.2.4 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../admin-guide.html" accesskey="U">Admin Guide</a> &raquo;</li> 
       </ul>
     </div>  
@@ -79,46 +90,46 @@ Once you signed up you will receive a login, an application login and an applica
 <li>On the Web interface</li>
 </ol>
 <p>Edit the file /usr/share/newfies-dialer/newfies_dialer/settings_local.py and find:</p>
-<div class="highlight-python"><div class="highlight"><pre>#TEXT-TO-SPEECH
-#==============
-TTS_ENGINE = &#39;FLITE&#39;  # FLITE, CEPSTRAL, ACAPELA
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#TEXT-TO-SPEECH</span>
+<span class="c1">#==============</span>
+<span class="n">TTS_ENGINE</span> <span class="o">=</span> <span class="s1">&#39;FLITE&#39;</span>  <span class="c1"># FLITE, CEPSTRAL, ACAPELA</span>
 
-ACCOUNT_LOGIN = &#39;EVAL_XXXX&#39;
-APPLICATION_LOGIN = &#39;EVAL_XXXXXXX&#39;
-APPLICATION_PASSWORD = &#39;XXXXXXXX&#39;
+<span class="n">ACCOUNT_LOGIN</span> <span class="o">=</span> <span class="s1">&#39;EVAL_XXXX&#39;</span>
+<span class="n">APPLICATION_LOGIN</span> <span class="o">=</span> <span class="s1">&#39;EVAL_XXXXXXX&#39;</span>
+<span class="n">APPLICATION_PASSWORD</span> <span class="o">=</span> <span class="s1">&#39;XXXXXXXX&#39;</span>
 
-SERVICE_URL = &#39;http://vaas.acapela-group.com/Services/Synthesizer&#39;
-QUALITY = &#39;22k&#39;  # 22k, 8k, 8ka, 8kmu
-ACAPELA_GENDER = &#39;W&#39;
-ACAPELA_INTONATION = &#39;NORMAL&#39;
+<span class="n">SERVICE_URL</span> <span class="o">=</span> <span class="s1">&#39;http://vaas.acapela-group.com/Services/Synthesizer&#39;</span>
+<span class="n">QUALITY</span> <span class="o">=</span> <span class="s1">&#39;22k&#39;</span>  <span class="c1"># 22k, 8k, 8ka, 8kmu</span>
+<span class="n">ACAPELA_GENDER</span> <span class="o">=</span> <span class="s1">&#39;W&#39;</span>
+<span class="n">ACAPELA_INTONATION</span> <span class="o">=</span> <span class="s1">&#39;NORMAL&#39;</span>
 
-You will have to change the value of the settings : TTS_ENGINE, ACCOUNT_LOGIN, APPLICATION_LOGIN and APPLICATION_PASSWORD.
+<span class="n">You</span> <span class="n">will</span> <span class="n">have</span> <span class="n">to</span> <span class="n">change</span> <span class="n">the</span> <span class="n">value</span> <span class="n">of</span> <span class="n">the</span> <span class="n">settings</span> <span class="p">:</span> <span class="n">TTS_ENGINE</span><span class="p">,</span> <span class="n">ACCOUNT_LOGIN</span><span class="p">,</span> <span class="n">APPLICATION_LOGIN</span> <span class="ow">and</span> <span class="n">APPLICATION_PASSWORD</span><span class="o">.</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
 <li>On the IVR application</li>
 </ol>
 <p>Create a new file /usr/share/newfies-lua/config/acapela_config.lua and add the following:</p>
-<div class="highlight-python"><div class="highlight"><pre>TTS_ENGINE = &#39;acapela&#39;
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">TTS_ENGINE</span> <span class="o">=</span> <span class="s1">&#39;acapela&#39;</span>
 
-ACCOUNT_LOGIN = &#39;EVAL_VAAS&#39;
-APPLICATION_LOGIN = &#39;EVAL_XXXXXX&#39;
-APPLICATION_PASSWORD = &#39;XXXXXX&#39;
+<span class="n">ACCOUNT_LOGIN</span> <span class="o">=</span> <span class="s1">&#39;EVAL_VAAS&#39;</span>
+<span class="n">APPLICATION_LOGIN</span> <span class="o">=</span> <span class="s1">&#39;EVAL_XXXXXX&#39;</span>
+<span class="n">APPLICATION_PASSWORD</span> <span class="o">=</span> <span class="s1">&#39;XXXXXX&#39;</span>
 
-SERVICE_URL = &#39;http://vaas.acapela-group.com/Services/Synthesizer&#39;
-QUALITY = &#39;22k&#39;  -- 22k, 8k, 8ka, 8kmu
-ACAPELA_GENDER = &#39;M&#39;
-ACAPELA_INTONATION = &#39;NORMAL&#39;
-ACAPELA_LANG = &#39;EN&#39;
+<span class="n">SERVICE_URL</span> <span class="o">=</span> <span class="s1">&#39;http://vaas.acapela-group.com/Services/Synthesizer&#39;</span>
+<span class="n">QUALITY</span> <span class="o">=</span> <span class="s1">&#39;22k&#39;</span>  <span class="o">--</span> <span class="mi">22</span><span class="n">k</span><span class="p">,</span> <span class="mi">8</span><span class="n">k</span><span class="p">,</span> <span class="mi">8</span><span class="n">ka</span><span class="p">,</span> <span class="mi">8</span><span class="n">kmu</span>
+<span class="n">ACAPELA_GENDER</span> <span class="o">=</span> <span class="s1">&#39;M&#39;</span>
+<span class="n">ACAPELA_INTONATION</span> <span class="o">=</span> <span class="s1">&#39;NORMAL&#39;</span>
+<span class="n">ACAPELA_LANG</span> <span class="o">=</span> <span class="s1">&#39;EN&#39;</span>
 
 
-Change the value of the settings : ACCOUNT_LOGIN, APPLICATION_LOGIN, APPLICATION_PASSWORD and optionally, ACAPELA_LANG.
+<span class="n">Change</span> <span class="n">the</span> <span class="n">value</span> <span class="n">of</span> <span class="n">the</span> <span class="n">settings</span> <span class="p">:</span> <span class="n">ACCOUNT_LOGIN</span><span class="p">,</span> <span class="n">APPLICATION_LOGIN</span><span class="p">,</span> <span class="n">APPLICATION_PASSWORD</span> <span class="ow">and</span> <span class="n">optionally</span><span class="p">,</span> <span class="n">ACAPELA_LANG</span><span class="o">.</span>
 </pre></div>
 </div>
 <p>Finally restart the web UI::</p>
-<div class="highlight-python"><div class="highlight"><pre>/etc/init.d/supervisor stop
-and
-/etc/init.d/supervisor start
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">supervisor</span> <span class="n">stop</span>
+<span class="ow">and</span>
+<span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">supervisor</span> <span class="n">start</span>
 </pre></div>
 </div>
 </div>
@@ -147,9 +158,6 @@ and
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -171,7 +179,7 @@ and
         <li class="right" >
           <a href="add-user.html" title="Add User"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.1.8 documentation</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.2.4 documentation</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../admin-guide.html" >Admin Guide</a> &raquo;</li> 
       </ul>
     </div>
