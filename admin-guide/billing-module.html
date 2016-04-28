@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-325034-18']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <title>SMS &amp; Call Billing Module &mdash; Newfies-Dialer 3.2.4 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.2.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 3.2.4 documentation" href="../index.html" />
+    <link rel="up" title="Admin Guide" href="../admin-guide.html" />
+    <link rel="next" title="Dialer Settings" href="dialer-settings.html" />
+    <link rel="prev" title="SMS Configuration" href="SMS-config.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="dialer-settings.html" title="Dialer Settings"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="SMS-config.html" title="SMS Configuration"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.2.4 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../admin-guide.html" accesskey="U">Admin Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+
+    <div class="section" id="sms-call-billing-module">
+<span id="id1"></span><h1>SMS &amp; Call Billing Module<a class="headerlink" href="#sms-call-billing-module" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#simple-sms-call-billing" id="id2">Simple SMS &amp; Call Billing</a><ul>
+<li><a class="reference internal" href="#sms-billing" id="id3">SMS Billing</a></li>
+<li><a class="reference internal" href="#call-billing" id="id4">Call Billing</a></li>
+<li><a class="reference internal" href="#negative-balance" id="id5">Negative Balance</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#global-settings" id="id6">Global settings</a></li>
+<li><a class="reference internal" href="#payments" id="id7">Payments</a></li>
+<li><a class="reference internal" href="#braintree" id="id8">Braintree</a><ul>
+<li><a class="reference internal" href="#braintree-account" id="id9">Braintree Account</a></li>
+<li><a class="reference internal" href="#domain-name" id="id10">Domain name</a></li>
+<li><a class="reference internal" href="#ssl-certificate" id="id11">SSL Certificate</a></li>
+<li><a class="reference internal" href="#braintree-settings" id="id12">Braintree Settings</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#manual-direct-payment" id="id13">Manual/Direct Payment</a></li>
+</ul>
+</div>
+<p>Newfies-Dialer is feature rich Auto Dialer software, since day one it has been Multi-tenant and to make it fully complete solution for business, we recently added support for SMS &amp; Call billing, as well as Braintree Payment integration Braintree is a division of Paypal. These features are vital to build a SaaS platform and resell Voice Broadcasting services to your customers.</p>
+<p>In this section we will go into detail about how the Billing module works and describe the Braintree payment module that allows your customers to recharge their account in few clicks.</p>
+<div class="section" id="simple-sms-call-billing">
+<h2><a class="toc-backref" href="#id2">Simple SMS &amp; Call Billing</a><a class="headerlink" href="#simple-sms-call-billing" title="Permalink to this headline">¶</a></h2>
+<p>Newfies-Dialer offer a simple and powerful approach for billing, you can easily define a rate for both SMS and Calls.</p>
+<p>It follows simple rules, we define a Call rate per minute and a SMS rate. If you don&#8217;t want to charge your customer for calls or SMS, for instance if Newfies-Dialer is being used inside an internal organization, then you can set these values to 0 and no charge will be applied.</p>
+<p>SMS &amp; Call Rates can be configured per user via the admin UI.</p>
+<p>Go to the User listing:</p>
+<a class="reference internal image-reference" href="../_images/admin-edit-customers.png"><img alt="../_images/admin-edit-customers.png" src="../_images/admin-edit-customers.png" style="width: 800px;" /></a>
+<p>Edit the user and set the desired value for Call/SMS Rates:</p>
+<a class="reference internal image-reference" href="../_images/admin-user-billing-settings.png"><img alt="../_images/admin-user-billing-settings.png" src="../_images/admin-user-billing-settings.png" style="width: 800px;" /></a>
+<p>Customer will see these values on the customer UI by clicking on his name in the menu:</p>
+<a class="reference internal image-reference" href="../_images/customer_history_direct_payment.png"><img alt="../_images/customer_history_direct_payment.png" src="../_images/customer_history_direct_payment.png" style="width: 800px;" /></a>
+<p>Let&#8217;s see now, how SMS and Call Billing works.</p>
+<div class="section" id="sms-billing">
+<h3><a class="toc-backref" href="#id3">SMS Billing</a><a class="headerlink" href="#sms-billing" title="Permalink to this headline">¶</a></h3>
+<p>For each SMS Sent successfully a charge will be applied</p>
+<p>Example:</p>
+<blockquote>
+<div><ul class="simple">
+<li>SMS rate: $ 0.02</li>
+<li>Sent 1000 SMS: Total cost $20</li>
+</ul>
+</div></blockquote>
+<p>Your customers use Newfies-Dialer normally, but if the customer balance runs low on credit, then SMS will not be sent and the campaign will stop running until credit is available.</p>
+<p>SMS reporting will display the cost of SMS:</p>
+<a class="reference internal image-reference" href="../_images/sms-billing-report.png"><img alt="../_images/sms-billing-report.png" src="../_images/sms-billing-report.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="call-billing">
+<h3><a class="toc-backref" href="#id4">Call Billing</a><a class="headerlink" href="#call-billing" title="Permalink to this headline">¶</a></h3>
+<p>VoIP Billing supports a rate per minute and billing increment. All calls are charged at the same rate. If the call is connected and the billing duration is more than 0, the call will be charged using the defined call rate &amp; increment for the user.</p>
+<p>Example 1 (No Billing increment):</p>
+<blockquote>
+<div><ul class="simple">
+<li>Call rate: $ 0.04 - increment: 0</li>
+<li>1000 Calls of 30 seconds: Cost per call $0.02</li>
+<li>Total Billed Duration 500 Minutes -&gt; Total cost $20</li>
+</ul>
+</div></blockquote>
+<p>Example 2 (with Billing increment):</p>
+<blockquote>
+<div><ul class="simple">
+<li>Call rate: $ 0.04 - increment: 6</li>
+<li>1000 Calls of 32 seconds: Cost per call $0.024</li>
+<li>Total Billed Duration with increment = 600 Minutes -&gt; Total cost $24</li>
+</ul>
+</div></blockquote>
+<p>Your customers use Newfies-Dialer normally, but if the customer balance runs below the minimum credit to call, then calls will not be sent and the campaign will stop running until credit is applied.</p>
+<p>Call reporting will display the cost of call:</p>
+<a class="reference internal image-reference" href="../_images/call-billing-report.png"><img alt="../_images/call-billing-report.png" src="../_images/call-billing-report.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="negative-balance">
+<h3><a class="toc-backref" href="#id5">Negative Balance</a><a class="headerlink" href="#negative-balance" title="Permalink to this headline">¶</a></h3>
+<p>User have a credit balance which can be recharged via the online payment system or via direct payment performed by the admin.</p>
+<p>As Newfies-Dialer is a Voice Broadcasting system, this means hundreds or thousands of calls can be running at the same time. There is a risk that a balance of a user becomes negative. In order to reduce the risk Newfies-Dialer can be configured to require a minimum balance before making a call, and to require a certain amount of credit before a given campaign is allowed to start dialling.</p>
+<p>These settings can be configured in Newfies-dialer config file <cite>settings_local.py</cite>, the following settings can be adjusted to suit your preferences which may also depend on the trust &amp; relationship you have with your customers:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Negative Balance helpers</span>
+<span class="c1"># ~~~~~~~~~~~~~~~~~~~~~~~~</span>
+<span class="c1"># 3 settings are provided to avoid reaching negative balance, they can be tweaked</span>
+<span class="c1"># to one preferences, depending of the type of business and customer relationship</span>
+<span class="c1"># BILLING_MIN_CALL_CREDIT_DIAL</span>
+<span class="c1"># BILLING_MIN_CREDIT_DIAL settings</span>
+<span class="c1"># BILLING_MIN_CREDIT_SMS</span>
+
+<span class="c1"># Define credit needed per call in order to be authorized to dial out</span>
+<span class="c1"># if you outbound at 100 calls per minute, you need 10$ on your account</span>
+<span class="c1"># a good value for BILLING_MIN_CREDIT_DIAL is a bit above the cost per call you would expect</span>
+<span class="n">BILLING_MIN_CALL_CREDIT_DIAL</span> <span class="o">=</span> <span class="mf">0.05</span>
+
+<span class="c1"># Define the minimum amount of credit to outbound calls</span>
+<span class="n">BILLING_MIN_CREDIT_DIAL</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Define the minimum amount of credit to send SMS</span>
+<span class="n">BILLING_MIN_CREDIT_SMS</span> <span class="o">=</span> <span class="mf">0.02</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="global-settings">
+<h2><a class="toc-backref" href="#id6">Global settings</a><a class="headerlink" href="#global-settings" title="Permalink to this headline">¶</a></h2>
+<p>Newfies-dialer comes with other settings to customize the billing module.</p>
+<p>Here is the list, also see the section on <cite>Negative Balance</cite>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># BILLING</span>
+<span class="c1"># =======</span>
+
+<span class="c1"># Feature switch to enable or disable payment in Newfies Dialer UI</span>
+<span class="n">BILLING_SWITCH</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1"># Currency displayed $ / €</span>
+<span class="n">BILLING_CURRENCY_DISPLAY</span> <span class="o">=</span> <span class="s1">&#39;$&#39;</span>
+
+<span class="c1"># Define the default Billing increment per Customer, this value is specified per user</span>
+<span class="n">BILLING_INCREMENT</span> <span class="o">=</span> <span class="mi">6</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>BILLING_SWITCH is useful if you don&#8217;t need billing and want to hide all the billing features for your users/customers.</li>
+<li>BILLING_CURRENCY_DISPLAY needs to display a difference currency, set the symbol for your currency.</li>
+<li>BILLING_INCREMENT: this is the default billing increment but the value set through the admin UI will take priority.</li>
+</ul>
+</div>
+<div class="section" id="payments">
+<h2><a class="toc-backref" href="#id7">Payments</a><a class="headerlink" href="#payments" title="Permalink to this headline">¶</a></h2>
+<p>Payments allow your customer to recharge their account. In order to provide easy recharge we integrated with Braintree. Braintree offers simple and robust way to accept payment inside Newfies-Dialer and allow customer to pay directly with their credit card or via Paypal.</p>
+<p>Here some of the payment settings that can be configured:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># PAYMENT</span>
+<span class="c1"># =======</span>
+
+<span class="c1"># Authorized amount for refill</span>
+<span class="n">AMOUNT_REFILL</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;25&#39;</span><span class="p">,</span> <span class="s1">&#39;25.00&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;50&#39;</span><span class="p">,</span> <span class="s1">&#39;50.00&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;100&#39;</span><span class="p">,</span> <span class="s1">&#39;100.00&#39;</span><span class="p">),</span>
+                 <span class="p">(</span><span class="s1">&#39;250&#39;</span><span class="p">,</span> <span class="s1">&#39;250.00&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;500&#39;</span><span class="p">,</span> <span class="s1">&#39;500.00&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;1000&#39;</span><span class="p">,</span> <span class="s1">&#39;1000.00&#39;</span><span class="p">))</span>
+
+<span class="n">PAYMENT_DESCRIPTION</span> <span class="o">=</span> <span class="s1">&#39;Voice Broadcasting Service&#39;</span>
+</pre></div>
+</div>
+<p>Once Newfies-Dialer is properly configured, your customer can simply click on add credit.</p>
+<img alt="../_images/newfies-payment-add-credit.png" src="../_images/newfies-payment-add-credit.png" />
+<p>Select the amount to refill your account with and click on <cite>Add Credit</cite>, this will takes you to the Credit Card form:</p>
+<img alt="../_images/newfies-payment-credit-card-form.png" src="../_images/newfies-payment-credit-card-form.png" />
+<p>The credit card will immediately be charged and the account refilled.</p>
+<p>All payments are listed:</p>
+<a class="reference internal image-reference" href="../_images/customer_history_direct_payment.png"><img alt="../_images/customer_history_direct_payment.png" src="../_images/customer_history_direct_payment.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="braintree">
+<h2><a class="toc-backref" href="#id8">Braintree</a><a class="headerlink" href="#braintree" title="Permalink to this headline">¶</a></h2>
+<p>There are a number of different requirements to use the Braintree payment Gateway:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Braintree Account</li>
+<li>Domain Name</li>
+<li>SSL Certificate</li>
+</ul>
+</div></blockquote>
+<div class="section" id="braintree-account">
+<h3><a class="toc-backref" href="#id9">Braintree Account</a><a class="headerlink" href="#braintree-account" title="Permalink to this headline">¶</a></h3>
+<p>You will need a Braintree account if you want to accept credit card payments on Newfies-Dialer,
+signup at <a class="reference external" href="https://apply.braintreegateway.com/signup/us">https://apply.braintreegateway.com/signup/us</a></p>
+<p>Note that it might take few days for your application to be accepted.</p>
+<p>One of the great avantages of Braintree is that credit cards can be accepted without being fully PCI compliant (<a class="reference external" href="https://articles.braintreepayments.com/reference/security/pci-compliance">https://articles.braintreepayments.com/reference/security/pci-compliance</a>).
+Braintree securely stores and processes the credit card data, you will only need to complete an annual Self-Assessment Questionnaire (SAQ) in order to be PCI compliant.</p>
+</div>
+<div class="section" id="domain-name">
+<h3><a class="toc-backref" href="#id10">Domain name</a><a class="headerlink" href="#domain-name" title="Permalink to this headline">¶</a></h3>
+<p>You will need to register a Domain name, you can use a Registrar company like:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Godaddy: <a class="reference external" href="https://www.godaddy.com/">https://www.godaddy.com/</a></li>
+<li>Gandi: <a class="reference external" href="https://www.gandi.net/">https://www.gandi.net/</a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="ssl-certificate">
+<h3><a class="toc-backref" href="#id11">SSL Certificate</a><a class="headerlink" href="#ssl-certificate" title="Permalink to this headline">¶</a></h3>
+<p>SSL Certificates will help you to provide secure &amp; encrypted communications between your Newfies-Dialer website and your customers. SSL Certificates will be installed on Newfies-dialer server, this will ensure the end-users can submit sensitive information over the internet like credit card details and passwords securely.</p>
+<p>Let’s Encrypt (<a class="reference external" href="https://letsencrypt.org/">https://letsencrypt.org/</a>) is a new Certificate Authority, it&#8217;s free and updates can be automated.</p>
+</div>
+<div class="section" id="braintree-settings">
+<h3><a class="toc-backref" href="#id12">Braintree Settings</a><a class="headerlink" href="#braintree-settings" title="Permalink to this headline">¶</a></h3>
+<p>Some settings are used to configure your Braintree account. Those can be configured via the Newfies-dialer config file <cite>settings_local.py</cite>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># BRAINTREE</span>
+<span class="c1"># =========</span>
+
+<span class="n">BRAINTREE_SANDBOX</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">BRAINTREE_MERCHANT_ID</span> <span class="o">=</span> <span class="s1">&#39;XXXXXXXXXXXXXXXX&#39;</span>
+<span class="n">BRAINTREE_PUBLIC_KEY</span> <span class="o">=</span> <span class="s1">&#39;YYYYYYYYYYYYYYYY&#39;</span>
+<span class="n">BRAINTREE_PRIVATE_KEY</span> <span class="o">=</span> <span class="s1">&#39;this_is_your_private_key&#39;</span>
+</pre></div>
+</div>
+<p>There is a setting called <cite>braintree_id</cite> in the admin:</p>
+<img alt="../_images/admin-user-billing-settings.png" src="../_images/admin-user-billing-settings.png" />
+<p>This will be automatically populated by braintree, if for some reason you need the Braintree-ID used in Braintree for trouble shooting, that&#8217;s the one you need.</p>
+</div>
+</div>
+<div class="section" id="manual-direct-payment">
+<h2><a class="toc-backref" href="#id13">Manual/Direct Payment</a><a class="headerlink" href="#manual-direct-payment" title="Permalink to this headline">¶</a></h2>
+<p>Some might need to accept payments through different channels, such as Bank Transfer or other payments system specific to your country. For this we introduced a way for the admin to add <cite>Manual/Direct Payment</cite>, to refill the user account and leave an audit trail in the platform so your customers can see those refills too.</p>
+<p>The admin can do this easily via the admin backend:</p>
+<a class="reference internal image-reference" href="../_images/admin_direct_payment.png"><img alt="../_images/admin_direct_payment.png" src="../_images/admin_direct_payment.png" style="width: 800px;" /></a>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><p class="logo"><a href="../index.html">
+  <img class="logo" src="https://github.com/newfies-dialer/newfies-dialer/raw/develop/newfies/resources/images/newfies-dialer-180.png" alt="Logo"/>
+</a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="SMS-config.html"
+                        title="previous chapter">SMS Configuration</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="dialer-settings.html"
+                        title="next chapter">Dialer Settings</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="dialer-settings.html" title="Dialer Settings"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="SMS-config.html" title="SMS Configuration"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.2.4 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../admin-guide.html" >Admin Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011-2016, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
+    </div>
+  </body>
+</html>

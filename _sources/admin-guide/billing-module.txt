@@ -1,0 +1,251 @@
+.. _sms-call-billing-module:
+
+=========================
+SMS & Call Billing Module
+=========================
+
+.. contents::
+    :local:
+    :depth: 2
+
+
+Newfies-Dialer is feature rich Auto Dialer software, since day one it has been Multi-tenant and to make it fully complete solution for business, we recently added support for SMS & Call billing, as well as Braintree Payment integration Braintree is a division of Paypal. These features are vital to build a SaaS platform and resell Voice Broadcasting services to your customers.
+
+In this section we will go into detail about how the Billing module works and describe the Braintree payment module that allows your customers to recharge their account in few clicks.
+
+
+Simple SMS & Call Billing
+-------------------------
+
+Newfies-Dialer offer a simple and powerful approach for billing, you can easily define a rate for both SMS and Calls.
+
+It follows simple rules, we define a Call rate per minute and a SMS rate. If you don't want to charge your customer for calls or SMS, for instance if Newfies-Dialer is being used inside an internal organization, then you can set these values to 0 and no charge will be applied.
+
+SMS & Call Rates can be configured per user via the admin UI.
+
+Go to the User listing:
+
+.. image:: ../_static/images/billing/admin-edit-customers.png
+    :width: 800
+
+
+Edit the user and set the desired value for Call/SMS Rates:
+
+.. image:: ../_static/images/billing/admin-user-billing-settings.png
+    :width: 800
+
+Customer will see these values on the customer UI by clicking on his name in the menu:
+
+.. image:: ../_static/images/billing/customer_history_direct_payment.png
+    :width: 800
+
+
+Let's see now, how SMS and Call Billing works.
+
+
+SMS Billing
+~~~~~~~~~~~
+
+For each SMS Sent successfully a charge will be applied
+
+Example:
+
+    * SMS rate: $ 0.02
+    * Sent 1000 SMS: Total cost $20
+
+
+Your customers use Newfies-Dialer normally, but if the customer balance runs low on credit, then SMS will not be sent and the campaign will stop running until credit is available.
+
+SMS reporting will display the cost of SMS:
+
+.. image:: ../_static/images/billing/sms-billing-report.png
+    :width: 800
+
+
+Call Billing
+~~~~~~~~~~~~
+
+VoIP Billing supports a rate per minute and billing increment. All calls are charged at the same rate. If the call is connected and the billing duration is more than 0, the call will be charged using the defined call rate & increment for the user.
+
+
+Example 1 (No Billing increment):
+
+    * Call rate: $ 0.04 - increment: 0
+    * 1000 Calls of 30 seconds: Cost per call $0.02
+    * Total Billed Duration 500 Minutes -> Total cost $20
+
+
+Example 2 (with Billing increment):
+
+    * Call rate: $ 0.04 - increment: 6
+    * 1000 Calls of 32 seconds: Cost per call $0.024
+    * Total Billed Duration with increment = 600 Minutes -> Total cost $24
+
+Your customers use Newfies-Dialer normally, but if the customer balance runs below the minimum credit to call, then calls will not be sent and the campaign will stop running until credit is applied.
+
+Call reporting will display the cost of call:
+
+.. image:: ../_static/images/billing/call-billing-report.png
+    :width: 800
+
+
+Negative Balance
+~~~~~~~~~~~~~~~~
+
+User have a credit balance which can be recharged via the online payment system or via direct payment performed by the admin.
+
+As Newfies-Dialer is a Voice Broadcasting system, this means hundreds or thousands of calls can be running at the same time. There is a risk that a balance of a user becomes negative. In order to reduce the risk Newfies-Dialer can be configured to require a minimum balance before making a call, and to require a certain amount of credit before a given campaign is allowed to start dialling.
+
+These settings can be configured in Newfies-dialer config file `settings_local.py`, the following settings can be adjusted to suit your preferences which may also depend on the trust & relationship you have with your customers::
+
+    # Negative Balance helpers
+    # ~~~~~~~~~~~~~~~~~~~~~~~~
+    # 3 settings are provided to avoid reaching negative balance, they can be tweaked
+    # to one preferences, depending of the type of business and customer relationship
+    # BILLING_MIN_CALL_CREDIT_DIAL
+    # BILLING_MIN_CREDIT_DIAL settings
+    # BILLING_MIN_CREDIT_SMS
+
+    # Define credit needed per call in order to be authorized to dial out
+    # if you outbound at 100 calls per minute, you need 10$ on your account
+    # a good value for BILLING_MIN_CREDIT_DIAL is a bit above the cost per call you would expect
+    BILLING_MIN_CALL_CREDIT_DIAL = 0.05
+
+    # Define the minimum amount of credit to outbound calls
+    BILLING_MIN_CREDIT_DIAL = 0
+
+    # Define the minimum amount of credit to send SMS
+    BILLING_MIN_CREDIT_SMS = 0.02
+
+
+Global settings
+---------------
+
+Newfies-dialer comes with other settings to customize the billing module.
+
+Here is the list, also see the section on `Negative Balance`::
+
+    # BILLING
+    # =======
+
+    # Feature switch to enable or disable payment in Newfies Dialer UI
+    BILLING_SWITCH = True
+
+    # Currency displayed $ / €
+    BILLING_CURRENCY_DISPLAY = '$'
+
+    # Define the default Billing increment per Customer, this value is specified per user
+    BILLING_INCREMENT = 6
+
+
+* BILLING_SWITCH is useful if you don't need billing and want to hide all the billing features for your users/customers.
+* BILLING_CURRENCY_DISPLAY needs to display a difference currency, set the symbol for your currency.
+* BILLING_INCREMENT: this is the default billing increment but the value set through the admin UI will take priority.
+
+
+Payments
+--------
+
+Payments allow your customer to recharge their account. In order to provide easy recharge we integrated with Braintree. Braintree offers simple and robust way to accept payment inside Newfies-Dialer and allow customer to pay directly with their credit card or via Paypal.
+
+
+Here some of the payment settings that can be configured::
+
+    # PAYMENT
+    # =======
+
+    # Authorized amount for refill
+    AMOUNT_REFILL = (('25', '25.00'), ('50', '50.00'), ('100', '100.00'),
+                     ('250', '250.00'), ('500', '500.00'), ('1000', '1000.00'))
+
+    PAYMENT_DESCRIPTION = 'Voice Broadcasting Service'
+
+
+Once Newfies-Dialer is properly configured, your customer can simply click on add credit.
+
+.. image:: ../_static/images/billing/newfies-payment-add-credit.png
+
+
+Select the amount to refill your account with and click on `Add Credit`, this will takes you to the Credit Card form:
+
+.. image:: ../_static/images/billing/newfies-payment-credit-card-form.png
+
+
+The credit card will immediately be charged and the account refilled.
+
+All payments are listed:
+
+.. image:: ../_static/images/billing/customer_history_direct_payment.png
+    :width: 800
+
+
+Braintree
+---------
+
+There are a number of different requirements to use the Braintree payment Gateway:
+
+    * Braintree Account
+    * Domain Name
+    * SSL Certificate
+
+
+Braintree Account
+~~~~~~~~~~~~~~~~~
+You will need a Braintree account if you want to accept credit card payments on Newfies-Dialer,
+signup at https://apply.braintreegateway.com/signup/us
+
+Note that it might take few days for your application to be accepted.
+
+
+One of the great avantages of Braintree is that credit cards can be accepted without being fully PCI compliant (https://articles.braintreepayments.com/reference/security/pci-compliance).
+Braintree securely stores and processes the credit card data, you will only need to complete an annual Self-Assessment Questionnaire (SAQ) in order to be PCI compliant.
+
+
+Domain name
+~~~~~~~~~~~
+
+You will need to register a Domain name, you can use a Registrar company like:
+
+    * Godaddy: https://www.godaddy.com/
+    * Gandi: https://www.gandi.net/
+
+
+SSL Certificate
+~~~~~~~~~~~~~~~
+
+SSL Certificates will help you to provide secure & encrypted communications between your Newfies-Dialer website and your customers. SSL Certificates will be installed on Newfies-dialer server, this will ensure the end-users can submit sensitive information over the internet like credit card details and passwords securely.
+
+Let’s Encrypt (https://letsencrypt.org/) is a new Certificate Authority, it's free and updates can be automated.
+
+
+Braintree Settings
+~~~~~~~~~~~~~~~~~~
+
+Some settings are used to configure your Braintree account. Those can be configured via the Newfies-dialer config file `settings_local.py`::
+
+    # BRAINTREE
+    # =========
+
+    BRAINTREE_SANDBOX = True
+    BRAINTREE_MERCHANT_ID = 'XXXXXXXXXXXXXXXX'
+    BRAINTREE_PUBLIC_KEY = 'YYYYYYYYYYYYYYYY'
+    BRAINTREE_PRIVATE_KEY = 'this_is_your_private_key'
+
+
+There is a setting called `braintree_id` in the admin:
+
+.. image:: ../_static/images/billing/admin-user-billing-settings.png
+
+
+This will be automatically populated by braintree, if for some reason you need the Braintree-ID used in Braintree for trouble shooting, that's the one you need.
+
+
+Manual/Direct Payment
+---------------------
+
+Some might need to accept payments through different channels, such as Bank Transfer or other payments system specific to your country. For this we introduced a way for the admin to add `Manual/Direct Payment`, to refill the user account and leave an audit trail in the platform so your customers can see those refills too.
+
+The admin can do this easily via the admin backend:
+
+.. image:: ../_static/images/billing/admin_direct_payment.png
+    :width: 800
