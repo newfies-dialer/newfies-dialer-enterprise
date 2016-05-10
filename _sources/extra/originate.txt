@@ -1,0 +1,106 @@
+
+.. _custom-originate:
+
+================
+Custom Originate
+================
+
+.. contents::
+    :local:
+    :depth: 1
+
+Some Newfies-Dialer users might want to use Newfies-Dialer to *ONLY* dial out call and take care of the CDRs,
+without the need of using our IVR engine to power an IVR application. For instance if you have an existing FreeSWITCH XML IVR or application, you might want to reuse this callflow directly. This is easily achievable thanks to the high level of flexibility Newfies-Dialer offer.
+
+First let's explain how `Originate`_ command works on `Freeswitch`_ .
+
+.. _`Freeswitch`: http://www.freeswitch.org/
+.. _`Originate`: https://freeswitch.org/confluence/display/FREESWITCH/mod_commands#mod_commands-originate
+
+
+.. _custom-originate-howto:
+
+How to use Originate in FreeSWITCH
+----------------------------------
+
+Originate a new call::
+
+   Usage: originate <call_url> <exten>|&<application_name>(<app_args>) [<dialplan>] [<context>] [<cid_name>] [<cid_num>] [<timeout_sec>]
+
+FreeSWITCH will originate a call to <call_url> as Leg A. If that leg supervises within 60 seconds FS will continue by searching for an extension definition in the specified dialplan for <exten> or else execute the application that follows the & along with its arguments.
+
+
+Arguments::
+
+    * <call_url> URL you are calling. For more info on sofia SIP URL syntax see: FreeSwitch Endpoint Sofia
+    Destination, one of:
+        <exten> Destination number to search in dialplan; note that registered extensions will fail this way, use &bridge(user/xxxx) instead
+        &<application_name>(<app_args>)
+            "&" indicates what follows is an application name, not an exten
+            (<app_args>) is optional (not all applications require parameters, e.g. park)
+            The most commonly used application names include:
+            park, bridge, javascript/lua/perl, playback (remove mod_native_file).
+            Note: Use single quotes to pass arguments with spaces, e.g. '&lua(test.lua arg1 arg2)'
+            Note: There is no space between & and the application name
+    * <dialplan> Defaults to 'XML' if not specified.
+    * <context> Defaults to 'default' if not specified.
+    * <cid_name> CallerID name to send to Leg A.
+    * <cid_num> CallerID number to send to Leg A.
+    * <timeout_sec> Timeout in seconds; default = 60 seconds.
+
+
+Example::
+
+    originate {origination_caller_id_number='123456789',ignore_early_media=true,originate_timeout=45}sofia/gateway/myowngate/0034650780001 &playback(/usr/share/freeswitch/sounds/en/us/callie/voicemail/8000/vm-hello.wav)
+
+
+The above `originate` command will outbound a call and then run the application called `playback`, playback will play the wav file put in argument.
+
+
+.. _custom-originate-dialplan:
+
+How to use originate with dialplan
+----------------------------------
+
+First create a dialplan extension, edit `default.xml` and add the following before the last `enum` section::
+
+    <extension name="54440001">
+        <condition field="destination_number" expression="^54440001$">
+
+            <action application="set" data="call_timeout=60"/>
+            <action application="answer"/>
+            <action application="sleep" data="1000"/>
+            <action application="playback" data="voicemail/vm-goodbye.wav"/>
+            <action application="hangup"/>
+        </condition>
+    </extension>
+
+
+Run command to reload XML::
+
+    fs_cli -x "reloadxml"
+
+
+Call originate command::
+
+    originate {origination_caller_id_number='123456789',ignore_early_media=true,originate_timeout=45}sofia/gateway/myowngate/0034650780001 54440001
+
+
+.. _customize-originate-newfies-dialer:
+
+Custom originate with Newfies-Dialer
+------------------------------------
+
+Newfies-Dialer configuration file have a setting to configure the outbound command::
+
+    ESL_SCRIPT = '&lua(/usr/share/newfies-lua/newfies.lua)'
+
+
+For instance if you are willing to outbound a call with a simple playback, you can configure `ESL_SCRIPT` as follow::
+
+    ESL_SCRIPT = '&playback(/usr/share/freeswitch/sounds/en/us/callie/voicemail/8000/vm-hello.wav)'
+
+
+Want to outbound call and redirect them to an extension, easy::
+
+    ESL_SCRIPT = '54440001'
