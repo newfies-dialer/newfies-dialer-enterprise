@@ -22,6 +22,7 @@ Contents:
     :maxdepth: 1
 
     api-reference
+    extra
 
 
 Indices and tables
