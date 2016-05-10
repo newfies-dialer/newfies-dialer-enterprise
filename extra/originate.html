@@ -82,23 +82,33 @@ without the need of using our IVR engine to power an IVR application. For instan
 </div>
 <p>FreeSWITCH will originate a call to &lt;call_url&gt; as Leg A. If that leg supervises within 60 seconds FS will continue by searching for an extension definition in the specified dialplan for &lt;exten&gt; or else execute the application that follows the &amp; along with its arguments.</p>
 <p>Arguments:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="o">&lt;</span><span class="n">call_url</span><span class="o">&gt;</span> <span class="n">URL</span> <span class="n">you</span> <span class="n">are</span> <span class="n">calling</span><span class="o">.</span> <span class="n">For</span> <span class="n">more</span> <span class="n">info</span> <span class="n">on</span> <span class="n">sofia</span> <span class="n">SIP</span> <span class="n">URL</span> <span class="n">syntax</span> <span class="n">see</span><span class="p">:</span> <span class="n">FreeSwitch</span> <span class="n">Endpoint</span> <span class="n">Sofia</span>
-<span class="n">Destination</span><span class="p">,</span> <span class="n">one</span> <span class="n">of</span><span class="p">:</span>
-    <span class="o">&lt;</span><span class="n">exten</span><span class="o">&gt;</span> <span class="n">Destination</span> <span class="n">number</span> <span class="n">to</span> <span class="n">search</span> <span class="ow">in</span> <span class="n">dialplan</span><span class="p">;</span> <span class="n">note</span> <span class="n">that</span> <span class="n">registered</span> <span class="n">extensions</span> <span class="n">will</span> <span class="n">fail</span> <span class="n">this</span> <span class="n">way</span><span class="p">,</span> <span class="n">use</span> <span class="o">&amp;</span><span class="n">bridge</span><span class="p">(</span><span class="n">user</span><span class="o">/</span><span class="n">xxxx</span><span class="p">)</span> <span class="n">instead</span>
-    <span class="o">&amp;&lt;</span><span class="n">application_name</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&lt;</span><span class="n">app_args</span><span class="o">&gt;</span><span class="p">)</span>
-        <span class="s2">&quot;&amp;&quot;</span> <span class="n">indicates</span> <span class="n">what</span> <span class="n">follows</span> <span class="ow">is</span> <span class="n">an</span> <span class="n">application</span> <span class="n">name</span><span class="p">,</span> <span class="ow">not</span> <span class="n">an</span> <span class="n">exten</span>
-        <span class="p">(</span><span class="o">&lt;</span><span class="n">app_args</span><span class="o">&gt;</span><span class="p">)</span> <span class="ow">is</span> <span class="n">optional</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">all</span> <span class="n">applications</span> <span class="n">require</span> <span class="n">parameters</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="n">park</span><span class="p">)</span>
-        <span class="n">The</span> <span class="n">most</span> <span class="n">commonly</span> <span class="n">used</span> <span class="n">application</span> <span class="n">names</span> <span class="n">include</span><span class="p">:</span>
-        <span class="n">park</span><span class="p">,</span> <span class="n">bridge</span><span class="p">,</span> <span class="n">javascript</span><span class="o">/</span><span class="n">lua</span><span class="o">/</span><span class="n">perl</span><span class="p">,</span> <span class="n">playback</span> <span class="p">(</span><span class="n">remove</span> <span class="n">mod_native_file</span><span class="p">)</span><span class="o">.</span>
-        <span class="n">Note</span><span class="p">:</span> <span class="n">Use</span> <span class="n">single</span> <span class="n">quotes</span> <span class="n">to</span> <span class="k">pass</span> <span class="n">arguments</span> <span class="k">with</span> <span class="n">spaces</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="s1">&#39;&amp;lua(test.lua arg1 arg2)&#39;</span>
-        <span class="n">Note</span><span class="p">:</span> <span class="n">There</span> <span class="ow">is</span> <span class="n">no</span> <span class="n">space</span> <span class="n">between</span> <span class="o">&amp;</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">application</span> <span class="n">name</span>
-<span class="o">*</span> <span class="o">&lt;</span><span class="n">dialplan</span><span class="o">&gt;</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="s1">&#39;XML&#39;</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">specified</span><span class="o">.</span>
-<span class="o">*</span> <span class="o">&lt;</span><span class="n">context</span><span class="o">&gt;</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="s1">&#39;default&#39;</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">specified</span><span class="o">.</span>
-<span class="o">*</span> <span class="o">&lt;</span><span class="n">cid_name</span><span class="o">&gt;</span> <span class="n">CallerID</span> <span class="n">name</span> <span class="n">to</span> <span class="n">send</span> <span class="n">to</span> <span class="n">Leg</span> <span class="n">A</span><span class="o">.</span>
-<span class="o">*</span> <span class="o">&lt;</span><span class="n">cid_num</span><span class="o">&gt;</span> <span class="n">CallerID</span> <span class="n">number</span> <span class="n">to</span> <span class="n">send</span> <span class="n">to</span> <span class="n">Leg</span> <span class="n">A</span><span class="o">.</span>
-<span class="o">*</span> <span class="o">&lt;</span><span class="n">timeout_sec</span><span class="o">&gt;</span> <span class="n">Timeout</span> <span class="ow">in</span> <span class="n">seconds</span><span class="p">;</span> <span class="n">default</span> <span class="o">=</span> <span class="mi">60</span> <span class="n">seconds</span><span class="o">.</span>
-</pre></div>
-</div>
+<ul>
+<li><dl class="first docutils">
+<dt>&lt;call_url&gt; URL you are calling. For more info on sofia SIP URL syntax see: FreeSwitch Endpoint Sofia Destination, one of:</dt>
+<dd><p class="first">&lt;exten&gt; Destination number to search in dialplan; note that registered extensions will fail this way, use &amp;bridge(user/xxxx) instead
+&amp;&lt;application_name&gt;(&lt;app_args&gt;)</p>
+<blockquote class="last">
+<div><p>&#8220;&amp;&#8221; indicates what follows is an application name, not an exten
+(&lt;app_args&gt;) is optional (not all applications require parameters, e.g. park)
+The most commonly used application names include:
+park, bridge, javascript/lua/perl, playback (remove mod_native_file).
+Note: Use single quotes to pass arguments with spaces, e.g. &#8216;&amp;lua(test.lua arg1 arg2)&#8217;
+Note: There is no space between &amp; and the application name</p>
+</div></blockquote>
+</dd>
+</dl>
+</li>
+<li><p class="first">&lt;dialplan&gt; Defaults to &#8216;XML&#8217; if not specified.</p>
+</li>
+<li><p class="first">&lt;context&gt; Defaults to &#8216;default&#8217; if not specified.</p>
+</li>
+<li><p class="first">&lt;cid_name&gt; CallerID name to send to Leg A.</p>
+</li>
+<li><p class="first">&lt;cid_num&gt; CallerID number to send to Leg A.</p>
+</li>
+<li><p class="first">&lt;timeout_sec&gt; Timeout in seconds; default = 60 seconds.</p>
+</li>
+</ul>
 <p>Example:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">originate</span> <span class="p">{</span><span class="n">origination_caller_id_number</span><span class="o">=</span><span class="s1">&#39;123456789&#39;</span><span class="p">,</span><span class="n">ignore_early_media</span><span class="o">=</span><span class="n">true</span><span class="p">,</span><span class="n">originate_timeout</span><span class="o">=</span><span class="mi">45</span><span class="p">}</span><span class="n">sofia</span><span class="o">/</span><span class="n">gateway</span><span class="o">/</span><span class="n">myowngate</span><span class="o">/</span><span class="mi">0034650780001</span> <span class="o">&amp;</span><span class="n">playback</span><span class="p">(</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">freeswitch</span><span class="o">/</span><span class="n">sounds</span><span class="o">/</span><span class="n">en</span><span class="o">/</span><span class="n">us</span><span class="o">/</span><span class="n">callie</span><span class="o">/</span><span class="n">voicemail</span><span class="o">/</span><span class="mi">8000</span><span class="o">/</span><span class="n">vm</span><span class="o">-</span><span class="n">hello</span><span class="o">.</span><span class="n">wav</span><span class="p">)</span>
 </pre></div>
