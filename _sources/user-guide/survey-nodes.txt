@@ -14,7 +14,7 @@ Survey & IVR Configuration
 Create Survey
 -------------
 
-We recommend that you create and prototype the survey using Text to Speech, particularly with more complex surveys, once you are happy with the end result, then you can use the TTS as a script for your voice talent. 
+We recommend that you create and prototype the survey using Text to Speech, particularly with more complex surveys, once you are happy with the end result, then you can use the TTS as a script for your voice talent.
 
 There are more details on uploading audio files further on in this section.
 
@@ -22,7 +22,7 @@ There are more details on uploading audio files further on in this section.
 
 The survey application for Newfies-Dialer allows polls and surveys to be taken over the phone.
 
-Each contact is called, and then played a sound file or Text to Speech (TTS). After the sound file is heard, the user can enter their answer through the phone keypad using keys 0 to 9. 
+Each contact is called, and then played a sound file or Text to Speech (TTS). After the sound file is heard, the user can enter their answer through the phone keypad using keys 0 to 9.
 
 .. _survey_nodes:
 
@@ -314,11 +314,11 @@ Uploading Audio Files
 
 It is recommended that you prototype surveys using Text to Speech before getting your voice talent to record your audio.
 
-Once the audio is recorded it can be uploaded via the interface, and assigned to the nodes in the survey. 
+Once the audio is recorded it can be uploaded via the interface, and assigned to the nodes in the survey.
 
 Select Audio Files from the top menu then click add.
 
-Enter a name to describe the audio, then click chose file, select the file you require from your
+Enter a name to describe the audio, then click choose file, select the file you require from your
 computer, then click submit.
 
 Note that only mp3, Wav and ogg formats are supported and the audio should be mono, not stereo. If the sound file does not play correctly on a live test, then check the file is in mono.

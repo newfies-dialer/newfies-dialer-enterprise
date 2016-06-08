@@ -80,11 +80,10 @@ There are some special variables which have certain functions. These are describ
 Import Contacts
 ---------------
 
-To import bulk contacts into a phonebook, click on ``Import``.
-where you can upload contacts via a CSV file under a logged in
+To import bulk contacts into a phonebook, click on `Import` where you can upload contacts via a CSV file under a logged in
 user's phonebook.
 
-There are two import modes, the default is a simple import where only the telephone numbers need uploading. Simply create a text file with your list of numbers, 'Chose File' from the interface, and upload.
+There are two import modes, the default is a simple import where only the telephone numbers need uploading. Simply create a text file with your list of numbers, 'Choose File' from the interface, and upload.
 
 The advanced mode should be used when other contact details have to be uploaded such as name, address and additional JSON parameters.
 
