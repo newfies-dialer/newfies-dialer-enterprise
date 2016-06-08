@@ -9,8 +9,7 @@ Custom Originate
     :local:
     :depth: 1
 
-Some Newfies-Dialer users might want to use Newfies-Dialer to *ONLY* dial out call and take care of the CDRs,
-without the need of using our IVR engine to power an IVR application. For instance if you have an existing FreeSWITCH XML IVR or application, you might want to reuse this callflow directly. This is easily achievable thanks to the high level of flexibility Newfies-Dialer offer.
+Some Newfies-Dialer users might want to use Newfies-Dialer to *ONLY* dial out and take care of the CDRs,without the need of using the IVR engine to run the IVR application. For instance if there is an existing FreeSWITCH XML IVR or application, you might want to reuse this callflow directly. This is easily achievable thanks to the high level of flexibility that Newfies-Dialer offers.
 
 First let's explain how `Originate`_ command works on `Freeswitch`_ .
 
@@ -27,7 +26,7 @@ Originate a new call::
 
    Usage: originate <call_url> <exten>|&<application_name>(<app_args>) [<dialplan>] [<context>] [<cid_name>] [<cid_num>] [<timeout_sec>]
 
-FreeSWITCH will originate a call to <call_url> as Leg A. If that leg supervises within 60 seconds FS will continue by searching for an extension definition in the specified dialplan for <exten> or else execute the application that follows the & along with its arguments.
+FreeSWITCH will originate a call to <call_url> as Leg A. If that leg answers within 60 seconds FS will continue by searching for an extension definition in the specified dialplan for <exten> or alternatively, execute the application that follows the & along with its arguments.
 
 
 Arguments:
@@ -53,7 +52,7 @@ Example::
     originate {origination_caller_id_number='123456789',ignore_early_media=true,originate_timeout=45}sofia/gateway/myowngate/0034650780001 &playback(/usr/share/freeswitch/sounds/en/us/callie/voicemail/8000/vm-hello.wav)
 
 
-The above `originate` command will outbound a call and then run the application called `playback`, playback will play the wav file put in argument.
+The above `originate` command will outbound a call and then run the application called `playback`, playback will play the wav file in the argument.
 
 
 .. _custom-originate-dialplan:
@@ -90,16 +89,18 @@ Call originate command::
 Custom originate with Newfies-Dialer
 ------------------------------------
 
-Newfies-Dialer configuration file have a setting to configure the outbound command::
+Newfies-Dialer configuration file has a setting to configure the outbound command::
 
     ESL_SCRIPT = '&lua(/usr/share/newfies-lua/newfies.lua)'
 
 
-For instance if you are willing to outbound a call with a simple playback, you can configure `ESL_SCRIPT` as follow::
+For instance if you want to make a call with a simple playback, you can configure `ESL_SCRIPT` as follows::
 
     ESL_SCRIPT = '&playback(/usr/share/freeswitch/sounds/en/us/callie/voicemail/8000/vm-hello.wav)'
 
 
-Want to outbound call and redirect them to an extension, easy::
+Want to make a call and redirect them to an extension, then::
 
     ESL_SCRIPT = '54440001'
+
+where 54440001 is the extension in FreeSWITCH.
