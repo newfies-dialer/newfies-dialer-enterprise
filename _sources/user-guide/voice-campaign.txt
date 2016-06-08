@@ -47,6 +47,8 @@ The `Add New Campaign` tab has a number of fields to fill in:
     - **Phonebook** - One or more phonebooks to be called.
     - **Description** - Free text to put notes against the campaign.
 
+NB: The caller ID number can be set to a random value by putting in XXXXXXXXXX, which will give 10 digit random numbers. 800XXXXXXX will set the caller ID to 800 followed by 7 random numbers.
+
 .. image:: ../_static/images/customer/add_campaign_dialer.png
     :width: 800
 
