@@ -1,0 +1,46 @@
+.. _api-reference:
+
+=============
+API Reference
+=============
+
+Contents:
+
+.. toctree::
+    :maxdepth: 1
+
+
+    ./api-doc/audiofile_serializers
+    ./api-doc/branching_template_serializers
+    ./api-doc/campaign_serializers
+    ./api-doc/contact_serializers
+    ./api-doc/content_type_serializers
+    ./api-doc/dnc_serializers
+    ./api-doc/dnc_contact_serializers
+    ./api-doc/gateway_serializers
+    ./api-doc/phonebook_serializers
+    ./api-doc/section_template_serializers
+    ./api-doc/sms_campaign_serializers
+    ./api-doc/sms_gateway_serializers
+    ./api-doc/subscriber_list_serializers
+    ./api-doc/survey_serializers
+    ./api-doc/survey_template_serializers
+
+
+Testing console of APIs:
+
+    **URL** : http://HOSTNAME_IP/rest-api/
+
+
+.. image:: /_static/images/api-playground/list_of_api.png
+    :width: 700
+
+
+To inspect the available APIs, click on a link from above API list:
+
+
+    **URL** : http://HOSTNAME_IP/rest-api/phonebook/
+
+
+.. image:: /_static/images/api-playground/phonebook_playground.png
+    :width: 700

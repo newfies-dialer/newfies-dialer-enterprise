@@ -17,7 +17,7 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
     </script>
-    <title>Voice Campaign &mdash; Newfies-Dialer 3.6.3 documentation</title>
+    <title>Voice Campaign &#8212; Newfies-Dialer 3.9.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,17 +25,18 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '3.6.3',
+        VERSION:     '3.9.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Newfies-Dialer 3.6.3 documentation" href="../index.html" />
-    <link rel="up" title="User Guide" href="../user-guide.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="SMS Campaign" href="sms-campaign.html" />
     <link rel="prev" title="Contacts" href="contacts.html" /> 
   </head>
@@ -55,8 +56,8 @@
         <li class="right" >
           <a href="contacts.html" title="Contacts"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.6.3 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="../user-guide.html" accesskey="U">User Guide</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.9.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../user-guide.html" accesskey="U">User Guide</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -113,7 +114,11 @@ linked with contacts from the campaign list, click on campaign to update.</p>
 <li><strong>Description</strong> - Free text to put notes against the campaign.</li>
 </ul>
 </div></blockquote>
-<p>NB: The caller ID number can be set to a random value by putting in XXXXXXXXXX, which will give 10 digit random numbers. 800XXXXXXX will set the caller ID to 800 followed by 7 random numbers.</p>
+<dl class="docutils">
+<dt>NB: The caller ID number can be set to a random value by putting in XXXXXXXXXX, which will give 10 digit random numbers. 800XXXXXXX will set the caller ID to 800 followed by 7 random numbers.</dt>
+<dd>Alternatively, up to 10 caller ID can be entered separated by a semi-colon; a caller ID will be chosen at random from the 10 caller ID.
+The caller ID can be changed mid campaign without stopping or pausing it.</dd>
+</dl>
 <a class="reference internal image-reference" href="../_images/add_campaign_dialer.png"><img alt="../_images/add_campaign_dialer.png" src="../_images/add_campaign_dialer.png" style="width: 800px;" /></a>
 </div>
 <div class="section" id="dialer-tab">
@@ -149,6 +154,8 @@ linked with contacts from the campaign list, click on campaign to update.</p>
 <p>Decide which time of day to start and stop the campaigns, as well as which days they are active. By default, the campaign is set to start at the time of creation and finish 24 hours later.</p>
 <a class="reference internal image-reference" href="../_images/add_campaign_schedule.png"><img alt="../_images/add_campaign_schedule.png" src="../_images/add_campaign_schedule.png" style="width: 800px;" /></a>
 <p>It is good practice to set the days and times that a campaign should be active to ensure that calls are not made out of hours.</p>
+<p>USA based systems can be configured to respect timezones. Set a Daily Start Time and a Daily Stop Time and set the Timezone Dialling Switch to <strong>On</strong> to make calls according to an individual contact&#8217;s own timezone.</p>
+<p>The date and time for campaign Start and Finish is in local time. The calls will only be made between these dates and times irrespective of the timezone of your contacts.</p>
 <p>Note that retries do not respect the stop time, so sufficient time must be given for these to complete before the campaign stops.</p>
 </div>
 <div class="section" id="extra">
@@ -186,8 +193,8 @@ linked with contacts from the campaign list, click on campaign to update.</p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -212,12 +219,12 @@ linked with contacts from the campaign list, click on campaign to update.</p>
         <li class="right" >
           <a href="contacts.html" title="Contacts"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.6.3 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="../user-guide.html" >User Guide</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.9.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../user-guide.html" >User Guide</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2011-2016, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
+        &#169; Copyright 2011-2016, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
     </div>
   </body>
 </html>

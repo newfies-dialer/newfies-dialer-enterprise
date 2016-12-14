@@ -1,0 +1,65 @@
+.. _rebranding:
+
+==========
+Rebranding
+==========
+
+.. contents::
+    :local:
+    :depth: 1
+
+Rebranding and logo upload will be done by the Newfies-Dialer support team, simply provide us with the Company Name, a logo as described below, and your favicon, as described below.
+
+Configure project names and footer
+----------------------------------
+
+Edit /usr/share/newfies/newfies_dialer/settings_local.py as follows::
+
+    # BRANDING
+    # ========
+    PROJECT_NAME = 'MyCompany'
+    PAGE_FOOTER = 'Powered by MyCompany'
+
+
+Change Icon
+-----------
+
+The icon needs to be in PNG format and have transparency.
+Max height for the icon is 60px.
+
+Copy it in the `images/branding` directory::
+
+    cp mycompany-icon.png /usr/share/newfies/resources/images/branding/logo-icon.png
+
+
+Change Favicon
+--------------
+
+You will need 3 files:
+* apple-touch-icon.png
+* favicon.ico
+* favicon.png
+
+Copy those files to the `images/branding` directory::
+
+    cp apple-touch-icon.png /usr/share/newfies/resources/images/branding/
+    cp favicon.* /usr/share/newfies/resources/images/branding/
+
+
+Custom CSS
+----------
+
+Copy `custom.css` to the `css/branding` directory::
+
+    cp custom.css /usr/share/newfies/resources/css/branding/
+
+
+Apply changes
+-------------
+
+You will need to collect the new static files and restart supervisor::
+
+    workon newfies-dialer
+    cd /usr/share/newfies
+    python manage.py collectstatic --noinput
+    resup

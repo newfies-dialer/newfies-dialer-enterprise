@@ -17,7 +17,7 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
     </script>
-    <title>Custom Originate &mdash; Newfies-Dialer 3.6.3 documentation</title>
+    <title>Custom Originate &#8212; Newfies-Dialer 3.9.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,17 +25,18 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '3.6.3',
+        VERSION:     '3.9.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Newfies-Dialer 3.6.3 documentation" href="../index.html" />
-    <link rel="up" title="Extra" href="../extra.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="Extra" href="../extra.html" /> 
   </head>
   <body role="document">
@@ -51,8 +52,8 @@
         <li class="right" >
           <a href="../extra.html" title="Extra"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.6.3 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="../extra.html" accesskey="U">Extra</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.9.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../extra.html" accesskey="U">Extra</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -81,32 +82,24 @@
 </div>
 <p>FreeSWITCH will originate a call to &lt;call_url&gt; as Leg A. If that leg answers within 60 seconds FS will continue by searching for an extension definition in the specified dialplan for &lt;exten&gt; or alternatively, execute the application that follows the &amp; along with its arguments.</p>
 <p>Arguments:</p>
-<ul>
+<ul class="simple">
 <li><dl class="first docutils">
 <dt>&lt;call_url&gt; URL you are calling. For more info on sofia SIP URL syntax see: FreeSwitch Endpoint Sofia Destination, one of:</dt>
-<dd><p class="first">&lt;exten&gt; Destination number to search in dialplan; note that registered extensions will fail this way, use &amp;bridge(user/xxxx) instead
-&amp;&lt;application_name&gt;(&lt;app_args&gt;)</p>
-<blockquote class="last">
-<div><p>&#8220;&amp;&#8221; indicates what follows is an application name, not an exten
+<dd>&lt;exten&gt; Destination number to search in dialplan; note that registered extensions will fail this way, use &amp;bridge(user/xxxx) instead
+&amp;&lt;application_name&gt;(&lt;app_args&gt;)
+&#8220;&amp;&#8221; indicates what follows is an application name, not an exten
 (&lt;app_args&gt;) is optional (not all applications require parameters, e.g. park)
 The most commonly used application names include:
 park, bridge, javascript/lua/perl, playback (remove mod_native_file).
 Note: Use single quotes to pass arguments with spaces, e.g. &#8216;&amp;lua(test.lua arg1 arg2)&#8217;
-Note: There is no space between &amp; and the application name</p>
-</div></blockquote>
-</dd>
+Note: There is no space between &amp; and the application name</dd>
 </dl>
 </li>
-<li><p class="first">&lt;dialplan&gt; Defaults to &#8216;XML&#8217; if not specified.</p>
-</li>
-<li><p class="first">&lt;context&gt; Defaults to &#8216;default&#8217; if not specified.</p>
-</li>
-<li><p class="first">&lt;cid_name&gt; CallerID name to send to Leg A.</p>
-</li>
-<li><p class="first">&lt;cid_num&gt; CallerID number to send to Leg A.</p>
-</li>
-<li><p class="first">&lt;timeout_sec&gt; Timeout in seconds; default = 60 seconds.</p>
-</li>
+<li>&lt;dialplan&gt; Defaults to &#8216;XML&#8217; if not specified.</li>
+<li>&lt;context&gt; Defaults to &#8216;default&#8217; if not specified.</li>
+<li>&lt;cid_name&gt; CallerID name to send to Leg A.</li>
+<li>&lt;cid_num&gt; CallerID number to send to Leg A.</li>
+<li>&lt;timeout_sec&gt; Timeout in seconds; default = 60 seconds.</li>
 </ul>
 <p>Example:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">originate</span> <span class="p">{</span><span class="n">origination_caller_id_number</span><span class="o">=</span><span class="s1">&#39;123456789&#39;</span><span class="p">,</span><span class="n">ignore_early_media</span><span class="o">=</span><span class="n">true</span><span class="p">,</span><span class="n">originate_timeout</span><span class="o">=</span><span class="mi">45</span><span class="p">}</span><span class="n">sofia</span><span class="o">/</span><span class="n">gateway</span><span class="o">/</span><span class="n">myowngate</span><span class="o">/</span><span class="mi">0034650780001</span> <span class="o">&amp;</span><span class="n">playback</span><span class="p">(</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">freeswitch</span><span class="o">/</span><span class="n">sounds</span><span class="o">/</span><span class="n">en</span><span class="o">/</span><span class="n">us</span><span class="o">/</span><span class="n">callie</span><span class="o">/</span><span class="n">voicemail</span><span class="o">/</span><span class="mi">8000</span><span class="o">/</span><span class="n">vm</span><span class="o">-</span><span class="n">hello</span><span class="o">.</span><span class="n">wav</span><span class="p">)</span>
@@ -171,8 +164,8 @@ Note: There is no space between &amp; and the application name</p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -194,12 +187,12 @@ Note: There is no space between &amp; and the application name</p>
         <li class="right" >
           <a href="../extra.html" title="Extra"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.6.3 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="../extra.html" >Extra</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.9.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../extra.html" >Extra</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2011-2016, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
+        &#169; Copyright 2011-2016, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
     </div>
   </body>
 </html>

@@ -1,0 +1,159 @@
+
+.. _contacts-title:
+
+========
+Contacts
+========
+
+.. contents::
+    :local:
+    :depth: 2
+
+
+.. _phonebook:
+
+Phonebook
+---------
+
+The phonebook list will be displayed from the following URL. You can add a new phonebook by clicking ``Add phonebook`` and add the name of a phonebook and its description. Also from the phonebook list, click on the phonebook to update.
+
+**URL**:
+
+    * http://HOSTNAME_IP/phonebook/
+
+.. image:: ../_static/images/customer/phonebook_list.png
+    :width: 700
+
+
+To Add/Update a Phonebook for a logged in user
+
+**URL**:
+
+    * http://HOSTNAME_IP/phonebook/add/
+    * http://HOSTNAME_IP/phonebook/1/
+
+.. image:: ../_static/images/customer/update_phonebook.png
+
+
+.. _contact:
+
+Contact
+-------
+
+The contact list will be displayed from following the URL. You can add a new contact by clicking ``Add contact`` & adding the contact details (i.e. phone number, name, description, contact status) under the logged in user's phonebook from the phonebook list. On the contact list, click on the contact to update.
+
+NB: the phone number needs to be in full international format, that is to say, +12024648397 for a USA number rather than 12024648397, or 2024648397.
+If numbers are entered in national format, then the + and country prefix will automatically be pre-pended according to the country set during installation. This also applies to imported numbers.
+
+**URL**:
+
+    * http://HOSTNAME_IP/contact/
+
+.. image:: ../_static/images/customer/contact_list.png
+
+
+To Add/Update a contact in a phonebook
+
+**URL**:
+
+    * http://HOSTNAME_IP/contact/add/
+    * http://HOSTNAME_IP/contact/1/
+
+.. image:: ../_static/images/customer/update_contact.png
+
+The contact can contain extra custom data in the Additional Parameters field. This is JSON formatted data that can be used for tag replacement in the survey when using TTS, e.g.
+
+::
+
+{"age": "32"}
+
+
+When {age} is used in the TTS script in a survey node, it will read out 32 instead.
+
+There are some special variables which have certain functions. These are described in the documentation.
+
+.. _import_contacts:
+
+Import Contacts
+---------------
+
+To import bulk contacts into a phonebook, click on `Import` where you can upload contacts via a CSV file under a logged in user's phonebook.
+
+There are two import modes, the default is a simple import where only the telephone numbers need uploading, advanced is where you need to upload other data with the telephone number such as name and address.
+
+Import Contact (Simple) 
+~~~~~~~~~~~~~~~~~~~~~~~
+
+**URL**:
+
+    * http://HOSTNAME_IP/contact_import/
+
+.. image:: ../_static/images/customer/import_contact_simple.png
+    :width: 700
+
+In most cases, only the simple import mode is required if all you need to do is upload a list of telephone numbers from a text file.
+
+Simply create a text file with your list of numbers e.g.
+
+::
+
++14242891477
++19255232463
++18058376573
++18058586048
+
+::
+
+Now ensure the heading says 'Import Contact (Simple)' if not, select 'simple' as the import mode, select the phonebook you are importing to, 'Choose File' from the interface, and upload, then check to ensure that the upload has worked as expected.
+
+
+Advanced Import
+~~~~~~~~~~~~~~~
+
+The advanced mode should be used when other contact details have to be uploaded such as name, address and additional JSON parameters.
+
+**URL**:
+
+    * http://HOSTNAME_IP/contact_import_advanced/
+
+.. image:: ../_static/images/customer/import_contact_advanced.png
+    :width: 700
+
+Use the pipe "|" as the field delimiter, e.g.
+::
+
+    +1234567890|surname|forename|email@somewhere.com|test-contact|1|address|city|state|US|unit|{"age":"32","title":"doctor"}|
+
+The file needs to contain all the pipes, even if you don't want to populate all the fields. e.g.
+
+::
+
+    +12024648397|||||1|||||||||
+
+
+.. _additional_parameters:
+
+Additional parameters (JSON)
+----------------------------
+
+In contacts, under advanced data, it is possible to upload custom values which can be played as TTS simply by enclosing them in {curly brackets} in the following form:
+
+::
+
+    {"age": "32"}
+
+If {age} is placed into the TTS, 32 will be the value read out. Multiple JSON formatted values can be added into this field
+
+.. _special_function_additional_parameters_keywords:
+
+Special Function Additional parameters keywords (JSON)
+------------------------------------------------------
+
+Some special function keywords can be added which change the usual behaviour of the system. These are:
+
+**transfer_phonenumber** - the value of the transfer phone number overwrites the SIP URI / Phone number in the call transfer node.
+
+**transfer_ref** - this means that a SIP header "P-Contact-Transfer-Ref" is added on transfer, which may be used to trigger a screen pop or otherwise identify the contact transferred at your IP-PBX.
+
+**sms_phonenumber** - when the SMS node is used, rather than sending the SMS to the contact's number, it can be sent to a different number, e.g. the contact's cellphone number, if this keyword is used.
+

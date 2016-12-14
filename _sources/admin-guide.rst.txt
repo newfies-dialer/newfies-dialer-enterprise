@@ -1,0 +1,22 @@
+.. _admin_guide:
+
+===========
+Admin Guide
+===========
+
+Contents:
+
+.. toctree::
+    :maxdepth: 1
+
+    ./admin-guide/configuration.rst
+    ./admin-guide/freeswitch-config.rst
+    ./admin-guide/site-config.rst
+    ./admin-guide/rebranding.rst
+    ./admin-guide/SMS-config.rst
+    ./admin-guide/billing-module.rst
+    ./admin-guide/dialer-settings.rst
+    ./admin-guide/add-user.rst
+    ./admin-guide/tts-config.rst
+    ./admin-guide/admin-panel
+    ./admin-guide/trouble-shooting.rst

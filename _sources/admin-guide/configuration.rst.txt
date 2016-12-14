@@ -1,0 +1,28 @@
+.. _configuration_overview:
+
+=============
+Configuration
+=============
+
+.. contents::
+    :local:
+    :depth: 1
+
+Configuration Overview
+----------------------
+
+When a Newfies-Dialer system is first commissioned, much of this work will be done as part of the commissioning process by the Newfies-Dialer team. However, it may be necessary for Newfies-Dialer admin to add new gateways or make other changes to the system.
+
+The commissioning process will include:
+
+* **Freeswitch configuration** - setting up the gateways which Newfies-Dialer will use
+* **Site configuration** - Setting up the host name
+* **Text to speech**  - configuring TTS engines
+* SMS configuration
+
+Tasks which will be performed by Newfies-Dialer admin, with our training, will include:
+
+* Adding new users
+* Creating Dialer settings, which control the resources any one user can consume
+* Site configuration and editing the home page
+

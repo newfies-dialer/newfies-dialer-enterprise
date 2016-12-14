@@ -1,0 +1,49 @@
+.. _Reports:
+
+=======
+Reports
+=======
+
+.. contents::
+    :local:
+    :depth: 1
+
+.. _call_detail_reports:
+
+Call Detail Reports (CDR)
+-------------------------
+
+Call detail reports give the call records of each individual call along with a daily report. The UI only shows an overview of the CDR, to get a more detailed report, use the action button to download a report to CSV or Excel.
+
+The report is mostly self explanatory, apart from the the duration and Bill Sec fields.
+
+	- **Duration** is the amount of time from ringing to hangup.
+	- **Bill-Sec** is the amount of time from answer to hangup - the sum of calls and duration should closely match your carrier's CDR.
+
+Therefore it follows that Duration less Bill-Sec is the time the the phone rings for before it is answered.
+
+.. _survey_reports:
+
+Survey Reports
+--------------
+
+These reports, also downloadable to CSV, Excel or JSON files are displayed here.
+
+Under Survey Calls, you can look at each indiviual call, and see the results of the call, as well as play any audio such as for a recording node.
+
+.. _subscriber_reports:
+
+Subscriber Reports
+------------------
+
+When a campaign is started, the numbers to call are copied from the phonebooks selected in the campaign, these numbers in Newfies-Dialer are referred to as "Subscribers". The subscriber report indicates the state of each individual subscriber, e.g. Pending, Completed, Sent, etc.
+
+.. _sms_reports:
+
+SMS Reports
+-----------
+
+Reports on the status of each SMS message sent.
+
+ 
+

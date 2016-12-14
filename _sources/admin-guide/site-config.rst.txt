@@ -1,0 +1,34 @@
+.. _site_configuration:
+
+==================
+Site Configuration
+==================
+
+.. contents::
+    :local:
+    :depth: 1
+
+Sites
+-----
+
+This will be done for you by the Newfies-Dialer support team.
+
+Some of the features of Newfies-Dialer are dependent on the hostname or IP address, so this has to be set correctly in site address.
+
+In the Admin dashboard, locate the "Sites" link in the General Section and click change. By default,
+there will be an entry of "example.com". Edit this setting to reflect the hostname of the server, or if you do not have this set up, the IP address. e.g.  http://www.domain.tld or in the case of an IP address,
+something like http://192.168.1.200
+
+Home Page
+---------
+
+In the general section, click Site/Page, then click "Change" against the "flat pages" link, click home, and the current text and logo will be displayed.
+
+From this screen edit the wording.
+
+In the Advanced Section, there is an option to make this page visible to everyone, or just logged in users.
+
+New Pages
+---------
+
+In the same area as the Home Page, there are options to add new pages to Newfies-Dialer to contain your own custom content.

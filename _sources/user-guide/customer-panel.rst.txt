@@ -1,0 +1,70 @@
+.. _customer_panel:
+
+==============
+Customer Panel
+==============
+
+Customer Panel URL : http://HOSTNAME_IP/admin/
+
+This application provides a user interface for restricted management of
+the User's Campaigns, Phonebooks and Subscribers. It also provides detailed
+reporting of calls and message delivery.
+
+.. contents::
+    :local:
+    :depth: 2
+
+.. _login_page:
+
+Login Page
+----------
+
+Index page for the customer interface after successful login with user credentials
+
+.. image:: ../_static/images/customer_screenshot.png
+    :width: 750
+
+.. _dashboards:
+
+Dashboards
+----------
+
+There is a voice and SMS dashboard which gives an overview of the results of the survey.
+
+.. _campaign:
+
+Campaign
+--------
+
+A voice campaign and an SMS campaign configuration screen is available to configure the desired type of campaign.
+
+.. _contacts:
+
+Contacts
+--------
+
+Phonebooks are created here, which contain contacts which can be entered manually or imported from a properly formatted text file.
+
+.. _reporting:
+
+Reporting
+---------
+
+As the campaign is running, and at the end of campaign, you can check the CDR (Call Detail Reports), the results of your survey, the subscriber report telling you the status of each queued and completed call, and the SMS reports. There are appropriate filters and search functions for each report, and they can be downloaded to CSV, Excel files or JSON values.
+
+.. _modules:
+
+Modules
+-------
+
+Configure Surveys, uplaod Audio files and DNC (Do Not Call) lists.
+
+.. _user_account:
+
+User Account
+------------
+
+Click the dropdown to check your account settings, your account limits. set your language, check notifications and logout.
+
+
+

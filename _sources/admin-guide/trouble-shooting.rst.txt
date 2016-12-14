@@ -1,0 +1,140 @@
+.. _trouble_shooting:
+
+===============
+Troubleshooting
+===============
+
+.. contents::
+    :local:
+    :depth: 1
+
+
+Support
+=======
+
+Commercial users of Newfies-Dialer have full support, so any problems should be referred to the Newfies-Dialer Support team.
+
+
+.. _step_by_step_checklist:
+
+Step By Step Checklist
+======================
+
+The step by step checklist below should be used to validate that all components of the platform are running.
+
+User interface :
+
+1. Dialer Gateway matching a configured trunk is set up in the UI
+
+2. Dialer Settings configured and attached to the appropriate user
+
+3. Phonebook Created with contacts attached to the phonebook
+
+4. Configured voice application
+
+5. Campaign created, and started, with a phone book attached, and the campaign schedule current
+
+
+Back-end :
+
+1. Celery Monitor Running
+
+2. Freeswitch running
+
+
+.. _diagnosing_carrier_problems:
+
+Diagnosing Carrier Problems
+===========================
+
+Due to the nature of Newfies-Dialer and voice broadcasting, it is not possible to easily test the quality of the call to different routes, or see if something unusual is going on.
+
+The most definitive way of discovering what is going on is to take a capture of all SIP files along with the audio.
+
+A program called PCAPSIPDUMP should have been installed on your server for just an eventuality, if not, instructions for installation follow::
+
+    apt-get -y install libpcap0.8 libpcap-dev build-essential
+    cd /usr/src/
+    wget --no-check-certificate http://skylink.dl.sourceforge.net/project/pcapsipdump/pcapsipdump/0.2/pcapsipdump-0.2.tar.gz
+    tar zxfv pcapsipdump-0.2.tar.gz
+    cd pcapsipdump-0.2
+    apt-get -y install libpcap0.8 libpcap-dev build-essential
+    make clean
+    make all
+    cp pcapsipdump /usr/sbin/pcapsipdump
+    chmod +x /usr/sbin/pcapsipdump
+
+PCAPSIPDUMP is launched with the following commands::
+
+    mkdir /tmp/pcapsipdump/
+    pcapsipdump -i eth0 -d /tmp/pcapsipdump/
+
+
+This will write a single file for every call into /tmp/pcasipdump We have chosen this location because if you should accidently fill the hard drive with this data, a reboot will clear it out, and pcapsipdum will not start automatically on reboot.
+
+The files are in directories according to the date and time, and each individual file is named using the origin and destination numbers coupled with the SIP call ID.
+
+Download the files onto your PC, and open them with a program called Wireshark, which is freely available for Windows, OSX and Linux.
+
+The SIP capture and the audio should give a clue as to what is going wrong, and the carrier will appreciate a copy of the pcap file as it well help them diagnose the problem at their end.
+
+There are other command line options for pcapsipdump::
+
+    #Usage: pcapsipdump [-fpU] [-i <interface>] [-r <file>] [-d <working directory>] [-v level] [-R filter]
+    -f   Do not fork or detach from controlling terminal.
+    -p   Do not put the interface into promiscuous mode.
+    -R   RTP filter. Possible values: 'rtp+rtcp' (default), 'rtp', 'rtpevent', 't38', or 'none'.
+    -U   Make .pcap files writing 'packet-buffered' - slower method,
+   but you can use partially written file anytime, it will be consistent.
+    -v   Set verbosity level (higher is more verbose).
+    -n   Number-filter. Only calls to/from specified number will be recorded
+    -t   T.38-filter. Only calls, containing T.38 payload indicated in SDP will be recorded
+
+
+.. _find_log_files:
+
+Where to find the log files
+===========================
+
+All the logs are centralized into one single directory **/var/log/newfies/**
+
+
+**newfies-django-db.log** : This contains all the Database queries performed by the UI
+
+
+**newfies-django.log** : All the logger events from Django
+
+
+**err-apache-newfies.log** : Any apache errors pertaining to Newfies-Dialer
+
+
+**celery-newfies-node1.log** : This contains celery activity
+
+**newfieslua_logs_%%.log.log** : This contains the phone system logs
+
+
+.. _config_files_location:
+
+Config Files Location
+=====================
+
+Newfies-Dialer configuration file is located by default at /usr/share/newfies-dialer/newfies_dialer/settings_local.py
+
+`settings_local.py` contains all the local changes specific to your installation, this file is inherited from /usr/share/newfies-dialer/newfies_dialer/settings.py, therefore you can copy settings to settings_local.py and overwrite the default configuration.
+
+
+.. _enable_debug:
+
+Enable the debug
+================
+
+When you get a message "Server Error, You've encountered an error!", you might want
+to enable the debugger to get a full traceback of the error.
+
+To enable the debugger, edit the file /usr/share/newfies-dialer/newfies_dialer/settings_local.py and set those settings as follow::
+
+    DEBUG = True
+    TEMPLATE_DEBUG = DEBUG
+
+Note that you should be able to get the traceback in
+**/var/log/newfies/err-apache-newfies.log**

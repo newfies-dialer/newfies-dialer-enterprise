@@ -17,7 +17,7 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
     </script>
-    <title>PhonebookSerializer &mdash; Newfies-Dialer 3.6.3 documentation</title>
+    <title>PhonebookSerializer &#8212; Newfies-Dialer 3.9.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,17 +25,18 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '3.6.3',
+        VERSION:     '3.9.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Newfies-Dialer 3.6.3 documentation" href="../index.html" />
-    <link rel="up" title="API Reference" href="../api-reference.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="SectionTemplateSerializer" href="section_template_serializers.html" />
     <link rel="prev" title="GatewaySerializer" href="gateway_serializers.html" /> 
   </head>
@@ -55,8 +56,8 @@
         <li class="right" >
           <a href="gateway_serializers.html" title="GatewaySerializer"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.6.3 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="../api-reference.html" accesskey="U">API Reference</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.9.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api-reference.html" accesskey="U">API Reference</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -74,7 +75,7 @@
 <dd><p><strong>Create</strong>:</p>
 <blockquote>
 <div><p>CURL Usage:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span><span class="p">:</span><span class="n">password</span> <span class="o">--</span><span class="n">dump</span><span class="o">-</span><span class="n">header</span> <span class="o">-</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type:application/json&quot;</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">--</span><span class="n">data</span> <span class="s1">&#39;{&quot;name&quot;: &quot;myphonebook&quot;}&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">phonebook</span><span class="o">/</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span><span class="p">:</span><span class="n">password</span> <span class="o">--</span><span class="n">dump</span><span class="o">-</span><span class="n">header</span> <span class="o">-</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type:application/json&quot;</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">--</span><span class="n">data</span> <span class="s1">&#39;{&quot;name&quot;: &quot;myphonebook&quot;, &quot;user&quot;: &quot;/rest-api/users/1/&quot;}&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">phonebook</span><span class="o">/</span>
 </pre></div>
 </div>
 <p>Response:</p>
@@ -161,8 +162,8 @@
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -187,12 +188,12 @@
         <li class="right" >
           <a href="gateway_serializers.html" title="GatewaySerializer"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.6.3 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="../api-reference.html" >API Reference</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.9.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api-reference.html" >API Reference</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2011-2016, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
+        &#169; Copyright 2011-2016, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
     </div>
   </body>
 </html>
