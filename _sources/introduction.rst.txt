@@ -149,7 +149,10 @@ Features
     | Rebranding &    | Rebranding and design services to match your       |
     | Whitelabelling  | corporate imagee.                                  |
     +-----------------+----------------------------------------------------+
-
+    | USA Timezone    | Contact's timezone identified from the telephone   |
+    | Support         | number and called according to their local time.   |
+    +-----------------+----------------------------------------------------+
+    
 
 .. _server-spec:
 
