@@ -1,0 +1,9 @@
+.. automodule:: apirest.payment_serializers
+
+.. _PaymentSerializer-model:
+
+`PaymentSerializer`
+-------------------
+
+.. autoclass:: PaymentSerializer
+    :members:

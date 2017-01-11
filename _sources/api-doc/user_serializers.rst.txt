@@ -1,0 +1,9 @@
+.. automodule:: apirest.user_serializers
+
+.. _UserSerializer-model:
+
+`UserSerializer`
+------------------
+
+.. autoclass:: UserSerializer
+    :members:

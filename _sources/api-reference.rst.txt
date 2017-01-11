@@ -10,6 +10,8 @@ Contents:
     :maxdepth: 1
 
 
+    ./api-doc/user_serializers
+    ./api-doc/userprofile_serializers
     ./api-doc/audiofile_serializers
     ./api-doc/branching_template_serializers
     ./api-doc/campaign_serializers
@@ -25,6 +27,7 @@ Contents:
     ./api-doc/subscriber_list_serializers
     ./api-doc/survey_serializers
     ./api-doc/survey_template_serializers
+    ./api-doc/payment_serializers
 
 
 Testing console of APIs:

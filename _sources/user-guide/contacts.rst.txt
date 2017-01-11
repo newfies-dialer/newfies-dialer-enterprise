@@ -81,7 +81,7 @@ To import bulk contacts into a phonebook, click on `Import` where you can upload
 
 There are two import modes, the default is a simple import where only the telephone numbers need uploading, advanced is where you need to upload other data with the telephone number such as name and address.
 
-Import Contact (Simple) 
+Import Contact (Simple)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 **URL**:
@@ -102,7 +102,6 @@ Simply create a text file with your list of numbers e.g.
 +18058376573
 +18058586048
 
-::
 
 Now ensure the heading says 'Import Contact (Simple)' if not, select 'simple' as the import mode, select the phonebook you are importing to, 'Choose File' from the interface, and upload, then check to ensure that the upload has worked as expected.
 
