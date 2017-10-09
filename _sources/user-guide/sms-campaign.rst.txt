@@ -36,7 +36,7 @@ Click Add and fill in the fields:
  - **Phonebook**  - Select one or more phone books containing the contacts to call
  - **Text Message** - Enter the message to be sent, with no more than 160 characters.
 
-Tag Replacement can be used here to personalise the message, e.g. Hello {first_name} {last_name} will replace whatever you have in the first and last name fields against the contact.
+Tag Replacement can be used here to personalise the message, e.g. Hello {full_name} will replace whatever you have in the full name fields against the contact.
 
 At this point the campaign could be saved and sent, however there are a number of other parameters that can be adjusted:
 

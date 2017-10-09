@@ -1,0 +1,181 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>VoIPCallSerializer &#8212; Newfies-Dialer 4.7.0 documentation</title>
+    <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '4.7.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ContactSerializer" href="contact_serializers.html" />
+    <link rel="prev" title="CampaignSerializer" href="campaign_serializers.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="contact_serializers.html" title="ContactSerializer"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="campaign_serializers.html" title="CampaignSerializer"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 4.7.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api-reference.html" accesskey="U">API Reference</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+
+    <span class="target" id="module-apirest.cdr_serializers"></span><div class="section" id="voipcallserializer">
+<span id="voipcallserializer-model"></span><h1><cite>VoIPCallSerializer</cite><a class="headerlink" href="#voipcallserializer" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="apirest.cdr_serializers.VoIPCallSerializer">
+<em class="property">class </em><code class="descclassname">apirest.cdr_serializers.</code><code class="descname">VoIPCallSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class rest_framework.fields.empty&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#apirest.cdr_serializers.VoIPCallSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Read</strong>:</p>
+<blockquote>
+<div><p>CURL Usage:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">areski</span><span class="p">:</span><span class="n">areski</span> <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Accept: application/json&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">cdr</span><span class="o">/</span>
+
+<span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span><span class="p">:</span><span class="n">password</span> <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Accept: application/json&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">cdr</span><span class="o">/%</span><span class="n">cdr</span><span class="o">-</span><span class="nb">id</span><span class="o">%/</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">556</span><span class="p">,</span>
+  <span class="s2">&quot;next&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/rest-api/cdr/?page=2&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;previous&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">&quot;results&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/rest-api/cdr/309403/&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;callid&quot;</span><span class="p">:</span> <span class="s2">&quot;38f343d0-7377-11e7-b7b0-5c514f6a0f72&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;callerid&quot;</span><span class="p">:</span> <span class="s2">&quot;10559410413&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;phone_number&quot;</span><span class="p">:</span> <span class="s2">&quot;43982080909&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;starting_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-07-28T16:10:15.158452Z&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;duration&quot;</span><span class="p">:</span> <span class="mi">681</span><span class="p">,</span>
+      <span class="s2">&quot;billsec&quot;</span><span class="p">:</span> <span class="mi">670</span><span class="p">,</span>
+      <span class="s2">&quot;call_cost&quot;</span><span class="p">:</span> <span class="s2">&quot;0.00000&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;billed_duration&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">&quot;hangup_cause_q850&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+      <span class="s2">&quot;leg_type&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">&quot;amd_status&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="s2">&quot;callrequest&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/rest-api/callrequest/129465/&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;campaign&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/rest-api/campaigns/138/&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/rest-api/cdr/309404/&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;callid&quot;</span><span class="p">:</span> <span class="s2">&quot;38f343d1-7377-11e7-b7b0-5c514f6a0f72&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;callerid&quot;</span><span class="p">:</span> <span class="s2">&quot;41826069928&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;phone_number&quot;</span><span class="p">:</span> <span class="s2">&quot;79289123003&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;starting_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-07-28T11:14:15.231771Z&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;duration&quot;</span><span class="p">:</span> <span class="mi">552</span><span class="p">,</span>
+      <span class="s2">&quot;billsec&quot;</span><span class="p">:</span> <span class="mi">544</span><span class="p">,</span>
+      <span class="s2">&quot;call_cost&quot;</span><span class="p">:</span> <span class="s2">&quot;0.00000&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;billed_duration&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">&quot;hangup_cause_q850&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+      <span class="s2">&quot;leg_type&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">&quot;amd_status&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">&quot;callrequest&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/rest-api/callrequest/129466/&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;campaign&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/rest-api/campaigns/138/&quot;</span>
+    <span class="p">},</span>
+    <span class="o">...</span>
+    <span class="o">...</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd></dl>
+
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><p class="logo"><a href="../index.html">
+  <img class="logo" src="https://github.com/newfies-dialer/newfies-dialer/raw/develop/newfies/resources/images/newfies-dialer-180.png" alt="Logo"/>
+</a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="campaign_serializers.html"
+                        title="previous chapter"><cite>CampaignSerializer</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="contact_serializers.html"
+                        title="next chapter"><cite>ContactSerializer</cite></a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="contact_serializers.html" title="ContactSerializer"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="campaign_serializers.html" title="CampaignSerializer"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 4.7.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api-reference.html" >API Reference</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2011-2017, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
+    </div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-325034-18");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

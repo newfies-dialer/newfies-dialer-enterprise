@@ -79,7 +79,7 @@ Import Contacts
 
 To import bulk contacts into a phonebook, click on `Import` where you can upload contacts via a CSV file under a logged in user's phonebook.
 
-There are two import modes, the default is a simple import where only the telephone numbers need uploading, advanced is where you need to upload other data with the telephone number such as name and address.
+There are two import modes, the default is a simple import where only the telephone numbers need uploading, advanced is where you need to upload other data with the telephone number such as full name and additional vars (Json field).
 
 Import Contact (Simple)
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -109,7 +109,7 @@ Now ensure the heading says 'Import Contact (Simple)' if not, select 'simple' as
 Advanced Import
 ~~~~~~~~~~~~~~~
 
-The advanced mode should be used when other contact details have to be uploaded such as name, address and additional JSON parameters.
+The advanced mode should be used when other contact details have to be uploaded such as full name and additional JSON parameters.
 
 **URL**:
 
@@ -121,13 +121,13 @@ The advanced mode should be used when other contact details have to be uploaded 
 Use the pipe "|" as the field delimiter, e.g.
 ::
 
-    +1234567890|surname|forename|email@somewhere.com|test-contact|1|address|city|state|US|unit|{"age":"32","title":"doctor"}|
+    +1234567890|full name|{"age":"32","title":"doctor"}
 
 The file needs to contain all the pipes, even if you don't want to populate all the fields. e.g.
 
 ::
 
-    +12024648397|||||1|||||||||
+    +12024648397||
 
 
 .. _additional_parameters:
@@ -155,4 +155,3 @@ Some special function keywords can be added which change the usual behaviour of 
 **transfer_ref** - this means that a SIP header "P-Contact-Transfer-Ref" is added on transfer, which may be used to trigger a screen pop or otherwise identify the contact transferred at your IP-PBX.
 
 **sms_phonenumber** - when the SMS node is used, rather than sending the SMS to the contact's number, it can be sent to a different number, e.g. the contact's cellphone number, if this keyword is used.
-

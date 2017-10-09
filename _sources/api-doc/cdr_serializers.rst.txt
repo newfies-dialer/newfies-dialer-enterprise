@@ -1,0 +1,10 @@
+.. automodule:: apirest.cdr_serializers
+
+.. _VoIPCallSerializer-model:
+
+`VoIPCallSerializer`
+--------------------
+
+.. autoclass:: VoIPCallSerializer
+    :members:
+

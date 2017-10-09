@@ -1,31 +1,17 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-325034-18']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>SMS Configuration &#8212; Newfies-Dialer 3.9.2 documentation</title>
-    
+    <title>SMS Configuration &#8212; Newfies-Dialer 4.7.0 documentation</title>
     <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '3.9.2',
+        VERSION:     '4.7.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -40,7 +26,7 @@
     <link rel="next" title="SMS &amp; Call Billing Module" href="billing-module.html" />
     <link rel="prev" title="Rebranding" href="rebranding.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -56,7 +42,7 @@
         <li class="right" >
           <a href="rebranding.html" title="Rebranding"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.9.2 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 4.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../admin-guide.html" accesskey="U">Admin Guide</a> &#187;</li> 
       </ul>
     </div>  
@@ -79,7 +65,7 @@
 <h2><a class="toc-backref" href="#id4">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
 <p>SMS braodcasting is supported as standard by Newfies-Dialer, allowing Newfies-Dialer to send out thousands or millions of SMS messages to  contacts.</p>
 <p>The SMS gateway supports the following gateways, Clickatell (<a class="reference external" href="http://www.clickatell.com/">http://www.clickatell.com/</a>) and SMSGlobal (<a class="reference external" href="http://www.smsglobal.com">http://www.smsglobal.com</a>). Additionally, Khomp hardware is supported to allow the use of SIM cards in house. See <a class="reference external" href="http://www.khomp.com.br/">http://www.khomp.com.br/</a> for more details.</p>
-<p>Go to the Admin interface and identify the SMS Gateway section, and click on Gateways. Listed by default are three gateways, Clickatell, SMSGlobal and Khomp. Those that you don&#8217;t want to be configured can be deleted.</p>
+<p>Go to the Admin interface and identify the SMS Gateway section, and click on Gateways. Listed by default are three gateways, Clickatell, SMSGlobal and Khomp. Those that you don’t want to be configured can be deleted.</p>
 <p>Click the gateway to be configured and edit the pre-filled settings and populate the fields with the credentials supplied by your SMS provider:</p>
 <p><strong>URL</strong>:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">admin</span><span class="o">/</span><span class="n">sms</span><span class="o">/</span><span class="n">gateway</span><span class="o">/</span>
@@ -123,7 +109,7 @@
 <p>You will need to turn on API access for whatever IP your Newfies-Dialer
 installation is hosted on, create a shortcode keyword, and set a default
 response to that keyword.</p>
-<p>Here it&#8217;s how you should configure the new SMS Gateway to support Vitelity:</p>
+<p>Here it’s how you should configure the new SMS Gateway to support Vitelity:</p>
 <p>Name:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SMSvitelity</span>
 </pre></div>
@@ -167,7 +153,7 @@ response to that keyword.</p>
 <p>Nordic Messaging documentation: <a class="reference external" href="http://doc.nordicmessaging.se/display/EMG/Sending+messages#Sendingmessages-UsingHTTPconnector">http://doc.nordicmessaging.se/display/EMG/Sending+messages#Sendingmessages-UsingHTTPconnector</a></p>
 <p>You will need to turn on API access for whatever IP your Newfies-Dialer
 installation is hosted on.</p>
-<p>Here it&#8217;s how you should configure the new SMS Gateway to support NordicMessaging:</p>
+<p>Here it’s how you should configure the new SMS Gateway to support NordicMessaging:</p>
 <p>Name:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">NordicMessaging</span>
 </pre></div>
@@ -253,12 +239,23 @@ installation is hosted on.</p>
         <li class="right" >
           <a href="rebranding.html" title="Rebranding"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.9.2 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 4.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../admin-guide.html" >Admin Guide</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2011-2016, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
+        &#169; Copyright 2011-2017, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
     </div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-325034-18");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
   </body>
 </html>

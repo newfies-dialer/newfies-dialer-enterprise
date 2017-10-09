@@ -1,31 +1,17 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-325034-18']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>CampaignSerializer &#8212; Newfies-Dialer 3.9.2 documentation</title>
-    
+    <title>CampaignSerializer &#8212; Newfies-Dialer 4.7.0 documentation</title>
     <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '3.9.2',
+        VERSION:     '4.7.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -37,10 +23,10 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ContactSerializer" href="contact_serializers.html" />
+    <link rel="next" title="VoIPCallSerializer" href="cdr_serializers.html" />
     <link rel="prev" title="BranchingTemplateSerializer" href="branching_template_serializers.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -51,12 +37,12 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="contact_serializers.html" title="ContactSerializer"
+          <a href="cdr_serializers.html" title="VoIPCallSerializer"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="branching_template_serializers.html" title="BranchingTemplateSerializer"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.9.2 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 4.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../api-reference.html" accesskey="U">API Reference</a> &#187;</li> 
       </ul>
     </div>  
@@ -75,7 +61,7 @@
 <dd><p><strong>Create</strong>:</p>
 <blockquote>
 <div><p>CURL Usage:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span><span class="p">:</span><span class="n">password</span> <span class="o">--</span><span class="n">dump</span><span class="o">-</span><span class="n">header</span> <span class="o">-</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type:application/json&quot;</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">--</span><span class="n">data</span> <span class="s1">&#39;{&quot;name&quot;: &quot;mycampaign01&quot;, &quot;description&quot;: &quot;&quot;, &quot;callerid&quot;: &quot;1239876&quot;, &quot;startingdate&quot;: &quot;2017-01-01 13:13:33&quot;, &quot;expirationdate&quot;: &quot;2017-06-14 13:13:33&quot;, &quot;frequency&quot;: &quot;10&quot;, &quot;callmaxduration&quot;: &quot;50&quot;, &quot;maxretry&quot;: &quot;3&quot;, &quot;intervalretry&quot;: &quot;3000&quot;, &quot;calltimeout&quot;: &quot;45&quot;, &quot;aleg_gateway&quot;: &quot;/rest-api/gateway/2/&quot;, &quot;sms_gateway&quot;: &quot;&quot;, &quot;content_type&quot;: &quot;/rest-api/content-type/42/&quot;, &quot;object_id&quot; : &quot;101&quot;, &quot;extra_data&quot;: &quot;2000&quot;, &quot;voicemail&quot;: &quot;True&quot;, &quot;amd_behavior&quot;: &quot;1&quot;, &quot;voicemail_audiofile&quot;: &quot;&quot;, &quot;dnc&quot;: &quot;&quot;, &quot;user&quot;: &quot;/rest-api/users/95/&quot;, &quot;phonebook&quot;: [&quot;/rest-api/phonebook/85/&quot;], &quot;daily_start_time&quot;: &quot;00:00:00&quot;, &quot;daily_stop_time&quot;: &quot;23:59:59&quot;}&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">campaigns</span><span class="o">/</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span><span class="p">:</span><span class="n">password</span> <span class="o">--</span><span class="n">dump</span><span class="o">-</span><span class="n">header</span> <span class="o">-</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type:application/json&quot;</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">--</span><span class="n">data</span> <span class="s1">&#39;{&quot;name&quot;: &quot;mycampaign01&quot;, &quot;description&quot;: &quot;&quot;, &quot;callerid&quot;: &quot;1239876&quot;, &quot;startingdate&quot;: &quot;2017-01-01 13:13:33&quot;, &quot;expirationdate&quot;: &quot;2017-06-14 13:13:33&quot;, &quot;frequency&quot;: &quot;10&quot;, &quot;max_aleg&quot;:28, &quot;max_xfer&quot;:12, &quot;dial_method&quot;:2, &quot;agent_dial_rate&quot;:1.2, &quot;callmaxduration&quot;: &quot;50&quot;, &quot;maxretry&quot;: &quot;3&quot;, &quot;intervalretry&quot;: &quot;3000&quot;, &quot;calltimeout&quot;: &quot;45&quot;, &quot;aleg_gateway&quot;: &quot;/rest-api/gateway/2/&quot;, &quot;sms_gateway&quot;: &quot;&quot;, &quot;content_type&quot;: &quot;/rest-api/content-type/42/&quot;, &quot;object_id&quot; : &quot;101&quot;, &quot;extra_data&quot;: &quot;2000&quot;, &quot;voicemail&quot;: &quot;True&quot;, &quot;amd_behavior&quot;: &quot;1&quot;, &quot;voicemail_audiofile&quot;: &quot;&quot;, &quot;dnc&quot;: &quot;&quot;, &quot;user&quot;: &quot;/rest-api/users/95/&quot;, &quot;phonebook&quot;: [&quot;/rest-api/phonebook/85/&quot;], &quot;daily_start_time&quot;: &quot;00:00:00&quot;, &quot;daily_stop_time&quot;: &quot;23:59:59&quot;}&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">campaigns</span><span class="o">/</span>
 </pre></div>
 </div>
 <p>Response:</p>
@@ -127,6 +113,10 @@
             <span class="s2">&quot;amd_behavior&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
             <span class="s2">&quot;voicemail_audiofile&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
             <span class="s2">&quot;frequency&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="s2">&quot;max_aleg&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span>
+            <span class="s2">&quot;max_xfer&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span>
+            <span class="s2">&quot;dial_method&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span>
+            <span class="s2">&quot;agent_dial_rate&quot;</span><span class="p">:</span><span class="mf">3.6</span><span class="p">,</span>
             <span class="s2">&quot;callmaxduration&quot;</span><span class="p">:</span> <span class="mi">1800</span><span class="p">,</span>
             <span class="s2">&quot;maxretry&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
             <span class="s2">&quot;intervalretry&quot;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
@@ -163,7 +153,7 @@
 <span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">text</span><span class="o">/</span><span class="n">html</span><span class="p">;</span> <span class="n">charset</span><span class="o">=</span><span class="n">utf</span><span class="o">-</span><span class="mi">8</span>
 <span class="n">Content</span><span class="o">-</span><span class="n">Language</span><span class="p">:</span> <span class="n">en</span><span class="o">-</span><span class="n">us</span>
 
-<span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;campaign_code&quot;</span><span class="p">:</span> <span class="s2">&quot;JDQBG&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;mylittlecampaign243&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;callerid&quot;</span><span class="p">:</span> <span class="s2">&quot;1239876&quot;</span><span class="p">,</span> <span class="s2">&quot;phonebook&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;http://HOSTNAME_IP/rest-api/phonebook/1/&quot;</span><span class="p">,</span> <span class="s2">&quot;http://&lt;IP-HOST&gt;/rest-api/phonebook/2/&quot;</span><span class="p">],</span> <span class="s2">&quot;startingdate&quot;</span><span class="p">:</span> <span class="s2">&quot;2016-01-13T13:13:33&quot;</span><span class="p">,</span> <span class="s2">&quot;expirationdate&quot;</span><span class="p">:</span> <span class="s2">&quot;2016-01-14T13:13:33&quot;</span><span class="p">,</span> <span class="s2">&quot;aleg_gateway&quot;</span><span class="p">:</span> <span class="s2">&quot;http://&lt;IP-HOST&gt;/rest-api/gateway/1/&quot;</span><span class="p">,</span> <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;http://&lt;IP-HOST&gt;/rest-api/users/1/&quot;</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;content_type&quot;</span><span class="p">:</span> <span class="s2">&quot;http://&lt;IP-HOST&gt;/rest-api/content-type/67/&quot;</span><span class="p">,</span> <span class="s2">&quot;object_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;extra_data&quot;</span><span class="p">:</span> <span class="s2">&quot;2000&quot;</span><span class="p">,</span> <span class="s2">&quot;dnc&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span> <span class="s2">&quot;frequency&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;callmaxduration&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">&quot;maxretry&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;intervalretry&quot;</span><span class="p">:</span> <span class="mi">3000</span><span class="p">,</span> <span class="s2">&quot;calltimeout&quot;</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span> <span class="s2">&quot;daily_start_time&quot;</span><span class="p">:</span> <span class="s2">&quot;00:00:00&quot;</span><span class="p">,</span> <span class="s2">&quot;daily_stop_time&quot;</span><span class="p">:</span> <span class="s2">&quot;23:59:59&quot;</span><span class="p">,</span> <span class="s2">&quot;monday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;tuesday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;wednesday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;thursday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;friday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;saturday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;sunday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;completion_maxretry&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;completion_intervalretry&quot;</span><span class="p">:</span> <span class="mi">900</span><span class="p">}</span>
+<span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;campaign_code&quot;</span><span class="p">:</span> <span class="s2">&quot;JDQBG&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;mylittlecampaign243&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;callerid&quot;</span><span class="p">:</span> <span class="s2">&quot;1239876&quot;</span><span class="p">,</span> <span class="s2">&quot;phonebook&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;http://HOSTNAME_IP/rest-api/phonebook/1/&quot;</span><span class="p">,</span> <span class="s2">&quot;http://&lt;IP-HOST&gt;/rest-api/phonebook/2/&quot;</span><span class="p">],</span> <span class="s2">&quot;startingdate&quot;</span><span class="p">:</span> <span class="s2">&quot;2016-01-13T13:13:33&quot;</span><span class="p">,</span> <span class="s2">&quot;expirationdate&quot;</span><span class="p">:</span> <span class="s2">&quot;2016-01-14T13:13:33&quot;</span><span class="p">,</span> <span class="s2">&quot;aleg_gateway&quot;</span><span class="p">:</span> <span class="s2">&quot;http://&lt;IP-HOST&gt;/rest-api/gateway/1/&quot;</span><span class="p">,</span> <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;http://&lt;IP-HOST&gt;/rest-api/users/1/&quot;</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;content_type&quot;</span><span class="p">:</span> <span class="s2">&quot;http://&lt;IP-HOST&gt;/rest-api/content-type/67/&quot;</span><span class="p">,</span> <span class="s2">&quot;object_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;extra_data&quot;</span><span class="p">:</span> <span class="s2">&quot;2000&quot;</span><span class="p">,</span> <span class="s2">&quot;dnc&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span> <span class="s2">&quot;frequency&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;max_aleg&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="s2">&quot;max_xfer&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="s2">&quot;dial_method&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;agent_dial_rate&quot;</span><span class="p">:</span><span class="mf">3.6</span><span class="p">,</span> <span class="s2">&quot;callmaxduration&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">&quot;maxretry&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;intervalretry&quot;</span><span class="p">:</span> <span class="mi">3000</span><span class="p">,</span> <span class="s2">&quot;calltimeout&quot;</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span> <span class="s2">&quot;daily_start_time&quot;</span><span class="p">:</span> <span class="s2">&quot;00:00:00&quot;</span><span class="p">,</span> <span class="s2">&quot;daily_stop_time&quot;</span><span class="p">:</span> <span class="s2">&quot;23:59:59&quot;</span><span class="p">,</span> <span class="s2">&quot;monday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;tuesday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;wednesday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;thursday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;friday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;saturday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;sunday&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;completion_maxretry&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;completion_intervalretry&quot;</span><span class="p">:</span> <span class="mi">900</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>CURL Usage (Update Campaign Status==Started):</p>
@@ -201,8 +191,8 @@
   <p class="topless"><a href="branching_template_serializers.html"
                         title="previous chapter"><cite>BranchingTemplateSerializer</cite></a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="contact_serializers.html"
-                        title="next chapter"><cite>ContactSerializer</cite></a></p>
+  <p class="topless"><a href="cdr_serializers.html"
+                        title="next chapter"><cite>VoIPCallSerializer</cite></a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -227,17 +217,28 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="contact_serializers.html" title="ContactSerializer"
+          <a href="cdr_serializers.html" title="VoIPCallSerializer"
              >next</a> |</li>
         <li class="right" >
           <a href="branching_template_serializers.html" title="BranchingTemplateSerializer"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.9.2 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 4.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../api-reference.html" >API Reference</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2011-2016, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
+        &#169; Copyright 2011-2017, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
     </div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-325034-18");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
   </body>
 </html>

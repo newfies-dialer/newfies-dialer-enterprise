@@ -3,7 +3,7 @@
 .. _UserProfileSerializer-model:
 
 `UserProfileSerializer`
-------------------
+-----------------------
 
 .. autoclass:: UserProfileSerializer
     :members:

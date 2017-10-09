@@ -1,31 +1,17 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-325034-18']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>Voice Campaign &#8212; Newfies-Dialer 3.9.2 documentation</title>
-    
+    <title>Voice Campaign &#8212; Newfies-Dialer 4.7.0 documentation</title>
     <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '3.9.2',
+        VERSION:     '4.7.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -40,7 +26,7 @@
     <link rel="next" title="SMS Campaign" href="sms-campaign.html" />
     <link rel="prev" title="Contacts" href="contacts.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -56,7 +42,7 @@
         <li class="right" >
           <a href="contacts.html" title="Contacts"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.9.2 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 4.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../user-guide.html" accesskey="U">User Guide</a> &#187;</li> 
       </ul>
     </div>  
@@ -81,7 +67,7 @@
 </div>
 <p>The campaign list will be displayed from the following URL. You can add a new campaign for
 the logged in user by clicking <code class="docutils literal"><span class="pre">Add</span> <span class="pre">campaign</span></code>. When adding a campaign, it is important
-to add the campaign&#8217;s start and end dates with time &amp; week-day exceptions. Select
+to add the campaign’s start and end dates with time &amp; week-day exceptions. Select
 the gateway through which calls will be routed &amp; phonebook(s) that are
 linked with contacts from the campaign list, click on campaign to update.</p>
 <p><strong>URL</strong>:</p>
@@ -154,7 +140,7 @@ The caller ID can be changed mid campaign without stopping or pausing it.</dd>
 <p>Decide which time of day to start and stop the campaigns, as well as which days they are active. By default, the campaign is set to start at the time of creation and finish 24 hours later.</p>
 <a class="reference internal image-reference" href="../_images/add_campaign_schedule.png"><img alt="../_images/add_campaign_schedule.png" src="../_images/add_campaign_schedule.png" style="width: 800px;" /></a>
 <p>It is good practice to set the days and times that a campaign should be active to ensure that calls are not made out of hours.</p>
-<p>USA based systems can be configured to respect timezones. Set a Daily Start Time and a Daily Stop Time and set the Timezone Dialling Switch to <strong>On</strong> to make calls according to an individual contact&#8217;s own timezone.</p>
+<p>USA based systems can be configured to respect timezones. Set a Daily Start Time and a Daily Stop Time and set the Timezone Dialling Switch to <strong>On</strong> to make calls according to an individual contact’s own timezone.</p>
 <p>The date and time for campaign Start and Finish is in local time. The calls will only be made between these dates and times irrespective of the timezone of your contacts.</p>
 <p>Note that retries do not respect the stop time, so sufficient time must be given for these to complete before the campaign stops.</p>
 </div>
@@ -165,13 +151,13 @@ The caller ID can be changed mid campaign without stopping or pausing it.</dd>
 </div>
 <div class="section" id="list-campaigns">
 <span id="id3"></span><h2><a class="toc-backref" href="#id9">List Campaigns</a><a class="headerlink" href="#list-campaigns" title="Permalink to this headline">¶</a></h2>
-<p>When a campaign is first created, the &#8220;Type&#8221; will show Survey Template, and the number of contacts will be 0. When the play button is pressed, the the &#8220;Type&#8221; will change to Survey and the number of contacts will be displayed.</p>
+<p>When a campaign is first created, the “Type” will show Survey Template, and the number of contacts will be 0. When the play button is pressed, the the “Type” will change to Survey and the number of contacts will be displayed.</p>
 <a class="reference internal image-reference" href="../_images/campaign_list1.png"><img alt="../_images/campaign_list1.png" src="../_images/campaign_list1.png" style="width: 800px;" /></a>
 <p>During the campaign, the speed of the campaign can be varied without having to stop the campaign.</p>
 <p>When the campaign is started, a snapshot is taken of the survey at that time, so if there is a mistake in the survey, and you edit it, a new campaign will have to be created ton include your edit.</p>
 <p>There is also the option to copy a campaign. When a campaign is copied, it will use the snpashot described in the previous paragraph, so if you edit the a survey, then copy an existing campaign, the survey edits will not be included.</p>
 <p>In brief, if you edit a survey, make a new campaign.</p>
-<p>While the survey is in a state of &#8220;Started&#8221; then new contacts can be added to the phonebook and they will be called. This will not occur if the campaign is stopped, even if the campaign is later restarted.</p>
+<p>While the survey is in a state of “Started” then new contacts can be added to the phonebook and they will be called. This will not occur if the campaign is stopped, even if the campaign is later restarted.</p>
 </div>
 </div>
 
@@ -219,12 +205,23 @@ The caller ID can be changed mid campaign without stopping or pausing it.</dd>
         <li class="right" >
           <a href="contacts.html" title="Contacts"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.9.2 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 4.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../user-guide.html" >User Guide</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2011-2016, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
+        &#169; Copyright 2011-2017, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
     </div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-325034-18");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
   </body>
 </html>

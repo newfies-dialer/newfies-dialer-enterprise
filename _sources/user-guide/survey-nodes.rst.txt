@@ -68,11 +68,7 @@ Tag Substitution with TTS
 -------------------------
 
 This is the list of standard tags that will be automatically replaced:
-    {last_name}
-    {first_name}
-    {email}
-    {country}
-    {city}
+    {full_name}
     {contact}  // This is the phone number
 
 If you need more flexibility, you can use the "Additional Parameters (JSON)" field which allow you to add custom key-values that will be replaced.
@@ -275,13 +271,8 @@ This is the current list of variables passed:
     - subscriber_id
     - contact_id
     - callrequest_id
-    - used_gateway_id
     - last_digits
-    - contact_last_name
-    - contact_first_name
-    - contact_email
-    - contact_country
-    - contact_city
+    - contact_full_name
     - caller_id_name
     - caller_id_number
     - destination_number

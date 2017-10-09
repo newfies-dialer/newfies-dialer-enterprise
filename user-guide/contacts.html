@@ -1,31 +1,17 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-325034-18']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>Contacts &#8212; Newfies-Dialer 3.9.2 documentation</title>
-    
+    <title>Contacts &#8212; Newfies-Dialer 4.7.0 documentation</title>
     <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '3.9.2',
+        VERSION:     '4.7.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -40,7 +26,7 @@
     <link rel="next" title="Voice Campaign" href="voice-campaign.html" />
     <link rel="prev" title="Survey &amp; IVR Configuration" href="survey-nodes.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -56,7 +42,7 @@
         <li class="right" >
           <a href="survey-nodes.html" title="Survey &amp; IVR Configuration"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.9.2 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 4.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../user-guide.html" accesskey="U">User Guide</a> &#187;</li> 
       </ul>
     </div>  
@@ -104,7 +90,7 @@
 </div>
 <div class="section" id="contact">
 <span id="id2"></span><h2><a class="toc-backref" href="#id5">Contact</a><a class="headerlink" href="#contact" title="Permalink to this headline">¶</a></h2>
-<p>The contact list will be displayed from following the URL. You can add a new contact by clicking <code class="docutils literal"><span class="pre">Add</span> <span class="pre">contact</span></code> &amp; adding the contact details (i.e. phone number, name, description, contact status) under the logged in user&#8217;s phonebook from the phonebook list. On the contact list, click on the contact to update.</p>
+<p>The contact list will be displayed from following the URL. You can add a new contact by clicking <code class="docutils literal"><span class="pre">Add</span> <span class="pre">contact</span></code> &amp; adding the contact details (i.e. phone number, name, description, contact status) under the logged in user’s phonebook from the phonebook list. On the contact list, click on the contact to update.</p>
 <p>NB: the phone number needs to be in full international format, that is to say, +12024648397 for a USA number rather than 12024648397, or 2024648397.
 If numbers are entered in national format, then the + and country prefix will automatically be pre-pended according to the country set during installation. This also applies to imported numbers.</p>
 <p><strong>URL</strong>:</p>
@@ -132,8 +118,8 @@ If numbers are entered in national format, then the + and country prefix will au
 </div>
 <div class="section" id="import-contacts">
 <span id="id3"></span><h2><a class="toc-backref" href="#id6">Import Contacts</a><a class="headerlink" href="#import-contacts" title="Permalink to this headline">¶</a></h2>
-<p>To import bulk contacts into a phonebook, click on <cite>Import</cite> where you can upload contacts via a CSV file under a logged in user&#8217;s phonebook.</p>
-<p>There are two import modes, the default is a simple import where only the telephone numbers need uploading, advanced is where you need to upload other data with the telephone number such as name and address.</p>
+<p>To import bulk contacts into a phonebook, click on <cite>Import</cite> where you can upload contacts via a CSV file under a logged in user’s phonebook.</p>
+<p>There are two import modes, the default is a simple import where only the telephone numbers need uploading, advanced is where you need to upload other data with the telephone number such as full name and additional vars (Json field).</p>
 <div class="section" id="import-contact-simple">
 <h3><a class="toc-backref" href="#id7">Import Contact (Simple)</a><a class="headerlink" href="#import-contact-simple" title="Permalink to this headline">¶</a></h3>
 <p><strong>URL</strong>:</p>
@@ -151,11 +137,11 @@ If numbers are entered in national format, then the + and country prefix will au
 <span class="o">+</span><span class="mi">18058586048</span>
 </pre></div>
 </div>
-<p>Now ensure the heading says &#8216;Import Contact (Simple)&#8217; if not, select &#8216;simple&#8217; as the import mode, select the phonebook you are importing to, &#8216;Choose File&#8217; from the interface, and upload, then check to ensure that the upload has worked as expected.</p>
+<p>Now ensure the heading says ‘Import Contact (Simple)’ if not, select ‘simple’ as the import mode, select the phonebook you are importing to, ‘Choose File’ from the interface, and upload, then check to ensure that the upload has worked as expected.</p>
 </div>
 <div class="section" id="advanced-import">
 <h3><a class="toc-backref" href="#id8">Advanced Import</a><a class="headerlink" href="#advanced-import" title="Permalink to this headline">¶</a></h3>
-<p>The advanced mode should be used when other contact details have to be uploaded such as name, address and additional JSON parameters.</p>
+<p>The advanced mode should be used when other contact details have to be uploaded such as full name and additional JSON parameters.</p>
 <p><strong>URL</strong>:</p>
 <blockquote>
 <div><ul class="simple">
@@ -163,12 +149,12 @@ If numbers are entered in national format, then the + and country prefix will au
 </ul>
 </div></blockquote>
 <a class="reference internal image-reference" href="../_images/import_contact_advanced.png"><img alt="../_images/import_contact_advanced.png" src="../_images/import_contact_advanced.png" style="width: 700px;" /></a>
-<p>Use the pipe &#8220;|&#8221; as the field delimiter, e.g.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">+</span><span class="mi">1234567890</span><span class="o">|</span><span class="n">surname</span><span class="o">|</span><span class="n">forename</span><span class="o">|</span><span class="n">email</span><span class="nd">@somewhere</span><span class="o">.</span><span class="n">com</span><span class="o">|</span><span class="n">test</span><span class="o">-</span><span class="n">contact</span><span class="o">|</span><span class="mi">1</span><span class="o">|</span><span class="n">address</span><span class="o">|</span><span class="n">city</span><span class="o">|</span><span class="n">state</span><span class="o">|</span><span class="n">US</span><span class="o">|</span><span class="n">unit</span><span class="o">|</span><span class="p">{</span><span class="s2">&quot;age&quot;</span><span class="p">:</span><span class="s2">&quot;32&quot;</span><span class="p">,</span><span class="s2">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;doctor&quot;</span><span class="p">}</span><span class="o">|</span>
+<p>Use the pipe “|” as the field delimiter, e.g.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">+</span><span class="mi">1234567890</span><span class="o">|</span><span class="n">full</span> <span class="n">name</span><span class="o">|</span><span class="p">{</span><span class="s2">&quot;age&quot;</span><span class="p">:</span><span class="s2">&quot;32&quot;</span><span class="p">,</span><span class="s2">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;doctor&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>The file needs to contain all the pipes, even if you don&#8217;t want to populate all the fields. e.g.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">+</span><span class="mi">12024648397</span><span class="o">|||||</span><span class="mi">1</span><span class="o">|||||||||</span>
+<p>The file needs to contain all the pipes, even if you don’t want to populate all the fields. e.g.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">+</span><span class="mi">12024648397</span><span class="o">||</span>
 </pre></div>
 </div>
 </div>
@@ -185,8 +171,8 @@ If numbers are entered in national format, then the + and country prefix will au
 <span id="special-function-additional-parameters-keywords"></span><h2><a class="toc-backref" href="#id10">Special Function Additional parameters keywords (JSON)</a><a class="headerlink" href="#special-function-additional-parameters-keywords-json" title="Permalink to this headline">¶</a></h2>
 <p>Some special function keywords can be added which change the usual behaviour of the system. These are:</p>
 <p><strong>transfer_phonenumber</strong> - the value of the transfer phone number overwrites the SIP URI / Phone number in the call transfer node.</p>
-<p><strong>transfer_ref</strong> - this means that a SIP header &#8220;P-Contact-Transfer-Ref&#8221; is added on transfer, which may be used to trigger a screen pop or otherwise identify the contact transferred at your IP-PBX.</p>
-<p><strong>sms_phonenumber</strong> - when the SMS node is used, rather than sending the SMS to the contact&#8217;s number, it can be sent to a different number, e.g. the contact&#8217;s cellphone number, if this keyword is used.</p>
+<p><strong>transfer_ref</strong> - this means that a SIP header “P-Contact-Transfer-Ref” is added on transfer, which may be used to trigger a screen pop or otherwise identify the contact transferred at your IP-PBX.</p>
+<p><strong>sms_phonenumber</strong> - when the SMS node is used, rather than sending the SMS to the contact’s number, it can be sent to a different number, e.g. the contact’s cellphone number, if this keyword is used.</p>
 </div>
 </div>
 
@@ -234,12 +220,23 @@ If numbers are entered in national format, then the + and country prefix will au
         <li class="right" >
           <a href="survey-nodes.html" title="Survey &amp; IVR Configuration"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.9.2 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 4.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../user-guide.html" >User Guide</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2011-2016, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
+        &#169; Copyright 2011-2017, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
     </div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-325034-18");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
   </body>
 </html>

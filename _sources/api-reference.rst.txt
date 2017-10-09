@@ -15,6 +15,7 @@ Contents:
     ./api-doc/audiofile_serializers
     ./api-doc/branching_template_serializers
     ./api-doc/campaign_serializers
+    ./api-doc/cdr_serializers
     ./api-doc/contact_serializers
     ./api-doc/content_type_serializers
     ./api-doc/dnc_serializers

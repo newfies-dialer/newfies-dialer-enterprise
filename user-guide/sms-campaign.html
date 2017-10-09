@@ -1,31 +1,17 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-325034-18']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>SMS Campaign &#8212; Newfies-Dialer 3.9.2 documentation</title>
-    
+    <title>SMS Campaign &#8212; Newfies-Dialer 4.7.0 documentation</title>
     <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '3.9.2',
+        VERSION:     '4.7.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -40,7 +26,7 @@
     <link rel="next" title="Reports" href="reports.html" />
     <link rel="prev" title="Voice Campaign" href="voice-campaign.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -56,7 +42,7 @@
         <li class="right" >
           <a href="voice-campaign.html" title="Voice Campaign"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.9.2 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 4.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../user-guide.html" accesskey="U">User Guide</a> &#187;</li> 
       </ul>
     </div>  
@@ -92,14 +78,14 @@
 <li><strong>Text Message</strong> - Enter the message to be sent, with no more than 160 characters.</li>
 </ul>
 </div></blockquote>
-<p>Tag Replacement can be used here to personalise the message, e.g. Hello {first_name} {last_name} will replace whatever you have in the first and last name fields against the contact.</p>
+<p>Tag Replacement can be used here to personalise the message, e.g. Hello {full_name} will replace whatever you have in the full name fields against the contact.</p>
 <p>At this point the campaign could be saved and sent, however there are a number of other parameters that can be adjusted:</p>
 <div class="section" id="completion">
 <span id="sms-completion-settings"></span><h3>Completion<a class="headerlink" href="#completion" title="Permalink to this headline">¶</a></h3>
 <p>Under the completion tab:</p>
 <blockquote>
 <div><ul class="simple">
-<li><strong>Frequency</strong> Number of SMS&#8217;s to send per minute.</li>
+<li><strong>Frequency</strong> Number of SMS’s to send per minute.</li>
 <li><strong>Time Between Retries</strong> If a message delivery fails, wait this number of seconds before retrying.</li>
 <li><strong>Max Retries</strong> Number of times to re-attempt message delivery.</li>
 </ul>
@@ -123,7 +109,7 @@
 </div>
 <div class="section" id="reporting">
 <span id="sms-reporting"></span><h2>Reporting<a class="headerlink" href="#reporting" title="Permalink to this headline">¶</a></h2>
-<p>To view the SMS reports, click reporting then SMS reports on the side menu. The call data records for SMS messages are listed under the SMS tab, while a daily report shows the number of SMS&#8217;s sent by day.</p>
+<p>To view the SMS reports, click reporting then SMS reports on the side menu. The call data records for SMS messages are listed under the SMS tab, while a daily report shows the number of SMS’s sent by day.</p>
 <p>Records can be filtered on date, status and campaign.</p>
 <p>SMS CDR can be exported in CSV, XML and Excel formats.</p>
 <p><strong>URL</strong>:</p>
@@ -181,12 +167,23 @@
         <li class="right" >
           <a href="voice-campaign.html" title="Voice Campaign"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.9.2 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 4.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../user-guide.html" >User Guide</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2011-2016, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
+        &#169; Copyright 2011-2017, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
     </div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-325034-18");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
   </body>
 </html>

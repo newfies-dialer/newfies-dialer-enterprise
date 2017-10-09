@@ -1,31 +1,17 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-325034-18']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <title>Freeswitch Trunk configuration &#8212; Newfies-Dialer 3.9.2 documentation</title>
-    
+    <title>Freeswitch Trunk configuration &#8212; Newfies-Dialer 4.7.0 documentation</title>
     <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '3.9.2',
+        VERSION:     '4.7.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -40,7 +26,7 @@
     <link rel="next" title="Site Configuration" href="site-config.html" />
     <link rel="prev" title="Configuration" href="configuration.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -56,7 +42,7 @@
         <li class="right" >
           <a href="configuration.html" title="Configuration"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.9.2 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 4.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../admin-guide.html" accesskey="U">Admin Guide</a> &#187;</li> 
       </ul>
     </div>  
@@ -119,9 +105,9 @@
 &lt;/include&gt;
 </pre></div>
 </div>
-<p>The XML syntax for comments are denoted by lines that begin &#8221; &lt;!– &#8221; and end in &#8220;–&gt; &#8221;.</p>
-<p>Finally we need to load the new configuration, and check the trunk is registered. The Freeswitch console is accessed by typing &#8220;fs_cli&#8221; at the command prompt. The logging level can be increased or decreased from level 0 to level 7. to switch off logging, type /log 0 at the Freeswitch console, followed by enter. For the greatest verbosity, type /log 7 followed by enter.</p>
-<p>Type &#8220;fs_cli&#8221; followed by enter.</p>
+<p>The XML syntax for comments are denoted by lines that begin ” &lt;!– ” and end in “–&gt; “.</p>
+<p>Finally we need to load the new configuration, and check the trunk is registered. The Freeswitch console is accessed by typing “fs_cli” at the command prompt. The logging level can be increased or decreased from level 0 to level 7. to switch off logging, type /log 0 at the Freeswitch console, followed by enter. For the greatest verbosity, type /log 7 followed by enter.</p>
+<p>Type “fs_cli” followed by enter.</p>
 <p>You should now see the Freeswitch CLI, so now reload the Freeswitch configuration with the following command: (tip; Tab auto-completes)</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sofia</span> <span class="n">profile</span> <span class="n">external</span> <span class="n">restart</span> <span class="n">reloadxml</span>
 </pre></div>
@@ -162,7 +148,7 @@ admin,  add a new dialer gateway, e.g. sofia/gateway/myprovider/ (The final / is
 </div>
 <div class="section" id="add-carrier-to-admin-or-manager">
 <h2><a class="toc-backref" href="#id4">Add Carrier to Admin or Manager</a><a class="headerlink" href="#add-carrier-to-admin-or-manager" title="Permalink to this headline">¶</a></h2>
-<p>To make the new carrier available to a user, you will select the gateways the Admin or the Manager is allowed to use in the appropriate Manager&#8217;s or Admin&#8217;s settings.</p>
+<p>To make the new carrier available to a user, you will select the gateways the Admin or the Manager is allowed to use in the appropriate Manager’s or Admin’s settings.</p>
 </div>
 </div>
 
@@ -210,12 +196,23 @@ admin,  add a new dialer gateway, e.g. sofia/gateway/myprovider/ (The final / is
         <li class="right" >
           <a href="configuration.html" title="Configuration"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 3.9.2 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 4.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../admin-guide.html" >Admin Guide</a> &#187;</li> 
       </ul>
     </div>
+
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2011-2016, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
+        &#169; Copyright 2011-2017, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
     </div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-325034-18");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
   </body>
 </html>
