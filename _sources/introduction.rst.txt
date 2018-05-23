@@ -4,16 +4,15 @@
 Introduction
 ============
 
-:Web: http://www.newfies-dialer.org/
-:Keywords: voice broadcasting, autodialer, voip, freeswitch, IVR, SMS, call blasting
+:Web: https://newfies-dialer.org/
+:Keywords: predictive dialer, callcenter, autodialer, outbound callcenter, power dialer
 
-|
 
 Newfies-Dialer is an SMS and voice broadcasting system built to support
 cloud based servers and can also work on standalone servers.
 It uses `Freeswitch`_ (VoIP Server) to make calls.
 
-.. image:: ./_static/images/newfies-dialer-dashboard.png
+.. image:: ./_static/images/predictive-dialer-campaign_list.png
     :width: 800
 
 Using very simple steps, Newfies-Dialer will help you create campaigns, add
@@ -26,13 +25,7 @@ via the API's.
 
 .. _`Freeswitch`: http://www.freeswitch.org/
 
-
-.. contents::
-    :local:
-    :depth: 1
-
-
-.. _newfies-dialer_overview:
+.. _dialerai_overview:
 
 Overview
 --------
@@ -113,7 +106,7 @@ Features
     |                 | connect the user to another IVR/phone number on    |
     |                 | pressing a key.                                    |
     +-----------------+----------------------------------------------------+
-    | Web Interface   | Newfies-Dialer can be managed via a Web interface. |
+    | Web Interface   | It can be fully managed via a Web interface.       |
     |                 | Realtime web-based reports for call details and    |
     |                 | current calls.                                     |
     +-----------------+----------------------------------------------------+
@@ -152,23 +145,6 @@ Features
     | USA Timezone    | Contact's timezone identified from the telephone   |
     | Support         | number and called according to their local time.   |
     +-----------------+----------------------------------------------------+
-    
-
-.. _server-spec:
-
-Server Specification
---------------------
-
-For best performance we recommend a highly specified server with good IO
-suggesting SSD, RAID 0 or RAID 10, plenty of RAM and multiple processors.
-
-
-The capacity of your Newfies-Dialer server can only be determined accurately
-with benchmarking.
-
-As a rule of thumb, if you are looking for more than 500 concurrent calls,
-then we would recommend a multi-server installation consisting of one database
-and web server and multiple Freeswitch systems to make the calls.
 
 
 .. _pricing:
@@ -180,8 +156,8 @@ Newfies-Dialer can be installed on either your servers (On-Premises) or on our
 servers (Rented) in our data centre. In either case, you provide the carrier
 to terminate your calls, if you need a carrier we can give some recommendations.
 
-To see pricing for on-premises and rented servers with or without AMD,
-visit our pricing page: http://www.newfies-dialer.org/pricing/
+To see pricing for on-premises and rented servers, visit our pricing
+page at https://newfies-dialer.org/pricing/
 
 
 .. _contact-us:
@@ -189,12 +165,8 @@ visit our pricing page: http://www.newfies-dialer.org/pricing/
 Contact Us
 ----------
 
-Star2Billing is the company behind the Newfies-Dialer SMS and Voice Broadcasting
-Solution and can be contacted at the email addresses and telephone numbers below
-during our normal working hours, Central European Time.
-
-Star2Billing can be contacted at:
+Newfies-Dialer can be contacted at:
 
 * Email: newfies-dialer@star2billing.com
-* Tel (UK): +44 117 911 4474
-* Tel (USA): +1-202-464-8397
+* Tel (UK): +44 20 8068 2675
+* Tel (USA): +1-415-937-6673

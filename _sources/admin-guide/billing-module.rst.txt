@@ -127,14 +127,14 @@ There are a few steps that need to be taken to sign up to Braintree and prepare 
 
 Once the Credit Card Billing Module is installed, then customers will be allowed to "Add Credit" to their account.
 
-.. image:: ../_static/images/billing/newfies-payment-add-credit.png
+.. image:: ../_static/images/billing/payment-add-credit.png
     :width: 800
 
 The amounts that the customer can select is configured in the configuration file as can the payment description appearing on the customer's credit card statement. Contact support to change these values.
 
 After selecting the amount to refill, the customer will be taken to the credit card form.
 
-.. image:: ../_static/images/billing/newfies-payment-credit-card-form.png
+.. image:: ../_static/images/billing/payment-credit-card-form.png
 
 At this point the customer can opt to pay via Paypal instead of credit card. Credit card information is not held locally, but by Braintree. Credit card information is stored by Braintree to allowing the customer to future purchases with one click.
 
@@ -174,7 +174,7 @@ Billing Settings
     # BILLING
     # =======
 
-    # Feature switch to enable or disable payment in Newfies Dialer UI
+    # Feature switch to enable or disable payment in Newfies-Dialer UI
     BILLING_SWITCH = True
 
     # Currency displayed $ / €

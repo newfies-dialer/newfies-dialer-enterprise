@@ -1,11 +1,11 @@
-.. Newfies documentation master file
+.. Newfies-Dialer documentation master file
 
-Documentation Newfies-Dialer
-============================
+Auto-Dialer Solution for CallCenter
+===================================
 
-:Version: |version|
 :Release: |release|
 :Date: |today|
+:Web: https://newfies-dialer.org/
 
 
 Contents:
@@ -22,7 +22,6 @@ Contents:
     :maxdepth: 1
 
     api-reference
-    extra
 
 
 Indices and tables

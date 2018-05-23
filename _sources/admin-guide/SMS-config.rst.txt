@@ -11,7 +11,7 @@ SMS Configuration
 Configuration
 =============
 
-SMS braodcasting is supported as standard by Newfies-Dialer, allowing Newfies-Dialer to send out thousands or millions of SMS messages to  contacts.
+SMS broadcasting is supported as standard by Newfies-Dialer, allowing Newfies-Dialer to send out thousands or millions of SMS messages to  contacts.
 
 The SMS gateway supports the following gateways, Clickatell (http://www.clickatell.com/) and SMSGlobal (http://www.smsglobal.com). Additionally, Khomp hardware is supported to allow the use of SIM cards in house. See http://www.khomp.com.br/ for more details.
 

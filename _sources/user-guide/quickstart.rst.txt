@@ -6,10 +6,10 @@ Quick Start
 The purpose of this short guide is to give a quick overview from creating a suvey through to making an outbound call. It is recommended that you run through this guide on your own platform before attempting more complex surveys and campaigns.
 
 We are going to use the customer portal to:
- - Create a phonebook 
- - Add some contacts to the phonebook 
+ - Create a phonebook
+ - Add some contacts to the phonebook
  - Create campaign using the survey and campaign
- - Start the outbound voice broadcast. 
+ - Start the outbound voice broadcast.
 
 NB: These tasks should always be done from the Customer Portal and not from the Admin Interface. To proceed, click "Customer Panel" at the top of Admin interface.
 
@@ -22,12 +22,17 @@ The phonebook is where lists of subscribers are grouped. Click Customer Panel on
 
 Create a new phonebook called, for the purposes of the exercise, PB1, and give it a description.
 
+.. image:: ../_static/images/customer/quickstart_add_phonebook.png
+
+
 .. _add_contacts:
 
 Add Contacts
 ------------
 
 Click contact, and add a new contact. As a minimum add a phone number to call in the Contact field, and for the purposes of this demonstration, enter your own telephone number in full international format including the leading +, for instance +12024648397 in the USA or +441179114474 in the UK
+
+.. image:: ../_static/images/customer/quickstart_add_contact.png
 
 Repeat as necessary until you have your test numbers added.
 
@@ -44,9 +49,13 @@ The aim is that Newfies-Dialer will call you, and when you answer, Newfies-Diale
 
 Click "Add Section" and select "Play Message", enter "Hello World" in the section title. This is the speech that will be read out by the TTS engine. It can be edited later. When done, click save.
 
+.. image:: ../_static/images/customer/quickstart_add_playaudio_node.png
+
 Best practice is that we should explicitly hangup, and mark the survey as complete, so click "Add Section" and select Hangup as the node type. Type "Goodbye" in the section title, and tick "Survey complete"
 
 Next, set up the node branching. On the play message panel, click the branch icon, and select "Goodbye" as the next destination.
+
+.. image:: ../_static/images/customer/quickstart_add_hangup_node.png
 
 Finally, click Close Survey, and move on to configuring the campaign.
 
@@ -58,6 +67,8 @@ Configure Campaign
 We now have all the components to create and run our campaign, so click campaign, and click add.
 
 Give the Campaign a name, say "CPN Hello World", optionally, a description, set a caller ID to pass the called party,  select the A-Leg Gateway you configured earlier, the application, Hello World, and highlight the phonebook PB1, and submit. You will be returned to the list of campaigns.
+
+.. image:: ../_static/images/customer/quickstart_add_campaign.png
 
 .. _start_the_campaign:
 

@@ -37,10 +37,10 @@ In order to provide support to an individual user without needing to know their 
 
 List the Managers, then click Hijack against the manager you want access.
 
-.. image:: ../_static/images/admin/newfies-hijack-user.png
+.. image:: ../_static/images/admin/dialerai-hijack-user.png
 
 You will then be logged on to your Manager's account.
 
-.. image:: ../_static/images/admin/newfies-user-hijacked.png
+.. image:: ../_static/images/admin/dialerai-user-hijacked.png
 
 

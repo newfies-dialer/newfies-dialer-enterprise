@@ -4,20 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Survey &amp; IVR Configuration &#8212; Newfies-Dialer 4.9.2 documentation</title>
+    <title>Survey &amp; IVR Configuration &#8212; Newfies-Dialer 5.2.23 documentation</title>
     <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '4.9.2',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -25,8 +17,7 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Contacts" href="contacts.html" />
     <link rel="prev" title="Customer Panel" href="customer-panel.html" /> 
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -42,7 +33,7 @@
         <li class="right" >
           <a href="customer-panel.html" title="Customer Panel"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 4.9.2 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 5.2.23 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../user-guide.html" accesskey="U">User Guide</a> &#187;</li> 
       </ul>
     </div>  
@@ -195,22 +186,22 @@ Text example:</p>
 <img alt="../_images/node_call_transfer.png" src="../_images/node_call_transfer.png" />
 <p>In order to support screen-pops and deliver other data, there has been some data included in the SIP message</p>
 <p>By default the following data is included in the SIP header on call transfer:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">P</span><span class="o">-</span><span class="n">CallRequest</span><span class="o">-</span><span class="n">ID</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">Call</span> <span class="n">request</span> <span class="n">ID</span>
-<span class="n">P</span><span class="o">-</span><span class="n">Contact</span><span class="o">-</span><span class="n">ID</span> <span class="ow">is</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">Contact</span> <span class="n">ID</span><span class="o">.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">P</span><span class="o">-</span><span class="n">CallRequest</span><span class="o">-</span><span class="n">ID</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">Call</span> <span class="n">request</span> <span class="n">ID</span>
+<span class="n">P</span><span class="o">-</span><span class="n">Contact</span><span class="o">-</span><span class="n">ID</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">Contact</span> <span class="n">ID</span><span class="o">.</span>
 </pre></div>
 </div>
 <p>It is envisaged that these ID numbers can be used to do database look-ups on the Newfies-Dialer database.</p>
 <p>Furthermore, there is a optional SIP header that can be added.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">P</span><span class="o">-</span><span class="n">Contact</span><span class="o">-</span><span class="n">Transfer</span><span class="o">-</span><span class="n">Ref</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">P</span><span class="o">-</span><span class="n">Contact</span><span class="o">-</span><span class="n">Transfer</span><span class="o">-</span><span class="n">Ref</span><span class="p">:</span>
 </pre></div>
 </div>
 <p>This can be added against the Contact in the “Additional Parmeters (JSON)” field.
 Simply add the “transfer_ref” keyword and string to send in the SIP message as follows:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;transfer_ref&quot;</span><span class="p">:</span> <span class="s2">&quot;My-Unique-Ref-Number&quot;</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;transfer_ref&quot;</span><span class="p">:</span> <span class="s2">&quot;My-Unique-Ref-Number&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>In the SIP headers, you will see:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">P</span><span class="o">-</span><span class="n">CallRequest</span><span class="o">-</span><span class="n">ID</span><span class="p">:</span> <span class="mi">3</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">P</span><span class="o">-</span><span class="n">CallRequest</span><span class="o">-</span><span class="n">ID</span><span class="p">:</span> <span class="mi">3</span>
 <span class="n">P</span><span class="o">-</span><span class="n">Contact</span><span class="o">-</span><span class="n">ID</span><span class="p">:</span> <span class="mi">1</span>
 <span class="n">P</span><span class="o">-</span><span class="n">Contact</span><span class="o">-</span><span class="n">Transfer</span><span class="o">-</span><span class="n">Ref</span><span class="p">:</span> <span class="n">My</span><span class="o">-</span><span class="n">Unique</span><span class="o">-</span><span class="n">Ref</span><span class="o">-</span><span class="n">Number</span>
 </pre></div>
@@ -229,7 +220,7 @@ Simply add the “transfer_ref” keyword and string to send in the SIP message 
 </div></blockquote>
 <p>The API <em>MUST</em> implement the GET method on the given URL and return a valid
 JSON document with the field “api_result”, eg:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;api_result&quot;</span><span class="p">:</span> <span class="s2">&quot;5000&quot;</span>
 <span class="p">}</span>
 </pre></div>
@@ -301,12 +292,14 @@ computer, then click submit.</p>
                         title="next chapter">Contacts</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -328,13 +321,13 @@ computer, then click submit.</p>
         <li class="right" >
           <a href="customer-panel.html" title="Customer Panel"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 4.9.2 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 5.2.23 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../user-guide.html" >User Guide</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2011-2017, Star2Billing S.L. &lt;newfies-dialer@star2billing.com&gt;.
+        &#169; Copyright 2017-2018, Newfies-Dialer mass outbound calling, voice broadcasting, phone survey solution &lt;newfies-dialer@star2billing.com&gt;.
     </div>
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

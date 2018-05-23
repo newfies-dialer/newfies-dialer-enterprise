@@ -202,7 +202,7 @@ By default the following data is included in the SIP header on call transfer:
 ::
 
     P-CallRequest-ID is the Call request ID
-    P-Contact-ID is is the Contact ID.
+    P-Contact-ID is the Contact ID.
 
 It is envisaged that these ID numbers can be used to do database look-ups on the Newfies-Dialer database.
 

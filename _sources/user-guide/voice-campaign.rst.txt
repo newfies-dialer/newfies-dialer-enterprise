@@ -18,7 +18,7 @@ linked with contacts from the campaign list, click on campaign to update.
 
     * http://HOSTNAME_IP/campaign/
 
-.. image:: ../_static/images/customer/campaign_list.png
+.. image:: ../_static/images/predictive-dialer-campaign_list.png
     :width: 800
 
 
@@ -50,7 +50,7 @@ The `Add New Campaign` tab has a number of fields to fill in:
 NB: The caller ID number can be set to a random value by putting in XXXXXXXXXX, which will give 10 digit random numbers. 800XXXXXXX will set the caller ID to 800 followed by 7 random numbers.
     Alternatively, up to 10 caller ID can be entered separated by a semi-colon; a caller ID will be chosen at random from the 10 caller ID.
     The caller ID can be changed mid campaign without stopping or pausing it.
-    
+
 
 .. image:: ../_static/images/customer/add_campaign_dialer.png
     :width: 800
@@ -98,7 +98,7 @@ Decide which time of day to start and stop the campaigns, as well as which days 
 
 It is good practice to set the days and times that a campaign should be active to ensure that calls are not made out of hours.
 
-USA based systems can be configured to respect timezones. Set a Daily Start Time and a Daily Stop Time and set the Timezone Dialling Switch to **On** to make calls according to an individual contact's own timezone. 
+USA based systems can be configured to respect timezones. Set a Daily Start Time and a Daily Stop Time and set the Timezone Dialling Switch to **On** to make calls according to an individual contact's own timezone.
 
 The date and time for campaign Start and Finish is in local time. The calls will only be made between these dates and times irrespective of the timezone of your contacts.
 
@@ -125,7 +125,7 @@ When a campaign is first created, the "Type" will show Survey Template, and the 
 .. image:: ../_static/images/customer/campaign_list.png
     :width: 800
 
-During the campaign, the speed of the campaign can be varied without having to stop the campaign. 
+During the campaign, the speed of the campaign can be varied without having to stop the campaign.
 
 When the campaign is started, a snapshot is taken of the survey at that time, so if there is a mistake in the survey, and you edit it, a new campaign will have to be created ton include your edit.
 

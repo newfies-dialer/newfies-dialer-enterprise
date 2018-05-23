@@ -4,19 +4,27 @@
 Admin Guide
 ===========
 
-Contents:
+When a Newfies-Dialer system is first commissioned, much of this work will be done as part of the commissioning process by the Newfies-Dialer team. However, it may be necessary for Newfies-Dialer admin to add new gateways or make other changes to the system.
+
+The commissioning process will include:
+
+* **Freeswitch/VoIP configuration** - setting up the VoIP gateways (carriers)
+* **Text to speech**  - configuring TTS engines
+* **SMS configuration** - settings up the SMS providers
+
+Tasks which will be performed by Newfies-Dialer admin, with our training, will include:
+
+* Adding new users
+* Creating Dialer settings, which control the resources any one user can consume
+
+
+**Admin Guide Contents:**
 
 .. toctree::
     :maxdepth: 1
 
-    ./admin-guide/configuration.rst
-    ./admin-guide/freeswitch-config.rst
-    ./admin-guide/site-config.rst
-    ./admin-guide/rebranding.rst
     ./admin-guide/SMS-config.rst
     ./admin-guide/billing-module.rst
     ./admin-guide/dialer-settings.rst
     ./admin-guide/add-user.rst
-    ./admin-guide/tts-config.rst
     ./admin-guide/admin-panel
-    ./admin-guide/trouble-shooting.rst
