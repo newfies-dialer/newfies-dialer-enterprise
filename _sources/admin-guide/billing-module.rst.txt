@@ -215,6 +215,12 @@ The following Negative Balance settings can be adjusted to suit your preferences
     # Define the minimum amount of credit to send SMS
     BILLING_MIN_CREDIT_SMS = 0.02
 
+Additionally there is a setting BILLING_LOW_CREDIT_WARNING that allow you to configure a notification on the UI when balance is under a specific threshold.
+
+::
+    # Define threshold to warn user on the UI when his credit are low
+    BILLING_LOW_CREDIT_WARNING = 5
+
 
 Payments
 ~~~~~~~~

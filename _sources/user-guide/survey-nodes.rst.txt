@@ -287,7 +287,7 @@ call is authorized, or asking to your customer's PBX how many agents are availab
 
 .. image:: ../_static/images/customer/node_http_api.png
 
-Note: You can use http://mockbin.org/ to create a test API.
+Note: You can use http://mockbin.org/ or http://putsreq.com to create a test API.
 
 .. _survey_branching:
 
