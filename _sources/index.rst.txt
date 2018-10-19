@@ -15,6 +15,7 @@ Contents:
 
     introduction
     user-guide
+    ./user-guide/call-center
     admin-guide
 
 
