@@ -36,9 +36,11 @@ An agent account is created by clicking "Callcenter" at the top and selecting ag
 .. image:: ../_static/images/customer/autodialer-dialerai-agent-configuration.png
     :width: 700
 
-In the Agent Screen, click add, enter a username, password and password confirmation. Moving onto the next screen, add a first name and last name.
+In the Agent Screen, click add, enter a username, password and password confirmation. Moving onto
+the next screen, add a first name and last name.
 
-The phone login field is pre-filled and a password is suggested. Passwords should be long and complex. Click Update. Your agent is now created and you can move on to configuring their phone.
+The phone login field is pre-filled and a password is suggested. Passwords should be long and complex
+. Click Update. Your agent is now created and you can move on to configuring their phone.
 
 You will now be returned to the agent listing.
 
@@ -48,15 +50,19 @@ You will now be returned to the agent listing.
 - The login and password are used for registering the agent’s SIP phone.
 - Last call indicates when the agent last took a call.
 - The agent’s status is shown. Values are Logged Out, Available and On Break.
-- Status can be changed by clicking the appropriate button in the Status Update field, or by dialing the appropriate short code listed in the Agent Screen.
-- Registered will show a green tick when the agent’s SIP phone is correctly registered to the system, and a red cross when it is not.
+- Status can be changed by clicking the appropriate button in the Status Update field, or by dialing
+  the appropriate short code listed in the Agent Screen.
+- Registered will show a green tick when the agent’s SIP phone is correctly registered to the system,
+  and a red cross when it is not.
 - Live State shows the current State of the agent, e.g. on a call or waiting.
 - Action allows you to edit the agent, change the password and delete the agent.
 
 Editing the Agent
 -----------------
 
-After the agent has been created, the agent’s name and SIP password can be edited. Under the callcenter tab, there are further agent specific settings such as wrap-up time. Read the onscreen instructions to understand each of the settings.
+After the agent has been created, the agent’s name and SIP password can be edited. Under the
+callcenter tab, there are further agent specific settings such as wrap-up time. Read the onscreen
+instructions to understand each of the settings.
 
 
 Registering a SIP Phone
@@ -64,25 +70,38 @@ Registering a SIP Phone
 
 Any SIP phone can be used as an endpoint on the system, these include:
 
-* **Hard-phone** - a physical SIP phone plugged into your network with access to the Internet. Features to look for in a physical phone for use in a call center would be the ability to connect a headset and to auto-answer a call.
+* **Hard-phone** - a physical SIP phone plugged into your network with access to the Internet.
+  Features to look for in a physical phone for use in a call center would be the ability to connect
+  a headset and to auto-answer a call.
 
-* **Soft-phone** - a software based phone installed on your computer. There are versions available for PC, Mac and Linux. For best results a microphone and headphones should be connected to your laptop or desktop. There are free softphones available, but it may be necessary to upgrade to the commercial version to enjoy extra features such as auto-answer.
+* **Soft-phone** - a software based phone installed on your computer. There are versions available
+  for PC, Mac and Linux. For best results a microphone and headphones should be connected to your
+  laptop or desktop. There are free softphones available, but it may be necessary to upgrade to the
+  commercial version to enjoy extra features such as auto-answer.
 
-* **Cell-Phone App** - Soft phones can be installed on cell phones, connecting to The Dialer via wifi. For busy call centers, this is not always satisfactory option, battery life is poor, auto-answer is not available and cell-phones are uncomfortable to hold for a long period of time, but fine for testing and low volumes.
+* **Cell-Phone App** - Soft phones can be installed on cell phones, connecting to The Dialer via
+  wifi. For busy call centers, this is not always satisfactory option, battery life is poor,
+  auto-answer is not available and cell-phones are uncomfortable to hold for a long period of time,
+  but fine for testing and low volumes.
 
-A competent and reliable softphone might be Zoiper at https://www.zoiper.com/ They have a free version, and a pro-version is available which includes auto-answer.
+A competent and reliable softphone might be Zoiper at https://www.zoiper.com/ They have a free
+version, and a pro-version is available which includes auto-answer.
 
-There is a video at [VIDEO LINK] explaining how to download and configure Zoiper to your auto-dialer system.
+There is a video at [VIDEO LINK] explaining how to download and configure Zoiper to your
+auto-dialer system.
 
 
 Short Codes
 -----------
 
-Several short codes have been provided for the agent to log into and out of the system as well as do basic tests to check all is working:
+Several short codes have been provided for the agent to log into and out of the system as well as
+do basic tests to check all is working:
+
 - 1000 -  log out, the agent will not receive calls.
 - 1001 - log in and make yourself available to take calls. Must be done on registration.
 - 0001 - Echo Test to check two way audio and that microphone and speakers are working correctly.
-- 0002 - continuous tone,  if the tone is not continuous and it jumps and stutters excessively, then your internet connection may not be of sufficient quality or bandwidth to support a voice call.
+- 0002 - continuous tone,  if the tone is not continuous and it jumps and stutters excessively,
+  then your internet connection may not be of sufficient quality or bandwidth to support a voice call.
 
 
 .. _call_center_queue:
@@ -123,7 +142,7 @@ The settings are mostly the same as for any campaign:
 Tab general settings
 --------------------
 
-Set the campaign name, which queue you are sending the calls into, the callerID and DNC list to refer to. Optionally you can play an audio file before transferring the call, such as "W" are trying to contact you, please hold while we connect you to an agent”, alternatively, the call can be transferred with no message, in this case, the agent’s phone should be set to auto-answer and the queue set up for "Roun" Robin” call distribution.
+Set the campaign name, which queue you are sending the calls into, the callerID and DNC list to refer to. Optionally you can play an audio file before transferring the call, such as *"We are trying to contact you, please hold while we connect you to an agent"*, alternatively, the call can be transferred with no message, in this case, the agent’s phone should be set to auto-answer and the queue set up for "Round Robin" call distribution.
 
 Tab dialer settings
 -------------------
@@ -140,9 +159,9 @@ Tab voicemail settings
 
 Set whether voicemail detection is off or on. Typically for power dialling, it will be set to on, so that only real people are transferred to agents. Set the detection behavior.
 
-- Always play message: In this case select a voicemail audio file, and/or text to speech. The audio needs to be at least 20 seconds so that the message is long enough to reach the "bee"”. On hearing the beep, the message will restart so that the entire message is recorded.
-- Play message to Human Only: This setting will drop the call when an answering machine is detected, so no audio file needs to be selected.
-- Leave message to voicemail only: This will disconnect if a real person is detected, so is not relevant to a call center campaign and should never be selected in these circumstances.
+- **Always play message:** In this case select a voicemail audio file, and/or text to speech. The audio needs to be at least 20 seconds so that the message is long enough to reach the *"beep"*. On hearing the beep, the message will restart so that the entire message is recorded.
+- **Play message to Human Only:** This setting will drop the call when an answering machine is detected, so no audio file needs to be selected.
+- **Leave message to voicemail only:** This will disconnect if a real person is detected, so is not relevant to a call center campaign and should never be selected in these circumstances.
 
 *NB: Although our answering machine detection has been shown to be quite accurate, it is still possible that answering machines could be identified as people, although unlikely that people will be identified as answering machines.*
 
@@ -165,7 +184,7 @@ Once the campaign has been been started, the number of contacts to be called wil
 
 There is a Callcenter Queue section which can be used in the survey as part of the IVR creation. This may be used for skills based routing in conjunction with a Multi-choice section.
 
-For instance, you could have two queues with English speaking agents in one, and Spanish speaking agents in another, then create a multi-choice node: "Fo" English, press 1, for Spanish press 2”, so that a call can be diverted to a queue so the agent can answer the call in the contact’s own language.
+For instance, you could have two queues with English speaking agents in one, and Spanish speaking agents in another, then create a multi-choice node: *"For English, press 1, for Spanish press 2"*, so that a call can be diverted to a queue so the agent can answer the call in the contact’s own language.
 
 .. image:: ../_static/images/customer/autodialer-dialerai-survey-ivr-go-queue.png
     :width: 700

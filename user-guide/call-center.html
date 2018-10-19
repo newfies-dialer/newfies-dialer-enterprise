@@ -87,41 +87,61 @@
 <p>An agent is a person who takes calls. A queue is created and agents added to that queue.</p>
 <p>An agent account is created by clicking “Callcenter” at the top and selecting agent.</p>
 <a class="reference internal image-reference" href="../_images/autodialer-dialerai-agent-configuration.png"><img alt="../_images/autodialer-dialerai-agent-configuration.png" src="../_images/autodialer-dialerai-agent-configuration.png" style="width: 700px;" /></a>
-<p>In the Agent Screen, click add, enter a username, password and password confirmation. Moving onto the next screen, add a first name and last name.</p>
-<p>The phone login field is pre-filled and a password is suggested. Passwords should be long and complex. Click Update. Your agent is now created and you can move on to configuring their phone.</p>
+<p>In the Agent Screen, click add, enter a username, password and password confirmation. Moving onto
+the next screen, add a first name and last name.</p>
+<p>The phone login field is pre-filled and a password is suggested. Passwords should be long and complex
+. Click Update. Your agent is now created and you can move on to configuring their phone.</p>
 <p>You will now be returned to the agent listing.</p>
 <a class="reference internal image-reference" href="../_images/autodialer-dialerai-agent.png"><img alt="../_images/autodialer-dialerai-agent.png" src="../_images/autodialer-dialerai-agent.png" style="width: 700px;" /></a>
 <ul class="simple">
 <li>The login and password are used for registering the agent’s SIP phone.</li>
 <li>Last call indicates when the agent last took a call.</li>
 <li>The agent’s status is shown. Values are Logged Out, Available and On Break.</li>
-<li>Status can be changed by clicking the appropriate button in the Status Update field, or by dialing the appropriate short code listed in the Agent Screen.</li>
-<li>Registered will show a green tick when the agent’s SIP phone is correctly registered to the system, and a red cross when it is not.</li>
+<li>Status can be changed by clicking the appropriate button in the Status Update field, or by dialing
+the appropriate short code listed in the Agent Screen.</li>
+<li>Registered will show a green tick when the agent’s SIP phone is correctly registered to the system,
+and a red cross when it is not.</li>
 <li>Live State shows the current State of the agent, e.g. on a call or waiting.</li>
 <li>Action allows you to edit the agent, change the password and delete the agent.</li>
 </ul>
 <div class="section" id="editing-the-agent">
 <h3><a class="toc-backref" href="#id3">Editing the Agent</a><a class="headerlink" href="#editing-the-agent" title="Permalink to this headline">¶</a></h3>
-<p>After the agent has been created, the agent’s name and SIP password can be edited. Under the callcenter tab, there are further agent specific settings such as wrap-up time. Read the onscreen instructions to understand each of the settings.</p>
+<p>After the agent has been created, the agent’s name and SIP password can be edited. Under the
+callcenter tab, there are further agent specific settings such as wrap-up time. Read the onscreen
+instructions to understand each of the settings.</p>
 </div>
 <div class="section" id="registering-a-sip-phone">
 <h3><a class="toc-backref" href="#id4">Registering a SIP Phone</a><a class="headerlink" href="#registering-a-sip-phone" title="Permalink to this headline">¶</a></h3>
 <p>Any SIP phone can be used as an endpoint on the system, these include:</p>
 <ul class="simple">
-<li><strong>Hard-phone</strong> - a physical SIP phone plugged into your network with access to the Internet. Features to look for in a physical phone for use in a call center would be the ability to connect a headset and to auto-answer a call.</li>
-<li><strong>Soft-phone</strong> - a software based phone installed on your computer. There are versions available for PC, Mac and Linux. For best results a microphone and headphones should be connected to your laptop or desktop. There are free softphones available, but it may be necessary to upgrade to the commercial version to enjoy extra features such as auto-answer.</li>
-<li><strong>Cell-Phone App</strong> - Soft phones can be installed on cell phones, connecting to The Dialer via wifi. For busy call centers, this is not always satisfactory option, battery life is poor, auto-answer is not available and cell-phones are uncomfortable to hold for a long period of time, but fine for testing and low volumes.</li>
+<li><strong>Hard-phone</strong> - a physical SIP phone plugged into your network with access to the Internet.
+Features to look for in a physical phone for use in a call center would be the ability to connect
+a headset and to auto-answer a call.</li>
+<li><strong>Soft-phone</strong> - a software based phone installed on your computer. There are versions available
+for PC, Mac and Linux. For best results a microphone and headphones should be connected to your
+laptop or desktop. There are free softphones available, but it may be necessary to upgrade to the
+commercial version to enjoy extra features such as auto-answer.</li>
+<li><strong>Cell-Phone App</strong> - Soft phones can be installed on cell phones, connecting to The Dialer via
+wifi. For busy call centers, this is not always satisfactory option, battery life is poor,
+auto-answer is not available and cell-phones are uncomfortable to hold for a long period of time,
+but fine for testing and low volumes.</li>
 </ul>
-<p>A competent and reliable softphone might be Zoiper at <a class="reference external" href="https://www.zoiper.com/">https://www.zoiper.com/</a> They have a free version, and a pro-version is available which includes auto-answer.</p>
-<p>There is a video at [VIDEO LINK] explaining how to download and configure Zoiper to your auto-dialer system.</p>
+<p>A competent and reliable softphone might be Zoiper at <a class="reference external" href="https://www.zoiper.com/">https://www.zoiper.com/</a> They have a free
+version, and a pro-version is available which includes auto-answer.</p>
+<p>There is a video at [VIDEO LINK] explaining how to download and configure Zoiper to your
+auto-dialer system.</p>
 </div>
 <div class="section" id="short-codes">
 <h3><a class="toc-backref" href="#id5">Short Codes</a><a class="headerlink" href="#short-codes" title="Permalink to this headline">¶</a></h3>
-<p>Several short codes have been provided for the agent to log into and out of the system as well as do basic tests to check all is working:
-- 1000 -  log out, the agent will not receive calls.
-- 1001 - log in and make yourself available to take calls. Must be done on registration.
-- 0001 - Echo Test to check two way audio and that microphone and speakers are working correctly.
-- 0002 - continuous tone,  if the tone is not continuous and it jumps and stutters excessively, then your internet connection may not be of sufficient quality or bandwidth to support a voice call.</p>
+<p>Several short codes have been provided for the agent to log into and out of the system as well as
+do basic tests to check all is working:</p>
+<ul class="simple">
+<li>1000 -  log out, the agent will not receive calls.</li>
+<li>1001 - log in and make yourself available to take calls. Must be done on registration.</li>
+<li>0001 - Echo Test to check two way audio and that microphone and speakers are working correctly.</li>
+<li>0002 - continuous tone,  if the tone is not continuous and it jumps and stutters excessively,
+then your internet connection may not be of sufficient quality or bandwidth to support a voice call.</li>
+</ul>
 </div>
 </div>
 <div class="section" id="queue">
@@ -144,7 +164,7 @@
 <p>The settings are mostly the same as for any campaign:</p>
 <div class="section" id="tab-general-settings">
 <h3><a class="toc-backref" href="#id8">Tab general settings</a><a class="headerlink" href="#tab-general-settings" title="Permalink to this headline">¶</a></h3>
-<p>Set the campaign name, which queue you are sending the calls into, the callerID and DNC list to refer to. Optionally you can play an audio file before transferring the call, such as “W” are trying to contact you, please hold while we connect you to an agent”, alternatively, the call can be transferred with no message, in this case, the agent’s phone should be set to auto-answer and the queue set up for “Roun” Robin” call distribution.</p>
+<p>Set the campaign name, which queue you are sending the calls into, the callerID and DNC list to refer to. Optionally you can play an audio file before transferring the call, such as <em>“We are trying to contact you, please hold while we connect you to an agent”</em>, alternatively, the call can be transferred with no message, in this case, the agent’s phone should be set to auto-answer and the queue set up for “Round Robin” call distribution.</p>
 </div>
 <div class="section" id="tab-dialer-settings">
 <h3><a class="toc-backref" href="#id9">Tab dialer settings</a><a class="headerlink" href="#tab-dialer-settings" title="Permalink to this headline">¶</a></h3>
@@ -158,9 +178,9 @@
 <h3><a class="toc-backref" href="#id11">Tab voicemail settings</a><a class="headerlink" href="#tab-voicemail-settings" title="Permalink to this headline">¶</a></h3>
 <p>Set whether voicemail detection is off or on. Typically for power dialling, it will be set to on, so that only real people are transferred to agents. Set the detection behavior.</p>
 <ul class="simple">
-<li>Always play message: In this case select a voicemail audio file, and/or text to speech. The audio needs to be at least 20 seconds so that the message is long enough to reach the “bee””. On hearing the beep, the message will restart so that the entire message is recorded.</li>
-<li>Play message to Human Only: This setting will drop the call when an answering machine is detected, so no audio file needs to be selected.</li>
-<li>Leave message to voicemail only: This will disconnect if a real person is detected, so is not relevant to a call center campaign and should never be selected in these circumstances.</li>
+<li><strong>Always play message:</strong> In this case select a voicemail audio file, and/or text to speech. The audio needs to be at least 20 seconds so that the message is long enough to reach the <em>“beep”</em>. On hearing the beep, the message will restart so that the entire message is recorded.</li>
+<li><strong>Play message to Human Only:</strong> This setting will drop the call when an answering machine is detected, so no audio file needs to be selected.</li>
+<li><strong>Leave message to voicemail only:</strong> This will disconnect if a real person is detected, so is not relevant to a call center campaign and should never be selected in these circumstances.</li>
 </ul>
 <p><em>NB: Although our answering machine detection has been shown to be quite accurate, it is still possible that answering machines could be identified as people, although unlikely that people will be identified as answering machines.</em></p>
 </div>
@@ -177,7 +197,7 @@
 <div class="section" id="use-queue-within-an-ivr">
 <span id="call-center-queue-ivr"></span><h2><a class="toc-backref" href="#id14">5. Use Queue within an IVR</a><a class="headerlink" href="#use-queue-within-an-ivr" title="Permalink to this headline">¶</a></h2>
 <p>There is a Callcenter Queue section which can be used in the survey as part of the IVR creation. This may be used for skills based routing in conjunction with a Multi-choice section.</p>
-<p>For instance, you could have two queues with English speaking agents in one, and Spanish speaking agents in another, then create a multi-choice node: “Fo” English, press 1, for Spanish press 2”, so that a call can be diverted to a queue so the agent can answer the call in the contact’s own language.</p>
+<p>For instance, you could have two queues with English speaking agents in one, and Spanish speaking agents in another, then create a multi-choice node: <em>“For English, press 1, for Spanish press 2”</em>, so that a call can be diverted to a queue so the agent can answer the call in the contact’s own language.</p>
 <a class="reference internal image-reference" href="../_images/autodialer-dialerai-survey-ivr-go-queue.png"><img alt="../_images/autodialer-dialerai-survey-ivr-go-queue.png" src="../_images/autodialer-dialerai-survey-ivr-go-queue.png" style="width: 700px;" /></a>
 <p>As with any section, text to speech can be added, an audio file selected and the queue selected.</p>
 </div>
