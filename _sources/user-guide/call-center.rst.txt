@@ -87,7 +87,7 @@ Any SIP phone can be used as an endpoint on the system, these include:
 A competent and reliable softphone might be Zoiper at https://www.zoiper.com/ They have a free
 version, and a pro-version is available which includes auto-answer.
 
-There is a video at [VIDEO LINK] explaining how to download and configure Zoiper to your
+There is a video at [https://www.youtube.com/watch?v=VN16jLJa1iA] explaining how to download and configure Zoiper to your
 auto-dialer system.
 
 
