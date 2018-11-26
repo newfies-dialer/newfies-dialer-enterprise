@@ -5,6 +5,14 @@ Quick Start
 
 The purpose of this short guide is to give a quick overview from creating a suvey through to making an outbound call. It is recommended that you run through this guide on your own platform before attempting more complex surveys and campaigns.
 
+There is a video demonstrating the quick start guide:
+
+.. raw:: html
+
+    <iframe width="700" height="415" src="https://www.youtube.com/embed/aEnVT7bcrUw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br/>
+    <br/>&nbsp;<br/>
+
+
 We are going to use the customer portal to:
  - Create a phonebook
  - Add some contacts to the phonebook
