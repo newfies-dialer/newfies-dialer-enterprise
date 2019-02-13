@@ -201,8 +201,24 @@ By default the following data is included in the SIP header on call transfer:
 
 ::
 
-    P-CallRequest-ID is the Call request ID
-    P-Contact-ID is the Contact ID.
+    P-CallRequest-ID
+    P-Subscriber-ID
+    P-User-ID
+    P-Gateway-ID
+    P-Last-Digits
+    P-CallerID-Name
+    P-CallerID-Number
+    P-Destination-Number
+    P-Dialer-UUID
+    P-Survey-ID
+    P-Record-Filename
+    P-contact-id
+    P-campaign-id
+    P-gmt-offset
+    P-status
+    P-tz-code
+    P-created-date
+    P-updated-date
 
 It is envisaged that these ID numbers can be used to do database look-ups on the Newfies-Dialer database.
 
@@ -226,6 +242,9 @@ In the SIP headers, you will see:
     P-CallRequest-ID: 3
     P-Contact-ID: 1
     P-Contact-Transfer-Ref: My-Unique-Ref-Number
+    ...
+
+In the latest version, since 5.9, any contact additional parameters will also be sent in the SIP headers.
 
 Confirm Script is TTS which can be played to the agent before the contact is connected, if this facility is used, then a number between 0 and 9 should be entered into the confirm key field which the agent presses to answer the call. Both these fields are optional.
 
