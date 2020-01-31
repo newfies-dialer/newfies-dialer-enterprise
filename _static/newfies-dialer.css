@@ -41,7 +41,7 @@ p.developmentversion {
 div.related {
     width: 920px;
     padding: 5px 10px;
-    background: #FFF49F;
+    background: #D7E9FF;
     margin: 15px auto 15px auto;
 }
 
@@ -155,12 +155,12 @@ div.sphinxsidebar input {
 /* -- body styles ----------------------------------------------------------- */
 
 a {
-    color: #D72129;
+    color: #009de0;
     text-decoration: underline;
 }
 
 a:hover {
-    color: #D72129;
+    color: #23599d;
     text-decoration: underline;
 }
 
@@ -359,7 +359,7 @@ pre {
     white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
     white-space: -pre-wrap;      /* Opera 4-6 */
     white-space: -o-pre-wrap;    /* Opera 7 */
-    word-wrap: break-word;       /* Internet Explorer 5.5+ */  
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
     background: #F0FFEB;
     padding: 7px 10px;
     margin: 15px 0;

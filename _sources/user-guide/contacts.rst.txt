@@ -150,7 +150,7 @@ Special Function Additional parameters keywords (JSON)
 
 Some special function keywords can be added which change the usual behaviour of the system. These are:
 
-**transfer_phonenumber** - the value of the transfer phone number overwrites the SIP URI / Phone number in the call transfer node.
+**transfer_phonenumber** - the value of the transfer phone number overwrites the SIP URI / Phone number in the call transfer node. If you don't want the transfer number overwritten by {transfer_number}, then prefix the transfer number with !! in the transfer section, for instance !!12024648397
 
 **transfer_ref** - this means that a SIP header "P-Contact-Transfer-Ref" is added on transfer, which may be used to trigger a screen pop or otherwise identify the contact transferred at your IP-PBX.
 
