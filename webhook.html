@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Webhook &#8212; Newfies-Dialer 6.3.1 documentation</title>
+    <title>Webhook &#8212; Newfies-Dialer 6.4.16 documentation</title>
     <link rel="stylesheet" href="_static/newfies-dialer.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" >
           <a href="api-doc/payment_serializers.html" title="PaymentSerializer"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Newfies-Dialer 6.3.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Newfies-Dialer 6.4.16 documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -92,9 +92,17 @@ If there is an error, for instance your endpoint didn’t accept the API call, i
 <span class="go">    type: &quot;number&quot;</span>
 <span class="go">    description: &quot;Hangup cause code returned by dialer&quot;</span>
 
-<span class="go">* hangup_cause:</span>
+<span class="go">* disposition:</span>
 <span class="go">    type: &quot;string&quot;</span>
-<span class="go">    description: &quot;Hangup cause string returned by dialer&quot;</span>
+<span class="go">    description: &quot;Call disposition/Hangup cause string returned by dialer&quot;</span>
+
+<span class="go">* lead_disposition:</span>
+<span class="go">    type: &quot;string&quot;</span>
+<span class="go">    description: &quot;Lead disposition - Agents will mark a contact with this disposition&quot;</span>
+
+<span class="go">* lead_disposition_id:</span>
+<span class="go">    type: &quot;string&quot;</span>
+<span class="go">    description: &quot;Lead disposition ID - Agents will mark a contact with this disposition&quot;</span>
 
 <span class="go">* cost:</span>
 <span class="go">    type: &quot;number&quot;</span>
@@ -158,7 +166,7 @@ If there is an error, for instance your endpoint didn’t accept the API call, i
         <li class="right" >
           <a href="api-doc/payment_serializers.html" title="PaymentSerializer"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Newfies-Dialer 6.3.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Newfies-Dialer 6.4.16 documentation</a> &#187;</li> 
       </ul>
     </div>
 

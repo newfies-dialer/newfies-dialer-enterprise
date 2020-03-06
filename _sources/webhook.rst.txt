@@ -62,9 +62,17 @@ The Webhook endpoint needs to accept the POST method, all the following fields w
         type: "number"
         description: "Hangup cause code returned by dialer"
 
-    * hangup_cause:
+    * disposition:
         type: "string"
-        description: "Hangup cause string returned by dialer"
+        description: "Call disposition/Hangup cause string returned by dialer"
+
+    * lead_disposition:
+        type: "string"
+        description: "Lead disposition - Agents will mark a contact with this disposition"
+
+    * lead_disposition_id:
+        type: "string"
+        description: "Lead disposition ID - Agents will mark a contact with this disposition"
 
     * cost:
         type: "number"
