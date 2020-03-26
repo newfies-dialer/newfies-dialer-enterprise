@@ -1,0 +1,44 @@
+.. _microsoft-asr:
+
+===============================================
+Setting up Microsoft Azure Speech-to-Text (ASR)
+===============================================
+
+For Speech-to-Text (ASR) sign up to Microsoft Azure, https://azure.microsoft.com/en-us/services/cognitive-services/speech/, when you set up the ASR, make sure you choose eastus, we will need the API key that they provide when you add this service.
+
+
+1. First step is to connect on the Azure portal and search for `Cognitive Services`
+
+.. image:: ../_static/images/advanced_admin/ms-asr-1.png
+
+
+
+2. Now click `Create`
+
+.. image:: ../_static/images/advanced_admin/ms-asr-2.png
+
+
+
+3. Give your new service a name and select East-US location. If this can't be selected, select another and let us know which one you chose.
+Also, create a resource group.
+
+.. image:: ../_static/images/advanced_admin/ms-asr-3.png
+
+
+
+4. This might take a minute or two, then your deployment will be complete.
+
+.. image:: ../_static/images/advanced_admin/ms-asr-4.png
+
+
+
+5. Click, `Go To Resource`.
+
+.. image:: ../_static/images/advanced_admin/ms-asr-5.png
+
+
+
+6. Copy the contents of `Key 1` and send it to us. This key will be used to connect your account with the speech recognition services you have just created.
+
+Make sure there is a payment source with Azure to cover any costs you incur.
+

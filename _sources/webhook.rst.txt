@@ -91,5 +91,12 @@ The Webhook endpoint needs to accept the POST method, all the following fields w
         format: "date-time"
         description: "Timestamp of when the dial was placed"
 
+    * url_bleg_recordings:
+        type: "array"
+        description: "List of bleg (xfer) recordings"
+
+    * survey_result:
+        type: "array"
+        description: "IVR/Survey interactions and results"
 
 Additionally, there is an header 'x-api-key' which can be set for authentication.

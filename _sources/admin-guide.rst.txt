@@ -28,3 +28,4 @@ Tasks which will be performed by Newfies-Dialer admin, with our training, will i
     ./admin-guide/dialer-settings.rst
     ./admin-guide/add-user.rst
     ./admin-guide/admin-panel
+    ./advanced-configuration/advanced-configuration-guide.rst

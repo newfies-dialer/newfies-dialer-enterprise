@@ -1,0 +1,34 @@
+.. _microsoft-tts:
+
+===============================================
+Setting up Microsoft Azure Text-to-Speech (TTS)
+===============================================
+
+1. For TTS, sign up to Microsoft Azure, https://azure.microsoft.com/en-us/services/cognitive-services/speech/,
+when you set up the TTS, make sure you choose eastus, we will need the API key that they provide
+when you add this service.
+
+
+2. Create a resource -> select Speech
+
+.. image:: ../_static/images/advanced_admin/ms-tts-1.png
+
+
+3. Click `Create` and fill in the details correctly, selecting East US as the zone, then click `Create`
+
+.. image:: ../_static/images/advanced_admin/ms-tts-2.png
+
+
+4. Wait for a short while
+
+.. image:: ../_static/images/advanced_admin/ms-tts-3.png
+
+
+5. When created, click on Go To Resource
+
+.. image:: ../_static/images/advanced_admin/ms-tts-4.png
+
+
+6. Finally send us the key. Make sure that you have provided a payment source to Azure so they
+can charge you.
+
