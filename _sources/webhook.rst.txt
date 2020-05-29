@@ -99,4 +99,10 @@ The Webhook endpoint needs to accept the POST method, all the following fields w
         type: "array"
         description: "IVR/Survey interactions and results"
 
+    * subscriber:
+        type: "array"
+        description: information about the subscriber/contact
+        this will contain the following fields: {subscriber_id: Value, full_name: "Value", additional_vars: JSON}
+
+
 Additionally, there is an header 'x-api-key' which can be set for authentication.
