@@ -7,7 +7,7 @@ Webhook
 A webhook can be configured in order to push CDRs to your own platform or API endpoint. When a new CDR is created on our system, a POST request will be sent with the CDR details.
 This is used when you either need to keep information about the call being made or to activate an application after a dial or an inbound call is made.
 
-The Webhook comes with a UI on the admin, https://HOSTNAME/admin/webhook/webhookcdr/ and it has a retry mechanism, which ensures that CDRs are pushed correctly.
+The Webhook comes with a UI on the admin, https://HOSTNAME/admin/webhook/webhook/ and it has a retry mechanism, which ensures that CDRs are pushed correctly.
 If there is an error, for instance your endpoint didn't accept the API call, it will be displayed on the UI.
 
 
@@ -106,3 +106,52 @@ The Webhook endpoint needs to accept the POST method, all the following fields w
 
 
 Additionally, there is an header 'x-api-key' which can be set for authentication.
+
+
+Field information
+-----------------
+
+**DISPOSITION:**
+
+This is the call disposition, a more simplistic version of hangup Q850.
+
+It can be one of those values: ANSWER, BUSY, NOANSWER, REJECTED, CANCEL, CONGESTION, DNC,
+UNAUTHORIZED or FAILED.
+
+The `hangup_cause_code` will translate like this:
+
+    - 16 -> ANSWER
+    - 17 -> BUSY
+    - 19 -> NOANSWER
+    - 21 -> REJECTED
+    - 487 -> CANCEL
+    - 42 -> CONGESTION
+    - -1 -> DNC
+    - -2 -> UNAUTHORIZED
+    - others  -> FAILED
+
+
+**HANGUP_CAUSE_CODE:**
+
+This is Q850, reference to https://freeswitch.org/confluence/display/FREESWITCH/Hangup+Cause+Code+Table
+
+
+**LEG TYPE:**
+
+It can be one of those values:
+
+    - 1: A-Leg
+    - 2: B-Leg
+    - 3: COLD_XFER
+    - 4: WARM_XFER
+    - 5: WAY3_XFER
+
+
+**AMD STATUS:**
+
+It can be one of those values:
+
+    - 0: NODETECT
+    - 1: PERSON
+    - 2: MACHINE
+    - 3: UNSURE
