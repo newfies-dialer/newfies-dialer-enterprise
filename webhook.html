@@ -136,8 +136,8 @@ If there is an error, for instance your endpoint didn’t accept the API call, i
 </pre></div>
 </div>
 <p>Additionally, there is an header ‘x-api-key’ which can be set for authentication.</p>
-<div class="section" id="field-information">
-<h2>Field information<a class="headerlink" href="#field-information" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="fields-information">
+<h2>Fields information<a class="headerlink" href="#fields-information" title="Permalink to this headline">¶</a></h2>
 <p><strong>DISPOSITION:</strong></p>
 <p>This is the call disposition, a more simplistic version of hangup Q850.</p>
 <p>It can be one of those values: ANSWER, BUSY, NOANSWER, REJECTED, CANCEL, CONGESTION, DNC,
@@ -179,6 +179,48 @@ UNAUTHORIZED or FAILED.</p>
 <li>3: UNSURE</li>
 </ul>
 </div></blockquote>
+</div>
+<div class="section" id="payload-sample">
+<h2>Payload sample<a class="headerlink" href="#payload-sample" title="Permalink to this headline">¶</a></h2>
+<p>Sample of the payload, a webhook will be sent for each call (CDR):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{</span>
+<span class="go">&quot;phone_number&quot;: &quot;14155130001&quot;,</span>
+<span class="go">&quot;gateway_id&quot;: 2,</span>
+<span class="go">&quot;lead_disposition&quot;: &quot;&quot;,</span>
+<span class="go">&quot;callrequest_id&quot;: &quot;6&quot;,</span>
+<span class="go">&quot;cost&quot;: 0.0,</span>
+<span class="go">&quot;amd_status&quot;: 0,</span>
+<span class="go">&quot;callerid&quot;: &quot;+1212450012&quot;,</span>
+<span class="go">&quot;lead_disposition_id&quot;: null,</span>
+<span class="go">&quot;url_bleg_recordings&quot;: [</span>
+<span class="go">    &quot;/usermedia/recording/bleg-recording-cr_6-ct_1-cpg_BANRSDS.wav&quot;</span>
+<span class="go">],</span>
+<span class="go">&quot;incremental_duration&quot;: 6,</span>
+<span class="go">&quot;hangup_cause_code&quot;: 16,</span>
+<span class="go">&quot;campaign_id&quot;: 2,</span>
+<span class="go">&quot;call_id&quot;: &quot;06991405-277b-4200-bad3-c3de5e0930b4&quot;,</span>
+<span class="go">&quot;leg_type&quot;: 2,</span>
+<span class="go">&quot;survey_result&quot;: {</span>
+<span class="go">    &quot;phone_number&quot;: &quot;14155130001&quot;,</span>
+<span class="go">    &quot;Enter your age&quot;: &quot;&quot;,</span>
+<span class="go">    &quot;Press 1 to talk to an Agent  press 2 to go to the next option&quot;: &quot;Agent&quot;,</span>
+<span class="go">    &quot;transfer&quot;: &quot;phonenumber: sofia/gateway/mygateway/14155130001&quot;,</span>
+<span class="go">    &quot;Record a message&quot;: &quot;&quot;,</span>
+<span class="go">    &quot;disposition&quot;: &quot;ANSWER&quot;,</span>
+<span class="go">    &quot;Bye now!&quot;: &quot;&quot;,</span>
+<span class="go">    &quot;billsec&quot;: 6,</span>
+<span class="go">    &quot;starting_date&quot;: &quot;2020-03-10 19:04:31&quot;,</span>
+<span class="go">    &quot;Transfering to agent&quot;: &quot;&quot;</span>
+<span class="go">},</span>
+<span class="go">&quot;billed_duration&quot;: 6,</span>
+<span class="go">&quot;disposition&quot;: &quot;ANSWER&quot;,</span>
+<span class="go">&quot;campaign_name&quot;: &quot;Voice Campaign, Mar 10, 18:59&quot;,</span>
+<span class="go">&quot;original__phone_number&quot;: &quot;&quot;,</span>
+<span class="go">&quot;cdr_id&quot;: &quot;15&quot;,</span>
+<span class="go">&quot;call_date&quot;: &quot;2020-03-10T18:04:31.000+00:00&quot;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
 </div>
 </div>
 

@@ -108,8 +108,8 @@ The Webhook endpoint needs to accept the POST method, all the following fields w
 Additionally, there is an header 'x-api-key' which can be set for authentication.
 
 
-Field information
------------------
+Fields information
+------------------
 
 **DISPOSITION:**
 
@@ -155,3 +155,49 @@ It can be one of those values:
     - 1: PERSON
     - 2: MACHINE
     - 3: UNSURE
+
+
+Payload sample
+--------------
+
+Sample of the payload, a webhook will be sent for each call (CDR):
+
+
+.. code-block:: console
+
+    {
+    "phone_number": "14155130001",
+    "gateway_id": 2,
+    "lead_disposition": "",
+    "callrequest_id": "6",
+    "cost": 0.0,
+    "amd_status": 0,
+    "callerid": "+1212450012",
+    "lead_disposition_id": null,
+    "url_bleg_recordings": [
+        "/usermedia/recording/bleg-recording-cr_6-ct_1-cpg_BANRSDS.wav"
+    ],
+    "incremental_duration": 6,
+    "hangup_cause_code": 16,
+    "campaign_id": 2,
+    "call_id": "06991405-277b-4200-bad3-c3de5e0930b4",
+    "leg_type": 2,
+    "survey_result": {
+        "phone_number": "14155130001",
+        "Enter your age": "",
+        "Press 1 to talk to an Agent  press 2 to go to the next option": "Agent",
+        "transfer": "phonenumber: sofia/gateway/mygateway/14155130001",
+        "Record a message": "",
+        "disposition": "ANSWER",
+        "Bye now!": "",
+        "billsec": 6,
+        "starting_date": "2020-03-10 19:04:31",
+        "Transfering to agent": ""
+    },
+    "billed_duration": 6,
+    "disposition": "ANSWER",
+    "campaign_name": "Voice Campaign, Mar 10, 18:59",
+    "original__phone_number": "",
+    "cdr_id": "15",
+    "call_date": "2020-03-10T18:04:31.000+00:00"
+    }
