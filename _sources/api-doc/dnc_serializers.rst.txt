@@ -2,9 +2,8 @@
 
 .. _DNCSerializer-model:
 
-`DNCSerializer`
----------------
+`DNC API`
+----------
 
-.. autoclass:: DNCSerializer
-    :members:
-
+.. autodata:: DNCSerializer
+   :annotation:

@@ -1,0 +1,9 @@
+.. automodule:: apirest.queue_serializers
+
+.. _QueueSerializer-model:
+
+`Queue API`
+------------
+
+.. autodata:: QueueSerializer
+   :annotation:

@@ -2,8 +2,8 @@
 
 .. _SMSCampaignSerializer-model:
 
-`SMSCampaignSerializer`
------------------------
+`SMS Campaign API`
+------------------
 
-.. autoclass:: SMSCampaignSerializer
-    :members:
+.. autodata:: SMSCampaignSerializer
+   :annotation:

@@ -34,6 +34,10 @@ The Webhook endpoint needs to accept the POST method, all the following fields w
         type: "string"
         description: "Dialer FreeSwitch call id"
 
+    * user_id:
+        type: "number"
+        description: "User ID"
+
     * campaign_id:
         type: "number"
         description: "Dialer campaign id"

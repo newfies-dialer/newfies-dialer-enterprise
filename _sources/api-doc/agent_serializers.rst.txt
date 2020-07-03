@@ -1,0 +1,9 @@
+.. automodule:: apirest.agent_serializers
+
+.. _AgentSerializer-model:
+
+`Agent API`
+-----------
+
+.. autodata:: AgentSerializer
+   :annotation:

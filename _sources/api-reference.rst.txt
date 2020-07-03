@@ -10,25 +10,28 @@ Contents:
     :maxdepth: 1
 
 
-    ./api-doc/user_serializers
-    ./api-doc/userprofile_serializers
-    ./api-doc/audiofile_serializers
-    ./api-doc/branching_template_serializers
+    ./api-doc/contact_serializers
+    ./api-doc/phonebook_serializers
     ./api-doc/campaign_serializers
     ./api-doc/cdr_serializers
-    ./api-doc/contact_serializers
-    ./api-doc/content_type_serializers
+    ./api-doc/subscriber_list_serializers
+    ./api-doc/user_serializers
     ./api-doc/dnc_serializers
     ./api-doc/dnc_contact_serializers
     ./api-doc/gateway_serializers
-    ./api-doc/phonebook_serializers
+    ./api-doc/callcenter_config_serializers
+    ./api-doc/queue_serializers
+    ./api-doc/agent_serializers
+    ./api-doc/survey_template_serializers
     ./api-doc/section_template_serializers
+    ./api-doc/branching_template_serializers
+    ./api-doc/survey_serializers
     ./api-doc/sms_campaign_serializers
     ./api-doc/sms_gateway_serializers
-    ./api-doc/subscriber_list_serializers
-    ./api-doc/survey_serializers
-    ./api-doc/survey_template_serializers
     ./api-doc/payment_serializers
+    ./api-doc/audiofile_serializers
+    ./api-doc/userprofile_serializers
+    ./api-doc/content_type_serializers
 
 
 Testing console of APIs:

@@ -2,8 +2,8 @@
 
 .. _DNCContactSerializer-model:
 
-`DNCContactSerializer`
-----------------------
+`DNCContact API`
+----------------
 
-.. autoclass:: DNCContactSerializer
-    :members:
+.. autodata:: DNCContactSerializer
+   :annotation:

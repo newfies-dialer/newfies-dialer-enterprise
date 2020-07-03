@@ -2,9 +2,8 @@
 
 .. _VoIPCallSerializer-model:
 
-`VoIPCallSerializer`
---------------------
+`CDR API`
+----------
 
-.. autoclass:: VoIPCallSerializer
-    :members:
-
+.. autodata:: VoIPCallSerializer
+   :annotation:

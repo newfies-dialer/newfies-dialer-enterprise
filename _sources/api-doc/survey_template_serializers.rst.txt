@@ -2,8 +2,9 @@
 
 .. _SurveyTemplateSerializer-model:
 
-`SurveyTemplateSerializer`
---------------------------
 
-.. autoclass:: SurveyTemplateSerializer
-    :members:
+`Survey Template API`
+---------------------
+
+.. autodata:: SurveyTemplateSerializer
+   :annotation:

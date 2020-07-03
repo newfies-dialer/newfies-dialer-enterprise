@@ -1,0 +1,10 @@
+.. automodule:: apirest.callcenter_config_serializers
+
+.. _CallcenterConfigSerializer-model:
+
+
+`Callcenter Config API`
+-----------------------
+
+.. autodata:: CallcenterConfigSerializer
+   :annotation:

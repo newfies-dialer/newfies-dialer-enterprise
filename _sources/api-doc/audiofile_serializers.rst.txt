@@ -2,8 +2,9 @@
 
 .. _AudioFileSerializer-model:
 
-`AudioFileSerializer`
----------------------
 
-.. autoclass:: AudioFileSerializer
-    :members:
+`Audio API`
+-----------
+
+.. autodata:: AudioFileSerializer
+   :annotation:

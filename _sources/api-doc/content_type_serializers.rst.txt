@@ -2,8 +2,8 @@
 
 .. _ContentTypeSerializer-model:
 
-`ContentTypeSerializer`
------------------------
+`Content Type API`
+------------------
 
-.. autoclass:: ContentTypeSerializer
-    :members:
+.. autodata:: ContentTypeSerializer
+   :annotation:

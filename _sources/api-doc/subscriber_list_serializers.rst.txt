@@ -2,8 +2,8 @@
 
 .. _SubscriberListSerializer-model:
 
-`SubscriberListSerializer`
---------------------------
+`SubscriberList API`
+--------------------
 
-.. autoclass:: SubscriberListSerializer
-    :members:
+.. autodata:: SubscriberListSerializer
+   :annotation:

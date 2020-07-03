@@ -2,8 +2,8 @@
 
 .. _GatewaySerializer-model:
 
-`GatewaySerializer`
--------------------
+`Gateway API`
+--------------
 
-.. autoclass:: GatewaySerializer
-    :members:
+.. autodata:: GatewaySerializer
+   :annotation:

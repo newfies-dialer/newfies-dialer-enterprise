@@ -2,8 +2,8 @@
 
 .. _UserSerializer-model:
 
-`UserSerializer`
-----------------
+`User API`
+--------------
 
-.. autoclass:: UserSerializer
-    :members:
+.. autodata:: UserSerializer
+   :annotation:

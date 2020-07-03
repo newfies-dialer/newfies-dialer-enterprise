@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>CampaignSerializer &#8212; Newfies-Dialer 6.5.9 documentation</title>
+    <title>Campaign API &#8212; Newfies-Dialer 6.5.21 documentation</title>
     <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -16,8 +16,8 @@
     <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="VoIPCallSerializer" href="cdr_serializers.html" />
-    <link rel="prev" title="BranchingTemplateSerializer" href="branching_template_serializers.html" /> 
+    <link rel="next" title="CDR API" href="cdr_serializers.html" />
+    <link rel="prev" title="Phonebook API" href="phonebook_serializers.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -29,12 +29,12 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="cdr_serializers.html" title="VoIPCallSerializer"
+          <a href="cdr_serializers.html" title="CDR API"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="branching_template_serializers.html" title="BranchingTemplateSerializer"
+          <a href="phonebook_serializers.html" title="Phonebook API"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 6.5.9 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 6.5.21 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../api-reference.html" accesskey="U">API Reference</a> &#187;</li> 
       </ul>
     </div>  
@@ -45,11 +45,11 @@
           <div class="body" role="main">
             
 
-    <span class="target" id="module-apirest.campaign_serializers"></span><div class="section" id="campaignserializer">
-<span id="campaignresource-model"></span><h1><cite>CampaignSerializer</cite><a class="headerlink" href="#campaignserializer" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+    <span class="target" id="module-apirest.campaign_serializers"></span><div class="section" id="campaign-api">
+<span id="campaignresource-model"></span><h1><cite>Campaign API</cite><a class="headerlink" href="#campaign-api" title="Permalink to this headline">¶</a></h1>
+<dl class="data">
 <dt id="apirest.campaign_serializers.CampaignSerializer">
-<em class="property">class </em><code class="descclassname">apirest.campaign_serializers.</code><code class="descname">CampaignSerializer</code><span class="sig-paren">(</span><em>instance=None</em>, <em>data=&lt;class rest_framework.fields.empty&gt;</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#apirest.campaign_serializers.CampaignSerializer" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">apirest.campaign_serializers.</code><code class="descname">CampaignSerializer</code><a class="headerlink" href="#apirest.campaign_serializers.CampaignSerializer" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>Create</strong>:</p>
 <blockquote>
 <div><p>CURL Usage:</p>
@@ -181,6 +181,29 @@
 </pre></div>
 </div>
 </div></blockquote>
+<p><strong>Create Callcenter Campaign</strong>:</p>
+<blockquote>
+<div><p>CallCenter campaigns have 3 extra parameters that normal IVR campaign don’t have: queue, callcenter_config &amp; campaign_type.</p>
+<p><strong>Campaign_type:</strong> This needs to be set to 3, this will set the campaign as Callcenter campaign.</p>
+<p><strong>Queue:</strong> This is the queue to use for the callcenter Campaign.</p>
+<p><strong>CallCenter Config:</strong> This is the Callcenter config, this configures the script to use, CRM external URLs, etc…</p>
+<p>CURL Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span><span class="p">:</span><span class="n">password</span> <span class="o">--</span><span class="n">dump</span><span class="o">-</span><span class="n">header</span> <span class="o">-</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type:application/json&quot;</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">--</span><span class="n">data</span> <span class="s1">&#39;{&quot;name&quot;: &quot;callcenter-campaign-01&quot;, &quot;description&quot;: &quot;&quot;, &quot;callerid&quot;: &quot;1239876&quot;, &quot;startingdate&quot;: &quot;2017-01-01 13:13:33&quot;, &quot;expirationdate&quot;: &quot;2017-06-14 13:13:33&quot;, &quot;frequency&quot;: &quot;10&quot;, &quot;max_aleg&quot;:28, &quot;max_xfer&quot;:12, &quot;dial_method&quot;:2, &quot;agent_dial_rate&quot;:1.2, &quot;callmaxduration&quot;: &quot;50&quot;, &quot;maxretry&quot;: &quot;3&quot;, &quot;intervalretry&quot;: &quot;3000&quot;, &quot;calltimeout&quot;: &quot;45&quot;, &quot;aleg_gateway&quot;: &quot;/rest-api/gateway/2/&quot;, &quot;sms_gateway&quot;: &quot;&quot;, &quot;content_type&quot;: &quot;/rest-api/content-type/42/&quot;, &quot;object_id&quot; : &quot;101&quot;, &quot;extra_data&quot;: &quot;2000&quot;, &quot;voicemail&quot;: &quot;True&quot;, &quot;amd_behavior&quot;: &quot;1&quot;, &quot;voicemail_audiofile&quot;: &quot;&quot;, &quot;dnc&quot;: &quot;&quot;, &quot;user&quot;: &quot;/rest-api/users/1/&quot;, &quot;phonebook&quot;: [&quot;/rest-api/phonebook/1/&quot;], &quot;daily_start_time&quot;: &quot;00:00:00&quot;, &quot;daily_stop_time&quot;: &quot;23:59:59&quot;, &quot;queue&quot;:&quot;/rest-api/queue/6/&quot;,&quot;callcenter_config&quot;:&quot;/rest-api/callcenter_config/1/&quot;,&quot;campaign_type&quot;:3}&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">campaigns</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HTTP</span><span class="o">/</span><span class="mf">1.0</span> <span class="mi">201</span> <span class="n">CREATED</span>
+<span class="n">Date</span><span class="p">:</span> <span class="n">Fri</span><span class="p">,</span> <span class="mi">14</span> <span class="n">Jun</span> <span class="mi">2013</span> <span class="mi">09</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">27</span> <span class="n">GMT</span>
+<span class="n">Server</span><span class="p">:</span> <span class="n">WSGIServer</span><span class="o">/</span><span class="mf">0.1</span> <span class="n">Python</span><span class="o">/</span><span class="mf">2.7</span><span class="o">.</span><span class="mi">3</span>
+<span class="n">Vary</span><span class="p">:</span> <span class="n">Accept</span><span class="p">,</span> <span class="n">Accept</span><span class="o">-</span><span class="n">Language</span><span class="p">,</span> <span class="n">Cookie</span>
+<span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">application</span><span class="o">/</span><span class="n">json</span><span class="p">;</span> <span class="n">charset</span><span class="o">=</span><span class="n">utf</span><span class="o">-</span><span class="mi">8</span>
+<span class="n">Content</span><span class="o">-</span><span class="n">Language</span><span class="p">:</span> <span class="n">en</span><span class="o">-</span><span class="n">us</span>
+<span class="n">Allow</span><span class="p">:</span> <span class="n">GET</span><span class="p">,</span> <span class="n">POST</span><span class="p">,</span> <span class="n">HEAD</span><span class="p">,</span> <span class="n">OPTIONS</span>
+
+<span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="mi">163</span><span class="p">,</span><span class="s2">&quot;campaign_code&quot;</span><span class="p">:</span><span class="s2">&quot;KTYIZZPXFO&quot;</span><span class="p">,</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;callcenter-campaign-05&quot;</span><span class="p">,</span><span class="s2">&quot;description&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;callerid&quot;</span><span class="p">:</span><span class="s2">&quot;1239876&quot;</span><span class="p">,</span><span class="s2">&quot;phonebook&quot;</span><span class="p">:[</span><span class="s2">&quot;/rest-api/phonebook/1/&quot;</span><span class="p">],</span><span class="s2">&quot;startingdate&quot;</span><span class="p">:</span><span class="s2">&quot;2017-01-01T13:13:33+01:00&quot;</span><span class="p">,</span><span class="s2">&quot;expirationdate&quot;</span><span class="p">:</span><span class="s2">&quot;2017-06-14T13:13:33+02:00&quot;</span><span class="p">,</span><span class="s2">&quot;aleg_gateway&quot;</span><span class="p">:</span><span class="s2">&quot;/rest-api/gateway/2/&quot;</span><span class="p">,</span><span class="s2">&quot;user&quot;</span><span class="p">:</span><span class="s2">&quot;/rest-api/users/1/&quot;</span><span class="p">,</span><span class="s2">&quot;status&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;object_id&quot;</span><span class="p">:</span><span class="mi">21</span><span class="p">,</span><span class="s2">&quot;extra_data&quot;</span><span class="p">:</span><span class="s2">&quot;2000&quot;</span><span class="p">,</span><span class="s2">&quot;dnc&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span><span class="s2">&quot;voicemail&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span><span class="s2">&quot;amd_behavior&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;voicemail_audiofile&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span><span class="s2">&quot;voicemail_tts&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span><span class="s2">&quot;frequency&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="s2">&quot;max_aleg&quot;</span><span class="p">:</span><span class="mi">28</span><span class="p">,</span><span class="s2">&quot;max_xfer&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="s2">&quot;dial_method&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;agent_dial_rate&quot;</span><span class="p">:</span><span class="s2">&quot;1.20&quot;</span><span class="p">,</span><span class="s2">&quot;callmaxduration&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="s2">&quot;maxretry&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;intervalretry&quot;</span><span class="p">:</span><span class="mi">3000</span><span class="p">,</span><span class="s2">&quot;calltimeout&quot;</span><span class="p">:</span><span class="mi">45</span><span class="p">,</span><span class="s2">&quot;daily_start_time&quot;</span><span class="p">:</span><span class="s2">&quot;00:00:00&quot;</span><span class="p">,</span><span class="s2">&quot;daily_stop_time&quot;</span><span class="p">:</span><span class="s2">&quot;23:59:59&quot;</span><span class="p">,</span><span class="s2">&quot;monday&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span><span class="s2">&quot;tuesday&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span><span class="s2">&quot;wednesday&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span><span class="s2">&quot;thursday&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span><span class="s2">&quot;friday&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span><span class="s2">&quot;saturday&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span><span class="s2">&quot;sunday&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span><span class="s2">&quot;completion_enabled&quot;</span><span class="p">:</span><span class="n">false</span><span class="p">,</span><span class="s2">&quot;sms_gateway&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span><span class="s2">&quot;record_bleg&quot;</span><span class="p">:</span><span class="n">false</span><span class="p">,</span><span class="s2">&quot;record_call&quot;</span><span class="p">:</span><span class="n">false</span><span class="p">,</span><span class="s2">&quot;timezone_dialing&quot;</span><span class="p">:</span><span class="n">false</span><span class="p">,</span><span class="s2">&quot;archived&quot;</span><span class="p">:</span><span class="n">false</span><span class="p">,</span><span class="s2">&quot;tts_language&quot;</span><span class="p">:</span><span class="s2">&quot;en&quot;</span><span class="p">,</span><span class="s2">&quot;unavailable_audiofile&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span><span class="s2">&quot;route_type&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;route_audiofile&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span><span class="s2">&quot;route_tts&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span><span class="s2">&quot;xfer_gateway&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span><span class="s2">&quot;xfer_phonenumber&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span><span class="s2">&quot;has_been_started&quot;</span><span class="p">:</span><span class="n">false</span><span class="p">,</span><span class="s2">&quot;has_been_duplicated&quot;</span><span class="p">:</span><span class="n">false</span><span class="p">,</span><span class="s2">&quot;duplicated_from&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span><span class="s2">&quot;queue&quot;</span><span class="p">:</span><span class="s2">&quot;/rest-api/queue/6/&quot;</span><span class="p">,</span><span class="s2">&quot;callcenter_config&quot;</span><span class="p">:</span><span class="s2">&quot;/rest-api/callcenter_config/14/&quot;</span><span class="p">,</span><span class="s2">&quot;campaign_type&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
 </dd></dl>
 
 </div>
@@ -196,11 +219,11 @@
               <img class="logo" src="../_static/logo-newfies-dialer-name-300.png" alt="Logo"/>
             </a></p>
   <h4>Previous topic</h4>
-  <p class="topless"><a href="branching_template_serializers.html"
-                        title="previous chapter"><cite>BranchingTemplateSerializer</cite></a></p>
+  <p class="topless"><a href="phonebook_serializers.html"
+                        title="previous chapter"><cite>Phonebook API</cite></a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="cdr_serializers.html"
-                        title="next chapter"><cite>VoIPCallSerializer</cite></a></p>
+                        title="next chapter"><cite>CDR API</cite></a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <div class="searchformwrapper">
@@ -227,12 +250,12 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="cdr_serializers.html" title="VoIPCallSerializer"
+          <a href="cdr_serializers.html" title="CDR API"
              >next</a> |</li>
         <li class="right" >
-          <a href="branching_template_serializers.html" title="BranchingTemplateSerializer"
+          <a href="phonebook_serializers.html" title="Phonebook API"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 6.5.9 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 6.5.21 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../api-reference.html" >API Reference</a> &#187;</li> 
       </ul>
     </div>

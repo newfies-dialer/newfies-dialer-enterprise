@@ -2,8 +2,8 @@
 
 .. _UserProfileSerializer-model:
 
-`UserProfileSerializer`
------------------------
+`UserProfile API`
+-----------------
 
-.. autoclass:: UserProfileSerializer
-    :members:
+.. autodata:: UserProfileSerializer
+   :annotation:

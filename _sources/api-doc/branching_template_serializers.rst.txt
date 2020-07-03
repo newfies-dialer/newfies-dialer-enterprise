@@ -2,8 +2,8 @@
 
 .. _BranchingTemplateSerializer-model:
 
-`BranchingTemplateSerializer`
------------------------------
+`Branching Template API`
+------------------------
 
-.. autoclass:: BranchingTemplateSerializer
-    :members:
+.. autodata:: BranchingTemplateSerializer
+   :annotation:

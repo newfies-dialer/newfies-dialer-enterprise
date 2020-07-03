@@ -2,8 +2,8 @@
 
 .. _PaymentSerializer-model:
 
-`PaymentSerializer`
--------------------
+`Payment API`
+--------------
 
-.. autoclass:: PaymentSerializer
-    :members:
+.. autodata:: PaymentSerializer
+   :annotation:

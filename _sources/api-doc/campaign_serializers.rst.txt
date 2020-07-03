@@ -2,8 +2,8 @@
 
 .. _campaignResource-model:
 
-`CampaignSerializer`
---------------------
+`Campaign API`
+--------------
 
-.. autoclass:: CampaignSerializer
-	:members:
+.. autodata:: CampaignSerializer
+   :annotation:

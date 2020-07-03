@@ -2,9 +2,8 @@
 
 .. _ContactSerializer-model:
 
-`ContactSerializer`
--------------------
+`Contact API`
+-------------
 
-.. autoclass:: ContactSerializer
-    :members:
-
+.. autodata:: ContactSerializer
+   :annotation:

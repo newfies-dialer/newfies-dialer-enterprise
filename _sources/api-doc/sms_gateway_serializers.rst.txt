@@ -2,8 +2,8 @@
 
 .. _SMSGatewaySerializer-model:
 
-`SMSGatewaySerializer`
-----------------------
+`SMSGateway API`
+----------------
 
-.. autoclass:: SMSGatewaySerializer
-    :members:
+.. autodata:: SMSGatewaySerializer
+   :annotation:

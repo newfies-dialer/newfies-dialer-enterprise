@@ -2,8 +2,8 @@
 
 .. _SurveySerializer-model:
 
-`SurveySerializer`
-------------------
+`Survey API`
+--------------
 
-.. autoclass:: SurveySerializer
-    :members:
+.. autodata:: SurveySerializer
+   :annotation:

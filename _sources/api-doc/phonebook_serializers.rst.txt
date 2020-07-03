@@ -2,8 +2,8 @@
 
 .. _PhonebookSerializer-model:
 
-`PhonebookSerializer`
----------------------
+`Phonebook API`
+---------------
 
-.. autoclass:: PhonebookSerializer
-    :members:
+.. autodata:: PhonebookSerializer
+   :annotation:
