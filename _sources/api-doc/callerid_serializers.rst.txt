@@ -1,0 +1,9 @@
+.. automodule:: apirest.callerid_serializers
+
+.. _CallerIDSerializer-model:
+
+`CallerID API`
+--------------
+
+.. autodata:: CallerIDSerializer
+   :annotation:

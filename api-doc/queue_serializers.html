@@ -50,7 +50,9 @@
 <dl class="data">
 <dt id="apirest.queue_serializers.QueueSerializer">
 <code class="descclassname">apirest.queue_serializers.</code><code class="descname">QueueSerializer</code><a class="headerlink" href="#apirest.queue_serializers.QueueSerializer" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Create</strong>:</p>
+<dd><p>Queue API is read only, you cannot create Queues using this API at the moment.</p>
+<p><strong>strategy</strong>: Strategy could have the following values [1: ‘ring-all’, 2: ‘longest-idle-agent’, 3: ‘round-robin’, 4: ‘top-down’, 5: ‘agent-with-least-talk-time’, 6: ‘agent-with-fewest-calls’, 7: ‘sequentially-by-agent-order’, 8: ‘random’, 9: ‘ring-progressively]</p>
+<p><strong>Create</strong>:</p>
 <blockquote>
 <div><p>CURL Usage:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span><span class="p">:</span><span class="n">password</span> <span class="o">--</span><span class="n">dump</span><span class="o">-</span><span class="n">header</span> <span class="o">-</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type:application/json&quot;</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">--</span><span class="n">data</span> <span class="s1">&#39;{&quot;name&quot;: &quot;queue name&quot;}&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">queue</span><span class="o">/</span>

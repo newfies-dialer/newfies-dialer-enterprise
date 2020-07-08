@@ -18,6 +18,8 @@ Contents:
     ./api-doc/user_serializers
     ./api-doc/dnc_serializers
     ./api-doc/dnc_contact_serializers
+    ./api-doc/callerid_serializers
+    ./api-doc/callerid_group_serializers
     ./api-doc/gateway_serializers
     ./api-doc/callcenter_config_serializers
     ./api-doc/queue_serializers

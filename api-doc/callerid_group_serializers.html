@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Gateway API &#8212; Newfies-Dialer 6.5.21 documentation</title>
+    <title>CallerID Group API &#8212; Newfies-Dialer 6.5.21 documentation</title>
     <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -16,8 +16,8 @@
     <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Callcenter Config API" href="callcenter_config_serializers.html" />
-    <link rel="prev" title="CallerID Group API" href="callerid_group_serializers.html" /> 
+    <link rel="next" title="Gateway API" href="gateway_serializers.html" />
+    <link rel="prev" title="CallerID API" href="callerid_serializers.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -29,10 +29,10 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="callcenter_config_serializers.html" title="Callcenter Config API"
+          <a href="gateway_serializers.html" title="Gateway API"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="callerid_group_serializers.html" title="CallerID Group API"
+          <a href="callerid_serializers.html" title="CallerID API"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 6.5.21 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../api-reference.html" accesskey="U">API Reference</a> &#187;</li> 
@@ -45,28 +45,39 @@
           <div class="body" role="main">
             
 
-    <span class="target" id="module-apirest.gateway_serializers"></span><div class="section" id="gateway-api">
-<span id="gatewayserializer-model"></span><h1><cite>Gateway API</cite><a class="headerlink" href="#gateway-api" title="Permalink to this headline">¶</a></h1>
+    <span class="target" id="module-apirest.callerid_group_serializers"></span><div class="section" id="callerid-group-api">
+<span id="calleridgroupserializer-model"></span><h1><cite>CallerID Group API</cite><a class="headerlink" href="#callerid-group-api" title="Permalink to this headline">¶</a></h1>
 <dl class="data">
-<dt id="apirest.gateway_serializers.GatewaySerializer">
-<code class="descclassname">apirest.gateway_serializers.</code><code class="descname">GatewaySerializer</code><a class="headerlink" href="#apirest.gateway_serializers.GatewaySerializer" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Read</strong>:</p>
+<dt id="apirest.callerid_group_serializers.CallerIDGroupSerializer">
+<code class="descclassname">apirest.callerid_group_serializers.</code><code class="descname">CallerIDGroupSerializer</code><a class="headerlink" href="#apirest.callerid_group_serializers.CallerIDGroupSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><p>CallerIDGroup API is read only, you cannot create CallerIDGroup using this API at the moment.</p>
+<p><strong>Read</strong>:</p>
 <blockquote>
 <div><p>CURL Usage:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span><span class="p">:</span><span class="n">password</span> <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Accept: application/json&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">gateway</span><span class="o">/</span>
-
-<span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span><span class="p">:</span><span class="n">password</span> <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Accept: application/json&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">gateway</span><span class="o">/%</span><span class="n">gateway</span><span class="o">-</span><span class="nb">id</span><span class="o">%/</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span><span class="p">:</span><span class="n">password</span> <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Accept: application/json&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">callerid_group</span><span class="o">/</span>
 </pre></div>
 </div>
 <p>Response:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
     <span class="s2">&quot;next&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
     <span class="s2">&quot;previous&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
     <span class="s2">&quot;results&quot;</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
-            <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://HOSTNAME_IP/rest-api/gateway/1/&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Default_Gateway&quot;</span>
+            <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/rest-api/callerid_group/2/&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;CIDGroup-01&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;created_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2018-08-08T16:01:54.358902+02:00&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;updated_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2018-08-08T16:01:54.358924+02:00&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/rest-api/users/2/&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/rest-api/callerid_group/3/&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;CIDGroup&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;created_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2018-09-20T10:37:58.346277+02:00&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;updated_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2018-09-20T10:37:58.346317+02:00&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/rest-api/users/1/&quot;</span>
         <span class="p">}</span>
     <span class="p">]</span>
 <span class="p">}</span>
@@ -88,11 +99,11 @@
               <img class="logo" src="../_static/logo-newfies-dialer-name-300.png" alt="Logo"/>
             </a></p>
   <h4>Previous topic</h4>
-  <p class="topless"><a href="callerid_group_serializers.html"
-                        title="previous chapter"><cite>CallerID Group API</cite></a></p>
+  <p class="topless"><a href="callerid_serializers.html"
+                        title="previous chapter"><cite>CallerID API</cite></a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="callcenter_config_serializers.html"
-                        title="next chapter"><cite>Callcenter Config API</cite></a></p>
+  <p class="topless"><a href="gateway_serializers.html"
+                        title="next chapter"><cite>Gateway API</cite></a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <div class="searchformwrapper">
@@ -119,10 +130,10 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="callcenter_config_serializers.html" title="Callcenter Config API"
+          <a href="gateway_serializers.html" title="Gateway API"
              >next</a> |</li>
         <li class="right" >
-          <a href="callerid_group_serializers.html" title="CallerID Group API"
+          <a href="callerid_serializers.html" title="CallerID API"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 6.5.21 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../api-reference.html" >API Reference</a> &#187;</li> 
