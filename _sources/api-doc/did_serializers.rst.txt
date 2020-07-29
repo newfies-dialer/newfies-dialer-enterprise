@@ -1,0 +1,9 @@
+.. automodule:: apirest.did_serializers
+
+.. _DIDSerializer-model:
+
+`DID API`
+---------
+
+.. autodata:: DIDSerializer
+   :annotation:

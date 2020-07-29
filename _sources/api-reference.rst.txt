@@ -34,6 +34,7 @@ Contents:
     ./api-doc/audiofile_serializers
     ./api-doc/userprofile_serializers
     ./api-doc/content_type_serializers
+    ./api-doc/did_serializers
 
 
 Testing console of APIs:

@@ -1,0 +1,181 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>DID API &#8212; Newfies-Dialer 7.0.10 documentation</title>
+    <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Webhook" href="../webhook.html" />
+    <link rel="prev" title="Content Type API" href="content_type_serializers.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../webhook.html" title="Webhook"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="content_type_serializers.html" title="Content Type API"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 7.0.10 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api-reference.html" accesskey="U">API Reference</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+
+    <span class="target" id="module-apirest.did_serializers"></span><div class="section" id="did-api">
+<span id="didserializer-model"></span><h1><cite>DID API</cite><a class="headerlink" href="#did-api" title="Permalink to this headline">¶</a></h1>
+<dl class="data">
+<dt id="apirest.did_serializers.DIDSerializer">
+<code class="descclassname">apirest.did_serializers.</code><code class="descname">DIDSerializer</code><a class="headerlink" href="#apirest.did_serializers.DIDSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><p>DID API to view and create new DIDs.</p>
+<p><strong>Create</strong>:</p>
+<blockquote>
+<div><p>CURL Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span><span class="p">:</span><span class="n">password</span> <span class="o">--</span><span class="n">dump</span><span class="o">-</span><span class="n">header</span> <span class="o">-</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type:application/json&quot;</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">--</span><span class="n">data</span> <span class="s1">&#39;{&quot;did_number&quot;: &quot;300112344&quot;, &quot;user&quot;: &quot;/rest-api/users/1/&quot;, &quot;campaign&quot;: &quot;/rest-api/campaigns/94/&quot;}&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">did</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HTTP</span><span class="o">/</span><span class="mf">1.0</span> <span class="mi">201</span> <span class="n">Created</span>
+<span class="n">Date</span><span class="p">:</span> <span class="n">Wed</span><span class="p">,</span> <span class="mi">29</span> <span class="n">Jul</span> <span class="mi">2020</span> <span class="mi">16</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">58</span> <span class="n">GMT</span>
+<span class="n">Server</span><span class="p">:</span> <span class="n">WSGIServer</span><span class="o">/</span><span class="mf">0.1</span> <span class="n">Python</span><span class="o">/</span><span class="mf">2.7</span><span class="o">.</span><span class="mi">15</span><span class="n">rc1</span>
+<span class="n">Content</span><span class="o">-</span><span class="n">Length</span><span class="p">:</span> <span class="mi">279</span>
+<span class="n">Content</span><span class="o">-</span><span class="n">Language</span><span class="p">:</span> <span class="n">en</span>
+<span class="n">Vary</span><span class="p">:</span> <span class="n">Accept</span><span class="p">,</span> <span class="n">Accept</span><span class="o">-</span><span class="n">Language</span><span class="p">,</span> <span class="n">Cookie</span>
+<span class="n">Location</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">8000</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">did</span><span class="o">/</span><span class="mi">4</span><span class="o">/</span>
+<span class="n">Allow</span><span class="p">:</span> <span class="n">GET</span><span class="p">,</span> <span class="n">POST</span><span class="p">,</span> <span class="n">HEAD</span><span class="p">,</span> <span class="n">OPTIONS</span>
+<span class="n">X</span><span class="o">-</span><span class="n">Frame</span><span class="o">-</span><span class="n">Options</span><span class="p">:</span> <span class="n">SAMEORIGIN</span>
+<span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">application</span><span class="o">/</span><span class="n">json</span>
+
+<span class="p">{</span><span class="s2">&quot;url&quot;</span><span class="p">:</span><span class="s2">&quot;http://127.0.0.1:8000/rest-api/did/4/&quot;</span><span class="p">,</span><span class="s2">&quot;did_number&quot;</span><span class="p">:</span><span class="s2">&quot;300112344&quot;</span><span class="p">,</span><span class="s2">&quot;created_date&quot;</span><span class="p">:</span><span class="s2">&quot;2020-07-29T18:04:57.951292+02:00&quot;</span><span class="p">,</span><span class="s2">&quot;updated_date&quot;</span><span class="p">:</span><span class="s2">&quot;2020-07-29T18:04:57.951354+02:00&quot;</span><span class="p">,</span><span class="s2">&quot;user&quot;</span><span class="p">:</span><span class="s2">&quot;http://127.0.0.1:8000/rest-api/users/1/&quot;</span><span class="p">,</span><span class="s2">&quot;campaign&quot;</span><span class="p">:</span><span class="s2">&quot;http://127.0.0.1:8000/rest-api/campaigns/94/&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Read</strong>:</p>
+<blockquote>
+<div><p>CURL Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span><span class="p">:</span><span class="n">password</span> <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Accept: application/json&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">did</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s2">&quot;next&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;previous&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;results&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+                <span class="s2">&quot;url&quot;</span><span class="p">:</span><span class="s2">&quot;http://127.0.0.1:8000/rest-api/did/1/&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;did_number&quot;</span><span class="p">:</span><span class="s2">&quot;804445454&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;created_date&quot;</span><span class="p">:</span><span class="s2">&quot;2018-09-05T17:13:01.123429+02:00&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;updated_date&quot;</span><span class="p">:</span><span class="s2">&quot;2018-09-05T17:18:48.055658+02:00&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;user&quot;</span><span class="p">:</span><span class="s2">&quot;http://127.0.0.1:8000/rest-api/users/1/&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;campaign&quot;</span><span class="p">:</span><span class="n">null</span>
+
+        <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;url&quot;</span><span class="p">:</span><span class="s2">&quot;http://127.0.0.1:8000/rest-api/did/2/&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;did_number&quot;</span><span class="p">:</span><span class="s2">&quot;55555555500&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;created_date&quot;</span><span class="p">:</span><span class="s2">&quot;2020-07-29T17:58:01.953773+02:00&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;updated_date&quot;</span><span class="p">:</span><span class="s2">&quot;2020-07-29T17:58:01.953798+02:00&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;user&quot;</span><span class="p">:</span><span class="s2">&quot;http://127.0.0.1:8000/rest-api/users/2/&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;campaign&quot;</span><span class="p">:</span><span class="s2">&quot;http://127.0.0.1:8000/rest-api/campaigns/94/&quot;</span>
+
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd></dl>
+
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo-newfies-dialer-name-300.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="content_type_serializers.html"
+                        title="previous chapter"><cite>Content Type API</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../webhook.html"
+                        title="next chapter">Webhook</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../webhook.html" title="Webhook"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="content_type_serializers.html" title="Content Type API"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 7.0.10 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api-reference.html" >API Reference</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017-2020, Newfies-Dialer mass outbound calling, voice broadcasting, phone survey solution &lt;newfies-dialer@star2billing.com&gt;.
+    </div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-325034-18");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>
