@@ -32,13 +32,10 @@ Also, create a resource group.
 
 
 
-5. Click, `Go To Resource`.
+5. Click, `Deployment Details (Download)` button.
 
-.. image:: ../_static/images/advanced_admin/ms-asr-5.png
-
-
-
-6. Copy the contents of `Key 1` and send it to us. This key will be used to connect your account with the speech recognition services you have just created.
+The download archive contains 2 json files that will be used to connect your account with the speech recognition services.
+Please, send the zip file you have just downloaded to our team to process with the installation.
 
 Make sure there is a payment source with Azure to cover any costs you incur.
 
