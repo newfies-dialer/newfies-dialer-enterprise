@@ -100,8 +100,14 @@ The Webhook endpoint needs to accept the POST method, all the following fields w
         description: "List of bleg (xfer) recordings"
 
     * survey_result:
+        DEPRECIATED!
         type: "array"
         description: "IVR/Survey interactions and results"
+
+    * extra_data:
+        type: "array"
+        description: "IVR/Survey interactions and results"
+        example: "{\"survey_result\": [{\"result\": [\"Sub-Option\", \"\"], \"section_id\": 227}, {\"result\": [\"41\", \"\"], \"section_id\": 229}, {\"result\": [\"Recorded\", \"/usermedia/recording/bleg-recording-cr_6-ct_1-cpg_BANRSDS.mp3\"], \"section_id\": 230}]}"
 
     * subscriber:
         type: "array"
@@ -179,7 +185,7 @@ Sample of the payload, a webhook will be sent for each call (CDR):
     "callerid": "+1212450012",
     "lead_disposition_id": null,
     "url_bleg_recordings": [
-        "/usermedia/recording/bleg-recording-cr_6-ct_1-cpg_BANRSDS.wav"
+        "/usermedia/recording/bleg-recording-cr_6-ct_1-cpg_BANRSDS.mp3"
     ],
     "incremental_duration": 6,
     "hangup_cause_code": 16,
@@ -197,6 +203,13 @@ Sample of the payload, a webhook will be sent for each call (CDR):
         "billsec": 6,
         "starting_date": "2020-03-10 19:04:31",
         "Transfering to agent": ""
+    },
+    "extra_data": {
+        "survey_result": [
+            {"result": ["Sub-Option", ""], "section_id": 227},
+            {"result": ["41", ""], "section_id": 229},
+            {"result": ["Recorded", "/usermedia/recording/bleg-recording-cr_6-ct_1-cpg_BANRSDS.mp3"], "section_id": 230}
+        ]
     },
     "billed_duration": 6,
     "disposition": "ANSWER",

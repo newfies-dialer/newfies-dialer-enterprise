@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Webhook &#8212; Newfies-Dialer 7.0.18 documentation</title>
+    <title>Webhook &#8212; Newfies-Dialer 7.3.0 documentation</title>
     <link rel="stylesheet" href="_static/newfies-dialer.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" >
           <a href="api-doc/did_serializers.html" title="DID API"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Newfies-Dialer 7.0.18 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Newfies-Dialer 7.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -130,8 +130,14 @@ If there is an error, for instance your endpoint didn’t accept the API call, i
 <span class="go">    description: &quot;List of bleg (xfer) recordings&quot;</span>
 
 <span class="go">* survey_result:</span>
+<span class="go">    DEPRECIATED!</span>
 <span class="go">    type: &quot;array&quot;</span>
 <span class="go">    description: &quot;IVR/Survey interactions and results&quot;</span>
+
+<span class="go">* extra_data:</span>
+<span class="go">    type: &quot;array&quot;</span>
+<span class="go">    description: &quot;IVR/Survey interactions and results&quot;</span>
+<span class="go">    example: &quot;{\&quot;survey_result\&quot;: [{\&quot;result\&quot;: [\&quot;Sub-Option\&quot;, \&quot;\&quot;], \&quot;section_id\&quot;: 227}, {\&quot;result\&quot;: [\&quot;41\&quot;, \&quot;\&quot;], \&quot;section_id\&quot;: 229}, {\&quot;result\&quot;: [\&quot;Recorded\&quot;, \&quot;/usermedia/recording/bleg-recording-cr_6-ct_1-cpg_BANRSDS.mp3\&quot;], \&quot;section_id\&quot;: 230}]}&quot;</span>
 
 <span class="go">* subscriber:</span>
 <span class="go">    type: &quot;array&quot;</span>
@@ -197,7 +203,7 @@ UNAUTHORIZED or FAILED.</p>
 <span class="go">&quot;callerid&quot;: &quot;+1212450012&quot;,</span>
 <span class="go">&quot;lead_disposition_id&quot;: null,</span>
 <span class="go">&quot;url_bleg_recordings&quot;: [</span>
-<span class="go">    &quot;/usermedia/recording/bleg-recording-cr_6-ct_1-cpg_BANRSDS.wav&quot;</span>
+<span class="go">    &quot;/usermedia/recording/bleg-recording-cr_6-ct_1-cpg_BANRSDS.mp3&quot;</span>
 <span class="go">],</span>
 <span class="go">&quot;incremental_duration&quot;: 6,</span>
 <span class="go">&quot;hangup_cause_code&quot;: 16,</span>
@@ -215,6 +221,13 @@ UNAUTHORIZED or FAILED.</p>
 <span class="go">    &quot;billsec&quot;: 6,</span>
 <span class="go">    &quot;starting_date&quot;: &quot;2020-03-10 19:04:31&quot;,</span>
 <span class="go">    &quot;Transfering to agent&quot;: &quot;&quot;</span>
+<span class="go">},</span>
+<span class="go">&quot;extra_data&quot;: {</span>
+<span class="go">    &quot;survey_result&quot;: [</span>
+<span class="go">        {&quot;result&quot;: [&quot;Sub-Option&quot;, &quot;&quot;], &quot;section_id&quot;: 227},</span>
+<span class="go">        {&quot;result&quot;: [&quot;41&quot;, &quot;&quot;], &quot;section_id&quot;: 229},</span>
+<span class="go">        {&quot;result&quot;: [&quot;Recorded&quot;, &quot;/usermedia/recording/bleg-recording-cr_6-ct_1-cpg_BANRSDS.mp3&quot;], &quot;section_id&quot;: 230}</span>
+<span class="go">    ]</span>
 <span class="go">},</span>
 <span class="go">&quot;billed_duration&quot;: 6,</span>
 <span class="go">&quot;disposition&quot;: &quot;ANSWER&quot;,</span>
@@ -269,7 +282,7 @@ UNAUTHORIZED or FAILED.</p>
         <li class="right" >
           <a href="api-doc/did_serializers.html" title="DID API"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Newfies-Dialer 7.0.18 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Newfies-Dialer 7.3.0 documentation</a> &#187;</li> 
       </ul>
     </div>
 
