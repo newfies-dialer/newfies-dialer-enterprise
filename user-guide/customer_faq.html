@@ -1,0 +1,162 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Customer FAQ &#8212; Newfies-Dialer 7.5.2 documentation</title>
+    <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Call-Center" href="call-center.html" />
+    <link rel="prev" title="Dashboard" href="dashboard.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="call-center.html" title="Call-Center"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="dashboard.html" title="Dashboard"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 7.5.2 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../user-guide.html" accesskey="U">User Guide</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+
+    <div class="section" id="customer-faq">
+<span id="id1"></span><h1>Customer FAQ<a class="headerlink" href="#customer-faq" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#campaign-won-t-start" id="id2">Campaign won’t start</a></li>
+<li><a class="reference internal" href="#i-ve-edited-the-survey-but-changes-aren-t-applied-to-my-running-campaign" id="id3">I’ve Edited the Survey, but Changes Aren’t Applied to my Running Campaign</a></li>
+<li><a class="reference internal" href="#i-ve-started-the-campaign-but-it-s-not-made-any-calls" id="id4">I’ve started the campaign, but it’s not made any calls.</a></li>
+<li><a class="reference internal" href="#i-want-to-call-my-contacts-at-sociable-times-across-multiple-time-zones" id="id5">I Want to Call my Contacts at Sociable Times Across Multiple Time Zones.</a></li>
+</ul>
+</div>
+<p>This is a short list of common errors and mistakes and the cure.</p>
+<div class="section" id="campaign-won-t-start">
+<h2><a class="toc-backref" href="#id2">Campaign won’t start</a><a class="headerlink" href="#campaign-won-t-start" title="Permalink to this headline">¶</a></h2>
+<p>Check you have a green tick next to the campaign. Orange triangle means the campaign is not in schedule. Edit the schedule to be in date.</p>
+<p>See picture below of the first campaign in schedule and the second out of schedule.</p>
+<img alt="../_images/campaign_in_date.png" src="../_images/campaign_in_date.png" />
+</div>
+<div class="section" id="i-ve-edited-the-survey-but-changes-aren-t-applied-to-my-running-campaign">
+<h2><a class="toc-backref" href="#id3">I’ve Edited the Survey, but Changes Aren’t Applied to my Running Campaign</a><a class="headerlink" href="#i-ve-edited-the-survey-but-changes-aren-t-applied-to-my-running-campaign" title="Permalink to this headline">¶</a></h2>
+<p>If you edit a survey, then you <strong>have</strong> to create a new campaign from scratch.</p>
+<p>Do not duplicate an existing campaign, as this will copy the survey as it was in the campaign you duplicated from.</p>
+<p>You can make changes the the recorded audio, text to speech script and transfer numbers while a campaign is running.</p>
+</div>
+<div class="section" id="i-ve-started-the-campaign-but-it-s-not-made-any-calls">
+<h2><a class="toc-backref" href="#id4">I’ve started the campaign, but it’s not made any calls.</a><a class="headerlink" href="#i-ve-started-the-campaign-but-it-s-not-made-any-calls" title="Permalink to this headline">¶</a></h2>
+<p>After checking the CDR to confirm calls have not been made, Check:</p>
+<ul class="simple">
+<li>your survey has sections in it</li>
+<li>your phonebook has contacts</li>
+<li>it’s in schedule to run</li>
+<li>there are numbers in the approprate timezone to call</li>
+<li>if you are using a queue, confirm there are agents logged-in and available in your queue</li>
+</ul>
+</div>
+<div class="section" id="i-want-to-call-my-contacts-at-sociable-times-across-multiple-time-zones">
+<h2><a class="toc-backref" href="#id5">I Want to Call my Contacts at Sociable Times Across Multiple Time Zones.</a><a class="headerlink" href="#i-want-to-call-my-contacts-at-sociable-times-across-multiple-time-zones" title="Permalink to this headline">¶</a></h2>
+<p>For example, you are based in New York on Eastern Standard Time (GMT-5)</p>
+<p>The Start and Finish times are the times that the Campaign will run, provided you have started the campaign. You should set these to the rough duration of the campaign. By default they are set from “NOW” to 24 hours hence.</p>
+<p>If you are calling the west coast, but still want calls to stop at 5PM EST, then you set the Finish time to today at 17:00.</p>
+<img alt="../_images/campaign_schedule.png" src="../_images/campaign_schedule.png" />
+<p>The Daily Start Time, and Daily Finish times are the times before which and after which no contact will be called according to their local timezone, assuming you have Timezone dialling switched on. So if you have Start set to 9AM, calls won’t be made on the West Coast until it’s 9AM PST (their time).</p>
+<p>If Timezone Dialling is switched off, then start and stop will be in EST, and West Coast contacts may get some really early calls.</p>
+<p>You can check the current date and time on The Dialer under the user menu:-</p>
+<img alt="../_images/user_menu.png" src="../_images/user_menu.png" />
+<p>If the campaign stops dialling, but is still not complete, there may be some numbers queued for the West Coast and these will go out when the time on the West Coast is after the Daily Start Time.</p>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo-newfies-dialer-name-300.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="dashboard.html"
+                        title="previous chapter">Dashboard</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="call-center.html"
+                        title="next chapter">Call-Center</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="call-center.html" title="Call-Center"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="dashboard.html" title="Dashboard"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 7.5.2 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../user-guide.html" >User Guide</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017-2020, Newfies-Dialer mass outbound calling, voice broadcasting, phone survey solution &lt;newfies-dialer@star2billing.com&gt;.
+    </div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-325034-18");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

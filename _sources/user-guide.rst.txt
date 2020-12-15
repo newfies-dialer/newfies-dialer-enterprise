@@ -42,5 +42,7 @@ We suggest you follow the quick start guide to get an overview of the system, th
     ./user-guide/contacts
     ./user-guide/voice-campaign
     ./user-guide/sms-campaign
+    ./user-guide/inbound
     ./user-guide/reports
     ./user-guide/dashboard
+    ./user-guide/customer_faq

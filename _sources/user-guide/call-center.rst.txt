@@ -18,8 +18,12 @@ The call center module is designed for call centers so that agents can answer ca
 
 The call center module allows you to:
 
+
 - Add Agents with a SIP username and password
-- Connect SIP phones to agent accounts.
+- Answer calls directly from the webpage using RTC
+- Optionally connect SIP phones to agent accounts
+- Transfer calls to pre-determined destinations
+- Make outbound calls
 - Create a Queue and add agents to the queue
 - Create a call center campaign to make outbound calls.
 - Use queues in standard campaigns, surveys and inbound campaigns.
@@ -40,7 +44,10 @@ In the Agent Screen, click add, enter a username, password and password confirma
 the next screen, add a first name and last name.
 
 The phone login field is pre-filled and a password is suggested. Passwords should be long and complex
-. Click Update. Your agent is now created and you can move on to configuring their phone.
+
+If you intend to use an external SIP phone, then Webphone should be switched off.
+
+Click Update. Your agent is now created and you can move on to configuring their phone where necessary. Normally, the agent will simply log into the agent interface and answer calls on the web page.
 
 You will now be returned to the agent listing.
 
@@ -99,14 +106,61 @@ do basic tests to check all is working:
 
 - 1000 -  log out, the agent will not receive calls.
 - 1001 - log in and make yourself available to take calls. Must be done on registration.
+- 1002 - Log in on Standby, agent hears music on hold and will be connected immediately to a contact on contact answer.
+- 1004 - Log in on Standby as above without music on hold
 - 0001 - Echo Test to check two way audio and that microphone and speakers are working correctly.
 - 0002 - continuous tone,  if the tone is not continuous and it jumps and stutters excessively,
   then your internet connection may not be of sufficient quality or bandwidth to support a voice call.
 
+.. _call_center_transfer_List:
+
+3. Transfer List
+================
+
+Phone numbers or SIP URI can be added to the Transfer list, these numbers can be made available to the agent to transfer calls to.
+
+There are two types of transfer available to the agent:
+
+- Cold Transfer - Transfers the call to the selected destination and disconnects the agent immediately.
+- 3-Way Transfer - Creates a 3 way call between agent, contact and selected destination.
+
+Phone numbers should be entered in full international format with a leading +
+
+
+.. _call_center_config:
+
+4. Call-Center Config
+=====================
+Multiple call-center configurations can be created and selected in a call-center Campaign. In a standard Voice Campaign, the default config will be used.
+
+The Call-Center Config allows you to create an agent script and allows tag replacement to be used to include specific information about a contact.
+
+There is integration with most web based CRM systems, where a link can be added along with the customer's ID uploaded with the contact to automatically open the CRM at the contacts's record.
+
+The numbers that agents are allowed to transfer to with this call center config are selected here.
+
+
+.. _call_center_Lead_disposition:
+
+5. Agent's Lead Dispostions
+===========================
+
+The agent can mark each contact with a lead disposition. These are set to:
+0=CONNECTED,1=NOT_CONNECTED,2=CALLBACK_LATER,3=WRONG_NUMBER,4=BAD_TIMING
+
+More lead dispositions can be added and edited by the tenant under account settings.
+
+Outbound Calling
+----------------
+
+The agent can manually dial indvidual numbers. Only one call can be maded at a time and total calls are limited to 500 per day for security.
+
+To allow outbound calling, the tenant selects the carrier to use and the callerID number and name to send with each call. Only when this is done can the agent make outbound calls.
+
 
 .. _call_center_queue:
 
-3. Queue
+6. Queue
 ========
 
 .. image:: ../_static/images/customer/autodialer-dialerai-queue-configuration.png
@@ -129,7 +183,7 @@ Finally, highlight the agents to be called in this queue then click update.
 
 .. _call_center_campaign:
 
-4. Callcenter Campaign
+7. Callcenter Campaign
 ======================
 
 A callcenter campaign is used for power dialling your contacts for your agents for direct transfer or introduced transfer (message followed by transfer)
@@ -179,7 +233,7 @@ Once the campaign has been been started, the number of contacts to be called wil
 
 .. _call_center_queue_ivr:
 
-5. Use Queue within an IVR
+8. Use Queue within an IVR
 ==========================
 
 There is a Callcenter Queue section which can be used in the survey as part of the IVR creation. This may be used for skills based routing in conjunction with a Multi-choice section.
@@ -193,8 +247,8 @@ As with any section, text to speech can be added, an audio file selected and the
 
 .. _call_center_regulating_calls:
 
-6. Regulating Calls According to Agents available
-==================================================
+9. Regulating Calls According to Agents available
+=================================================
 
 There is a new Dialer Mode in a normal outbound campaign called Callcenter dialer which will regulate the calls according to the number of agents available. When this is selected:
 
@@ -204,11 +258,17 @@ There is a new Dialer Mode in a normal outbound campaign called Callcenter diale
 
 .. _call_center_reporting:
 
-7. Reporting
-============
+10. Reporting
+=============
 
 As with any campaign, the following reports are available:
 
 - Dashboard showing overview and progress of a campaign.
 - The Callcenter campaign screen shows progress and calls in progress.
 - Under reporting, the CDR can be viewed and downloaded.
+
+Additionally under CallCenter the following reports are available:
+
+- Queue Stats showing total calls, abandoned calls, talk time, etc.
+- Agent Reports, filtered by agent and date showing stats by agent.
+- Agent Activity log of agent actions.

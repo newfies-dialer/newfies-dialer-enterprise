@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Survey &amp; IVR Configuration &#8212; Newfies-Dialer 7.3.0 documentation</title>
+    <title>Survey &amp; IVR Configuration &#8212; Newfies-Dialer 7.5.2 documentation</title>
     <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -34,7 +34,7 @@
         <li class="right" >
           <a href="customer-panel.html" title="Customer Panel"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 7.3.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 7.5.2 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../user-guide.html" accesskey="U">User Guide</a> &#187;</li> 
       </ul>
     </div>  
@@ -49,29 +49,31 @@
 <span id="survey-and-ivr-configuration"></span><h1>Survey &amp; IVR Configuration<a class="headerlink" href="#survey-ivr-configuration" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#create-survey" id="id7">Create Survey</a></li>
-<li><a class="reference internal" href="#survey-nodes" id="id8">Survey Nodes</a></li>
-<li><a class="reference internal" href="#survey-completion-retry" id="id9">Survey Completion Retry</a></li>
-<li><a class="reference internal" href="#dtmf-input-with-audio" id="id10">DTMF input with Audio</a></li>
-<li><a class="reference internal" href="#tts-or-audio-file" id="id11">TTS or Audio file</a></li>
-<li><a class="reference internal" href="#tag-substitution-with-tts" id="id12">Tag Substitution with TTS</a></li>
-<li><a class="reference internal" href="#capture-digits" id="id13">Capture Digits</a></li>
-<li><a class="reference internal" href="#conference" id="id14">Conference</a></li>
-<li><a class="reference internal" href="#dnc" id="id15">DNC</a></li>
-<li><a class="reference internal" href="#hangup" id="id16">Hangup</a></li>
-<li><a class="reference internal" href="#multi-choice" id="id17">Multi-Choice</a></li>
-<li><a class="reference internal" href="#play-message" id="id18">Play Message</a></li>
-<li><a class="reference internal" href="#rating-question" id="id19">Rating Question</a></li>
-<li><a class="reference internal" href="#record-message" id="id20">Record Message</a></li>
-<li><a class="reference internal" href="#sms-message" id="id21">SMS Message</a></li>
-<li><a class="reference internal" href="#call-transfer" id="id22">Call Transfer</a></li>
-<li><a class="reference internal" href="#http-api" id="id23">HTTP API</a></li>
-<li><a class="reference internal" href="#survey-branching" id="id24">Survey Branching</a></li>
-<li><a class="reference internal" href="#uploading-audio-files" id="id25">Uploading Audio Files</a></li>
+<li><a class="reference internal" href="#create-survey" id="id8">Create Survey</a></li>
+<li><a class="reference internal" href="#survey-nodes" id="id9">Survey Nodes</a></li>
+<li><a class="reference internal" href="#survey-completion-retry" id="id10">Survey Completion Retry</a></li>
+<li><a class="reference internal" href="#dtmf-input-with-audio" id="id11">DTMF input with Audio</a></li>
+<li><a class="reference internal" href="#tts-or-audio-file" id="id12">TTS or Audio file</a></li>
+<li><a class="reference internal" href="#tag-substitution-with-tts" id="id13">Tag Substitution with TTS</a></li>
+<li><a class="reference internal" href="#capture-digits" id="id14">Capture Digits</a></li>
+<li><a class="reference internal" href="#conference" id="id15">Conference</a></li>
+<li><a class="reference internal" href="#dnc" id="id16">DNC</a></li>
+<li><a class="reference internal" href="#hangup" id="id17">Hangup</a></li>
+<li><a class="reference internal" href="#multi-choice" id="id18">Multi-Choice</a></li>
+<li><a class="reference internal" href="#play-message" id="id19">Play Message</a></li>
+<li><a class="reference internal" href="#rating-question" id="id20">Rating Question</a></li>
+<li><a class="reference internal" href="#record-message" id="id21">Record Message</a></li>
+<li><a class="reference internal" href="#sms-message" id="id22">SMS Message</a></li>
+<li><a class="reference internal" href="#call-transfer" id="id23">Call Transfer</a></li>
+<li><a class="reference internal" href="#http-api" id="id24">HTTP API</a></li>
+<li><a class="reference internal" href="#http-api-async-non-blocking" id="id25">HTTP API Async (Non Blocking)</a></li>
+<li><a class="reference internal" href="#asr-speech-recognition" id="id26">ASR (Speech Recognition)</a></li>
+<li><a class="reference internal" href="#survey-branching" id="id27">Survey Branching</a></li>
+<li><a class="reference internal" href="#uploading-audio-files" id="id28">Uploading Audio Files</a></li>
 </ul>
 </div>
 <div class="section" id="create-survey">
-<span id="id1"></span><h2><a class="toc-backref" href="#id7">Create Survey</a><a class="headerlink" href="#create-survey" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2><a class="toc-backref" href="#id8">Create Survey</a><a class="headerlink" href="#create-survey" title="Permalink to this headline">¶</a></h2>
 <p>We recommend that you create and prototype the survey using Text to Speech, particularly with more complex surveys, once you are happy with the end result, then you can use the TTS as a script for your voice talent.</p>
 <p>There are more details on uploading audio files further on in this section.</p>
 <img alt="../_images/update_survey1.png" src="../_images/update_survey1.png" />
@@ -79,7 +81,7 @@
 <p>Each contact is called, and then played a sound file or Text to Speech (TTS). After the sound file is heard, the user can enter their answer through the phone keypad using keys 0 to 9.</p>
 </div>
 <div class="section" id="survey-nodes">
-<span id="id2"></span><h2><a class="toc-backref" href="#id8">Survey Nodes</a><a class="headerlink" href="#survey-nodes" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2><a class="toc-backref" href="#id9">Survey Nodes</a><a class="headerlink" href="#survey-nodes" title="Permalink to this headline">¶</a></h2>
 <p>There are many types of survey nodes which allow to create complex IVR applications. On each node you will be able to perform call transfer, capture digits, go to conference room, add a contact to the DNC list and much more.</p>
 <p>Most survey nodes have similar attributes that include:</p>
 <blockquote>
@@ -95,7 +97,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="survey-completion-retry">
-<h2><a class="toc-backref" href="#id9">Survey Completion Retry</a><a class="headerlink" href="#survey-completion-retry" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id10">Survey Completion Retry</a><a class="headerlink" href="#survey-completion-retry" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>As mentioned in the list above, When a node is created, the “Survey Complete” checkbox can be turned on so that it is clear that the contact reached a certain point in the survey and did not abandon the call early.</p>
 <p>Usually, one of the last nodes in the survey is marked as “Survey Complete”.</p>
@@ -104,15 +106,15 @@
 </div></blockquote>
 </div>
 <div class="section" id="dtmf-input-with-audio">
-<h2><a class="toc-backref" href="#id10">DTMF input with Audio</a><a class="headerlink" href="#dtmf-input-with-audio" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id11">DTMF input with Audio</a><a class="headerlink" href="#dtmf-input-with-audio" title="Permalink to this headline">¶</a></h2>
 <p>Any node where you expect to recieve DTMF must have either TTS or an audio file, even if that audio file is only half a second of silence.</p>
 </div>
 <div class="section" id="tts-or-audio-file">
-<h2><a class="toc-backref" href="#id11">TTS or Audio file</a><a class="headerlink" href="#tts-or-audio-file" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id12">TTS or Audio file</a><a class="headerlink" href="#tts-or-audio-file" title="Permalink to this headline">¶</a></h2>
 <p>When no audio file is selected against a node, the TTS will be used. The TTS is automatically created from the title or question that is assigned to the node, but it can be edited afterwards.</p>
 </div>
 <div class="section" id="tag-substitution-with-tts">
-<span id="id3"></span><h2><a class="toc-backref" href="#id12">Tag Substitution with TTS</a><a class="headerlink" href="#tag-substitution-with-tts" title="Permalink to this headline">¶</a></h2>
+<span id="id3"></span><h2><a class="toc-backref" href="#id13">Tag Substitution with TTS</a><a class="headerlink" href="#tag-substitution-with-tts" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
 <dt>This is the list of standard tags that will be automatically replaced:</dt>
 <dd>{full_name}
@@ -132,55 +134,55 @@ Text example:</p>
 <div>“We are calling you on behalf of Canonical, you will recieve a bonus of two hundred euro”</div></blockquote>
 </div>
 <div class="section" id="capture-digits">
-<span id="id4"></span><h2><a class="toc-backref" href="#id13">Capture Digits</a><a class="headerlink" href="#capture-digits" title="Permalink to this headline">¶</a></h2>
+<span id="id4"></span><h2><a class="toc-backref" href="#id14">Capture Digits</a><a class="headerlink" href="#capture-digits" title="Permalink to this headline">¶</a></h2>
 <p>Captures a series of digits, e.g. a telephone number or account number and stores it in the reporting. The number of digits and the minimum and maximum values can be set.</p>
 <img alt="../_images/node_capture_digits.png" src="../_images/node_capture_digits.png" />
 </div>
 <div class="section" id="conference">
-<span id="conference-node"></span><h2><a class="toc-backref" href="#id14">Conference</a><a class="headerlink" href="#conference" title="Permalink to this headline">¶</a></h2>
+<span id="conference-node"></span><h2><a class="toc-backref" href="#id15">Conference</a><a class="headerlink" href="#conference" title="Permalink to this headline">¶</a></h2>
 <p>Set up a conference with outbound calls. The default conference number in Freeswitch is 9888. The Freeswitch dialplan can be adjusted to add more conferences.</p>
 <img alt="../_images/node_conference.png" src="../_images/node_conference.png" />
 </div>
 <div class="section" id="dnc">
-<span id="dnc-node"></span><h2><a class="toc-backref" href="#id15">DNC</a><a class="headerlink" href="#dnc" title="Permalink to this headline">¶</a></h2>
+<span id="dnc-node"></span><h2><a class="toc-backref" href="#id16">DNC</a><a class="headerlink" href="#dnc" title="Permalink to this headline">¶</a></h2>
 <p>Do Not Call node, which will add the called contact to the DNC list configured in the campaign.</p>
 <img alt="../_images/node_dnc.png" src="../_images/node_dnc.png" />
 </div>
 <div class="section" id="hangup">
-<span id="hangup-node"></span><h2><a class="toc-backref" href="#id16">Hangup</a><a class="headerlink" href="#hangup" title="Permalink to this headline">¶</a></h2>
+<span id="hangup-node"></span><h2><a class="toc-backref" href="#id17">Hangup</a><a class="headerlink" href="#hangup" title="Permalink to this headline">¶</a></h2>
 <p>Hang up the call at the end of the survey. It’s good practice to always end a survey with an explicit hangup.</p>
 <img alt="../_images/node_hangup.png" src="../_images/node_hangup.png" />
 </div>
 <div class="section" id="multi-choice">
-<span id="multi-choice-node"></span><h2><a class="toc-backref" href="#id17">Multi-Choice</a><a class="headerlink" href="#multi-choice" title="Permalink to this headline">¶</a></h2>
+<span id="multi-choice-node"></span><h2><a class="toc-backref" href="#id18">Multi-Choice</a><a class="headerlink" href="#multi-choice" title="Permalink to this headline">¶</a></h2>
 <p>Multi-Choice offering options 0 to 9. The value placed in the “Key X” fields appears in the survey reports.</p>
 <p>Survey branching can be used to control the flow of the IVR depending on the key pressed.</p>
 <img alt="../_images/node_multi-choice.png" src="../_images/node_multi-choice.png" />
 </div>
 <div class="section" id="play-message">
-<span id="play-message-node"></span><h2><a class="toc-backref" href="#id18">Play Message</a><a class="headerlink" href="#play-message" title="Permalink to this headline">¶</a></h2>
+<span id="play-message-node"></span><h2><a class="toc-backref" href="#id19">Play Message</a><a class="headerlink" href="#play-message" title="Permalink to this headline">¶</a></h2>
 <p>Play message is simply to play a message, either with TTS or pre-recorded audio.</p>
 <img alt="../_images/node_play_message.png" src="../_images/node_play_message.png" />
 </div>
 <div class="section" id="rating-question">
-<span id="rating-question-node"></span><h2><a class="toc-backref" href="#id19">Rating Question</a><a class="headerlink" href="#rating-question" title="Permalink to this headline">¶</a></h2>
+<span id="rating-question-node"></span><h2><a class="toc-backref" href="#id20">Rating Question</a><a class="headerlink" href="#rating-question" title="Permalink to this headline">¶</a></h2>
 <p>Rating allows the entry of a digit or digits from 1 to X, where X is a number you select.</p>
 <img alt="../_images/node_rating_question.png" src="../_images/node_rating_question.png" />
 </div>
 <div class="section" id="record-message">
-<span id="record-message-node"></span><h2><a class="toc-backref" href="#id20">Record Message</a><a class="headerlink" href="#record-message" title="Permalink to this headline">¶</a></h2>
+<span id="record-message-node"></span><h2><a class="toc-backref" href="#id21">Record Message</a><a class="headerlink" href="#record-message" title="Permalink to this headline">¶</a></h2>
 <img alt="../_images/node_record_message.png" src="../_images/node_record_message.png" />
 <p>Record a message, the system stops recording after 3 seconds of silence, or by pressing the # key. The IVR flow will then continue.</p>
 <p>Recordings can be listened to in the survey reports menu.</p>
 </div>
 <div class="section" id="sms-message">
-<span id="sms-message-node"></span><h2><a class="toc-backref" href="#id21">SMS Message</a><a class="headerlink" href="#sms-message" title="Permalink to this headline">¶</a></h2>
+<span id="sms-message-node"></span><h2><a class="toc-backref" href="#id22">SMS Message</a><a class="headerlink" href="#sms-message" title="Permalink to this headline">¶</a></h2>
 <p>Play a message to the customer, either via TTS or audio file, then send an SMS message to the customer.</p>
 <p>Note that when the campaign is created, an SMS gateway must be selected under the Dialer tab.</p>
 <p>Reports on SMS messages can be be viewed under the Reporting section.</p>
 </div>
 <div class="section" id="call-transfer">
-<span id="call-transfer-node"></span><h2><a class="toc-backref" href="#id22">Call Transfer</a><a class="headerlink" href="#call-transfer" title="Permalink to this headline">¶</a></h2>
+<span id="call-transfer-node"></span><h2><a class="toc-backref" href="#id23">Call Transfer</a><a class="headerlink" href="#call-transfer" title="Permalink to this headline">¶</a></h2>
 <p>Used for “press one” campaigns and live lead generation. This node bridges the call to the number in the Phone Number field when the contact answers.</p>
 <p>The field can have a telephone number or something like sofia/gateway/my.gateway/12345 which will direct the call via a specified gateway (my.gateway) to number 12345.</p>
 <p>Note that if your carrier requires a prefix, it must be added here, as the prefix against the gateway configuration in Newfies-Dialer is not respected.</p>
@@ -228,7 +230,7 @@ Simply add the “transfer_ref” keyword and string to send in the SIP message 
 <p>Confirm Script is TTS which can be played to the agent before the contact is connected, if this facility is used, then a number between 0 and 9 should be entered into the confirm key field which the agent presses to answer the call. Both these fields are optional.</p>
 </div>
 <div class="section" id="http-api">
-<span id="http-api-node"></span><h2><a class="toc-backref" href="#id23">HTTP API</a><a class="headerlink" href="#http-api" title="Permalink to this headline">¶</a></h2>
+<span id="http-api-node"></span><h2><a class="toc-backref" href="#id24">HTTP API</a><a class="headerlink" href="#http-api" title="Permalink to this headline">¶</a></h2>
 <p>This node provides the ability to perform HTTP API Request and branch to another node based on the result.</p>
 <p>In order to do this, the UI has some features in the survey editor:</p>
 <blockquote>
@@ -277,13 +279,33 @@ call is authorized, or asking to your customer’s PBX how many agents are avail
 <img alt="../_images/node_http_api.png" src="../_images/node_http_api.png" />
 <p>Note: You can use <a class="reference external" href="http://mockbin.org/">http://mockbin.org/</a> or <a class="reference external" href="http://putsreq.com">http://putsreq.com</a> to create a test API.</p>
 </div>
+<div class="section" id="http-api-async-non-blocking">
+<span id="http-api-node-async"></span><h2><a class="toc-backref" href="#id25">HTTP API Async (Non Blocking)</a><a class="headerlink" href="#http-api-async-non-blocking" title="Permalink to this headline">¶</a></h2>
+<p>The HTTP API Async is similar the HTTP API, but does not accept or wait for a response. It might be used where you need to send information to a 3rd party system, but don’t need to react on the answer.</p>
+<img alt="../_images/node_api_async.png" src="../_images/node_api_async.png" />
+</div>
+<div class="section" id="asr-speech-recognition">
+<span id="id5"></span><h2><a class="toc-backref" href="#id26">ASR (Speech Recognition)</a><a class="headerlink" href="#asr-speech-recognition" title="Permalink to this headline">¶</a></h2>
+<p>This section will be available if speech recognition is enabled on your system.</p>
+<img alt="../_images/node_asr.png" src="../_images/node_asr.png" />
+<p>The Audio Recording Timeout is the minimum amount of time to listen. Transcription takes place after the contact finishes speaking.</p>
+<p>Don’t use ASR as the first section in a survey, as it will pickup the contact’s initial greeting rather than the answer to the question.</p>
+<p>To branch to another section, enter single words likely to be in the contact’s answer separated by a comma and direct the contact to the next section.</p>
+<img alt="../_images/node_asr_branching.png" src="../_images/node_asr_branching.png" />
+<p>In some cases, we want to simulate a conversation with the contact, but don’t want to act on the answer, so there is no need to transcribe the contact’s answer.</p>
+<p>In this case, use a Play Audio section, and in the script, enter <strong>detect_silence:6000</strong>, but don’t add any audio to play.</p>
+<img alt="../_images/node_play_audio_detect_silence.png" src="../_images/node_play_audio_detect_silence.png" />
+<p>This will listen to the answer, wait until the contact has finished speaking, then move on to the next section. If the contact does not speak, or speaks continuously, it will move onto the next section after the number of milliseconds after the colon, e.g. 6000 (6 seconds)</p>
+<p>Values of less than 2000ms will be set to 2000ms.</p>
+</div>
 <div class="section" id="survey-branching">
-<span id="id5"></span><h2><a class="toc-backref" href="#id24">Survey Branching</a><a class="headerlink" href="#survey-branching" title="Permalink to this headline">¶</a></h2>
+<span id="id6"></span><h2><a class="toc-backref" href="#id27">Survey Branching</a><a class="headerlink" href="#survey-branching" title="Permalink to this headline">¶</a></h2>
 <p>The flow of the survey is determined by Survey Branching, which will pass the contact onto the next node depending on the parameters you set for instance, invalid entry, any key or a specified key.</p>
 <p>For simple nodes, such as play audio, there is a dropdown to select the next node to execute, but for more complex nodes, such as Multi-choice, you have to click the branching icon and select the next node to execute depending on the key pressed.</p>
+<p>Always ensure that if the contact does nothing, the survey will exit and hang-up automatically, so as to avoid the survey getting stuck in an interminable loop.</p>
 </div>
 <div class="section" id="uploading-audio-files">
-<span id="id6"></span><h2><a class="toc-backref" href="#id25">Uploading Audio Files</a><a class="headerlink" href="#uploading-audio-files" title="Permalink to this headline">¶</a></h2>
+<span id="id7"></span><h2><a class="toc-backref" href="#id28">Uploading Audio Files</a><a class="headerlink" href="#uploading-audio-files" title="Permalink to this headline">¶</a></h2>
 <p>It is recommended that you prototype surveys using Text to Speech before getting your voice talent to record your audio.</p>
 <p>Once the audio is recorded it can be uploaded via the interface, and assigned to the nodes in the survey.</p>
 <p>Select Audio Files from the top menu then click add.</p>
@@ -341,7 +363,7 @@ computer, then click submit.</p>
         <li class="right" >
           <a href="customer-panel.html" title="Customer Panel"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 7.3.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 7.5.2 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../user-guide.html" >User Guide</a> &#187;</li> 
       </ul>
     </div>

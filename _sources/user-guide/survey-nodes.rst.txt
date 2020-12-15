@@ -308,6 +308,45 @@ call is authorized, or asking to your customer's PBX how many agents are availab
 
 Note: You can use http://mockbin.org/ or http://putsreq.com to create a test API.
 
+.. _http_api_node_async:
+
+HTTP API Async (Non Blocking)
+-----------------------------
+
+The HTTP API Async is similar the HTTP API, but does not accept or wait for a response. It might be used where you need to send information to a 3rd party system, but don't need to react on the answer.
+
+.. image:: ../_static/images/customer/node_api_async.png
+
+.. _asr_speech_recognition:
+
+ASR (Speech Recognition)
+------------------------
+
+This section will be available if speech recognition is enabled on your system. 
+
+.. image:: ../_static/images/customer/node_asr.png
+
+The Audio Recording Timeout is the minimum amount of time to listen. Transcription takes place after the contact finishes speaking.
+
+Don't use ASR as the first section in a survey, as it will pickup the contact's initial greeting rather than the answer to the question.
+
+To branch to another section, enter single words likely to be in the contact's answer separated by a comma and direct the contact to the next section.
+
+.. image:: ../_static/images/customer/node_asr_branching.png
+
+In some cases, we want to simulate a conversation with the contact, but don't want to act on the answer, so there is no need to transcribe the contact's answer.
+
+In this case, use a Play Audio section, and in the script, enter **detect_silence:6000**, but don't add any audio to play.
+
+
+.. image:: ../_static/images/customer/node_play_audio_detect_silence.png 
+
+
+This will listen to the answer, wait until the contact has finished speaking, then move on to the next section. If the contact does not speak, or speaks continuously, it will move onto the next section after the number of milliseconds after the colon, e.g. 6000 (6 seconds)
+
+Values of less than 2000ms will be set to 2000ms. 
+
+
 .. _survey_branching:
 
 Survey Branching
@@ -316,6 +355,8 @@ Survey Branching
 The flow of the survey is determined by Survey Branching, which will pass the contact onto the next node depending on the parameters you set for instance, invalid entry, any key or a specified key.
 
 For simple nodes, such as play audio, there is a dropdown to select the next node to execute, but for more complex nodes, such as Multi-choice, you have to click the branching icon and select the next node to execute depending on the key pressed.
+
+Always ensure that if the contact does nothing, the survey will exit and hang-up automatically, so as to avoid the survey getting stuck in an interminable loop.
 
 .. _uploading_audio_files:
 
