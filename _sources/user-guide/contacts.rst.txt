@@ -45,6 +45,7 @@ The contact list will be displayed from following the URL. You can add a new con
 NB: the phone number needs to be in full international format, that is to say, +12024648397 for a USA number rather than 12024648397, or 2024648397.
 If numbers are entered in national format, then the + and country prefix will automatically be pre-pended according to the country set during installation. This also applies to imported numbers.
 
+
 **URL**:
 
     * http://HOSTNAME_IP/contact/
@@ -77,23 +78,9 @@ There are some special variables which have certain functions. These are describ
 Import Contacts
 ---------------
 
-To import bulk contacts into a phonebook, click on `Import` where you can upload contacts via a CSV file under a logged in user's phonebook.
+To import bulk contacts into a phonebook, click on `Import Contacts` where you can upload contacts via a CSV (Comma Separated Values) text file under a logged in user's phonebook.
 
-There are two import modes, the default is a simple import where only the telephone numbers need uploading, advanced is where you need to upload other data with the telephone number such as full name and additional vars (Json field).
-
-Import Contact (Simple)
-~~~~~~~~~~~~~~~~~~~~~~~
-
-**URL**:
-
-    * http://HOSTNAME_IP/contact_import/
-
-.. image:: ../_static/images/customer/import_contact_simple.png
-    :width: 700
-
-In most cases, only the simple import mode is required if all you need to do is upload a list of telephone numbers from a text file.
-
-Simply create a text file with your list of numbers e.g.
+At its most simple, the data in the CSV file to be imported can simply be a list of numbers with no additional fields:
 
 ::
 
@@ -102,32 +89,65 @@ Simply create a text file with your list of numbers e.g.
 +18058376573
 +18058586048
 
+More complext CSV files with multiple columns can be easily imported. The CSV file can be in any format and any number of predefined fields can be imported. 
 
-Now ensure the heading says 'Import Contact (Simple)' if not, select 'simple' as the import mode, select the phonebook you are importing to, 'Choose File' from the interface, and upload, then check to ensure that the upload has worked as expected.
-
-
-Advanced Import
-~~~~~~~~~~~~~~~
-
-The advanced mode should be used when other contact details have to be uploaded such as full name and additional JSON parameters.
+Go to the Import Contacts screen:
 
 **URL**:
 
-    * http://HOSTNAME_IP/contact_import_advanced/
+    * http://HOSTNAME_IP/import_select_phonebook/
 
-.. image:: ../_static/images/customer/import_contact_advanced.png
+.. image:: ../_static/images/customer/import_contact1.png
     :width: 700
 
-Use the pipe "|" as the field delimiter, e.g.
-::
 
-    +1234567890|full name|{"age":"32","title":"doctor"}
+Select Phonebook
+~~~~~~~~~~~~~~~~
 
-The file needs to contain all the pipes, even if you don't want to populate all the fields. e.g.
+You will see a screen where you can select the phonebook you want to put your contacts in.
 
-::
 
-    +12024648397||
+Click the Next Button
+
+.. image:: ../_static/images/customer/add-new-contacts.png
+    :width: 700
+
+Import
+~~~~~~
+
+You can now browse for your CSV file to import. If you have headings at the top of your CSV file, it's best to switch off the 'Shuffle' so that these headings appear in the import screen.
+
+'Remove Duplicates' will only remove duplicates from the file you are importing, it will not prevent duplicates being imported of numbers that are already in the phonebook.
+
+
+Advanced Options allows you to change the delimiter from a comma to whatever delimiter you have used in your CSV text file. Numbers that are not in the correct format can be transformed on input by clicking Advanced Options which allows you to add and remove a prefix, e.g. remove a leading 0 and replace with +44.
+
+When done, click import.
+
+.. image:: ../_static/images/customer/import-contact2.png
+    :width: 700
+
+
+Assign Data Fields
+~~~~~~~~~~~~~~~~~~
+
+On import the system will try to identify the phone number field; check this is correct. For each column of data, select the field purtaining to the column of data. If you require more fields that are not in the drop-down, the Dialer Administrator can add more. 
+
+
+
+Import Progress
+~~~~~~~~~~~~~~~
+
+The data will now import. A progress bar will display on screen. Depending on the size of the import file, this could take a few minutes. At the end, records that have been rejected will be displayed. Records might be rejected because the phone number is in the wrong format or the number is present in the Global DNC list.
+
+
+.. _alternative_numbers:
+
+Alternative Numbers
+-------------------
+
+Useful in debt collection, alternative numbers can be imported, so once the primary number has been dialled, the alternative numbers can also be called until the survey is marked 'Completed' and the contact has done the action you specified. At that point calls on the contact's numbers will stop.
+
 
 
 .. _additional_parameters:
@@ -135,18 +155,23 @@ The file needs to contain all the pipes, even if you don't want to populate all 
 Additional parameters (JSON)
 ----------------------------
 
-In contacts, under advanced data, it is possible to upload custom values which can be played as TTS simply by enclosing them in {curly brackets} in the following form:
+In contacts, under advanced data, it is possible to add custom values which can be played as TTS simply by enclosing them in {curly brackets} in the following form:
 
 ::
 
     {"age": "32"}
 
-If {age} is placed into the TTS, 32 will be the value read out. Multiple JSON formatted values can be added into this field
+If {age} is placed into the TTS, 32 will be the value read out. Multiple JSON formatted values can be added into this field.
+
+On CSV file import, the columns imported will be properly JSON formatted automatically. 
+
 
 .. _special_function_additional_parameters_keywords:
 
 Special Function Additional parameters keywords (JSON)
 ------------------------------------------------------
+
+When 
 
 Some special function keywords can be added which change the usual behaviour of the system. These are:
 
@@ -155,3 +180,15 @@ Some special function keywords can be added which change the usual behaviour of 
 **transfer_ref** - this means that a SIP header "P-Contact-Transfer-Ref" is added on transfer, which may be used to trigger a screen pop or otherwise identify the contact transferred at your IP-PBX.
 
 **sms_phonenumber** - when the SMS node is used, rather than sending the SMS to the contact's number, it can be sent to a different number, e.g. the contact's cellphone number, if this keyword is used.
+
+
+Failed Imports
+--------------
+
+If your import fails, there are a few things to check:-
+
+1. Open the file in text editor and make sure it looks right with no gaps and each record on a separate line.
+2. Check you have no extra commas in the text when you are using comma as the separator. Check address columns in particular.
+
+
+
