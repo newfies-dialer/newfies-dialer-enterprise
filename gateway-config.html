@@ -1,0 +1,222 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Setting up VoIP Telecoms Carriers &#8212; Newfies-Dialer 7.6.9 documentation</title>
+    <link rel="stylesheet" href="_static/newfies-dialer.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API Reference" href="api-reference.html" />
+    <link rel="prev" title="Setting up Microsoft Azure Speech-to-Text (ASR)" href="advanced-configuration/microsoft-asr.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="api-reference.html" title="API Reference"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="advanced-configuration/microsoft-asr.html" title="Setting up Microsoft Azure Speech-to-Text (ASR)"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Newfies-Dialer 7.6.9 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+
+    <div class="section" id="setting-up-voip-telecoms-carriers">
+<span id="gateway-config"></span><h1>Setting up VoIP Telecoms Carriers<a class="headerlink" href="#setting-up-voip-telecoms-carriers" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#introduction" id="id1">Introduction</a></li>
+<li><a class="reference internal" href="#terms-and-conditions" id="id2">Terms and Conditions</a></li>
+<li><a class="reference internal" href="#voxtelesys" id="id3">Voxtelesys</a></li>
+<li><a class="reference internal" href="#twilio" id="id4">Twilio</a></li>
+<li><a class="reference internal" href="#telnyx" id="id5">Telnyx</a></li>
+<li><a class="reference internal" href="#voxbeam" id="id6">Voxbeam</a></li>
+<li><a class="reference internal" href="#vitelity-inteliquent" id="id7">Vitelity / Inteliquent</a></li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<h2><a class="toc-backref" href="#id1">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>We sell dialer systems all over the world. We are not licensed telecoms operators so we do not
+include telephone numbers and calling time with the dialer. You can choose your own VoIP telecoms
+provider.</p>
+<p>The Dialer Support Team will help you set up your telecoms carrier on the Dialer.</p>
+<p>Ideally, you should choose a wholesale telecoms carrier which allows you to set your own callerID.</p>
+<p>VoIP / SIP gateways authenticate using the following methods:</p>
+<ul class="simple">
+<li><strong>IP Authentication:</strong> Accept traffic from a given IP address.</li>
+<li><strong>Digest Authentication:</strong> Authenticate using a username and password</li>
+<li><strong>IP Auth + Tech Prefix:</strong> Less common than the two above. A unique number is prepended to the
+dialled digits</li>
+</ul>
+</div>
+<div class="section" id="terms-and-conditions">
+<h2><a class="toc-backref" href="#id2">Terms and Conditions</a><a class="headerlink" href="#terms-and-conditions" title="Permalink to this headline">¶</a></h2>
+<p>Before engaging a VoIP telecoms carrier, check the terms and conditions to ensure they allow
+automated dialling. Some Telcos will insist that certain standards of voice traffic are maintained
+in terms of speed, concurrent calls, average duration and answer ratio.</p>
+<p>It’s unlikely that any monthly subscription unlimited calling plans can be used, and will have rules
+to disallow auto-dialling. If you go ahead anyway, you might find that you are retroactively charged
+for calls, or simply disconnected.</p>
+</div>
+<div class="section" id="voxtelesys">
+<h2><a class="toc-backref" href="#id3">Voxtelesys</a><a class="headerlink" href="#voxtelesys" title="Permalink to this headline">¶</a></h2>
+<p>Voxtelesys [<a class="reference external" href="https://voxtelesys.com/">https://voxtelesys.com/</a>] is recommended for USA and Canada termination. Once signed up
+with them, simply provide the IP address of your Dialer to them which the Dialer Support Team will give to you. The Dialer Support Team can make an introduction to Voxtelesys and expedite the setting up of a gateway. SMS is supported as well.</p>
+</div>
+<div class="section" id="twilio">
+<h2><a class="toc-backref" href="#id4">Twilio</a><a class="headerlink" href="#twilio" title="Permalink to this headline">¶</a></h2>
+<p>The product compatible with the Dialer for Twilio is Elastic SIP Trunking at
+<a class="reference external" href="https://www.twilio.com/sip-trunking">https://www.twilio.com/sip-trunking</a>. After having signed up to Twilo, to configure the gateway, you
+need to select Elastic SIP Trunking in the Twilio portal:</p>
+<img alt="_images/Twilio-Elastic.png" src="_images/Twilio-Elastic.png" />
+<p>Then create a new SIP trunk:</p>
+<img alt="_images/Twilio-SIP-Trunk.png" src="_images/Twilio-SIP-Trunk.png" />
+<p>You have the option of choosing digest or IP authentication. Where possible, IP authentication is
+preferable.</p>
+<p>Start by giving the trunk a name.</p>
+<p>In termination, set the Termination SIP URI and take note of it, e.g. autodialer.pstn.twilio.com</p>
+<img alt="_images/Twilio-termination.png" src="_images/Twilio-termination.png" />
+<p>Add an IP Access Control List, entering the IP address of the Dialer system which will be supplied
+by the Dialer Support Team.</p>
+<img alt="_images/Twilio-ACL.png" src="_images/Twilio-ACL.png" />
+<p>There is no need to fill out the Origination details unless you have inbound calls. If required,
+add a new Origination URI and enter the IP address or the FQDN of the Dialer.</p>
+<p>In Numbers purchase any numbers Twilio you want.</p>
+<p>Finally save and pass the Termination SIP URI back to the Dialer Support Team who will configure
+gateway.</p>
+<p>When sending out calls, you need to use the callerID of either a Twilio number, or verify another
+number to use as a callerID.</p>
+<img alt="_images/Verify-callerid.png" src="_images/Verify-callerid.png" />
+</div>
+<div class="section" id="telnyx">
+<h2><a class="toc-backref" href="#id5">Telnyx</a><a class="headerlink" href="#telnyx" title="Permalink to this headline">¶</a></h2>
+<p>Telynx supports IP authentication with its Elastic SIP Trunking product at
+<a class="reference external" href="https://telnyx.com/products/sip-trunking">https://telnyx.com/products/sip-trunking</a></p>
+<p>Start by creating a SIP connection to your IP address supplied by the Dialer Support Team:</p>
+<img alt="_images/Telnyx-IP.png" src="_images/Telnyx-IP.png" />
+<p>Then select the gateway created in the previous step against the DID and callerID you are going to
+use for this gateway.</p>
+<img alt="_images/Telnyx-DID.png" src="_images/Telnyx-DID.png" />
+</div>
+<div class="section" id="voxbeam">
+<h2><a class="toc-backref" href="#id6">Voxbeam</a><a class="headerlink" href="#voxbeam" title="Permalink to this headline">¶</a></h2>
+<p>Voxbeam only offers IP authentication. It provides termination worldwide.</p>
+<p>Log into your portal at <a class="reference external" href="https://www.voxbeam.com/settings">https://www.voxbeam.com/settings</a>, and add the IP address of your Dialer as
+provided by the Dialer Support Team.</p>
+<p>Voxbeam offer several classes of service which can be selected by prefixing the dialled digits as
+follows:</p>
+<ul class="simple">
+<li><strong>Platinum:</strong> 0011102</li>
+<li><strong>Gold:</strong> 0011101</li>
+<li><strong>Silver:</strong> 0011103</li>
+<li><strong>Call Center:</strong> 0011104</li>
+</ul>
+<p>In most cases, Call Center termination will be used.</p>
+</div>
+<div class="section" id="vitelity-inteliquent">
+<h2><a class="toc-backref" href="#id7">Vitelity / Inteliquent</a><a class="headerlink" href="#vitelity-inteliquent" title="Permalink to this headline">¶</a></h2>
+<p>The product required from Vitelity / Ineliquent is SIP trunking. Once an account has been created,
+log onto their portal at <a class="reference external" href="https://portal.vitelity.net/login.php">https://portal.vitelity.net/login.php</a>, then choose ‘Sub Account’:</p>
+<img alt="_images/Vitelity-Add-Sub-account.png" src="_images/Vitelity-Add-Sub-account.png" />
+<p>Add a new sub account. You now have the option of adding a gateway. We recommend that you add a
+gateway based on IP authentication. Simply add the IP address given to you by the Dialer Support
+Team.</p>
+<img alt="_images/Vitelity-add-IP.png" src="_images/Vitelity-add-IP.png" />
+<p>If Digest authentication is required, then enter a name for the gateway, the password and the
+callerID number you intend to use.</p>
+<img alt="_images/Vitelity-digest.png" src="_images/Vitelity-digest.png" />
+<p>Pass these details onto the Dialer Support Team who will configure your gateway for you. We will
+also require the name of the register server and outbound server:-</p>
+<img alt="_images/Vitelity-switch.png" src="_images/Vitelity-switch.png" />
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo-newfies-dialer-name-300.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="advanced-configuration/microsoft-asr.html"
+                        title="previous chapter">Setting up Microsoft Azure Speech-to-Text (ASR)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="api-reference.html"
+                        title="next chapter">API Reference</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="api-reference.html" title="API Reference"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="advanced-configuration/microsoft-asr.html" title="Setting up Microsoft Azure Speech-to-Text (ASR)"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Newfies-Dialer 7.6.9 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017-2020, Newfies-Dialer mass outbound calling, voice broadcasting, phone survey solution &lt;newfies-dialer@star2billing.com&gt;.
+    </div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-325034-18");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>

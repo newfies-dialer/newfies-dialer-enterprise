@@ -7,6 +7,13 @@ Webhook
 A webhook can be configured in order to push CDRs to your own platform or API endpoint. When a new CDR is created on our system, a POST request will be sent with the CDR details.
 This is used when you either need to keep information about the call being made or to activate an application after a dial or an inbound call is made.
 
+On installation, the webhook is not enabled by default. If it's to be used, check it's enabled.
+
+An Endpoint needs to be configured where the CDR are going to be submitted at https://HOSTNAME/admin/user_profile/staff/1/change/. Put the URL that you want to use in the 'Webhook Endpoint' field
+
+.. image:: /_static/images/admin/admin-create-webhookendpoint.png
+
+
 The Webhook comes with a UI on the admin, https://HOSTNAME/admin/webhook/webhook/ and it has a retry mechanism, which ensures that CDRs are pushed correctly.
 If there is an error, for instance your endpoint didn't accept the API call, it will be displayed on the UI.
 

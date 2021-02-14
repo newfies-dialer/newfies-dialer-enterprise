@@ -171,15 +171,17 @@ On CSV file import, the columns imported will be properly JSON formatted automat
 Special Function Additional parameters keywords (JSON)
 ------------------------------------------------------
 
-When 
-
-Some special function keywords can be added which change the usual behaviour of the system. These are:
+Some special function keywords can be imported that change the usual behaviour of the system. These are:
 
 **transfer_phonenumber** - the value of the transfer phone number overwrites the SIP URI / Phone number in the call transfer node. If you don't want the transfer number overwritten by {transfer_number}, then prefix the transfer number with !! in the transfer section, for instance !!12024648397
 
 **transfer_ref** - this means that a SIP header "P-Contact-Transfer-Ref" is added on transfer, which may be used to trigger a screen pop or otherwise identify the contact transferred at your IP-PBX.
 
 **sms_phonenumber** - when the SMS node is used, rather than sending the SMS to the contact's number, it can be sent to a different number, e.g. the contact's cellphone number, if this keyword is used.
+
+**overwrite_callerid_num** - This CallerID Number is used in preference to the callerID number set in the campaign. X can be included in the callerID and will be replaced by a random number from 0 to 9.
+
+**overwrite_callerid_name** - The callerID Name is used instead of the callerID Name set in the campaign.
 
 
 Failed Imports

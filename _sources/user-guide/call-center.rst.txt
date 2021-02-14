@@ -155,7 +155,9 @@ Outbound Calling
 
 The agent can manually dial indvidual numbers. Only one call can be maded at a time and total calls are limited to 500 per day for security.
 
-To allow outbound calling, the tenant selects the carrier to use and the callerID number and name to send with each call. Only when this is done can the agent make outbound calls.
+To allow manual outbound calling by the agent, the tenant selects the carrier to use and the callerID number and name to send with each call at http://HOSTNAME_IP/user_detail_change/?action=tabs-7. 
+
+Only when this is done can the agent make manual outbound calls.
 
 
 .. _call_center_queue:

@@ -23,6 +23,7 @@ Contents:
 .. toctree::
     :maxdepth: 1
 
+    gateway-config.rst
     api-reference
     webhook
 
@@ -33,5 +34,3 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-
-

@@ -30,24 +30,28 @@ Once registered, which might take a few seconds, the agent can then dial 0002 to
 
 The agent can dial 0001 for an Echo Test to check that speakers, headset and microphone are working as expected.
 
- - **0001** : Echo Test
- - **0002** : Tone Test
+- **0001** : Echo Test
+- **0002** : Tone Test 
+
+On login or on dialling, the browser may ask for permission to use the Microphone, headset and speakers. Allow permission. You can check the browser to ensure permissions have been granted by clicking on the padlock next to the URL in the address bar.
+
+.. image:: ../_static/images/agentui/agentui-mic.png
 
 Logging on to the Queue (1001)
 ==============================
 
 In order for the agent to receive calls, they need to be logged on to the queue to accept calls. The statuses are:-
 
- - **Log Out** - Not available to take calls.
- - **On Break** - Temporarily not accepting calls
- - **Available** - Ready to accept calls
+- **Log Out** - Not available to take calls.
+- **On Break** - Temporarily not accepting calls
+- **Available** - Ready to accept calls
 
 When the agent's status is 'Available' calls will come arrive in the interface, displaying data on the contact and the webphone will ring. The agent clicks the green answer button to accept the call. Between the contact being directed to the queue and the agent answering the call, the contact will hear Music on Hold.
 
 The agent can set their status with the dropdown in the agent portal or they can dial the following short codes:-
 
- - **1000** : Log out
- - **1001** : Available
+- **1000** : Log out
+- **1001** : Available
 
 Instant Answer (1002 & 1004)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -130,8 +134,8 @@ Transfer destinations are configured in advance by the adminstrator in the Callc
 
 Two types of transfer are supported:
 
- - **Cold Transfer** - call is transferred and the agent is disconnected immediately.
- - **3 Way Transfer** - Agent, Contact and Transferee are put into a three way call to introduce the Contact. The agent then hangs up leaving the contact and transferee connected.
+- **Cold Transfer** - call is transferred and the agent is disconnected immediately.
+- **3 Way Transfer** - Agent, Contact and Transferee are put into a three way call to introduce the Contact. The agent then hangs up leaving the contact and transferee connected.
 
 Making Calls with the Webphone
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

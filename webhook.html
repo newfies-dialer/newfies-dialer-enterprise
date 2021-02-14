@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Webhook &#8212; Newfies-Dialer 7.6.0 documentation</title>
+    <title>Webhook &#8212; Newfies-Dialer 7.6.9 documentation</title>
     <link rel="stylesheet" href="_static/newfies-dialer.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" >
           <a href="api-doc/did_serializers.html" title="DID API"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Newfies-Dialer 7.6.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Newfies-Dialer 7.6.9 documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -44,6 +44,9 @@
 <span id="id1"></span><h1>Webhook<a class="headerlink" href="#webhook" title="Permalink to this headline">¶</a></h1>
 <p>A webhook can be configured in order to push CDRs to your own platform or API endpoint. When a new CDR is created on our system, a POST request will be sent with the CDR details.
 This is used when you either need to keep information about the call being made or to activate an application after a dial or an inbound call is made.</p>
+<p>On installation, the webhook is not enabled by default. If it’s to be used, check it’s enabled.</p>
+<p>An Endpoint needs to be configured where the CDR are going to be submitted at <a class="reference external" href="https://HOSTNAME/admin/user_profile/staff/1/change/">https://HOSTNAME/admin/user_profile/staff/1/change/</a>. Put the URL that you want to use in the ‘Webhook Endpoint’ field</p>
+<img alt="_images/admin-create-webhookendpoint.png" src="_images/admin-create-webhookendpoint.png" />
 <p>The Webhook comes with a UI on the admin, <a class="reference external" href="https://HOSTNAME/admin/webhook/webhook/">https://HOSTNAME/admin/webhook/webhook/</a> and it has a retry mechanism, which ensures that CDRs are pushed correctly.
 If there is an error, for instance your endpoint didn’t accept the API call, it will be displayed on the UI.</p>
 <a class="reference internal image-reference" href="_images/admin-webhookcdr.png"><img alt="_images/admin-webhookcdr.png" src="_images/admin-webhookcdr.png" style="width: 700px;" /></a>
@@ -282,7 +285,7 @@ UNAUTHORIZED or FAILED.</p>
         <li class="right" >
           <a href="api-doc/did_serializers.html" title="DID API"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Newfies-Dialer 7.6.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Newfies-Dialer 7.6.9 documentation</a> &#187;</li> 
       </ul>
     </div>
 

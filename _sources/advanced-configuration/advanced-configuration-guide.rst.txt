@@ -10,6 +10,7 @@ but the customer may have to open their own accounts where applicable for instan
 
 * Text to Speech (TTS)
 * Speech to Text (ASR)
+* VoIP Telecom Carriers
 
 
 **Advanced Admin Guide Contents:**
@@ -19,3 +20,4 @@ but the customer may have to open their own accounts where applicable for instan
 
     ./microsoft-tts.rst
     ./microsoft-asr.rst
+
