@@ -35,6 +35,10 @@ A DID is directed to an inbound campaign configured in the Tenant's user interfa
 
 .. image:: ../_static/images/customer/inbound_campaign.png
 
+The DID number should be entered exactly as delivered from the carrier.
+
+To match all DID and send them to the same destination to avoid having to enter every DID manually, the keyword "MATCH_ALL_DID" can be used in place of the DID number.
+
 Calls can be sent to
 
 - A Survey / IVR which has already been configured in the survey section

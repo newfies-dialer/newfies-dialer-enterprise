@@ -365,14 +365,14 @@ Uploading Audio Files
 
 It is recommended that you prototype surveys using Text to Speech before getting your voice talent to record your audio.
 
-Once the audio is recorded it can be uploaded via the interface, and assigned to the nodes in the survey.
+Once the audio is recorded it can be uploaded via the interface and assigned to the nodes in the survey.
 
-Select Audio Files from the top menu then click add.
+Select Modules then Audio Files from the top menu then click add.
 
 Enter a name to describe the audio, then click choose file, select the file you require from your
 computer, then click submit.
 
-Note that only mp3, Wav and ogg formats are supported and the audio should be mono, not stereo. If the sound file does not play correctly on a live test, then check the file is in mono.
+Note that only MP3 and WAV are supported and the audio should be mono, not stereo. A quick and easy way to record audio is via the website  https://voice-recorder-online.com/, and the audio can be edited as well, for instance to trim silence from the start and finish.
 
 The audio file will then be uploaded and renamed so that it is unique.
 

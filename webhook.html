@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Webhook &#8212; Newfies-Dialer 7.6.9 documentation</title>
+    <title>Webhook &#8212; Newfies-Dialer 7.6.17 documentation</title>
     <link rel="stylesheet" href="_static/newfies-dialer.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,7 +30,7 @@
         <li class="right" >
           <a href="api-doc/did_serializers.html" title="DID API"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Newfies-Dialer 7.6.9 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Newfies-Dialer 7.6.17 documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -146,6 +146,10 @@ If there is an error, for instance your endpoint didn’t accept the API call, i
 <span class="go">    type: &quot;array&quot;</span>
 <span class="go">    description: information about the subscriber/contact</span>
 <span class="go">    this will contain the following fields: {subscriber_id: Value, full_name: &quot;Value&quot;, additional_vars: JSON}</span>
+
+<span class="go">* agent:</span>
+<span class="go">    type: &quot;string&quot;</span>
+<span class="go">    description: &quot;Agent username to whom the call has been transfered/&quot;</span>
 </pre></div>
 </div>
 <p>Additionally, there is an header ‘x-api-key’ which can be set for authentication.</p>
@@ -197,47 +201,48 @@ UNAUTHORIZED or FAILED.</p>
 <h2>Payload sample<a class="headerlink" href="#payload-sample" title="Permalink to this headline">¶</a></h2>
 <p>Sample of the payload, a webhook will be sent for each call (CDR):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{</span>
-<span class="go">&quot;phone_number&quot;: &quot;14155130001&quot;,</span>
-<span class="go">&quot;gateway_id&quot;: 2,</span>
-<span class="go">&quot;lead_disposition&quot;: &quot;&quot;,</span>
-<span class="go">&quot;callrequest_id&quot;: &quot;6&quot;,</span>
-<span class="go">&quot;cost&quot;: 0.0,</span>
-<span class="go">&quot;amd_status&quot;: 0,</span>
-<span class="go">&quot;callerid&quot;: &quot;+1212450012&quot;,</span>
-<span class="go">&quot;lead_disposition_id&quot;: null,</span>
-<span class="go">&quot;url_bleg_recordings&quot;: [</span>
-<span class="go">    &quot;/usermedia/recording/bleg-recording-cr_6-ct_1-cpg_BANRSDS.mp3&quot;</span>
-<span class="go">],</span>
-<span class="go">&quot;incremental_duration&quot;: 6,</span>
-<span class="go">&quot;hangup_cause_code&quot;: 16,</span>
-<span class="go">&quot;campaign_id&quot;: 2,</span>
-<span class="go">&quot;call_id&quot;: &quot;06991405-277b-4200-bad3-c3de5e0930b4&quot;,</span>
-<span class="go">&quot;leg_type&quot;: 2,</span>
-<span class="go">&quot;survey_result&quot;: {</span>
 <span class="go">    &quot;phone_number&quot;: &quot;14155130001&quot;,</span>
-<span class="go">    &quot;Enter your age&quot;: &quot;&quot;,</span>
-<span class="go">    &quot;Press 1 to talk to an Agent  press 2 to go to the next option&quot;: &quot;Agent&quot;,</span>
-<span class="go">    &quot;transfer&quot;: &quot;phonenumber: sofia/gateway/mygateway/14155130001&quot;,</span>
-<span class="go">    &quot;Record a message&quot;: &quot;&quot;,</span>
+<span class="go">    &quot;gateway_id&quot;: 2,</span>
+<span class="go">    &quot;lead_disposition&quot;: &quot;&quot;,</span>
+<span class="go">    &quot;callrequest_id&quot;: &quot;6&quot;,</span>
+<span class="go">    &quot;cost&quot;: 0.0,</span>
+<span class="go">    &quot;amd_status&quot;: 0,</span>
+<span class="go">    &quot;callerid&quot;: &quot;+1212450012&quot;,</span>
+<span class="go">    &quot;lead_disposition_id&quot;: null,</span>
+<span class="go">    &quot;url_bleg_recordings&quot;: [</span>
+<span class="go">        &quot;/usermedia/recording/bleg-recording-cr_6-ct_1-cpg_BANRSDS.mp3&quot;</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;incremental_duration&quot;: 6,</span>
+<span class="go">    &quot;hangup_cause_code&quot;: 16,</span>
+<span class="go">    &quot;campaign_id&quot;: 2,</span>
+<span class="go">    &quot;call_id&quot;: &quot;06991405-277b-4200-bad3-c3de5e0930b4&quot;,</span>
+<span class="go">    &quot;leg_type&quot;: 2,</span>
+<span class="go">    &quot;survey_result&quot;: {</span>
+<span class="go">        &quot;phone_number&quot;: &quot;14155130001&quot;,</span>
+<span class="go">        &quot;Enter your age&quot;: &quot;&quot;,</span>
+<span class="go">        &quot;Press 1 to talk to an Agent  press 2 to go to the next option&quot;: &quot;Agent&quot;,</span>
+<span class="go">        &quot;transfer&quot;: &quot;phonenumber: sofia/gateway/mygateway/14155130001&quot;,</span>
+<span class="go">        &quot;Record a message&quot;: &quot;&quot;,</span>
+<span class="go">        &quot;disposition&quot;: &quot;ANSWER&quot;,</span>
+<span class="go">        &quot;Bye now!&quot;: &quot;&quot;,</span>
+<span class="go">        &quot;billsec&quot;: 6,</span>
+<span class="go">        &quot;starting_date&quot;: &quot;2020-03-10 19:04:31&quot;,</span>
+<span class="go">        &quot;Transfering to agent&quot;: &quot;&quot;</span>
+<span class="go">    },</span>
+<span class="go">    &quot;extra_data&quot;: {</span>
+<span class="go">        &quot;survey_result&quot;: [</span>
+<span class="go">            {&quot;result&quot;: [&quot;Sub-Option&quot;, &quot;&quot;], &quot;section_id&quot;: 227},</span>
+<span class="go">            {&quot;result&quot;: [&quot;41&quot;, &quot;&quot;], &quot;section_id&quot;: 229},</span>
+<span class="go">            {&quot;result&quot;: [&quot;Recorded&quot;, &quot;/usermedia/recording/bleg-recording-cr_6-ct_1-cpg_BANRSDS.mp3&quot;], &quot;section_id&quot;: 230}</span>
+<span class="go">        ]</span>
+<span class="go">    },</span>
+<span class="go">    &quot;billed_duration&quot;: 6,</span>
 <span class="go">    &quot;disposition&quot;: &quot;ANSWER&quot;,</span>
-<span class="go">    &quot;Bye now!&quot;: &quot;&quot;,</span>
-<span class="go">    &quot;billsec&quot;: 6,</span>
-<span class="go">    &quot;starting_date&quot;: &quot;2020-03-10 19:04:31&quot;,</span>
-<span class="go">    &quot;Transfering to agent&quot;: &quot;&quot;</span>
-<span class="go">},</span>
-<span class="go">&quot;extra_data&quot;: {</span>
-<span class="go">    &quot;survey_result&quot;: [</span>
-<span class="go">        {&quot;result&quot;: [&quot;Sub-Option&quot;, &quot;&quot;], &quot;section_id&quot;: 227},</span>
-<span class="go">        {&quot;result&quot;: [&quot;41&quot;, &quot;&quot;], &quot;section_id&quot;: 229},</span>
-<span class="go">        {&quot;result&quot;: [&quot;Recorded&quot;, &quot;/usermedia/recording/bleg-recording-cr_6-ct_1-cpg_BANRSDS.mp3&quot;], &quot;section_id&quot;: 230}</span>
-<span class="go">    ]</span>
-<span class="go">},</span>
-<span class="go">&quot;billed_duration&quot;: 6,</span>
-<span class="go">&quot;disposition&quot;: &quot;ANSWER&quot;,</span>
-<span class="go">&quot;campaign_name&quot;: &quot;Voice Campaign, Mar 10, 18:59&quot;,</span>
-<span class="go">&quot;original__phone_number&quot;: &quot;&quot;,</span>
-<span class="go">&quot;cdr_id&quot;: &quot;15&quot;,</span>
-<span class="go">&quot;call_date&quot;: &quot;2020-03-10T18:04:31.000+00:00&quot;</span>
+<span class="go">    &quot;campaign_name&quot;: &quot;Voice Campaign, Mar 10, 18:59&quot;,</span>
+<span class="go">    &quot;original__phone_number&quot;: &quot;&quot;,</span>
+<span class="go">    &quot;cdr_id&quot;: &quot;15&quot;,</span>
+<span class="go">    &quot;call_date&quot;: &quot;2020-03-10T18:04:31.000+00:00&quot;,</span>
+<span class="go">    &quot;agent&quot;: &quot;agent01&quot;</span>
 <span class="go">}</span>
 </pre></div>
 </div>
@@ -285,7 +290,7 @@ UNAUTHORIZED or FAILED.</p>
         <li class="right" >
           <a href="api-doc/did_serializers.html" title="DID API"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Newfies-Dialer 7.6.9 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Newfies-Dialer 7.6.17 documentation</a> &#187;</li> 
       </ul>
     </div>
 
