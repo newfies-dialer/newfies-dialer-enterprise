@@ -1,0 +1,145 @@
+.. _how-to-create-an-ivr-survey-via-api:
+
+How to create an IVR/Survey via API
+====================================
+
+We will explain how to create a Campaign, a Survey-Template & an Audio only via the API.
+
+It's similar to what we do on the webUI, which you can find here http://HOSTNAME_IP/module/survey/
+on your UI. Therefore, make sure to be familiar with this first.
+
+Firstly we will upload an audio, then create a Survey Template, then add a Section to this
+Survey template that will play a message and finally create a campaign with that Survey Template.
+
+
+Altogether, there is 5 points to follow:
+
+.. contents::
+    :local:
+    :depth: 2
+
+Let's now go through those 5 points in more details.
+
+
+1) Upload an audio Via API
+--------------------------
+
+You can easily upload a new audio file with the following API/Curl command.
+
+
+CURL Usage::
+
+    curl -u username:password -H 'Accept: application/json' \
+    --request POST http://HOSTNAME_IP/rest-api/audio-files/ \
+    --form 'name="audio created from API"' \
+    --form 'audio_file=@"/path/duck01.wav"' \
+    --form 'user_id="1"'
+
+The result should be similar to this::
+
+    {
+        "id": 6,
+        "name": "audio-via-API",
+        "audio_file": "/usermedia/upload/audiofiles/duck01.wav",
+        "user_id": 1
+    }
+
+Keep the id, that will be your `audio-ID` for later.
+
+
+2) Create a Survey Template
+---------------------------
+
+We will create a survey template via API, this is similar to create the survey template
+here http://HOSTNAME_IP/module/survey/add/
+
+
+CURL Usage::
+
+    curl -u username:password --dump-header - -H "Content-Type:application/json" -X POST --data '{"name": "Survey created from API"}' http://HOSTNAME_IP/rest-api/survey-template/
+
+Result::
+
+    {
+        "url": "http://127.0.0.1:8000/rest-api/survey-template/27/",
+        "name": "Survey created from API",
+        "description":null,
+        "created_date": "2021-06-19T20:34:47.283180+02:00",
+        "updated_date": "2021-06-19T20:34:47.283199+02:00",
+        "user": "http://127.0.0.1:8000/rest-api/users/1/"
+    }
+
+You should get a result similar to the above, you can extract the Survey-Template-ID from the
+result url data. (eg. "url": "http://127.0.0.1:8000/rest-api/survey-template/27/", the ID is 27)
+
+That `survey-template-ID` will then need to be used when you create the section & also the Campaign.
+
+
+3) Create a Section into your Survey Template
+---------------------------------------------
+
+You have created a Survey Template at the moment it's empty, as you can see on the UI.
+
+You need to add at least one section for a Survey/IVR to make sense.
+This would be similar to adding a section from the webUI.
+
+Here the documentation about different type of section, :ref:`survey_and_ivr_configuration`
+
+We will keep things simple here and we will create one section `Play message` (type 1),
+but it's possible to create multiple sections and attach them with branching.
+
+Let's now create a simple `Play message`.
+
+
+Here to create this via the API, you will need the `audio-ID` & the `survey-template-ID` from before.
+
+Earlier our `audio-ID` was 25 and our `survey-template-ID` was 27.
+
+
+Create the Section-Template via API, as follow::
+
+    curl -u username:password --dump-header - -H "Content-Type:application/json" -X POST --data '{"type": "1", "audiofile": "/rest-api/audio-files/25/", "question": "Basic Message", "survey": "/rest-api/survey-template/27/"}' http://HOSTNAME_IP/rest-api/section-template/
+
+
+4) Create a campaign for the previous created Survey Template
+-------------------------------------------------------------
+
+Now it's time to create a campaign, you must also have created a phonebook and imported contacts in that phonebook.
+
+Curl example to create a campaign with IVR/Survey::
+
+    curl -u username:password --dump-header - -H "Content-Type:application/json" -X POST --data '{"name": "campaign-via-api", "description": "", "callerid": "1239876", "startingdate": "2021-06-01 14:13:33", "expirationdate": "2022-08-30 13:13:33", "frequency": "100", "max_aleg":100, "max_xfer":10, "dial_method":1, "agent_dial_rate":1, "callmaxduration": "50", "maxretry": "1", "intervalretry": "3000", "calltimeout": "45", "aleg_gateway": "/rest-api/gateway/2/", "sms_gateway": "", "object_id" : "27", "extra_data": "2000", "voicemail": "True", "amd_behavior": "1", "voicemail_audiofile": "", "dnc": "", "user": "/rest-api/users/1/", "phonebook": ["/rest-api/phonebook/1/"], "daily_start_time": "00:00:00", "daily_stop_time": "23:59:59", "callerid_group": "/rest-api/callerid_group/1/"}' http://HOSTNAME_IP/rest-api/campaigns/
+
+Keep the id from the result, that is your `Campaign-ID`.
+
+**Parameters**::
+
+* The `name`, try to give a unique name to your campaign.
+
+* The `object_id` parameter is the `survey-template-ID` that you can create earlier via API or via the WebUI.
+
+* The `aleg_gateway` is the gateway that will be used, most of the time it will be the same one.
+
+* You will notice more settings in the campaign APIs, if you have doubts feel free to ask us.
+
+
+5) Start the campaign via API
+-----------------------------
+
+When a campaign is created via the API, the Campaign status is `New` at first.
+
+If you are ready and want to start your campaign, you can do so via the following update Campaign API, as follow::
+
+    curl -u username:password --dump-header - -H "Content-Type: application/json" -X PATCH --data '{"status": 1}' http://HOSTNAME_IP/rest-api/campaigns/175/
+
+
+**Note:** `status: 1` is for Started, now the system should start making calls.
+
+You can also stop or pause a campaign via this API.
+
+Here the different campaign value for status:
+
+* 1: START
+* 2: PAUSE
+* 3: ABORD
+* 4: END
