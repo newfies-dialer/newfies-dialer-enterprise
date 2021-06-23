@@ -37,6 +37,15 @@ Contents:
     ./api-doc/did_serializers
 
 
+
+Extended documentation on how to create an IVR/Survey via APIs:
+
+.. toctree::
+    :maxdepth: 1
+
+    ./api-doc/how_create_survey_campaign_via_api
+
+
 Testing console of APIs:
 
     **URL** : http://HOSTNAME_IP/rest-api/

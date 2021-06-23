@@ -322,7 +322,7 @@ The HTTP API Async is similar the HTTP API, but does not accept or wait for a re
 ASR (Speech Recognition)
 ------------------------
 
-This section will be available if speech recognition is enabled on your system. 
+This section will be available if speech recognition is enabled on your system.
 
 .. image:: ../_static/images/customer/node_asr.png
 
@@ -339,12 +339,12 @@ In some cases, we want to simulate a conversation with the contact, but don't wa
 In this case, use a Play Audio section, and in the script, enter **detect_silence:6000**, but don't add any audio to play.
 
 
-.. image:: ../_static/images/customer/node_play_audio_detect_silence.png 
+.. image:: ../_static/images/customer/node_play_audio_detect_silence.png
 
 
 This will listen to the answer, wait until the contact has finished speaking, then move on to the next section. If the contact does not speak, or speaks continuously, it will move onto the next section after the number of milliseconds after the colon, e.g. 6000 (6 seconds)
 
-Values of less than 2000ms will be set to 2000ms. 
+Values of less than 2000ms will be set to 2000ms.
 
 
 .. _survey_branching:

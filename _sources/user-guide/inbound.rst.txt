@@ -26,6 +26,20 @@ DID need to be initially configured by the Dialer Adminstrator, added and pointe
 
 .. image:: ../_static/images/customer/inbound_did_config.png
 
+
+To match all DID and send them to the same destination to avoid having to enter every DID manually, the keyword "MATCH_ALL_DID" can be used in place of the DID number.
+
+The DID number should be entered exactly as delivered from the carrier.
+
+DID can also be uploaded from a CSV file in the format:- *did_number, user, campaign* - Therefore each entry will appear as one of the following:
+
+**12024648397,,** *(If you are just importing the number (note the 2 commas)*.
+
+**12024648397,1,** *(If you are importing the number and assigning it to userID 1, root)*
+
+**12024648397,1,38** *(If you want to import the number, Assign it to root, and set the inbound DID for inbound Campaign ID 38)*
+
+
 Once the DID has been directed to the tenant, then it can be configured by them in the Inbound Menu.
 
 Inbound Campaign
@@ -35,9 +49,7 @@ A DID is directed to an inbound campaign configured in the Tenant's user interfa
 
 .. image:: ../_static/images/customer/inbound_campaign.png
 
-The DID number should be entered exactly as delivered from the carrier.
 
-To match all DID and send them to the same destination to avoid having to enter every DID manually, the keyword "MATCH_ALL_DID" can be used in place of the DID number.
 
 Calls can be sent to
 
