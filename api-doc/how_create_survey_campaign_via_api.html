@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>How to create an IVR/Survey via API &#8212; Newfies-Dialer 7.8.2 documentation</title>
+    <title>How to create an IVR/Survey via API &#8212; Newfies-Dialer 7.8.3 documentation</title>
     <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -34,7 +34,7 @@
         <li class="right" >
           <a href="did_serializers.html" title="DID API"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 7.8.2 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 7.8.3 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../api-reference.html" accesskey="U">API Reference</a> &#187;</li> 
       </ul>
     </div>  
@@ -47,25 +47,25 @@
 
     <div class="section" id="how-to-create-an-ivr-survey-via-api">
 <span id="id1"></span><h1>How to create an IVR/Survey via API<a class="headerlink" href="#how-to-create-an-ivr-survey-via-api" title="Permalink to this headline">¶</a></h1>
-<p>We will explain how to create a Campaign, a Survey-Template &amp; an Audio only via the API.</p>
-<p>It’s similar to what we do on the webUI, which you can find here <a class="reference external" href="http://HOSTNAME_IP/module/survey/">http://HOSTNAME_IP/module/survey/</a>
-on your UI. Therefore, make sure to be familiar with this first.</p>
-<p>Firstly we will upload an audio, then create a Survey Template, then add a Section to this
-Survey template that will play a message and finally create a campaign with that Survey Template.</p>
-<p>Altogether, there is 5 points to follow:</p>
+<p>We will explain how to create a Campaign, a Survey-Template and Audio via the API.</p>
+<p>It’s similar to what we do on the webUI, which you can find at <a class="reference external" href="http://HOSTNAME_IP/module/survey/">http://HOSTNAME_IP/module/survey/</a>
+Therefore, make sure you are familiar with the UI.</p>
+<p>Firstly we will upload an audio file, then create a Survey Template, add a Section to the
+Survey template which will play a message, create a campaign with the Survey Template, then start it.</p>
+<p>There are 5 points to follow:</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#upload-an-audio-via-api" id="id2">1) Upload an audio Via API</a></li>
+<li><a class="reference internal" href="#upload-audio-via-api" id="id2">1) Upload audio Via API</a></li>
 <li><a class="reference internal" href="#create-a-survey-template" id="id3">2) Create a Survey Template</a></li>
 <li><a class="reference internal" href="#create-a-section-into-your-survey-template" id="id4">3) Create a Section into your Survey Template</a></li>
-<li><a class="reference internal" href="#create-a-campaign-for-the-previous-created-survey-template" id="id5">4) Create a campaign for the previous created Survey Template</a></li>
+<li><a class="reference internal" href="#create-a-campaign-for-the-previously-created-survey-template" id="id5">4) Create a campaign for the previously created Survey Template</a></li>
 <li><a class="reference internal" href="#start-the-campaign-via-api" id="id6">5) Start the campaign via API</a></li>
 </ul>
 </div>
-<p>Let’s now go through those 5 points in more details.</p>
-<div class="section" id="upload-an-audio-via-api">
-<h2><a class="toc-backref" href="#id2">1) Upload an audio Via API</a><a class="headerlink" href="#upload-an-audio-via-api" title="Permalink to this headline">¶</a></h2>
-<p>You can easily upload a new audio file with the following API/Curl command.</p>
+<p>Let’s go through each point in more detail.</p>
+<div class="section" id="upload-audio-via-api">
+<h2><a class="toc-backref" href="#id2">1) Upload audio Via API</a><a class="headerlink" href="#upload-audio-via-api" title="Permalink to this headline">¶</a></h2>
+<p>Upload a new audio file with the following API/Curl command.</p>
 <p>CURL Usage:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span><span class="p">:</span><span class="n">password</span> <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Accept: application/json&#39;</span> \
 <span class="o">--</span><span class="n">request</span> <span class="n">POST</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">audio</span><span class="o">-</span><span class="n">files</span><span class="o">/</span> \
@@ -83,12 +83,12 @@ Survey template that will play a message and finally create a campaign with that
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Keep the id, that will be your <cite>audio-ID</cite> for later.</p>
+<p>Note the id (6), that will be your <cite>audio-ID</cite> for later.</p>
 </div>
 <div class="section" id="create-a-survey-template">
 <h2><a class="toc-backref" href="#id3">2) Create a Survey Template</a><a class="headerlink" href="#create-a-survey-template" title="Permalink to this headline">¶</a></h2>
-<p>We will create a survey template via API, this is similar to create the survey template
-here <a class="reference external" href="http://HOSTNAME_IP/module/survey/add/">http://HOSTNAME_IP/module/survey/add/</a></p>
+<p>Next, create a survey template via API, this is similar to creating the survey template
+on the webUI at <a class="reference external" href="http://HOSTNAME_IP/module/survey/add/">http://HOSTNAME_IP/module/survey/add/</a></p>
 <p>CURL Usage:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span><span class="p">:</span><span class="n">password</span> <span class="o">--</span><span class="n">dump</span><span class="o">-</span><span class="n">header</span> <span class="o">-</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type:application/json&quot;</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">--</span><span class="n">data</span> <span class="s1">&#39;{&quot;name&quot;: &quot;Survey created from API&quot;}&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">survey</span><span class="o">-</span><span class="n">template</span><span class="o">/</span>
 </pre></div>
@@ -104,28 +104,28 @@ here <a class="reference external" href="http://HOSTNAME_IP/module/survey/add/">
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>You should get a result similar to the above, you can extract the Survey-Template-ID from the
+<p>You should get a result similar to the example note the Survey-Template-ID from the
 result url data. (eg. “url”: “<a class="reference external" href="http://127.0.0.1:8000/rest-api/survey-template/27/">http://127.0.0.1:8000/rest-api/survey-template/27/</a>”, the ID is 27)</p>
-<p>That <cite>survey-template-ID</cite> will then need to be used when you create the section &amp; also the Campaign.</p>
+<p>That <cite>survey-template-ID</cite> will be used when you create the section &amp; the Campaign.</p>
 </div>
 <div class="section" id="create-a-section-into-your-survey-template">
 <h2><a class="toc-backref" href="#id4">3) Create a Section into your Survey Template</a><a class="headerlink" href="#create-a-section-into-your-survey-template" title="Permalink to this headline">¶</a></h2>
-<p>You have created a Survey Template at the moment it’s empty, as you can see on the UI.</p>
-<p>You need to add at least one section for a Survey/IVR to make sense.
-This would be similar to adding a section from the webUI.</p>
-<p>Here the documentation about different type of section, <a class="reference internal" href="../user-guide/survey-nodes.html#survey-and-ivr-configuration"><span class="std std-ref">Survey &amp; IVR Configuration</span></a></p>
+<p>So far, you have created a Survey Template. At the moment it’s empty, as you can see on the UI.</p>
+<p>You need to add at least one section for a Survey/IVR to work.
+This is similar to adding a section from the webUI.</p>
+<p>The documentation about different type of sections is at, <a class="reference internal" href="../user-guide/survey-nodes.html#survey-and-ivr-configuration"><span class="std std-ref">Survey &amp; IVR Configuration</span></a></p>
 <p>We will keep things simple here and we will create one section <cite>Play message</cite> (type 1),
-but it’s possible to create multiple sections and attach them with branching.</p>
-<p>Let’s now create a simple <cite>Play message</cite>.</p>
-<p>Here to create this via the API, you will need the <cite>audio-ID</cite> &amp; the <cite>survey-template-ID</cite> from before.</p>
-<p>Earlier our <cite>audio-ID</cite> was 25 and our <cite>survey-template-ID</cite> was 27.</p>
-<p>Create the Section-Template via API, as follow:</p>
+but it’s possible to create multiple sections and navigate them with branching.</p>
+<p>Let’s create a simple <cite>Play message</cite> section.</p>
+<p>To create this via the API, you will need the <cite>audio-ID</cite> &amp; the <cite>survey-template-ID</cite> from before.</p>
+<p>Earlier our <cite>audio-ID</cite> was 6 and our <cite>survey-template-ID</cite> was 27.</p>
+<p>Create the Section-Template via API, as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span><span class="p">:</span><span class="n">password</span> <span class="o">--</span><span class="n">dump</span><span class="o">-</span><span class="n">header</span> <span class="o">-</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type:application/json&quot;</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">--</span><span class="n">data</span> <span class="s1">&#39;{&quot;type&quot;: &quot;1&quot;, &quot;audiofile&quot;: &quot;/rest-api/audio-files/25/&quot;, &quot;question&quot;: &quot;Basic Message&quot;, &quot;survey&quot;: &quot;/rest-api/survey-template/27/&quot;}&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">section</span><span class="o">-</span><span class="n">template</span><span class="o">/</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="create-a-campaign-for-the-previous-created-survey-template">
-<h2><a class="toc-backref" href="#id5">4) Create a campaign for the previous created Survey Template</a><a class="headerlink" href="#create-a-campaign-for-the-previous-created-survey-template" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="create-a-campaign-for-the-previously-created-survey-template">
+<h2><a class="toc-backref" href="#id5">4) Create a campaign for the previously created Survey Template</a><a class="headerlink" href="#create-a-campaign-for-the-previously-created-survey-template" title="Permalink to this headline">¶</a></h2>
 <p>Now it’s time to create a campaign, you must also have created a phonebook and imported contacts in that phonebook.</p>
 <p>Curl example to create a campaign with IVR/Survey:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span><span class="p">:</span><span class="n">password</span> <span class="o">--</span><span class="n">dump</span><span class="o">-</span><span class="n">header</span> <span class="o">-</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type:application/json&quot;</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">--</span><span class="n">data</span> <span class="s1">&#39;{&quot;name&quot;: &quot;campaign-via-api&quot;, &quot;description&quot;: &quot;&quot;, &quot;callerid&quot;: &quot;1239876&quot;, &quot;startingdate&quot;: &quot;2021-06-01 14:13:33&quot;, &quot;expirationdate&quot;: &quot;2022-08-30 13:13:33&quot;, &quot;frequency&quot;: &quot;100&quot;, &quot;max_aleg&quot;:100, &quot;max_xfer&quot;:10, &quot;dial_method&quot;:1, &quot;agent_dial_rate&quot;:1, &quot;callmaxduration&quot;: &quot;50&quot;, &quot;maxretry&quot;: &quot;1&quot;, &quot;intervalretry&quot;: &quot;3000&quot;, &quot;calltimeout&quot;: &quot;45&quot;, &quot;aleg_gateway&quot;: &quot;/rest-api/gateway/2/&quot;, &quot;sms_gateway&quot;: &quot;&quot;, &quot;object_id&quot; : &quot;27&quot;, &quot;extra_data&quot;: &quot;2000&quot;, &quot;voicemail&quot;: &quot;True&quot;, &quot;amd_behavior&quot;: &quot;1&quot;, &quot;voicemail_audiofile&quot;: &quot;&quot;, &quot;dnc&quot;: &quot;&quot;, &quot;user&quot;: &quot;/rest-api/users/1/&quot;, &quot;phonebook&quot;: [&quot;/rest-api/phonebook/1/&quot;], &quot;daily_start_time&quot;: &quot;00:00:00&quot;, &quot;daily_stop_time&quot;: &quot;23:59:59&quot;, &quot;callerid_group&quot;: &quot;/rest-api/callerid_group/1/&quot;}&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">campaigns</span><span class="o">/</span>
@@ -137,21 +137,21 @@ but it’s possible to create multiple sections and attach them with branching.<
 </pre></div>
 </div>
 <ul class="simple">
-<li>The <cite>object_id</cite> parameter is the <cite>survey-template-ID</cite> that you can create earlier via API or via the WebUI.</li>
-<li>The <cite>aleg_gateway</cite> is the gateway that will be used, most of the time it will be the same one.</li>
-<li>You will notice more settings in the campaign APIs, if you have doubts feel free to ask us.</li>
+<li>The <cite>object_id</cite> parameter is the <cite>survey-template-ID</cite> that you created earlier using the API or WebUI.</li>
+<li>The <cite>aleg_gateway</cite> is the gateway to be used, most of the time it will be the same one.</li>
+<li>You will notice more settings in the campaign APIs, if you have questions, contact support.</li>
 </ul>
 </div>
 <div class="section" id="start-the-campaign-via-api">
 <h2><a class="toc-backref" href="#id6">5) Start the campaign via API</a><a class="headerlink" href="#start-the-campaign-via-api" title="Permalink to this headline">¶</a></h2>
-<p>When a campaign is created via the API, the Campaign status is <cite>New</cite> at first.</p>
-<p>If you are ready and want to start your campaign, you can do so via the following update Campaign API, as follow:</p>
+<p>When a campaign is created via API the Campaign status is set as <cite>New</cite>.</p>
+<p>If you are ready to start your campaign, it can be done with the following Update Campaign API, as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span><span class="p">:</span><span class="n">password</span> <span class="o">--</span><span class="n">dump</span><span class="o">-</span><span class="n">header</span> <span class="o">-</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="o">-</span><span class="n">X</span> <span class="n">PATCH</span> <span class="o">--</span><span class="n">data</span> <span class="s1">&#39;{&quot;status&quot;: 1}&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">campaigns</span><span class="o">/</span><span class="mi">175</span><span class="o">/</span>
 </pre></div>
 </div>
 <p><strong>Note:</strong> <cite>status: 1</cite> is for Started, now the system should start making calls.</p>
 <p>You can also stop or pause a campaign via this API.</p>
-<p>Here the different campaign value for status:</p>
+<p>The different campaign status values are:</p>
 <ul class="simple">
 <li>1: START</li>
 <li>2: PAUSE</li>
@@ -208,7 +208,7 @@ but it’s possible to create multiple sections and attach them with branching.<
         <li class="right" >
           <a href="did_serializers.html" title="DID API"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 7.8.2 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 7.8.3 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../api-reference.html" >API Reference</a> &#187;</li> 
       </ul>
     </div>
