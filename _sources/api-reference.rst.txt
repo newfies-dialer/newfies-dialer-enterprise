@@ -44,6 +44,7 @@ Extended documentation on how to create an IVR/Survey via APIs:
     :maxdepth: 1
 
     ./api-doc/how_create_survey_campaign_via_api
+    ./api-doc/create_more_complex_ivr_api
 
 
 Testing console of APIs:

@@ -1,0 +1,215 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Create a complex IVR/Survey via API &#8212; Newfies-Dialer 7.8.6 documentation</title>
+    <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Webhook" href="../webhook.html" />
+    <link rel="prev" title="How to create an IVR/Survey via API" href="how_create_survey_campaign_via_api.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../webhook.html" title="Webhook"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="how_create_survey_campaign_via_api.html" title="How to create an IVR/Survey via API"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 7.8.6 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api-reference.html" accesskey="U">API Reference</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+
+    <div class="section" id="create-a-complex-ivr-survey-via-api">
+<span id="id1"></span><h1>Create a complex IVR/Survey via API<a class="headerlink" href="#create-a-complex-ivr-survey-via-api" title="Permalink to this headline">¶</a></h1>
+<p>First create a survey template via API, this is similar to creating the survey template
+on the webUI at <a class="reference external" href="http://HOSTNAME_IP/module/survey/add/">http://HOSTNAME_IP/module/survey/add/</a></p>
+<p>CURL Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span><span class="p">:</span><span class="n">password</span> <span class="o">--</span><span class="n">dump</span><span class="o">-</span><span class="n">header</span> <span class="o">-</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type:application/json&quot;</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">--</span><span class="n">data</span> <span class="s1">&#39;{&quot;name&quot;: &quot;Complex Survey created from API&quot;, &quot;user&quot;: &quot;/rest-api/users/1/&quot;}&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">survey</span><span class="o">-</span><span class="n">template</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>Result:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://HOSTNAME_IP/rest-api/survey-template/29/&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Complex Survey created from API&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;description&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;created_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-06-19T20:34:47.283180+02:00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;updated_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-06-19T20:34:47.283199+02:00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;http://HOSTNAME_IP/rest-api/users/1/&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>You should get a result similar to the example note the Survey-Template-ID from the
+result url data. (eg. “url”: “<a class="reference external" href="http://HOSTNAME_IP/rest-api/survey-template/29/">http://HOSTNAME_IP/rest-api/survey-template/29/</a>”, the ID is 29)</p>
+<p>Note the <cite>survey-template-ID</cite>,it will be used when you create the sections and the branching.</p>
+<div class="section" id="create-a-section-into-your-survey-template">
+<h2>1) Create a Section into your Survey Template<a class="headerlink" href="#create-a-section-into-your-survey-template" title="Permalink to this headline">¶</a></h2>
+<p>So far, you have created a Survey Template. At the moment it’s empty, as you can see on the UI.</p>
+<p>The documentation for different types of section is at, <a class="reference internal" href="../user-guide/survey-nodes.html#survey-and-ivr-configuration"><span class="std std-ref">Survey &amp; IVR Configuration</span></a></p>
+<p>We will create as an example:
+* a) <cite>Multi-choice</cite> (section type 2) to offer 2 options with some branching
+* b) <cite>Play message</cite> (section type 1) with simple message
+* c) <cite>API</cite> (section type 11) which will send an API request.</p>
+<p>Here is a list of section types for reference:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PLAY_MESSAGE</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">MULTI_CHOICE</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">RATING_SECTION</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">CAPTURE_DIGITS</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">RECORD_MSG</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">CALL_TRANSFER</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">HANGUP_SECTION</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">CONFERENCE</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">DNC</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="n">SMS</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">API</span> <span class="o">=</span> <span class="mi">11</span>
+<span class="n">QUEUE</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">ASR</span> <span class="o">=</span> <span class="mi">13</span>
+<span class="n">API_ASYNC</span> <span class="o">=</span> <span class="mi">14</span>
+</pre></div>
+</div>
+<p>To create any section via the API, you will need the <cite>survey-template-ID</cite> from before (which was 29).</p>
+<p>All the API calls will return a result which will contain the section-template ID, eg:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;url&quot;</span><span class="p">:</span><span class="s2">&quot;http://HOSTNAME_IP/rest-api/section-template/75/&quot;</span><span class="p">,</span> <span class="o">...</span>
+</pre></div>
+</div>
+<ol class="loweralpha">
+<li><p class="first">First, create a <cite>Multi-Choice</cite> Section-Template, as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span><span class="p">:</span><span class="n">password</span> <span class="o">--</span><span class="n">dump</span><span class="o">-</span><span class="n">header</span> <span class="o">-</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type:application/json&quot;</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">--</span><span class="n">data</span> <span class="s1">&#39;{&quot;type&quot;: &quot;2&quot;, &quot;audiofile&quot;: &quot;/rest-api/audio-files/18/&quot;, &quot;question&quot;: &quot;Multi-choice, select 1 or 2&quot;, &quot;survey&quot;: &quot;/rest-api/survey-template/29/&quot;, &quot;retries&quot;: 3, &quot;timeout&quot;: 5, &quot;key_1&quot;: &quot;1 Pressed&quot;, &quot;key_2&quot;: &quot;2 Pressed&quot;, &quot;order&quot;: 1, &quot;queue&quot;: null}&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">section</span><span class="o">-</span><span class="n">template</span><span class="o">/</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>There are a lot of parameters available, we advise you to inspect them via the API explorer: <a class="reference external" href="http://HOSTNAME_IP/rest-api/section-template/">http://HOSTNAME_IP/rest-api/section-template/</a></p>
+<p>Note here are the <cite>retries</cite> &amp; <cite>timeout</cite> were used, along with <cite>key_1</cite> &amp; <cite>key_2</cite> as we want to capture contacts pressing 1 or 2.</p>
+<p>Let’s assume that in the API result the <cite>section-template ID</cite> was 75.</p>
+<ol class="loweralpha" start="2">
+<li><p class="first">Now create a <cite>Play message</cite> Section-Template, as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span><span class="p">:</span><span class="n">password</span> <span class="o">--</span><span class="n">dump</span><span class="o">-</span><span class="n">header</span> <span class="o">-</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type:application/json&quot;</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">--</span><span class="n">data</span> <span class="s1">&#39;{&quot;type&quot;: &quot;1&quot;, &quot;audiofile&quot;: &quot;/rest-api/audio-files/20/&quot;, &quot;question&quot;: &quot;Simple Message&quot;, &quot;survey&quot;: &quot;/rest-api/survey-template/29/&quot;, &quot;order&quot;: 2, &quot;queue&quot;: null}&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">section</span><span class="o">-</span><span class="n">template</span><span class="o">/</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Assume that in the API result the <cite>section-template ID</cite> was 76.</p>
+<ol class="loweralpha" start="3">
+<li><p class="first">Now, let’s create an <cite>API</cite> Section-Template, as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span><span class="p">:</span><span class="n">password</span> <span class="o">--</span><span class="n">dump</span><span class="o">-</span><span class="n">header</span> <span class="o">-</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type:application/json&quot;</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">--</span><span class="n">data</span> <span class="s1">&#39;{&quot;type&quot;: &quot;11&quot;, &quot;audiofile&quot;: null, &quot;script&quot;: &quot;.&quot;, &quot;question&quot;: &quot;API HTTP Get Request&quot;, &quot;survey&quot;: &quot;/rest-api/survey-template/29/&quot;, &quot;completed&quot;: true, &quot;api_url&quot;: &quot;http://mydomain.com/CustomAPI&quot;, &quot;order&quot;: 3, &quot;queue&quot;: null}&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">section</span><span class="o">-</span><span class="n">template</span><span class="o">/</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Note: We have used <cite>completed</cite> to mark a call as completed when reaching this section, this is not mandatory.</p>
+<p>Assume that in the API result the <cite>section-template ID</cite> was 77.</p>
+</div>
+<div class="section" id="create-branching-into-your-survey-template">
+<h2>2) Create Branching into your Survey Template<a class="headerlink" href="#create-branching-into-your-survey-template" title="Permalink to this headline">¶</a></h2>
+<p>Branching is used on the multi-choice to tell the IVR which section to go to when pressing a certain key.</p>
+<p>Create 2 branchings for press-1 &amp; press-2.</p>
+<p>When pressing 1, we want to go to the Play Message (so it will go from section-template ID 75 to 76)</p>
+<p>Create the branching via API, as follow:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span><span class="p">:</span><span class="n">password</span> <span class="o">--</span><span class="n">dump</span><span class="o">-</span><span class="n">header</span> <span class="o">-</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type:application/json&quot;</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">--</span><span class="n">data</span> <span class="s1">&#39;{&quot;keys&quot;: &quot;1&quot;, &quot;section&quot;: &quot;/rest-api/section-template/75/&quot;, &quot;goto&quot;: &quot;/rest-api/section-template/76/&quot;}&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">branching</span><span class="o">-</span><span class="n">template</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>When pressing 2, we want to go to the API section (so it will go from section-template ID 75 to 77).</p>
+<p>Create the branching via API, as follow:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span><span class="p">:</span><span class="n">password</span> <span class="o">--</span><span class="n">dump</span><span class="o">-</span><span class="n">header</span> <span class="o">-</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type:application/json&quot;</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">--</span><span class="n">data</span> <span class="s1">&#39;{&quot;keys&quot;: &quot;2&quot;, &quot;section&quot;: &quot;/rest-api/section-template/75/&quot;, &quot;goto&quot;: &quot;/rest-api/section-template/77/&quot;}&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">branching</span><span class="o">-</span><span class="n">template</span><span class="o">/</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="closing-remark">
+<h2>3) Closing remark<a class="headerlink" href="#closing-remark" title="Permalink to this headline">¶</a></h2>
+<p>You can now use this complex IVR with a campaign, remember that a campaign when it is started will create a copy of that IVR/Survey, so if you modify a survey after a campaign is started, you will need to recreate your campaign from the beginning for the changes to take effect.</p>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo-newfies-dialer-name-300.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="how_create_survey_campaign_via_api.html"
+                        title="previous chapter">How to create an IVR/Survey via API</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../webhook.html"
+                        title="next chapter">Webhook</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../webhook.html" title="Webhook"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="how_create_survey_campaign_via_api.html" title="How to create an IVR/Survey via API"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 7.8.6 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api-reference.html" >API Reference</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017-2020, Newfies-Dialer mass outbound calling, voice broadcasting, phone survey solution &lt;newfies-dialer@star2billing.com&gt;.
+    </div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-325034-18");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+  </body>
+</html>
