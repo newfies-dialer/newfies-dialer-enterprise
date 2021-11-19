@@ -1,0 +1,40 @@
+/*
+ * celery.css_t
+ * ~~~~~~~~~~~~
+ *
+ * :copyright: Copyright 2010 by Armin Ronacher.
+ * :license: BSD, see LICENSE for details.
+ */
+
+@import url("basic.css");
+
+/* -- page layout ----------------------------------------------------------- */
+
+pre {
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    background: #F0FFEB;
+    padding: 7px 10px;
+    margin: 15px 0;
+    border: 1px solid #C7ECB8;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    line-height: 1.3em;
+}
+
+.rst-content div[class^="highlight"] pre {
+    white-space: pre;
+    margin: 0;
+    padding: 12px 12px;
+    display: block;
+    overflow: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}

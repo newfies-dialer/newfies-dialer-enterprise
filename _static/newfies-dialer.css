@@ -370,6 +370,19 @@ pre {
     line-height: 1.3em;
 }
 
+.rst-content div[class^="highlight"] pre {
+    white-space: pre;
+    margin: 0;
+    padding: 12px 12px;
+    display: block;
+    overflow: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
 tt {
     background: #F0FFEB;
     color: #222;

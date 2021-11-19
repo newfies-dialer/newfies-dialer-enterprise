@@ -1,0 +1,66 @@
+.. _streaming-callcenter-events:
+
+============================
+Streaming Call-Center Events
+============================
+
+.. _stream_events_overview:
+
+Overview
+--------
+
+In some situation, you may want to know in realtime what is happening on a call-center queue.
+
+For the moment those 2 events are published:
+
+    * **Offering-Call-Agent:** Contact session being offered to the agent, his phone is ringing.
+    * **Connected-Call-Agent:** Contact session from the queue is being connected to the agent.
+
+Event Payload::
+
+    '{\'Offering-Call-Agent:\' : {\'callrequest_id\': \'276547\', \'CC_Agent\': \'tenant-1@areski\', \'campaign_id\': \'295\', \'CC_Member_CID_Name\': \'Outbound Call\', \'CC_Agent_System\': \'single_box\', \'phonenumber\': \'34650844400\', \'callerid_number\': \'34650844400\', \'CC_Member_Session_UUID\': \'4dbd89c2-8e54-43a6-a0b4-a7d26b09ae6c\', \'CC_Member_UUID\': \'33e7df24-133c-47c1-9aec-b985d507d43e\', \'CC_Member_CID_Number\': \'34650110022\', \'CC_Queue\': \'tenant-1@areski-queue\'}}'
+
+Relevant information in the payload:
+
+    * callrequest_id: Internal ID to identify the call (provided by webhook too)
+    * CC_Member_UUID: UUID to identify the call (provided by webhook too)
+    * campaign_id: ID of the Campaign
+    * CC_Agent: agent internal name, built as follow tenant-%USER_ID@%AGENT_USERNAME
+    * phonenumber: Contact phone number
+    * callerid_number: Contact phone number
+    * agent_internal_name: agent internal name is composed as follow "tenant-USERID@AGENT_USERNAME"
+    * agent_username: username choosed by the agent
+
+
+.. _pub_sub_redis:
+
+Pub/Sub Redis
+-------------
+
+Those events can be retrieved using Redis Pub/Sub, thus you can simply subscribe internally to redis and
+listen on `callcenter_events`.
+
+Code example in Python to subscribe on a channel:
+
+.. code-block:: python
+
+    import redis
+    redis_con = redis.Redis(host='localhost', port=6379, db=0)
+    redis_ps = redis_con.pubsub()
+    redis_ps.subscribe('callcenter_events')
+    print("Subscribed to callcenter_events...")
+    while True:
+        event = redis_ps.get_message()
+        if event:
+            print(event)
+    print("the End.")
+
+
+.. _extra_hiredis:
+
+Hiredis
+-------
+
+Ignore this part for now:
+
+    # hiredis_raw default PUBLISH callcenter_events '{\'agent-offering\' : {\'callrequest_id\': \'276547\', \'CC_Agent\': \'tenant-1@areski\', \'campaign_id\': \'295\', \'CC_Member_CID_Name\': \'Outbound Call\', \'CC_Agent_System\': \'single_box\', \'phonenumber\': \'34650844400\', \'callerid_number\': \'34650844400\', \'CC_Member_Session_UUID\': \'4dbd89c2-8e54-43a6-a0b4-a7d26b09ae6c\', \'CC_Member_UUID\': \'33e7df24-133c-47c1-9aec-b985d507d43e\', \'CC_Member_CID_Number\': \'34650110022\', \'CC_Queue\': \'tenant-1@areski-queue\'}}'

@@ -76,6 +76,8 @@ If you need more flexibility, you can use the "Additional Parameters (JSON)" fie
 For example, let's add this in "Additional Parameters (JSON)":
     {"company_name": "Canonical", "bonus" : "200", "currency" : "euro"}
 
+NB: variable names should be lowercase with no spaces, for instance use {first_name} rather than {First Name}. 
+
 When you create a survey with a node that plays TTS, you can easily replace the key-values in the text.
 Text example:
 

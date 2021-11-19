@@ -29,3 +29,4 @@ Tasks which will be performed by Newfies-Dialer admin, with our training, will i
     ./admin-guide/add-user.rst
     ./admin-guide/admin-panel
     ./advanced-configuration/advanced-configuration-guide.rst
+    ./advanced-dev/streaming-callcenter-events.rst
