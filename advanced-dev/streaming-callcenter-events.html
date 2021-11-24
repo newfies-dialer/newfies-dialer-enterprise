@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Streaming Call-Center Events &#8212; Newfies-Dialer 7.8.21 documentation</title>
+    <title>Streaming Call-Center Events &#8212; Newfies-Dialer 7.8.22 documentation</title>
     <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/dialerai.css" />
@@ -35,7 +35,7 @@
         <li class="right" >
           <a href="../advanced-configuration/microsoft-asr.html" title="Setting up Microsoft Azure Speech-to-Text (ASR)"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 7.8.21 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 7.8.22 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../admin-guide.html" accesskey="U">Admin Guide</a> &#187;</li> 
       </ul>
     </div>  
@@ -56,10 +56,15 @@
 <div><ul class="simple">
 <li><strong>Offering-Call-Agent:</strong> Contact session being offered to the agent, his phone is ringing.</li>
 <li><strong>Connected-Call-Agent:</strong> Contact session from the queue is being connected to the agent.</li>
+<li><strong>Agent-Status-Change:</strong> Event to notify that the agent changed his status. To one of those value (Available, Logged Out, On Standby, On Break)</li>
 </ul>
 </div></blockquote>
 <p>Event Payload:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;{</span><span class="se">\&#39;</span><span class="s1">Offering-Call-Agent:</span><span class="se">\&#39;</span><span class="s1"> : {</span><span class="se">\&#39;</span><span class="s1">callrequest_id</span><span class="se">\&#39;</span><span class="s1">: </span><span class="se">\&#39;</span><span class="s1">276547</span><span class="se">\&#39;</span><span class="s1">, </span><span class="se">\&#39;</span><span class="s1">CC_Agent</span><span class="se">\&#39;</span><span class="s1">: </span><span class="se">\&#39;</span><span class="s1">tenant-1@areski</span><span class="se">\&#39;</span><span class="s1">, </span><span class="se">\&#39;</span><span class="s1">campaign_id</span><span class="se">\&#39;</span><span class="s1">: </span><span class="se">\&#39;</span><span class="s1">295</span><span class="se">\&#39;</span><span class="s1">, </span><span class="se">\&#39;</span><span class="s1">CC_Member_CID_Name</span><span class="se">\&#39;</span><span class="s1">: </span><span class="se">\&#39;</span><span class="s1">Outbound Call</span><span class="se">\&#39;</span><span class="s1">, </span><span class="se">\&#39;</span><span class="s1">CC_Agent_System</span><span class="se">\&#39;</span><span class="s1">: </span><span class="se">\&#39;</span><span class="s1">single_box</span><span class="se">\&#39;</span><span class="s1">, </span><span class="se">\&#39;</span><span class="s1">phonenumber</span><span class="se">\&#39;</span><span class="s1">: </span><span class="se">\&#39;</span><span class="s1">34650844400</span><span class="se">\&#39;</span><span class="s1">, </span><span class="se">\&#39;</span><span class="s1">callerid_number</span><span class="se">\&#39;</span><span class="s1">: </span><span class="se">\&#39;</span><span class="s1">34650844400</span><span class="se">\&#39;</span><span class="s1">, </span><span class="se">\&#39;</span><span class="s1">CC_Member_Session_UUID</span><span class="se">\&#39;</span><span class="s1">: </span><span class="se">\&#39;</span><span class="s1">4dbd89c2-8e54-43a6-a0b4-a7d26b09ae6c</span><span class="se">\&#39;</span><span class="s1">, </span><span class="se">\&#39;</span><span class="s1">CC_Member_UUID</span><span class="se">\&#39;</span><span class="s1">: </span><span class="se">\&#39;</span><span class="s1">33e7df24-133c-47c1-9aec-b985d507d43e</span><span class="se">\&#39;</span><span class="s1">, </span><span class="se">\&#39;</span><span class="s1">CC_Member_CID_Number</span><span class="se">\&#39;</span><span class="s1">: </span><span class="se">\&#39;</span><span class="s1">34650110022</span><span class="se">\&#39;</span><span class="s1">, </span><span class="se">\&#39;</span><span class="s1">CC_Queue</span><span class="se">\&#39;</span><span class="s1">: </span><span class="se">\&#39;</span><span class="s1">tenant-1@areski-queue</span><span class="se">\&#39;</span><span class="s1">}}&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;{&quot;Offering-Call-Agent:&quot; : {&quot;callrequest_id&quot;: &quot;276547&quot;, &quot;CC_Agent&quot;: &quot;tenant-1@areski&quot;, &quot;campaign_id&quot;: &quot;295&quot;, &quot;CC_Member_CID_Name&quot;: &quot;Outbound Call&quot;, &quot;CC_Agent_System&quot;: &quot;single_box&quot;, &quot;phonenumber&quot;: &quot;34650844400&quot;, &quot;callerid_number&quot;: &quot;34650844400&quot;, &quot;CC_Member_Session_UUID&quot;: &quot;4dbd89c2-8e54-43a6-a0b4-a7d26b09ae6c&quot;, &quot;CC_Member_UUID&quot;: &quot;33e7df24-133c-47c1-9aec-b985d507d43e&quot;, &quot;CC_Member_CID_Number&quot;: &quot;34650110022&quot;, &quot;CC_Queue&quot;: &quot;tenant-1@areski-queue&quot;}}&#39;</span>
+</pre></div>
+</div>
+<p>Event Payload for Agent-Status-Change:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;{&quot;Offering-Call-Agent:&quot; : {&quot;CC_Agent&quot;: &quot;tenant-1@areski&quot;, &quot;CC_Agent_Status&quot;: &quot;Logged Out&quot;}}&#39;</span>
 </pre></div>
 </div>
 <p>Relevant information in the payload:</p>
@@ -93,12 +98,6 @@ listen on <cite>callcenter_events</cite>.</p>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;the End.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="hiredis">
-<span id="extra-hiredis"></span><h2>Hiredis<a class="headerlink" href="#hiredis" title="Permalink to this headline">¶</a></h2>
-<p>Ignore this part for now:</p>
-<blockquote>
-<div># hiredis_raw default PUBLISH callcenter_events ‘{‘agent-offering’ : {‘callrequest_id’: ‘276547’, ‘CC_Agent’: <a class="reference external" href="mailto:'tenant-1&#37;&#52;&#48;areski">‘tenant-1<span>&#64;</span>areski</a>’, ‘campaign_id’: ‘295’, ‘CC_Member_CID_Name’: ‘Outbound Call’, ‘CC_Agent_System’: ‘single_box’, ‘phonenumber’: ‘34650844400’, ‘callerid_number’: ‘34650844400’, ‘CC_Member_Session_UUID’: ‘4dbd89c2-8e54-43a6-a0b4-a7d26b09ae6c’, ‘CC_Member_UUID’: ‘33e7df24-133c-47c1-9aec-b985d507d43e’, ‘CC_Member_CID_Number’: ‘34650110022’, ‘CC_Queue’: <a class="reference external" href="mailto:'tenant-1&#37;&#52;&#48;areski-queue">‘tenant-1<span>&#64;</span>areski-queue</a>’}}’</div></blockquote>
 </div>
 </div>
 
@@ -149,7 +148,7 @@ listen on <cite>callcenter_events</cite>.</p>
         <li class="right" >
           <a href="../advanced-configuration/microsoft-asr.html" title="Setting up Microsoft Azure Speech-to-Text (ASR)"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 7.8.21 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 7.8.22 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../admin-guide.html" >Admin Guide</a> &#187;</li> 
       </ul>
     </div>
