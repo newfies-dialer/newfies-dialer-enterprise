@@ -51,7 +51,7 @@
 <div class="section" id="overview">
 <span id="stream-events-overview"></span><h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>In some situation, you may want to know in realtime what is happening on a call-center queue.</p>
-<p>For the moment those 2 events are published:</p>
+<p>For the moment those 3 events are published:</p>
 <blockquote>
 <div><ul class="simple">
 <li><strong>Offering-Call-Agent:</strong> Contact session being offered to the agent, his phone is ringing.</li>
@@ -59,12 +59,12 @@
 <li><strong>Agent-Status-Change:</strong> Event to notify that the agent changed his status. To one of those value (Available, Logged Out, On Standby, On Break)</li>
 </ul>
 </div></blockquote>
-<p>Event Payload:</p>
+<p>Example of the Event Payload:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;{&quot;Offering-Call-Agent:&quot; : {&quot;callrequest_id&quot;: &quot;276547&quot;, &quot;CC_Agent&quot;: &quot;tenant-1@areski&quot;, &quot;campaign_id&quot;: &quot;295&quot;, &quot;CC_Member_CID_Name&quot;: &quot;Outbound Call&quot;, &quot;CC_Agent_System&quot;: &quot;single_box&quot;, &quot;phonenumber&quot;: &quot;34650844400&quot;, &quot;callerid_number&quot;: &quot;34650844400&quot;, &quot;CC_Member_Session_UUID&quot;: &quot;4dbd89c2-8e54-43a6-a0b4-a7d26b09ae6c&quot;, &quot;CC_Member_UUID&quot;: &quot;33e7df24-133c-47c1-9aec-b985d507d43e&quot;, &quot;CC_Member_CID_Number&quot;: &quot;34650110022&quot;, &quot;CC_Queue&quot;: &quot;tenant-1@areski-queue&quot;}}&#39;</span>
 </pre></div>
 </div>
-<p>Event Payload for Agent-Status-Change:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;{&quot;Offering-Call-Agent:&quot; : {&quot;CC_Agent&quot;: &quot;tenant-1@areski&quot;, &quot;CC_Agent_Status&quot;: &quot;Logged Out&quot;}}&#39;</span>
+<p>Example of the Event Payload for Agent-Status-Change:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;{&quot;Agent-Status-Change:&quot; : {&quot;CC_Agent&quot;: &quot;tenant-1@areski&quot;, &quot;CC_Agent_Status&quot;: &quot;Logged Out&quot;}}&#39;</span>
 </pre></div>
 </div>
 <p>Relevant information in the payload:</p>

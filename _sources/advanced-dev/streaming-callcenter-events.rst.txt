@@ -11,21 +11,21 @@ Overview
 
 In some situation, you may want to know in realtime what is happening on a call-center queue.
 
-For the moment those 2 events are published:
+For the moment those 3 events are published:
 
     * **Offering-Call-Agent:** Contact session being offered to the agent, his phone is ringing.
     * **Connected-Call-Agent:** Contact session from the queue is being connected to the agent.
     * **Agent-Status-Change:** Event to notify that the agent changed his status. To one of those value (Available, Logged Out, On Standby, On Break)
 
 
-Event Payload::
+Example of the Event Payload::
 
     '{"Offering-Call-Agent:" : {"callrequest_id": "276547", "CC_Agent": "tenant-1@areski", "campaign_id": "295", "CC_Member_CID_Name": "Outbound Call", "CC_Agent_System": "single_box", "phonenumber": "34650844400", "callerid_number": "34650844400", "CC_Member_Session_UUID": "4dbd89c2-8e54-43a6-a0b4-a7d26b09ae6c", "CC_Member_UUID": "33e7df24-133c-47c1-9aec-b985d507d43e", "CC_Member_CID_Number": "34650110022", "CC_Queue": "tenant-1@areski-queue"}}'
 
 
-Event Payload for Agent-Status-Change::
+Example of the Event Payload for Agent-Status-Change::
 
-    '{"Offering-Call-Agent:" : {"CC_Agent": "tenant-1@areski", "CC_Agent_Status": "Logged Out"}}'
+    '{"Agent-Status-Change:" : {"CC_Agent": "tenant-1@areski", "CC_Agent_Status": "Logged Out"}}'
 
 
 Relevant information in the payload:
