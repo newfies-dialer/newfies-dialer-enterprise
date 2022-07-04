@@ -4,7 +4,7 @@
 Advanced
 ========
 
-When a Newfies-Dialer system is first setup, this work will be done by the commissioning team,
+When the Dialer System is first setup, this work will be done by the commissioning team,
 but the customer may have to open their own accounts where applicable for instance to set up:
 
 
@@ -18,6 +18,5 @@ but the customer may have to open their own accounts where applicable for instan
 .. toctree::
     :maxdepth: 1
 
-    ./microsoft-tts.rst
-    ./microsoft-asr.rst
+    ./microsoft-tts-asr.rst
 

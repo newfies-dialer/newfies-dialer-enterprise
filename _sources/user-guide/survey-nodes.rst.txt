@@ -348,6 +348,15 @@ This will listen to the answer, wait until the contact has finished speaking, th
 
 Values of less than 2000ms will be set to 2000ms.
 
+**Notes on using ASR**
+
+1. An ASR section should **never** be the first section on survey, as the initial "Hello" is recorded as well as the answer to the question you asked, so you end up sending very long audio files. 
+
+2. Closed questions for ASR responses should be used, so the reply is a variation on yes or no. This is because we strip the silence at the beginning and end of the audio and send it to Microsoft for processing. MS has to listen to the whole message then send back the translation. This means that the delay time is always going to be longer than the duration of the audio that you have sent them. If you send 5 seconds of audio, you are going to have to wait longer than 5 seconds for the translation to come back, e.g. time to listen to the message plus translation and delivery time.
+
+3. Try and keep number of ASR sections in the survey to an absolute bare minimum. Use **detect_silence:6000** as described above to simulate questions where you don't need to know the answer. Also consider using compound questions, e.g. Rather than two questions: "Are you over 35?" and "Do you earn more than $35,000?", use one compound question "Are you over 35 and earn more than $35,000?".
+
+4. Keep the questions really short by splitting up your question audio if necessary, we want to avoid recording too much background noise to be sent to Microsoft, so that the audio files sent to MS are as short as they can be containing only the words you are interested in. MS charge by the second, so it's in your interests to do this as well.
 
 .. _survey_branching:
 

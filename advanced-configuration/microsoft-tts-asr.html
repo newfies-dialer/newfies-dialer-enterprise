@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Gateway API &#8212; Newfies-Dialer 7.11.14 documentation</title>
+    <title>Setting up Microsoft Azure Speech Services (ASR/TTS) &#8212; Newfies-Dialer 7.11.14 documentation</title>
     <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/dialerai.css" />
@@ -17,8 +17,8 @@
     <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Callcenter Config API" href="callcenter_config_serializers.html" />
-    <link rel="prev" title="CallerID Group API" href="callerid_group_serializers.html" /> 
+    <link rel="next" title="Streaming Call-Center Events" href="../advanced-dev/streaming-callcenter-events.html" />
+    <link rel="prev" title="Advanced" href="advanced-configuration-guide.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -30,13 +30,14 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="callcenter_config_serializers.html" title="Callcenter Config API"
+          <a href="../advanced-dev/streaming-callcenter-events.html" title="Streaming Call-Center Events"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="callerid_group_serializers.html" title="CallerID Group API"
+          <a href="advanced-configuration-guide.html" title="Advanced"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 7.11.14 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../api-reference.html" accesskey="U">API Reference</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../admin-guide.html" >Admin Guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="advanced-configuration-guide.html" accesskey="U">Advanced</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -46,36 +47,31 @@
           <div class="body" role="main">
             
 
-    <span class="target" id="module-apirest.gateway_serializers"></span><div class="section" id="gateway-api">
-<span id="gatewayserializer-model"></span><h1><cite>Gateway API</cite><a class="headerlink" href="#gateway-api" title="Permalink to this headline">¶</a></h1>
-<dl class="data">
-<dt id="apirest.gateway_serializers.GatewaySerializer">
-<code class="descclassname">apirest.gateway_serializers.</code><code class="descname">GatewaySerializer</code><a class="headerlink" href="#apirest.gateway_serializers.GatewaySerializer" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Read</strong>:</p>
-<blockquote>
-<div><p>CURL Usage:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span><span class="p">:</span><span class="n">password</span> <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Accept: application/json&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">gateway</span><span class="o">/</span>
-
-<span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span><span class="p">:</span><span class="n">password</span> <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Accept: application/json&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">HOSTNAME_IP</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">gateway</span><span class="o">/%</span><span class="n">gateway</span><span class="o">-</span><span class="nb">id</span><span class="o">%/</span>
-</pre></div>
-</div>
-<p>Response:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="s2">&quot;next&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-    <span class="s2">&quot;previous&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-    <span class="s2">&quot;results&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://HOSTNAME_IP/rest-api/gateway/1/&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Default_Gateway&quot;</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div></blockquote>
-</dd></dl>
-
+    <div class="section" id="setting-up-microsoft-azure-speech-services-asr-tts">
+<span id="microsoft-tts"></span><h1>Setting up Microsoft Azure Speech Services (ASR/TTS)<a class="headerlink" href="#setting-up-microsoft-azure-speech-services-asr-tts" title="Permalink to this headline">¶</a></h1>
+<p>Use these instructions to set up both TTS (Text to Speech) and ASR (Automatic Speech Recognition)</p>
+<p>1. Sign up to Microsoft Azure at <a class="reference external" href="https://azure.microsoft.com/en-us/services/cognitive-services/speech/">https://azure.microsoft.com/en-us/services/cognitive-services/speech/</a>,
+when you set up the Speech Services, make sure you choose eastus, we will need the API key that they provide
+when you add this service.</p>
+<ol class="arabic simple" start="2">
+<li>Create a resource -&gt; Click or search for “Speech Services” then <cite>Create</cite></li>
+</ol>
+<img alt="../_images/ms-tts-1-202206.png" src="../_images/ms-tts-1-202206.png" />
+<ol class="arabic simple" start="3">
+<li>Click <cite>Create</cite> and fill in the details correctly, selecting East US as the zone, then click <cite>Review + Create</cite> then if all correct, <cite>Create</cite></li>
+</ol>
+<img alt="../_images/ms-tts-2-202206.png" src="../_images/ms-tts-2-202206.png" />
+<ol class="arabic simple" start="4">
+<li>Wait for a short while</li>
+</ol>
+<img alt="../_images/ms-tts-3-202206.png" src="../_images/ms-tts-3-202206.png" />
+<ol class="arabic simple" start="5">
+<li>When created, click on Go To Resource, then Manage Keys</li>
+</ol>
+<img alt="../_images/ms-tts-4-202206.png" src="../_images/ms-tts-4-202206.png" />
+<p>6. Finally send us the key. Make sure that you have provided a payment source to Azure so they
+can charge you.</p>
+<img alt="../_images/ms-tts-5-202206.png" src="../_images/ms-tts-5-202206.png" />
 </div>
 
 
@@ -89,11 +85,11 @@
               <img class="logo" src="../_static/logo-newfies-dialer-name-300.png" alt="Logo"/>
             </a></p>
   <h4>Previous topic</h4>
-  <p class="topless"><a href="callerid_group_serializers.html"
-                        title="previous chapter"><cite>CallerID Group API</cite></a></p>
+  <p class="topless"><a href="advanced-configuration-guide.html"
+                        title="previous chapter">Advanced</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="callcenter_config_serializers.html"
-                        title="next chapter"><cite>Callcenter Config API</cite></a></p>
+  <p class="topless"><a href="../advanced-dev/streaming-callcenter-events.html"
+                        title="next chapter">Streaming Call-Center Events</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <div class="searchformwrapper">
@@ -120,13 +116,14 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="callcenter_config_serializers.html" title="Callcenter Config API"
+          <a href="../advanced-dev/streaming-callcenter-events.html" title="Streaming Call-Center Events"
              >next</a> |</li>
         <li class="right" >
-          <a href="callerid_group_serializers.html" title="CallerID Group API"
+          <a href="advanced-configuration-guide.html" title="Advanced"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 7.11.14 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../api-reference.html" >API Reference</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../admin-guide.html" >Admin Guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="advanced-configuration-guide.html" >Advanced</a> &#187;</li> 
       </ul>
     </div>
 

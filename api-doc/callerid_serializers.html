@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>CallerID API &#8212; Newfies-Dialer 7.9.3 documentation</title>
+    <title>CallerID API &#8212; Newfies-Dialer 7.11.14 documentation</title>
     <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/dialerai.css" />
@@ -35,7 +35,7 @@
         <li class="right" >
           <a href="dnc_contact_serializers.html" title="DNCContact API"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 7.9.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 7.11.14 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../api-reference.html" accesskey="U">API Reference</a> &#187;</li> 
       </ul>
     </div>  
@@ -130,8 +130,8 @@
 <p><strong>How to filter and update a specific CallerID</strong>:</p>
 <blockquote>
 <div><p>The CallerID has 3 filters: callerid_group_id, areacode &amp; callerid_num.</p>
-<p>You use none or several of those filters to retrieve a specific callerID.</p>
-<p>Here an example of retrieving in the CallerID Group 1 the CallerID Number <cite>+120388445511</cite>:</p>
+<p>You can use none or several of those filters to retrieve a specific callerID.</p>
+<p>Here an example of retrieving the CallerID Number <cite>+120388445511</cite> in the CallerID Group <cite>1</cite>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>curl -u username:password -H &#39;Accept: application/json&#39; http://127.0.0.1:8000/rest-api/callerid/?callerid_group_id=1&amp;areacode=&amp;callerid_num=%2B120388445511
 </pre></div>
 </div>
@@ -153,12 +153,12 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Now, if you want to update that callerID, you can retrieve the CallerID ID from the <cite>url</cite>, here it’s <cite>3</cite>.</p>
-<p>You can easily now update that CallerID:</p>
+<p>Now, if you want to update the callerID you just retrieved, you can use the CallerID ID from the <cite>url</cite>, here it’s <cite>3</cite>.</p>
+<p>Update that <cite>callerid_num</cite> to a new value, for instance <cite>120388445511</cite> as follow:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">username</span><span class="p">:</span><span class="n">password</span> <span class="o">--</span><span class="n">dump</span><span class="o">-</span><span class="n">header</span> <span class="o">-</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="o">-</span><span class="n">X</span> <span class="n">PATCH</span> <span class="o">--</span><span class="n">data</span> <span class="s1">&#39;{&quot;callerid_num&quot;: &quot;+120388445511&quot;}&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">8000</span><span class="o">/</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span><span class="o">/</span><span class="n">callerid</span><span class="o">/</span><span class="mi">3</span><span class="o">/</span>
 </pre></div>
 </div>
-<p>The CallerID is now updated.</p>
+<p>The CallerID has now been updated.</p>
 </div></blockquote>
 </dd></dl>
 
@@ -211,7 +211,7 @@
         <li class="right" >
           <a href="dnc_contact_serializers.html" title="DNCContact API"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 7.9.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 7.11.14 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../api-reference.html" >API Reference</a> &#187;</li> 
       </ul>
     </div>
