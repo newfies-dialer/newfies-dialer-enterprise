@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>DID API &#8212; Newfies-Dialer 7.11.14 documentation</title>
+    <title>DID API &#8212; Newfies-Dialer 7.16.3 documentation</title>
     <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/dialerai.css" />
@@ -35,7 +35,7 @@
         <li class="right" >
           <a href="content_type_serializers.html" title="Content Type API"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 7.11.14 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 7.16.3 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../api-reference.html" accesskey="U">API Reference</a> &#187;</li> 
       </ul>
     </div>  
@@ -109,6 +109,41 @@
 </pre></div>
 </div>
 </div></blockquote>
+<p><strong>Update</strong>:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>CURL Usage::</dt>
+<dd>curl -u username:password –dump-header - -H “Content-Type: application/json” -X PATCH –data ‘{“did_number”: “888884864”, “campaign”: “http://HOSTNAME_IP/rest-api/campaigns/5/”}’ http://HOSTNAME_IP/rest-api/did/%did-id%/</dd>
+<dt>Response::</dt>
+<dd>HTTP/1.0 202 Accepted
+Date: Wed, 29 Jul 2020 16:10:28 GMT
+Server: WSGIServer/0.1 Python/2.7.15rc1
+Vary: Accept-Language, Cookie
+Content-Length: 0
+Content-Type: text/html; charset=utf-8
+Content-Language: en-us</dd>
+</dl>
+</div></blockquote>
+<p><strong>Update usages</strong>:</p>
+<blockquote>
+<div><p>Assign DID to an Inbound campaign with ID-5:</p>
+<blockquote>
+<div>curl -u username:password –dump-header - -H “Content-Type: application/json” -X PATCH –data ‘{“campaign”: “http://HOSTNAME_IP/rest-api/campaigns/5/”}’ http://HOSTNAME_IP/rest-api/did/2/</div></blockquote>
+<p>Unassign DID from an Inbound campaign:</p>
+<blockquote>
+<div>curl -u username:password –dump-header - -H “Content-Type: application/json” -X PATCH
+–data ‘{“campaign”: null}’ http://HOSTNAME_IP/rest-api/did/2/</div></blockquote>
+<p>Update DID number to a new value:</p>
+<blockquote>
+<div>curl -u username:password –dump-header - -H “Content-Type: application/json” -X PATCH –data ‘{“did_number”: “888884877”}’ http://HOSTNAME_IP/rest-api/did/2/</div></blockquote>
+</div></blockquote>
+<p><strong>Delete</strong>:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>CURL Usage::</dt>
+<dd>curl -u username:password –dump-header - -X DELETE http://HOSTNAME_IP/rest-api/did/%did-id%/</dd>
+</dl>
+</div></blockquote>
 </dd></dl>
 
 </div>
@@ -160,7 +195,7 @@
         <li class="right" >
           <a href="content_type_serializers.html" title="Content Type API"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 7.11.14 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Newfies-Dialer 7.16.3 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../api-reference.html" >API Reference</a> &#187;</li> 
       </ul>
     </div>
